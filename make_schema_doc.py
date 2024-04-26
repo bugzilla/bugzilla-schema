@@ -755,13 +755,14 @@ def validate_schema_remarks():
     print("Versions validated.")
 
 if __name__ == "__main__":
-    if sys.argv[1] == '--validate':
+    if len(sys.argv) > 1 and sys.argv[1] == '--validate':
         validate_schema_remarks()
     else:
         try:
             (first, last, filename) = sys.argv[1:]
         except ValueError:
-            print("Please pass the starting and ending schema versions and a filename to output to.")
+            print("Please pass the starting and ending schema versions and a filename to output to,")
+            print("or pass --validate to check for version number sanity.")
             sys.exit()
         write_file(first, last, filename)
 
