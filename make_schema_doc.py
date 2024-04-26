@@ -732,13 +732,38 @@ def make_body(first, last):
     (header, body, footer) = make_tables(first, last)
     return body
 
+def validate_schema_remarks():
+    for v in schema_remarks.version_order:
+        if not v in schema_remarks.version_schema_map:
+            errors.append(f"Version {v} found in version_order is not listed in version_schema_map")
+        if len([item for item in schema_remarks.version_remark if item[0] == v]) < 1:
+            errors.append(f"Version {v} found in version_order is not listed in version_remark")
+    for v in schema_remarks.version_schema_map.keys():
+        if not v in schema_remarks.version_order:
+            errors.append(f"Version {v} found in version_schema_map is not listed in version_order")
+        if len([item for item in schema_remarks.version_remark if item[0] == v]) < 1:
+            errors.append(f"Version {v} found in version_schema_map is not listed in version_remark")
+    for item in schema_remarks.version_remark:
+        v = item[0];
+        if not v in schema_remarks.version_order:
+            errors.append(f"Version {v} found in version_remark is not listed in version_order")
+        if not v in schema_remarks.version_schema_map:
+            errors.append(f"Version {v} found in version_remark is not listed in version_schema_map")
+    if errors:
+        e = str.join('<br/>\n', errors)
+        raise BzSchemaProcessingException(e)
+    print("Versions validated.")
+
 if __name__ == "__main__":
-    try:
-        (first, last, filename) = sys.argv[1:]
-    except ValueError:
-        print("Please pass the starting and ending schema versions and a filename to output to.")
-        sys.exit()
-    write_file(first, last, filename)
+    if sys.argv[1] == '--validate':
+        validate_schema_remarks()
+    else:
+        try:
+            (first, last, filename) = sys.argv[1:]
+        except ValueError:
+            print("Please pass the starting and ending schema versions and a filename to output to.")
+            sys.exit()
+        write_file(first, last, filename)
 
 # A. REFERENCES
 #
