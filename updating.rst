@@ -45,6 +45,11 @@ For any given release of Bugzilla, the process goes something like this:
   possibly ``default_last_version``).  Add a placeholder to the history
   section of ``afterword``.
 
+- To validate that you got the version numbers entered in all the right
+  spots, you can run::
+
+  > ./make_schema_doc.py --validate
+
 - Then get a plain schema doc, either through the CGI or by hand::
 
   > ./make_schema_doc.py 3.0.0 3.8.12 foo.html
