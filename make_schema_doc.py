@@ -321,6 +321,9 @@ def output_schema(schema, remarks, colours, bugzilla_versions):
         tables_table_rows.append(('<th%s><a href="#table-%s">%s</a></th>\n\n' % (colour, table, table)) +
                                  ('    <td%s>%s</td>\n\n' % (colour, remark)))
         quick_tables_table_rows.append('<th%s><a href="#table-%s">%s</a></th>\n\n' % (colour, table, table))
+        # if the table was modified, we only want to color the things in it
+        # that were modified below this point, not the entire table.
+        if colour == blue: colour = ''
         add('<h3><a id="table-%s" name="table-%s">The "%s" table</a></h3>\n\n\n' % (table, table, table))
         output_description(table, colour, remark, columns,
                            colours[table]['column'], dict, bugzilla_versions)
@@ -526,6 +529,7 @@ def make_versioned_schema(schema_list,
                     if (k in crec and
                         crec[k][-1][1] != cols[c][k][0][1]):
                         colours[t]['column'][c][k] = blue
+                        colours[t][''] = blue
                     crec[k] = crec.get(k,[])
                     crec[k] += cols[c][k]
                     crec['Remarks'] = cols[c]['Remarks']
@@ -537,6 +541,7 @@ def make_versioned_schema(schema_list,
                     if (k in irec and
                         irec[k][-1][1] != inds[i][k][0][1]):
                         colours[t]['index'][i][k] = blue
+                        colours[t][''] = blue
                     irec[k] = irec.get(k, [])
                     irec[k] += inds[i][k]
                     irec['Remarks'] = inds[i]['Remarks']
@@ -560,6 +565,7 @@ def make_versioned_schema(schema_list,
                 if t in schema_remarks.table_removed_remark:
                     note = schema_remarks.table_removed_remark[t]
                     note = make_annotation('Removed in %s' % bz, note)
+                    if not isinstance(table_remarks[t], list): table_remarks[t] = [table_remarks[t]]
                     table_remarks[t].append(note)
                 else:
                     errors.append('No remark to remove table %s' % t)
@@ -578,8 +584,10 @@ def make_versioned_schema(schema_list,
             v = tables[t][1][c]['versions']
             if last_bz not in v:
                 colours[t]['column'][c][''] = red
+                if colours[t][''] == '': colours[t][''] = blue
             elif first_bz not in v:
                 colours[t]['column'][c][''] = green
+                if colours[t][''] == '': colours[t][''] = blue
             # don't colour whole column rows blue, so we're done
             present = tables[t][0][0] in v
             for bz in tables[t][0]:
@@ -590,7 +598,7 @@ def make_versioned_schema(schema_list,
                         c in schema_remarks.column_removed_remark[t]):
                         note = schema_remarks.column_removed_remark[t][c]
                     else:
-                        errors.append("No remark to remove %s.%s." %(t, c))
+                        errors.append("No remark to remove column %s.%s." %(t, c))
                         note = None
                     note = make_annotation('Removed in %s' % bz, note)
                     tables[t][1][c]['Remarks'].append(note)
@@ -601,7 +609,7 @@ def make_versioned_schema(schema_list,
                         c in schema_remarks.column_added_remark[t]):
                         note = schema_remarks.column_added_remark[t][c]
                     else:
-                        errors.append("No remark to add %s.%s." % (t,c))
+                        errors.append("No remark to add column %s.%s." % (t,c))
                         note = None
                     note = make_annotation('Added in %s' % bz, note)
                     tables[t][1][c]['Remarks'].append(note)
@@ -611,8 +619,10 @@ def make_versioned_schema(schema_list,
             v = tables[t][2][i]['versions']
             if last_bz not in v:
                 colours[t]['index'][i][''] = red
+                if colours[t][''] == '': colours[t][''] = blue
             elif first_bz not in v:
                 colours[t]['index'][i][''] = green
+                if colours[t][''] == '': colours[t][''] = blue
             # don't colour whole index rows blue, so we're done
             present = tables[t][0][0] in v
             for bz in tables[t][0]:
@@ -623,7 +633,7 @@ def make_versioned_schema(schema_list,
                         i in schema_remarks.index_removed_remark[t]):
                         note = schema_remarks.index_removed_remark[t][i]
                     else:
-                        errors.append("No remark to remove %s:%s." %(t, i))
+                        errors.append("No remark to remove index %s:%s." %(t, i))
                         note = None
                     note = make_annotation('Removed in %s' % bz, note)
                     tables[t][2][i]['Remarks'].append(note)
@@ -634,7 +644,7 @@ def make_versioned_schema(schema_list,
                         i in schema_remarks.index_added_remark[t]):
                         note = schema_remarks.index_added_remark[t][i]
                     else:
-                        errors.append("No remark to add %s:%s." % (t, i))
+                        errors.append("No remark to add index %s:%s." % (t, i))
                         note = None
                     note = make_annotation('Added in %s' % bz, note)
                     tables[t][2][i]['Remarks'].append(note)

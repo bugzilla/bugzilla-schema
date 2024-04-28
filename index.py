@@ -353,7 +353,7 @@ class index_webpage(schema_webpage):
     def prepare_body(self):
         # Page title.
         self.title = 'Bugzilla Schema Documentation'
-        self.b('<div align="center"><table>')
+        self.b('<div align="center">')
 
         self.b('<p>This service generates documentation for the database schema of '
                '<a href="http://bugzilla.org/">Bugzilla</a> defect-tracking software. '
@@ -365,6 +365,7 @@ class index_webpage(schema_webpage):
                'The source code and data for this service are open source and available '
                'at <a href="http://github.com/Ravenbrook/bugzilla-schema">GitHub</a>.</p>')
 
+        self.b('<table>')
         self.b('<tr><td>')
         self.b('<form action="" method="get">')
         self.b('<input name="action" value="single" type="hidden" />')
@@ -392,7 +393,9 @@ class index_webpage(schema_webpage):
         self.b('</form>')
         self.b('</td></tr>')
         ####
-        self.b('</table></div>')
+        self.b('</table>')
+        self.b(f'<p>Note that this tool was just recently resurrected and is still in the process of being updated. While the version numbers are loaded for every version that currently exists, much of the schema data has not yet been loaded. The newest version currently available is {schema_remarks.default_last_version}.</p>')
+        self.b('</div>')
 
     def options(self, options, selected = None):
         if selected == None:

@@ -3,12 +3,13 @@ How to Update
 
 For any given release of Bugzilla, the process goes something like this:
 
-- As of Bugzilla version 2.20, you can diff Bugzilla/DB/Schema.pm from one
+- As of Bugzilla version 2.20, you can diff just a few files from one
   version to the next to see if there were schema changes.::
 
-  > git diff release-2.20..release-2.22 -- Bugzilla/DB/Schema.pm
+  > git diff --name-only release-2.20..release-2.22 -- Bugzilla/DB/Schema.pm Bugzilla/DB/Schema/Mysql.pm Bugzilla/Install/DB.pm
 
-  If that gives you no output, there were no changes.
+  If that gives you no output, there were no changes. If it lists files and
+  you want to see the diffs, remove the ``--name-only`` flag and run it again.
 
 - If you are *sure* there are none, just add the release to a few
   places in schema_remarks.py (``version_order``, ``version_schema_map``,
