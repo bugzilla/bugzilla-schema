@@ -143,7 +143,7 @@ class webpage:
         print('</head>')
         print ('<body bgcolor="#FFFFFF" text="#000000" link="#000099" '
                'vlink="#660066" alink="#FF0000">')
-        print ('<a href="https://github.com/Ravenbrook/bugzilla-schema">'
+        print ('<a href="https://github.com/bugzilla/bugzilla-schema">'
                '<img style="position: absolute; top: 0; right: 0; border: 0;"'
                'src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"'
                'alt="Fork me on GitHub"></a>')
@@ -363,7 +363,7 @@ class index_webpage(schema_webpage):
                'Limited</a>, as part of the <a href="http://www.ravenbrook.com/project/p4dti">'
                'P4DTI</a> project under contract to <a href="http://www.perforce.com">Perforce, Inc.</a> '
                'The source code and data for this service are open source and available '
-               'at <a href="http://github.com/Ravenbrook/bugzilla-schema">GitHub</a>.</p>')
+               'at <a href="http://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>')
 
         self.b('<table>')
         self.b('<tr><td>')
