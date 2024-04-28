@@ -1,14 +1,6 @@
 Bugzilla Schema Doc Generation
 ==============================
 
-0. Bitrot Warning
------------------
-
-This repo is now (2024-04-27) some years out of date.
-`Dave Miller <https://github.com/justdave>`_
-has `forked it <https://github.com/justdave/bugzilla-schema>`_ and is
-actively working on his fork; I recommend you follow it there.
-
 1. Introduction
 ---------------
 
