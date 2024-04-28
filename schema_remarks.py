@@ -264,7 +264,7 @@ version_order = [
     '5.9.1',
     ]
 
-default_first_version = '4.2'
+default_first_version = '4.0.18'
 default_last_version = '4.2.16'
 
 
@@ -3456,7 +3456,7 @@ prelude=["""
 <p>This document is generated automatically by a Python script which
 constructs and colors the schema tables from the stored results of
 MySQL queries.  For more information about the scripts, see <a
-href="code.html"><code>code.html</code></a>.</p>
+href="https://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>
 
 <p>The purpose of this document is to act as a reference for
 developers of Bugzilla and of code which interacts with Bugzilla
@@ -3467,10 +3467,7 @@ and administrators.</p>
 
 <p>This document is not confidential.</p>
 
-<p>Please send any comments to <a
-href="mailto:p4dti-comments@ravenbrook.com">&lt;p4dti-comments@ravenbrook.com&gt;</a>,
-and problem reports to <a
-href="mailto:p4dti-support@ravenbrook.com">&lt;p4dti-support@ravenbrook.com&gt;</a>.</p>
+<p>Please <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Bugzilla&amp;component=bugzilla.org&amp;short_desc=[schematool]%%20change%%20this%%20to%%20your%%20description">file a bug report</a> if you find any issues or what a new feature.</p>
 
 <h2><a id="section-2" name="section-2">2. Bugzilla overview</a></h2>
 
