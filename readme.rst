@@ -5,7 +5,7 @@ Bugzilla Schema Doc Generation
 ---------------
 
 This repository contains the code and documents used to generate
-the `online Bugzilla schema documentation <http://www.ravenbrook.com/tool/bugzilla-schema/>`_,
+the `online Bugzilla schema documentation <https://schema.bugzilla.org/>`_,
 produced as a side-benefit
 of the `Perforce Defect Tracking Integration <http://www.ravenbrook.com/project/p4dti/>`_ project.
 
