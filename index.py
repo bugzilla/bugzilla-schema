@@ -1,16 +1,10 @@
+import cgi
+import time
+import html
+
 import make_schema_doc
 from make_schema_doc import BzSchemaProcessingException
 import schema_remarks
-
-import cgi
-import os
-import re
-import string
-import io
-import sys
-import time
-import html
-import urllib.request, urllib.parse, urllib.error
 
 # 1. GENERIC CGI SUPPORT FOR RAVENBROOK
 #
@@ -285,7 +279,7 @@ class schema_webpage(webpage):
         if not version:
             raise BzSchemaException(400, 'Bad form parameters',
                           'No %s parameter.' % param)
-        if not (version in schema_remarks.version_order):
+        if not version in schema_remarks.version_order:
             raise BzSchemaException(404, 'No such Bugzilla version',
                           'No such Bugzilla version: %s.'
                           % version)
@@ -339,7 +333,7 @@ class range_webpage(schema_webpage):
                                                                      self.to_version))
         self.h1 = self.title
         self.b(make_schema_doc.make_body(self.from_version, self.to_version))
-        
+
 class single_webpage(schema_webpage):
     def check_form_parameters(self):
         self.check_bugzilla_single()
@@ -361,7 +355,8 @@ class index_webpage(schema_webpage):
                'or of the schema changes between any two versions.</p>'
                '<p>It was written by staff at <a href="http://www.ravenbrook.com/">Ravenbrook '
                'Limited</a>, as part of the <a href="http://www.ravenbrook.com/project/p4dti">'
-               'P4DTI</a> project under contract to <a href="http://www.perforce.com">Perforce, Inc.</a> '
+               'P4DTI</a> project under contract to <a href="http://www.perforce.com">Perforce, '
+               'Inc.</a> '
                'The source code and data for this service are open source and available '
                'at <a href="http://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>')
 
@@ -394,7 +389,11 @@ class index_webpage(schema_webpage):
         self.b('</td></tr>')
         ####
         self.b('</table>')
-        self.b(f'<p>Note that this tool was just recently resurrected and is still in the process of being updated. While the version numbers are loaded for every version that currently exists, much of the schema data has not yet been loaded. The newest version currently available is {schema_remarks.default_last_version}.</p>')
+        self.b('<p>Note that this tool was just recently resurrected and is '
+            'still in the process of being updated. While the version numbers are loaded for '
+            'every version that currently exists, much of the schema data has not yet been '
+            'loaded. The newest version currently available is '
+            f'{schema_remarks.default_last_version}.</p>')
         self.b('</div>')
 
     def options(self, options, selected = None):
@@ -434,7 +433,7 @@ def show_page():
 # B. DOCUMENT HISTORY
 #
 # 2004-11-12 NB  Adapted from issue.cgi.
-# 
+#
 #
 # C. COPYRIGHT AND LICENSE
 #
