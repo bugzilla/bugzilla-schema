@@ -9,18 +9,6 @@ the `online Bugzilla schema documentation <https://schema.bugzilla.org/>`_,
 produced as a side-benefit
 of the `Perforce Defect Tracking Integration <http://www.ravenbrook.com/project/p4dti/>`_ project.
 
-Please note:
-
-- this has not been substantially updated since 2009, and the last
-  schema contained in the data is for Bugzilla 3.3.4.  We don't have
-  an ongoing business case for maintaining it.
-
-- it was written and has been maintained in a very ad-hoc fashion, and
-  the job which it aims to achieve is intrinsically complex.  We are
-  not proud of this code.
-
-Please fork it and bring it up to date!
-
 2. Index
 --------
 
