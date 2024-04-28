@@ -174,7 +174,7 @@ def output_description(table, colour, remark, columns, colours, dict, bv):
         d = columns[c]
         if d['Remarks']:
             d['Remarks'] = str.join(' ',
-              list(map(lambda r,bv=bv,d=dict: process(r,bv,d),d['Remarks'])))
+              [process(r,bv,dict) for r in d['Remarks']])
         else:
             d['Remarks'] = '-'
         output_row('column-%s-%s' % (table, c), c, d, ['Type',
