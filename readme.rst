@@ -63,4 +63,4 @@ For updating:
 - Understanding of Perl, and of Bugzilla internals.
 - Patience.
 
-For guidance on updating the tool to handle newer Bugzilla releases, see updating.rst.
+For guidance on updating the tool to handle newer Bugzilla releases, see `updating.rst<updating.rst>`_.
