@@ -722,15 +722,15 @@ version_remark = [
     ('5.1.2', '2018-02-16', 'A development release'),
     ('5.0.5', '2019-01-30', 'An invasive patch release'),
     ('5.0.6', '2019-02-09', 'An invasive patch release'),
-    ('4.4.14', '2024-05-??', 'A security patch release'),
-    ('5.0.4.1', '2024-05-??', 'A security patch release'),
-    ('5.2', '2024-05-??', 'Forked from 5.0.6 not from 5.1.'),
+    ('4.4.14', '2024-05-??', 'A not-yet-released security patch release'),
+    ('5.0.4.1', '2024-05-??', 'A not-yet-released security patch release'),
+    ('5.2', '2024-05-??', 'Forked from 5.0.6 not from 5.1. Not-yet released.'),
     (
         '5.3.3',
         '2024-05-??',
-        'A development release following 5.1.2 (the branch was renamed)',
+        'A development release following 5.1.2 (the branch was renamed). Not-yet-released.',
     ),
-    ('5.9.1', '2024-05-??', 'A development release'),
+    ('5.9.1', '2024-05-??', 'A not-yet-released development release'),
 ]
 
 # This is a map from table name to an HTML remark concerning that
