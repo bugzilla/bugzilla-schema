@@ -64,7 +64,7 @@ version_order = [
     '2.16.10',
     '2.16.11',
     '2.17.1',
-    '2.17.3', # there was no 2.17.2, see https://www.bugzilla.org/blog/2003/01/02/status-update/
+    '2.17.3',  # there was no 2.17.2, see https://www.bugzilla.org/blog/2003/01/02/status-update/
     '2.17.4',
     '2.17.5',
     '2.17.6',
@@ -258,11 +258,11 @@ version_order = [
     '5.0.5',
     '5.0.6',
     '5.2',
-    '5.1.1', # yes, 5.1 comes after 5.2 in terms of schema progression
-    '5.1.2', # 5.2 was actually forked from 5.0.6 instead of 5.1
-    '5.3.3', # and thus, 5.1 was renamed to 5.3, but after 5.1.2 was out
+    '5.1.1',  # yes, 5.1 comes after 5.2 in terms of schema progression
+    '5.1.2',  # 5.2 was actually forked from 5.0.6 instead of 5.1
+    '5.3.3',  # and thus, 5.1 was renamed to 5.3, but after 5.1.2 was out
     '5.9.1',
-    ]
+]
 
 default_first_version = '4.0.18'
 default_last_version = '4.2.16'
@@ -705,7 +705,7 @@ version_remark = [
     ('5.0rc2', '2015-01-27', 'A release candidate'),
     ('4.0.18', '2015-04-15', 'A patch release'),
     ('4.2.14', '2015-04-15', 'A patch release'),
-    ('4.4.9',  '2015-04-15', 'A patch release'),
+    ('4.4.9', '2015-04-15', 'A patch release'),
     ('5.0rc3', '2015-04-15', 'A patch release'),
     ('5.0', '2015-07-07', ''),
     ('4.2.15', '2015-09-10', 'A security patch release'),
@@ -725,7 +725,11 @@ version_remark = [
     ('4.4.14', '2024-05-??', 'A security patch release'),
     ('5.0.4.1', '2024-05-??', 'A security patch release'),
     ('5.2', '2024-05-??', 'Forked from 5.0.6 not from 5.1.'),
-    ('5.3.3', '2024-05-??', 'A development release following 5.1.2 (the branch was renamed)'),
+    (
+        '5.3.3',
+        '2024-05-??',
+        'A development release following 5.1.2 (the branch was renamed)',
+    ),
     ('5.9.1', '2024-05-??', 'A development release'),
 ]
 
@@ -737,297 +741,154 @@ version_remark = [
 
 table_remark = {
     'attachments': 'Bug <a href="#notes-attachments">attachments</a>.',
-
     'attach_data': 'The content of <a href="#notes-attachments">attachments</a>.',
-
     'attachstatusdefs': 'Attachment status definitions.',
-
     'attachstatuses': 'Attachment statuses.',
-
     'audit_log': 'Changes to anything that subclasses Bugzilla::Object (such as users, products, components) get logged here. A class can exclude itself from being logged by including `use constant AUDIT_UPDATES => 1;` within the object .pm file. Attachments, Bugs, Comments, and Flags are excluded as they are tracked in %(table-bugs_activity)s.',
-
     'bug_group_map': 'Which bugs are in which groups.  See <a href="#notes-groups">the notes on groups</a>.',
-
     'bug_see_also': '<a href="#notes-see_also">Related bugs</a> in other Bugzillas.',
-
     'bug_severity': 'The severity values of bugs.',
-
     'bug_status': 'The status values of bugs.',
-
     'bugs': 'The bugs themselves.',
-
     'bugs_activity': '<a href="#notes-activity">Activity</a> on the bugs table.',
-
     'bugs_fulltext': 'All the descriptive text on bugs, to speed up searching.',
-
     'bz_schema': 'The database schema itself.',
-
     'category_group_map': 'Which groups does a user have to be in to view chart data in a given category.  See <a href="#notes-charts">the notes on charts</a>. ',
-
     'cc': 'Users who have asked to receive <a href="#notes-email">email</a> when a bug changes.',
-
     'component_cc': 'Users to put on the <a href="#notes-email">CC list</a> for a new bug in a given component.',
-
     'classifications': 'Product classifications. See <a href="#notes-products">the notes on products</a>.',
-
     'components': 'One row for each component.  See <a href="#notes-products">the notes on products and components.</a>',
-
     'dependencies': 'Which bugs <a href="#notes-dependencies">depend</a> on other bugs.',
-
     'duplicates': 'Which bugs are duplicates of which other bugs.',
-
     'email_setting': 'Per-user settings controlling when email is sent to that user.',
-
     'fielddefs': 'The properties of each bug field.',
-
     'field_visibility': 'Tracks when custom fields are visible based on other fields on the bug.',
-
     'flagexclusions': 'It may be forbidden to set a given flag on an item (bug or attachment) if that item is in a given product and/or component.  This table records such exclusions.  See the notes on <a href="#notes-flags">flags</a>.',
-
     'flaginclusions': 'An item (bug or attachment) may be required to be in a given product and/or component for a flag to be set.  This table records such requirements. See the notes on <a href="#notes-flags">flags</a>.',
-
     'flags': 'This table records the flags set on bugs or attachments. See the notes on <a href="#notes-flags">flags</a>.',
-
     'flagtypes': 'The types of flags available for bugs and attachments.  See the notes on <a href="#notes-flags">flags</a>.',
-
     'group_control_map': 'This table describes the relationship of groups to products (whether membership in a given group is required for entering or editing a bug in a given product).  See <a href="#notes-groups">the notes on groups</a>.',
-
     'group_group_map': 'Groups can be configured such that membership of one group automatically confers rights over some other groups.  This table records that configuration.  See <a href="#notes-groups">the notes on groups</a>.',
-
     'groups': 'This table describes a number of user groups.  Each group allows its members to perform a restricted activity.  See <a href="#notes-groups">the notes on groups</a>. ',
-
     'keyworddefs': 'Names and definitions of the keywords.  See <a href="#notes-keywords">the notes on keywords</a>.',
-
     'keywords': 'Bugs may have keywords.  This table defines which bugs have which keywords.  The keywords are defined in %(the-table-keyworddefs)s.',
-
     'logincookies': 'Bugzilla generates a cookie each time a user logs in, and uses it for subsequent authentication.  The cookies generated are stored in this table.  For more information, see <a href="#notes-authentication">the notes on authentication</a>.',
-
     'login_failure': 'Log of failed user login attempts. Records for a given user are cleared when they successfully log in. Users are locked out if they exceed MAX_LOGIN_ATTEMPTS in LOGIN_LOCKOUT_INTERVAL minutes (defined in Bugzilla::Constants).',
-
     'longdescs': 'Long bug <a href="#notes-descriptions">descriptions</a>.',
-
     'milestones': 'Development <a href="#notes-milestones">milestones</a>.',
-
     'namedqueries': 'Named <a href="#notes-namedqueries">queries</a>.',
-
     'namedquery_group_map': 'Controls whether a <a href="#notes-namedqueries">named query</a> is shared with other users (other members of a group).',
-
     'namedqueries_link_in_footer': 'Controls whether a <a href="#notes-namedqueries">named query</a> appears in a given user\'s navigation footer.',
-
     'op_sys': 'The possible values of the "operating system" field of a bug.',
-
     'priority': 'The possible values of the "priority" field of a bug.',
-
     'products': 'One row for each product.  See <a href="#notes-products">the notes on products.</a>',
-
     'profile_search': 'The most-recent SAVE_NUM_SEARCHES (defined in Bugzilla::Constants) searches a user has run are stored here, so that the Next/Prev links in a bug that was opened from a list will continue to work even if you have multiple browser tabs open with different searches.',
-
     'profile_setting': 'User preference settings.',
-
     'profiles': 'Describes Bugzilla <a href="#notes-users">users</a>.  One row per user.',
-
     'profiles_activity': 'This table is for recording changes to %(the-table-profiles)s. Currently it only records changes to group membership made with editusers.cgi.  This allows the administrator to track group inflation.  There is currently no code to inspect this table; only to add to it.',
-
     'quips': 'A table of <a href="#notes-quips">quips</a>.',
-
     'rep_platform': 'The possible values of the "platform" field of a bug.',
-
     'resolution': 'The possible values of the "resolution" field of a bug.',
-
     'series': 'Properties of the time-series datasets available (e.g. for plotting charts).  See <a href="#notes-charts">the notes on charts</a>.',
-
     'series_categories': None,
-
     'series_data': 'Data for plotting time-series charts.  See <a href="#notes-charts">the notes on charts</a>.',
-
     'setting': 'Identifies the set of user preferences.',
-
     'setting_value': 'Possible values for user preferences.',
-
     'shadowlog': 'A log of SQL activity; used for updating <a href="#notes-shadow">shadow databases</a>.',
-
     'status_workflow': 'Identifies allowable <a href="#notes-workflow">workflow</a> transitions.',
-
     'tag': None,
-
     'tags': None,
-
     'tokens': 'Tokens are sent to users to track activities such as creating new accounts and changing email addresses or passwords.  They are also sent to browsers and used to track workflow, to prevent security problems (e.g. so that one can only delete groups from a session last seen on a group management page).',
-
     'ts_error': 'A log of errors from TheSchwartz asynchronous job-queueing system.  Rows are aged out of this table after seven days.',
-
     'ts_exitstatus': 'A log of job completions from TheSchwartz asynchronous job-queueing system.',
-
     'ts_funcmap': 'The table of functions for TheSchwartz asynchronous job-queueing system.',
-
     'ts_job': 'The job queue managed by TheSchwartz asynchronous job-queueing system.',
-
     'ts_note': 'Notes on jobs for TheSchwartz asynchronous job-queueing system.  Apparently not used.',
-
     'user_group_map': 'This table records which users are members of each group, or can "bless" each group.  See <a href="#notes-groups">the notes on groups</a>.',
-
     'user_series_map': 'User subscriptions to time-series datasets.  See <a href="#notes-charts">the notes on charts</a>.',
-
     'versions': 'Product <a href="#notes-versions">versions</a>.',
-
     'votes': '<a href="#notes-voting">votes</a>.',
-
     'watch': '<a href="#notes-watchers">watchers</a>.',
-
     'whine_events': 'One row for each regular whine event. See <a href="#notes-whine">the notes on whining</a>.',
-
     'whine_queries': 'See <a href="#notes-whine">the notes on whining</a>.',
-
     'whine_schedules': 'See <a href="#notes-whine">the notes on whining</a>.',
-
 }
 
 table_added_remark = {
     'attachments': None,
-
     'attach_data': 'Speeding up attachment queries',
-
     'attachstatusdefs': None,
-
     'attachstatuses': None,
-
     'audit_log': None,
-
     'bug_group_map': 'Part of the new groups system',
-
     'bug_see_also': None,
-
     'bug_severity': 'Removing enumerated types',
-
     'bug_status': 'Removing enumerated types',
-
     'bug_tag': None,
-
     'bugs_fulltext': 'Improving full-text search speed',
-
     'bz_schema': None,
-
     'category_group_map': 'Part of the new charting system',
-
     'component_cc': None,
-
     'classifications': None,
-
     'dependencies': None,
-
     'duplicates': None,
-
     'email_setting': 'Replaces %(column-profiles-emailflags)s',
-
     'field_visibility': 'Replaced %(column-fielddefs-visibility_field_id)s',
-
     'fielddefs': None,
-
     'flagexclusions': 'Part of the new flags system',
-
     'flaginclusions': 'Part of the new flags system',
-
     'flags': 'Part of the new flags system',
-
     'flagtypes': 'Part of the new flags system',
-
     'group_control_map': 'Part of the new groups system',
-
     'group_group_map': 'Part of the new groups system',
-
     'groups': None,
-
     'keywords': None,
-
     'keyworddefs': None,
-
     'login_failure': 'Supporting new feature to lock out users who repeatedly fail logging in',
-
     'longdescs': None,
-
     'milestones': None,
-
     'namedqueries': None,
-
     'namedqueries_link_in_footer': 'Replacing %(column-namedqueries-linkinfooter)s',
-
     'namedquery_group_map': None,
-
     'op_sys': 'Removing enumerated types',
-
     'priority': 'Removing enumerated types',
-
     'products': None,
-
     'profile_search': None,
-
     'profile_setting': None,
-
     'profiles_activity': None,
-
     'quips': None,
-
     'rep_platform': 'Removing enumerated types',
-
     'resolution': 'Removing enumerated types',
-
     'series': 'Part of the new charting system',
-
     'series_categories': 'Part of the new charting system',
-
     'series_data': 'Part of the new charting system',
-
     'setting': None,
-
     'setting_value': None,
-
     'shadowlog': None,
-
     'status_workflow': 'Part of the custom workflow system',
-
     'tag': 'Renamed from %(table-tags)s',
-
     'tags': None,
-
     'tokens': None,
-
     'ts_error': 'For asynchronous mail',
-
     'ts_exitstatus': 'For asynchronous mail',
-
     'ts_funcmap': 'For asynchronous mail',
-
     'ts_job': 'For asynchronous mail',
-
     'ts_note': 'For asynchronous mail',
-
     'user_group_map': 'Part of the new groups system',
-
     'user_series_map': 'Part of the new charting system',
-
     'votes': None,
-
     'watch': None,
-
     'whine_events': 'Part of the new whine system',
-
     'whine_queries': 'Part of the new whine system',
-
     'whine_schedules': 'Part of the new whine system',
-
 }
 
 table_removed_remark = {
     'attachstatusdefs': 'replaced by the flag tables',
-
     'attachstatuses': ' replaced by the flag tables',
-
     'shadowlog': 'similar functionality now available using MySQL\'s replication facilities',
-
     'user_series_map': 'partially replaced by %(the-table-category_group_map)s',
-
     'votes': 'The Voting feature was moved to an extension. The table is not deleted on upgrade if it exists.',
-
     'tags': 'Was renamed to %(table-tag)s',
 }
 
@@ -1041,1114 +902,695 @@ table_removed_remark = {
 column_remark = {
     'attachments': {
         'attach_id': 'a unique ID.',
-
         'bug_id': 'the bug to which this is attached (foreign key %(column-bugs-bug_id)s)',
-
         'creation_ts': 'the creation time.',
-
         'description': 'a description of the attachment.',
-
         'mimetype': 'the MIME type of the attachment.',
-
         'modification_time': 'the modification time of the attachment.',
-
         'ispatch': 'non-zero if this attachment is a patch file.',
-
         'isprivate': 'Non-zero if this attachment is "private", i.e. only visible to members of the "insider" group.',
-
         'isobsolete': 'Non-zero if this attachment is marked as obsolete.',
-
         'isurl': 'Non-zero if this attachment is actually a URL.',
-
         'filename': 'the filename of the attachment.',
-
         'thedata': 'the content of the attachment.',
-
         'submitter_id': 'the userid of the attachment (foreign key %(column-profiles-userid)s)',
-
-        },
-
+    },
     'attach_data': {
         'id': 'The attachment id (foreign key %(column-attachments-attach_id)s).',
-
         'thedata': 'the content of the attachment.',
-
-        },
-
+    },
     'attachstatusdefs': {
         'id': 'a unique ID.',
-
         'name': 'the name of the attachment status.',
-
         'description': 'The description of the attachment status.',
-
         'sortkey': 'A number used to determine the order in which attachment statuses are shown.',
-
         'product': 'The product for which bugs can have attachments with this status (foreign key %(column-products-product)s)',
-
-        },
-
+    },
     'attachstatuses': {
-
         'attach_id': 'The id of the attachment (foreign key %(column-attachments-attach_id)s)',
-
         'statusid': 'The id of the status (foreign key %(column-attachstatusdefs-id)s)',
-
-        },
-
+    },
     'audit_log': {
-
         'user_id': '',
-
         'class': 'The class of the item being modified (such as Bugzilla::User)',
-
         'object_id': 'The ID of the item such as the userid) that was modified',
-
         'field': 'The name of the field being modified',
-
         'removed': 'The value that was removed',
-
         'added': 'The value that was added',
-
         'at_time': 'Timestamp of the change',
-
-        },
+    },
     'bug_group_map': {
-
         'bug_id': 'The bug id, (foreign key %(column-bugs-bug_id)s)',
-
         'group_id': 'The group id, (foreign key %(column-groups-id)s)',
-
-        },
-
+    },
     'bug_see_also': {
-
         'bug_id': 'The bug id, (foreign key %(column-bugs-bug_id)s)',
-
         'id': 'A unique ID for the table row',
-
         'class': 'The class of the object defining the remote reference. Should be a subclass of Bugzilla::BugUrl.',
-
         'value': 'The URL of a related bug in another Bugzilla.',
-
     },
-
     'bug_severity': {
-
         'value': 'A possible value of the field',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'sortkey': 'A number used to determine the order in which values are shown.',
-
         'id': 'a unique ID.',
-
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-
-        },
-
+    },
     'bug_status': {
-
         'value': 'A possible value of the field',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'sortkey': 'A number used to determine the order in which values are shown.',
-
         'is_open': '1 if the status is "Open", 0 if it is "Closed".',
-
         'id': 'a unique ID.',
-
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-        },
-
+    },
     'bug_tag': {
-
         'bug_id': 'A bug with this tag applied to it. (foreign key %(column-bugs-bug_id)s)',
-
         'tag_id': [
-            (None,'4.2rc1','The tag to apply to this bug. (foreign key %(column-tags-id)s)'),
-            ('4.2rc2',None,'The tag to apply to this bug. (foreign key %(column-tag-id)s)'),
-            ],
-        },
-
+            (
+                None,
+                '4.2rc1',
+                'The tag to apply to this bug. (foreign key %(column-tags-id)s)',
+            ),
+            (
+                '4.2rc2',
+                None,
+                'The tag to apply to this bug. (foreign key %(column-tag-id)s)',
+            ),
+        ],
+    },
     'bugs': {
-
         'area': 'The development area of the bug.',
-
         'bug_id': 'The bug ID.',
-
         'groupset': 'The groups which this bug occupies. Each group corresponds to one bit. See %(the-table-groups)s.',
-
         'assigned_to': 'The current owner of the bug  (foreign key %(column-profiles-userid)s).',
-
         'bug_file_loc': 'A URL which points to more information about the bug.',
-
-        'bug_severity': ['See the <a href="#notes-severity">notes</a>.',
-                         ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-bug_severity-value)s.'),
-                         ],
-
-        'bug_status': ['The <a href="#notes-workflow">workflow</a> status of the bug.',
-                       ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-bug_status-value)s.'),
-                       ],
-
+        'bug_severity': [
+            'See the <a href="#notes-severity">notes</a>.',
+            (
+                '2.19.3',
+                None,
+                '%(VERSION_STRING)sforeign key %(column-bug_severity-value)s.',
+            ),
+        ],
+        'bug_status': [
+            'The <a href="#notes-workflow">workflow</a> status of the bug.',
+            (
+                '2.19.3',
+                None,
+                '%(VERSION_STRING)sforeign key %(column-bug_status-value)s.',
+            ),
+        ],
         'creation_ts': 'The times of the bug\'s creation.',
-
         'delta_ts': 'The timestamp of the last update.  This includes updates to some related tables (e.g. %(the-table-longdescs)s).',
-
         'long_desc': 'A long description of the bug.',
-
         'short_desc': 'A short description of the bug.',
-
-        'op_sys': ['The operating system on which the bug was observed.',
-                   ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-op_sys-value)s.'),
-                   ],
-
-        'priority': ['The priority of the bug.',
-                     (None, '2.19.2', '%(VERSION_STRING)s: P1 = most urgent, P5 = least urgent).'),
-                     ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-priority-value)s.'),
-                     ],
-
+        'op_sys': [
+            'The operating system on which the bug was observed.',
+            ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-op_sys-value)s.'),
+        ],
+        'priority': [
+            'The priority of the bug.',
+            (
+                None,
+                '2.19.2',
+                '%(VERSION_STRING)s: P1 = most urgent, P5 = least urgent).',
+            ),
+            (
+                '2.19.3',
+                None,
+                '%(VERSION_STRING)sforeign key %(column-priority-value)s.',
+            ),
+        ],
         'product': 'The product (foreign key %(column-products-product)s)',
-
         'product_id': 'The product (foreign key %(column-products-id)s)',
-
-        'rep_platform': ['The platform on which the bug was reported.',
-                         ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-rep_platform-value)s.'),
-                         ],
-
+        'rep_platform': [
+            'The platform on which the bug was reported.',
+            (
+                '2.19.3',
+                None,
+                '%(VERSION_STRING)sforeign key %(column-rep_platform-value)s.',
+            ),
+        ],
         'reporter': 'The user who reported this (foreign key %(column-profiles-userid)s)',
-
         'version': 'The product version (foreign key %(column-versions-value)s)',
-
         'component': 'The product component (foreign key %(column-components-value)s)',
-
         'component_id': 'The product component (foreign key %(column-components-id)s)',
-
-        'resolution': ['The bug\'s <a href="#notes-workflow">resolution</a>',
-                       ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-resolution-value)s.'),
-                       ],
-
+        'resolution': [
+            'The bug\'s <a href="#notes-workflow">resolution</a>',
+            (
+                '2.19.3',
+                None,
+                '%(VERSION_STRING)sforeign key %(column-resolution-value)s.',
+            ),
+        ],
         'target_milestone': 'The milestone by which this bug should be resolved.  (foreign key %(column-milestones-value)s)',
-
         'qa_contact': 'The QA contact (foreign key %(column-profiles-userid)s)',
-
         'status_whiteboard': 'This seems to be just a small whiteboard field.',
-
         'votes': 'The number of votes.',
-
         'keywords': 'A set of keywords.  Note that this duplicates the information in %(the-table-keywords)s. (foreign key %(column-keyworddefs-name)s)',
-
         'lastdiffed': 'The time at which information about this bug changing was last emailed to the cc list.',
-
         'everconfirmed': '1 if this bug has ever been confirmed.  This is used for validation of some sort.',
-
         'reporter_accessible': '1 if the reporter can see this bug (even if in the wrong group); 0 otherwise.',
-
         'assignee_accessible': '1 if the assignee can see this bug (even if in the wrong group); 0 otherwise.',
-
         'qacontact_accessible': '1 if the QA contact can see this bug (even if in the wrong group); 0 otherwise.',
-
         'cclist_accessible': '1 if people on the CC list can see this bug (even if in the wrong group); 0 otherwise.',
-
         'estimated_time': 'The original estimate of the total effort required to fix this bug (in hours).',
-
         'remaining_time': 'The current estimate of the remaining effort required to fix this bug (in hours).',
-
         'alias': 'An alias for the bug which can be used instead of the bug number.',
-
         'deadline': 'The deadline for this bug (a date).',
-
-        },
-
+    },
     'bugs_activity': {
-
         'bug_id': 'Which bug (foreign key %(column-bugs-bug_id)s)',
-
         'who': 'Which user (foreign key %(column-profiles-userid)s)',
-
         'when': 'When was the change made?',
-
         'bug_when': 'When was the change made?',
-
         'field': 'What was the field?',
-
         'fieldid': 'What was the fieldid? (foreign key %(column-fielddefs-id)s)',
-
         'attach_id': 'If the change was to an attachment, the ID of the attachment (foreign key %(column-attachments-attach_id)s)',
-
         'oldvalue': 'The head of the old value.',
-
         'newvalue': 'The head of the new value.',
-
         'added': 'The new value of this field, or values which have been added for multi-value fields such as %(column-bugs-keywords)s,  %(the-table-cc)s, and %(the-table-dependencies)s',
-
         'removed': 'The old value of this field, or values which have been removed for multi-value fields such as %(column-bugs-keywords)s, %(the-table-cc)s, and %(the-table-dependencies)s',
-
         'comment_id': 'The comment on the bug that was made at the same time as or most-recently previous to this change. (foreign key %(column-longdescs-comment_id)s)',
-
-        },
-
+    },
     'bugs_fulltext': {
-
         'bug_id': 'Which bug (foreign key %(column-bugs-bug_id)s)',
-
         'short_desc': 'The bug\'s short description (%(column-bugs-short_desc)s)',
-
         'comments': 'The bug\'s comments, concatenated (%(column-longdescs-thetext)s)',
-
         'comments_noprivate': 'Those comments visible to non-members of the "insider" group (i.e. with %(column-longdescs-isprivate)s zero).',
-        },
-
+    },
     'bz_schema': {
-
-            'version': 'The version number of the abstract schema data structures.  This is <em>not</em> the schema version; it does not change as tables, columns, and indexes are added and removed.',
-
-            'schema_data': 'A Perl Storable (serialized version) of the abstract schema.',
-            },
-
+        'version': 'The version number of the abstract schema data structures.  This is <em>not</em> the schema version; it does not change as tables, columns, and indexes are added and removed.',
+        'schema_data': 'A Perl Storable (serialized version) of the abstract schema.',
+    },
     'category_group_map': {
-
         'category_id': 'The series category (foreign key %(column-series_categories-id)s)',
-
         'group_id': 'The group.  (foreign key %(column-groups-id)s)',
-
-        },
-
+    },
     'cc': {
-
         'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
-
         'who': 'The user (foreign key %(column-profiles-userid)s)',
-
-        },
-
+    },
     'classifications': {
-
         'id': 'The classification id.',
-
         'name': 'The classification name.',
-
         'description': 'A description of the classification',
-
         'sortkey': 'A number used to determine the order in which classifications are shown.',
-
-        },
-
+    },
     'components': {
-
         'name': 'The component id.',
-
         'id': 'The component id.',
-
         'value': 'The component name.',
-
         'program': 'The product (foreign key %(column-products-product)s)',
-
         'product_id': 'The product (foreign key %(column-products-id)s)',
-
-        'initialowner': ['The default initial owner of bugs in this component.  On component creation, this is set to the user who creates the component.',
-                         (None,  '2.10', '%(VERSION_STRING)sforeign key %(column-profiles-login_name)s.'),
-                         ('2.12', None , '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
-                         ],
-
-        'initialqacontact': ['The initial "qa_contact" field for bugs of this component. Note that the use of the qa_contact field is optional, parameterized by Param("useqacontact").',
-                             (None,  '2.10', '%(VERSION_STRING)sforeign key %(column-profiles-login_name)s.'),
-                             ('2.12', None,  '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
-                             ],
-
+        'initialowner': [
+            'The default initial owner of bugs in this component.  On component creation, this is set to the user who creates the component.',
+            (
+                None,
+                '2.10',
+                '%(VERSION_STRING)sforeign key %(column-profiles-login_name)s.',
+            ),
+            ('2.12', None, '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
+        ],
+        'initialqacontact': [
+            'The initial "qa_contact" field for bugs of this component. Note that the use of the qa_contact field is optional, parameterized by Param("useqacontact").',
+            (
+                None,
+                '2.10',
+                '%(VERSION_STRING)sforeign key %(column-profiles-login_name)s.',
+            ),
+            ('2.12', None, '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
+        ],
         'description': 'A description of the component.',
-
         'isactive': '1 if this component is available for new bugs, 0 if not.',
-
-        },
-
+    },
     'component_cc': {
-
         'component_id': 'The component id (foreign key %(column-components-id)s).',
-
         'user_id': 'The user id (foreign key %(column-profiles-userid)s).',
-
-        },
-
+    },
     'dependencies': {
-
         'blocked': 'Which bug is blocked (foreign key %(column-bugs-bug_id)s)',
-
         'dependson': 'Which bug does it depend on (foreign key %(column-bugs-bug_id)s)',
-
-        },
-
+    },
     'duplicates': {
-
         'dupe_of': 'The bug which is duplicated (foreign key %(column-bugs-bug_id)s)',
-
         'dupe': 'The duplicate bug (foreign key %(column-bugs-bug_id)s)',
-
-        },
-
+    },
     'email_setting': {
-
         'user_id': 'The user to whom this setting applies (foreign key %(column-profiles-userid)s).',
-
         'relationship': 'The relationship between the user and the bug.  0: Assignee; 1: QA contact; 2: Reporter; 3: CC; 4: Voter; 100: for global events, which do not depend on a relationship.',
-
         'event': 'The event on which an email should be sent.  1: added or removed from this capacity; 2: new comments are added; 3: new attachment is added; 4: attachment data is changed; 5: severity, priority, status, or milestone are changed; 6: resolved or reopened; 7: keywords change; 8: CC list changed; 0: any other change.<br><br>These are overridden and an email is not sent in the following circumstances, unless a suitable row is also present: 50: if the bug is unconfirmed; 51: if the change was by this user.<br><br>Global events are 100: a flag has been requested of this user; 101: This user has requested a flag.',
-
-        },
-
+    },
     'field_visibility': {
-
         'field_id': 'ID of the field to match (foreign key %(column-fielddefs-id)s)',
-
         'value_id': 'ID of the value to match?  TODO',
-
-        },
-
+    },
     'fielddefs': {
-
         'id': 'primary key for this table',
-
         'name': 'field name or definition (some fields are names of other tables or of fields in other tables).',
-
         'description': 'long description',
-
         'mailhead': 'whether or not to send the field description in mail notifications.',
-
         'sortkey': 'the order of fields in mail notifications.',
-
         'obsolete': '1 if this field no longer exists, 0 otherwise.',
-
-        'type': ['The field type. 0 (FIELD_TYPE_UNKNOWN) for most non-custom fields.',
-                 ('2.23.1', None, '%(VERSION_STRING)s1 (FIELD_TYPE_FREETEXT) for a single-line text field. '),
-                 ('2.23.3', None, '%(VERSION_STRING)s2 (FIELD_TYPE_SINGLE_SELECT) for a single-select field. '),
-                 ('3.1.2', None, '%(VERSION_STRING)s3 (FIELD_TYPE_MULTI_SELECT) for a multi-select field. '),
-                 ('3.1.2', None, '%(VERSION_STRING)s4 (FIELD_TYPE_TEXTAREA) for a large text box field. '),
-                 ('3.1.3', None, '%(VERSION_STRING)s5 (FIELD_TYPE_DATETIME) for a date/time field. '),
-                 ('3.3.1', None, '%(VERSION_STRING)s6 (FIELD_TYPE_BUG_ID) for a bug ID field. '),
-                 ('3.3.2', None, '%(VERSION_STRING)s7 (FIELD_TYPE_BUG_URLS) for a list of bug URLs. '),
-                 ],
-
+        'type': [
+            'The field type. 0 (FIELD_TYPE_UNKNOWN) for most non-custom fields.',
+            (
+                '2.23.1',
+                None,
+                '%(VERSION_STRING)s1 (FIELD_TYPE_FREETEXT) for a single-line text field. ',
+            ),
+            (
+                '2.23.3',
+                None,
+                '%(VERSION_STRING)s2 (FIELD_TYPE_SINGLE_SELECT) for a single-select field. ',
+            ),
+            (
+                '3.1.2',
+                None,
+                '%(VERSION_STRING)s3 (FIELD_TYPE_MULTI_SELECT) for a multi-select field. ',
+            ),
+            (
+                '3.1.2',
+                None,
+                '%(VERSION_STRING)s4 (FIELD_TYPE_TEXTAREA) for a large text box field. ',
+            ),
+            (
+                '3.1.3',
+                None,
+                '%(VERSION_STRING)s5 (FIELD_TYPE_DATETIME) for a date/time field. ',
+            ),
+            (
+                '3.3.1',
+                None,
+                '%(VERSION_STRING)s6 (FIELD_TYPE_BUG_ID) for a bug ID field. ',
+            ),
+            (
+                '3.3.2',
+                None,
+                '%(VERSION_STRING)s7 (FIELD_TYPE_BUG_URLS) for a list of bug URLs. ',
+            ),
+        ],
         'custom': '1 for a custom field, 0 otherwise. Part of <a href="#notes-customfields">the custom fields system</a>.',
-
         'enter_bug': '1 for a field which is present on the bug entry form, 0 otherwise.',
-
         'buglist': '1 for a field which can be used as a display or order column in a bug list, 0 otherwise.',
-
         'value_field_id': 'If not NULL, the ID of a (single-select or multi-select) <i>chooser field</i>, which controls the visibility of individual values of this field.  Only applies to single-select and multi-select fields.  Foreign ney %(column-fielddefs-id)s.',
-
         'visibility_field_id': 'If not NULL, the ID of a (single-select or multi-select) <i>control field</i> which controls the visibility of this field.  Only applies to custom fields.  Foreign key %(column-fielddefs-id)s.',
-
         'visibility_value_id': 'If not NULL, and the control field (with ID visibility_field_id) does not have a value with this ID, this field is not visible.  Only applies to custom fields.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-
         'reverse_desc': 'Label for a list of bugs that link to a bug with this field. For example, if the description is "Is a duplicate of", the reverse description would be "Duplicates of this bug". Leave blank to disable the list for this bug.',
-
         'is_mandatory': '1 if the field is required on the new bug form, 0 if it is not.',
-
         'is_numeric': '1 if the field is numeric, 0 if it is not.',
-
-        },
-
+    },
     'flagexclusions': {
-
-    'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
-
-    'product_id': 'The product, or NULL for "any".  (foreign key %(column-products-id)s)',
-
-    'component_id': 'The component, or NULL for "any". (foreign key %(column-components-id)s)',
+        'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
+        'product_id': 'The product, or NULL for "any".  (foreign key %(column-products-id)s)',
+        'component_id': 'The component, or NULL for "any". (foreign key %(column-components-id)s)',
     },
-
     'flaginclusions': {
-
-    'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
-
-    'product_id': 'The product, or NULL for "any".  (foreign key %(column-products-id)s)',
-
-    'component_id': 'The component, or NULL for "any". (foreign key %(column-components-id)s)',
+        'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
+        'product_id': 'The product, or NULL for "any".  (foreign key %(column-products-id)s)',
+        'component_id': 'The component, or NULL for "any". (foreign key %(column-components-id)s)',
     },
-
     'flags': {
-
-    'id': 'A unique ID.' ,
-
-    'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
-
-    'status': "'+' (granted), '-' (denied), or '?' (requested).",
-
-    'bug_id': 'The bug.  (foreign key %(column-bugs-bug_id)s)',
-
-    'attach_id': 'The attachment, or NULL if this flag is not on an attachment. (foreign key %(column-attachments-attach_id)s)',
-
-    'creation_date': 'The date the flag was created.',
-
-    'modification_date': 'The date the flag was most recently modified or created.',
-
-    'setter_id': 'The ID of the user who created, or most recently modified, this flag (foreign key %(column-profiles-userid)s)',
-
-    'requestee_id': 'The ID of the user to whom this request flag is addressed, or NULL for non-requestee flags (foreign key %(column-profiles-userid)s)',
-
-    'is_active': '0 if this flag has been deleted; 1 otherwise.',
+        'id': 'A unique ID.',
+        'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
+        'status': "'+' (granted), '-' (denied), or '?' (requested).",
+        'bug_id': 'The bug.  (foreign key %(column-bugs-bug_id)s)',
+        'attach_id': 'The attachment, or NULL if this flag is not on an attachment. (foreign key %(column-attachments-attach_id)s)',
+        'creation_date': 'The date the flag was created.',
+        'modification_date': 'The date the flag was most recently modified or created.',
+        'setter_id': 'The ID of the user who created, or most recently modified, this flag (foreign key %(column-profiles-userid)s)',
+        'requestee_id': 'The ID of the user to whom this request flag is addressed, or NULL for non-requestee flags (foreign key %(column-profiles-userid)s)',
+        'is_active': '0 if this flag has been deleted; 1 otherwise.',
     },
-
     'flagtypes': {
-
-    'id': 'The flag type ID',
-
-    'name': 'The short flag name',
-
-    'description': 'The description of the flag',
-
-    'cc_list': "A string containing email addresses to which notification of requests for this flag should be sent. This is filtered using the groups system before messages are actually sent, so that users not entitled to see a bug don't receive notifications concerning it.",
-
-    'target_type': "'a' for attachment flags, 'b' for bug flags",
-
-    'is_active': '1 if the flag appears in the UI and can be set; 0 otherwise.',
-
-    'is_requestable': '1 if the flag may be requested; 0 otherwise.',
-
-    'is_requesteeble': '1 if a request for this flag may be aimed at a particular user; 0 otherwise.',
-
-    'is_multiplicable': '1 if multiple instances of this flag may be set on the same item; 0 otherwise.',
-
-    'sortkey': 'An integer used for sorting flags for display.',
-
-    'request_group_id': 'Group membership required to request this flag.  (foreign key %(column-groups-id)s)',
-
-    'grant_group_id': 'Group membership required to grant this flag.  (foreign key %(column-groups-id)s)',
-
+        'id': 'The flag type ID',
+        'name': 'The short flag name',
+        'description': 'The description of the flag',
+        'cc_list': "A string containing email addresses to which notification of requests for this flag should be sent. This is filtered using the groups system before messages are actually sent, so that users not entitled to see a bug don't receive notifications concerning it.",
+        'target_type': "'a' for attachment flags, 'b' for bug flags",
+        'is_active': '1 if the flag appears in the UI and can be set; 0 otherwise.',
+        'is_requestable': '1 if the flag may be requested; 0 otherwise.',
+        'is_requesteeble': '1 if a request for this flag may be aimed at a particular user; 0 otherwise.',
+        'is_multiplicable': '1 if multiple instances of this flag may be set on the same item; 0 otherwise.',
+        'sortkey': 'An integer used for sorting flags for display.',
+        'request_group_id': 'Group membership required to request this flag.  (foreign key %(column-groups-id)s)',
+        'grant_group_id': 'Group membership required to grant this flag.  (foreign key %(column-groups-id)s)',
     },
-
     'group_control_map': {
-
-    'group_id': 'The group.  (foreign key %(column-groups-id)s)',
-
-    'product_id': 'The product.  (foreign key %(column-products-id)s)',
-
-    'entry': '1 if membership of this group is required to enter a bug in this product; 0 otherwise.',
-
-    'membercontrol': 'Determines what control members of this group have over whether a bug for this product is placed in this group. 0 (NA/no control): forbidden.  1 (Shown): permitted.  2 (Default): permitted and by default.  3 (Mandatory): always.',
-
-    'othercontrol': 'Determines what control non-group-members have over whether a new bug for this product is placed in this group.  Group membership of existing bugs can only be changed by members of the relevant group. 0 (NA/no control): forbidden. 1 (Shown): permitted.  2 (Default): permitted and by default.  3 (Mandatory): always.  Allowable values depend on the value of membercontrol.  See <a href="#notes-groups">the notes on groups</a>.',
-
-    'canedit': '1 if membership of this group is required to edit a bug in this product; 0 otherwise.',
-
-    'editcomponents': '1 if membership of this group enables editing product-specific configuration such as components and flagtypes; 0 otherwise.',
-
-    'editbugs': '1 if membership of this group enables editing bugs in this product; 0 otherwise. Note: membership of all \'canedit\' groups is also required.',
-
-    'canconfirm': '1 if membership of this group enables confirmation of bugs in this product; 0 otherwise.',
+        'group_id': 'The group.  (foreign key %(column-groups-id)s)',
+        'product_id': 'The product.  (foreign key %(column-products-id)s)',
+        'entry': '1 if membership of this group is required to enter a bug in this product; 0 otherwise.',
+        'membercontrol': 'Determines what control members of this group have over whether a bug for this product is placed in this group. 0 (NA/no control): forbidden.  1 (Shown): permitted.  2 (Default): permitted and by default.  3 (Mandatory): always.',
+        'othercontrol': 'Determines what control non-group-members have over whether a new bug for this product is placed in this group.  Group membership of existing bugs can only be changed by members of the relevant group. 0 (NA/no control): forbidden. 1 (Shown): permitted.  2 (Default): permitted and by default.  3 (Mandatory): always.  Allowable values depend on the value of membercontrol.  See <a href="#notes-groups">the notes on groups</a>.',
+        'canedit': '1 if membership of this group is required to edit a bug in this product; 0 otherwise.',
+        'editcomponents': '1 if membership of this group enables editing product-specific configuration such as components and flagtypes; 0 otherwise.',
+        'editbugs': '1 if membership of this group enables editing bugs in this product; 0 otherwise. Note: membership of all \'canedit\' groups is also required.',
+        'canconfirm': '1 if membership of this group enables confirmation of bugs in this product; 0 otherwise.',
     },
-
     'group_group_map': {
-
-    'member_id': 'The group whose membership grants membership or "bless" privilege for another group.(foreign key %(column-groups-id)s)',
-
-    'grantor_id': 'The group whose membership or "bless" privilege is automatically granted.(foreign key %(column-groups-id)s)',
-
-    'isbless': '0 if membership is granted; 1 if just "bless" privilege is granted ("bless" does not imply membership).',
-
-    'grant_type': '0 if membership is granted; 1 if just "bless" privilege is granted ("bless" does not imply membership), 2 if visibility is granted.' ,
-
+        'member_id': 'The group whose membership grants membership or "bless" privilege for another group.(foreign key %(column-groups-id)s)',
+        'grantor_id': 'The group whose membership or "bless" privilege is automatically granted.(foreign key %(column-groups-id)s)',
+        'isbless': '0 if membership is granted; 1 if just "bless" privilege is granted ("bless" does not imply membership).',
+        'grant_type': '0 if membership is granted; 1 if just "bless" privilege is granted ("bless" does not imply membership), 2 if visibility is granted.',
     },
-
     'groups': {
-
-    'bit': '2^n for some n.  Assigned automatically.',
-
-    'name': 'A short name for the group.',
-
-    'description': 'A long description of the group.',
-
-    'isbuggroup': '1 if this is a group controlling access to a set of bugs.',
-
-    'userregexp': 'a regexp used to determine membership of new users.',
-
-    'isactive': '1 if bugs can be added to this group; 0 otherwise.',
-
-    'id': 'The group id',
-
-    'icon_url': 'The URL of an icon for the group (e.g. to be shown next to bug comments made by members of the group).',
-
-    'last_changed': 'A timestamp showing when this group was last changed.',
-
+        'bit': '2^n for some n.  Assigned automatically.',
+        'name': 'A short name for the group.',
+        'description': 'A long description of the group.',
+        'isbuggroup': '1 if this is a group controlling access to a set of bugs.',
+        'userregexp': 'a regexp used to determine membership of new users.',
+        'isactive': '1 if bugs can be added to this group; 0 otherwise.',
+        'id': 'The group id',
+        'icon_url': 'The URL of an icon for the group (e.g. to be shown next to bug comments made by members of the group).',
+        'last_changed': 'A timestamp showing when this group was last changed.',
     },
-
     'keyworddefs': {
-
-    'id': 'A unique number identifying this keyword.',
-
-    'name': 'The keyword itself.',
-
-    'description': 'The meaning of the keyword.',
+        'id': 'A unique number identifying this keyword.',
+        'name': 'The keyword itself.',
+        'description': 'The meaning of the keyword.',
     },
-
     'keywords': {
-
-    'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
-
-    'keywordid': 'The keyword ID (foreign key %(column-keyworddefs-id)s)',
+        'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
+        'keywordid': 'The keyword ID (foreign key %(column-keyworddefs-id)s)',
     },
-
     'logincookies': {
-
-    'cookie': 'The cookie',
-
-    'userid': 'The user id; (foreign key %(column-profiles-userid)s)',
-
-    'cryptpassword': 'The encrypted password used on this login.',
-
-    'hostname': 'The CGI REMOTE_HOST for this login.',
-
-    'ipaddr': 'The CGI REMOTE_ADDR for this login.',
-
-    'lastused': 'The timestamp of this login.',
+        'cookie': 'The cookie',
+        'userid': 'The user id; (foreign key %(column-profiles-userid)s)',
+        'cryptpassword': 'The encrypted password used on this login.',
+        'hostname': 'The CGI REMOTE_HOST for this login.',
+        'ipaddr': 'The CGI REMOTE_ADDR for this login.',
+        'lastused': 'The timestamp of this login.',
     },
-
     'longdescs': {
-
-    'bug_id': 'the bug (foreign key %(column-bugs-bug_id)s)',
-
-    'who': 'the user who added this text (foreign key %(column-profiles-userid)s)',
-
-    'bug_when': 'when the text was added',
-
-    'thetext': 'the text itself.',
-
-    'isprivate': 'Non-zero if this comment is "private", i.e. only visible to members of the "insider" group.',
-
-    'work_time': 'Number of hours worked on this bug (for time tracking purposes).',
-
-    'already_wrapped': 'Non-zero if this comment is word-wrapped in the database (and so should not be wrapped for display).',
-
-    'comment_id': 'A unique ID for this comment.',
-
-    'type': 'The type of a comment, used to identify and localize the text of comments which are automatically added by Bugzilla. 0 for a normal comment. 1 for a comment marking this bug as a duplicate of another.  2 for a comment marking another bug as a duplicate of this.  3 for a comment recording a transition to NEW by voting.  4 for a comment recording that this bug has been moved.',
-
-    'extra_data': 'Used in conjunction with %(column-longdescs-type)s to provide the variable data in localized text of an automatic comment.  For instance, a duplicate bug number.',
-
+        'bug_id': 'the bug (foreign key %(column-bugs-bug_id)s)',
+        'who': 'the user who added this text (foreign key %(column-profiles-userid)s)',
+        'bug_when': 'when the text was added',
+        'thetext': 'the text itself.',
+        'isprivate': 'Non-zero if this comment is "private", i.e. only visible to members of the "insider" group.',
+        'work_time': 'Number of hours worked on this bug (for time tracking purposes).',
+        'already_wrapped': 'Non-zero if this comment is word-wrapped in the database (and so should not be wrapped for display).',
+        'comment_id': 'A unique ID for this comment.',
+        'type': 'The type of a comment, used to identify and localize the text of comments which are automatically added by Bugzilla. 0 for a normal comment. 1 for a comment marking this bug as a duplicate of another.  2 for a comment marking another bug as a duplicate of this.  3 for a comment recording a transition to NEW by voting.  4 for a comment recording that this bug has been moved.',
+        'extra_data': 'Used in conjunction with %(column-longdescs-type)s to provide the variable data in localized text of an automatic comment.  For instance, a duplicate bug number.',
     },
-
     'login_failure': {
-
         'user_id': 'the user who failed a login (foreign key %(column-profiles-userid)s)',
-
         'login_time': 'when the failure occurred',
-
         'ip_addr': 'the IP address of the client that failed the login',
-
     },
-
     'milestones': {
-
         'id': 'A unique numeric ID',
-
         'value': 'The name of the milestone (e.g. "3.1 RTM", "0.1.37", "tweakfor BigCustomer", etc).',
-
         'product': 'The product (foreign key %(column-products-product)s)',
-
         'product_id': 'The product (foreign key %(column-products-id)s)',
-
         'sortkey': 'A number used for sorting milestones for a given product.',
-
         'isactive': '1 if this milestone is available for new bugs, 0 if not.',
-
     },
-
     'namedqueries': {
-
         'id': 'A unique number identifying this query.',
-
         'userid': 'The user whose query this is (foreign key %(column-profiles-userid)s)',
-
         'name': 'The name of the query.',
-
         'watchfordiffs': 'Unused.',
-
         'linkinfooter': 'Whether or not the query should appear in the foot of every page.',
-
         'query': 'The query (text to append to the query page URL).',
-
         'query_type': '1 (LIST_OF_BUGS) if the query is simply a list of bug IDs, 0 (QUERY_LIST) if it is a genuine query.',
-
     },
-
     'namedqueries_link_in_footer': {
-
         'namedquery_id': 'The query id (foreign key %(column-namedqueries-id)s).',
-
         'user_id': 'The user id (foreign key %(column-profiles-userid)s).',
-
-        },
-
+    },
     'namedquery_group_map': {
-
         'namedquery_id': 'The query id (foreign key %(column-namedqueries-id)s).',
-
         'group_id': 'The group id (foreign key %(column-groups-id)s).',
-
-        },
-
+    },
     'op_sys': {
-
         'value': 'A possible value of the field',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'sortkey': 'A number used to determine the order in which values are shown.',
-
         'id': 'a unique ID.',
-
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-        },
-
+    },
     'priority': {
-
         'value': 'A possible value of the field',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'sortkey': 'A number used to determine the order in which values are shown.',
-
         'id': 'a unique ID.',
-
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-        },
-
+    },
     'products': {
-
         'product': 'The name of the product.',
-
         'id': 'The product ID.',
-
         'name': 'The product name.',
-
         'description': 'The description of the product',
-
         'milestoneurl': 'The URL of a document describing the product milestones.',
-
         'disallownew': 'New bugs can only be created for this product if this is 0.',
-
         'votesperuser': 'Total votes which a single user has for bugs of this product.',
-
         'maxvotesperbug': 'Maximum number of votes which a bug may have.',
-
         'votestoconfirm': 'How many votes are required for this bug to become NEW.',
-
         'defaultmilestone': 'The default milestone for a new bug (foreign key %(column-milestones-value)s)',
-
         'classification_id': 'The classification ID (foreign key %(column-classifications-id)s).',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'allows_unconfirmed': '1 if new bugs can be UNCONFIRMED, 0 if they always start as NEW',
-
     },
-
     'profile_search': {
-
         'id': 'A unique ID for the list, specified as list_id in the URL parameters.',
-
         'user_id': 'The ID of the user who ran the search. (foreign key %(column-profiles-userid)s)',
-
         'bug_list': 'The list of bug numbers returned by the search.',
-
         'list_order': 'The sort order specified by the user.',
-
     },
-
     'profile_setting': {
-
         'setting_name': 'The name of the setting (foreign key %(column-setting-name)s).',
-
         'user_id': 'The user (foreign key %(column-profiles-userid)s).',
-
         'setting_value': 'The value (foreign key %(column-setting_value-value)s).',
     },
-
     'profiles': {
-
         'userid': 'A unique identifier for the user.  Used in other tables to identify this user.',
-
         'login_name': 'The user\'s email address.  Used when logging in or providing mailto: links.',
-
         'password': 'The user\'s password, in plaintext.',
-
-        'cryptpassword': ['The user\'s password.',
-                          (None, '2.12', '%(VERSION_STRING)sThe MySQL function <code>encrypt</code> is used to encrypt passwords.'),
-                          ('2.14', None, '%(VERSION_STRING)sThe Perl function <code>crypt</code> is used.')],
-
+        'cryptpassword': [
+            'The user\'s password.',
+            (
+                None,
+                '2.12',
+                '%(VERSION_STRING)sThe MySQL function <code>encrypt</code> is used to encrypt passwords.',
+            ),
+            (
+                '2.14',
+                None,
+                '%(VERSION_STRING)sThe Perl function <code>crypt</code> is used.',
+            ),
+        ],
         'realname': 'The user\'s real name.',
-
         'groupset': 'The set of groups to which the user belongs.  Each group corresponds to one bit and confers powers upon the user. See %(the-table-groups)s.',
-
         'emailnotification': 'Controls when email reporting bug changes is sent to this user.',
-
         'disabledtext': 'If non-empty, indicates that this account has been disabled and gives a reason. ',
-
         'newemailtech': 'is non-zero if the user wants to user the "new" email notification technique.',
-
         'mybugslink': 'indicates whether a "My Bugs" link should appear at the bottom of each page.',
-
         'blessgroupset': 'Indicates the groups into which this user is able to introduce other users.',
-
         'emailflags': 'Flags controlling when email messages are sent to this user.',
-
         'refreshed_when': 'A timestamp showing when the derived group memberships in %(the-table-user_group_map)s were last updated for this user.',
-
         'extern_id': 'The ID for environmental authentication (see <a href="#notes-authentication">the notes on authentication</a>).',
-
         'disable_mail': '1 to disable all mail to this user; 0 for mail to depend on the per-user email settings in %(table-email_setting)s.',
-
         'is_enabled': '1 if the account is enabled, 0 if it is disabled and prevented from logging in.',
-
     },
-
     'profiles_activity': {
-
         'userid': 'The profile which has changed (foreign key %(column-profiles-userid)s)',
-
         'who': 'The user who changed it (foreign key %(column-profiles-userid)s)',
-
         'profiles_when': 'When it was changed',
-
         'fieldid': 'The ID of the changed field (foreign key %(column-fielddefs-id)s)',
-
         'oldvalue': 'The old value',
-
         'newvalue': 'The new value.',
     },
-
     'quips': {
-
-    'quipid': 'A unique ID.',
-
-    'userid': 'The user who added this quip (foreign key %(column-profiles-userid)s)',
-
-    'quip': 'The quip itself.',
-
-    'approved': '1 if this quip has been approved for display, 0 otherwise.',
+        'quipid': 'A unique ID.',
+        'userid': 'The user who added this quip (foreign key %(column-profiles-userid)s)',
+        'quip': 'The quip itself.',
+        'approved': '1 if this quip has been approved for display, 0 otherwise.',
     },
-
     'rep_platform': {
-
         'value': 'A possible value of the field',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'sortkey': 'A number used to determine the order in which values are shown.',
-
         'id': 'a unique ID.',
-
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-        },
-
+    },
     'resolution': {
-
         'value': 'A possible value of the field',
-
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-
         'sortkey': 'A number used to determine the order in which values are shown.',
-
         'id': 'a unique ID.',
-
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-        },
-
+    },
     'series': {
-
-    'series_id': 'A unique ID.',
-
-    'creator': ['The user who created this series (foreign key %(column-profiles-userid)s).',
-                (None, '2.23.2', '%(VERSION_STRING)s 0 if this series is created by checksetup when first installing Bugzilla.'),
-                ('2.23.3', None, '%(VERSION_STRING)s NULL if this series is created by checksetup when first installing Bugzilla.'),],
-
-    'category': 'The series category. (foreign key %(column-series_categories-id)s)',
-
-    'subcategory': 'The series subcategory. (foreign key %(column-series_categories-id)s)',
-
-    'name': 'The series name.',
-
-    'frequency': 'The period between data samples for this series, in days.' ,
-
-    'last_viewed': 'The time at which this dataset was last viewed.',
-
-    'query': 'a snippet of CGI which specifies a subset of bugs, as for query.cgi',
-
-    'public': '1 if the series is visible to all users, 0 otherwise.',
+        'series_id': 'A unique ID.',
+        'creator': [
+            'The user who created this series (foreign key %(column-profiles-userid)s).',
+            (
+                None,
+                '2.23.2',
+                '%(VERSION_STRING)s 0 if this series is created by checksetup when first installing Bugzilla.',
+            ),
+            (
+                '2.23.3',
+                None,
+                '%(VERSION_STRING)s NULL if this series is created by checksetup when first installing Bugzilla.',
+            ),
+        ],
+        'category': 'The series category. (foreign key %(column-series_categories-id)s)',
+        'subcategory': 'The series subcategory. (foreign key %(column-series_categories-id)s)',
+        'name': 'The series name.',
+        'frequency': 'The period between data samples for this series, in days.',
+        'last_viewed': 'The time at which this dataset was last viewed.',
+        'query': 'a snippet of CGI which specifies a subset of bugs, as for query.cgi',
+        'public': '1 if the series is visible to all users, 0 otherwise.',
     },
-
     'series_categories': {
-
-    'id': 'A unique ID.',
-
-    'name': 'The category name.',
-
+        'id': 'A unique ID.',
+        'name': 'The category name.',
     },
-
     'series_data': {
-
-    'series_id': 'The series ID. (foreign key %(column-series-series_id)s)',
-
-    'date': 'The time point at which this datum was collected.',
-
-    'value': 'The number of bugs in the dataset at this time point.',
-
-    'series_date': 'The time point at which this datum was collected.',
-
-    'series_value': 'The number of bugs in the dataset at this time point.',
+        'series_id': 'The series ID. (foreign key %(column-series-series_id)s)',
+        'date': 'The time point at which this datum was collected.',
+        'value': 'The number of bugs in the dataset at this time point.',
+        'series_date': 'The time point at which this datum was collected.',
+        'series_value': 'The number of bugs in the dataset at this time point.',
     },
-
     'setting': {
-
         'default_value': 'the value of this setting which will apply to any user who does not change it.',
-
         'is_enabled': '1 if users are able to change this setting; 0 if it is automatic.',
-
         'name': 'The name of the setting.',
-
         'subclass': 'The name of the Perl subclass (of Setting) to which this setting applies.',
-
-        },
-
+    },
     'setting_value': {
-
         'sortindex': 'A number used to determine the order in which setting values are shown',
-
         'name': 'The setting name. (foreign key %(column-setting-name)s)',
-
         'value': 'The setting value',
     },
-
     'shadowlog': {
-
-    'id': 'unique id',
-
-    'ts': 'timestamp',
-
-    'reflected': '0',
-
-    'command': 'SQL command',
+        'id': 'unique id',
+        'ts': 'timestamp',
+        'reflected': '0',
+        'command': 'SQL command',
     },
-
     'status_workflow': {
-
-    'old_status': 'The old bug status, None for bug creation (foreign key %(column-bug_status-id)s)',
-
-    'new_status': 'The new bug status (foreign key %(column-bug_status-id)s)',
-
-    'require_comment': '1 if this transition requires a comment; 0 otherwise.',
+        'old_status': 'The old bug status, None for bug creation (foreign key %(column-bug_status-id)s)',
+        'new_status': 'The new bug status (foreign key %(column-bug_status-id)s)',
+        'require_comment': '1 if this transition requires a comment; 0 otherwise.',
     },
-
     'tag': {
-
         'id': 'A unique ID for the tag',
-
         'name': 'The name of the tag. Only unique per user.',
-
         'user_id': 'ID of the user this tag belongs to. (foreign key %(column-profiles-userid)s)',
-
     },
-
     'tags': {
-
         'id': 'A unique ID for the tag',
-
         'name': 'The name of the tag. Only unique per user.',
-
         'user_id': 'ID of the user this tag belongs to. (foreign key %(column-profiles-userid)s)',
-
     },
-
     'tokens': {
-
-    'userid': 'The user to whom the token was issued.  (foreign key %(column-profiles-userid)s)',
-
-    'issuedate': 'The date at which the token was issued',
-
-    'token': 'The token itself.',
-
-    'tokentype': "The type of the token.  Possible values: 'account' when creating a new user account, 'emailold' and 'emailnew' when changing email address, 'password' when changing a password, or 'session' for a session token.",
-
-    'eventdata': 'The expected event, for a session token.'
+        'userid': 'The user to whom the token was issued.  (foreign key %(column-profiles-userid)s)',
+        'issuedate': 'The date at which the token was issued',
+        'token': 'The token itself.',
+        'tokentype': "The type of the token.  Possible values: 'account' when creating a new user account, 'emailold' and 'emailnew' when changing email address, 'password' when changing a password, or 'session' for a session token.",
+        'eventdata': 'The expected event, for a session token.',
     },
-
     'ts_error': {
-            
         'error_time': 'The time at which the error occurred.',
-
         'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
-
         'message': 'The error message.',
-
         'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
-
-    },  
-
+    },
     'ts_exitstatus': {
-
         'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
-
         'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
-
         'status': 'The exit status.  0 for success.',
-
         'completion_time': 'The time at which the job finished.',
-
         'delete_after': 'A time after which this row can be deleted.',
-
     },
-
     'ts_funcmap': {
-
         'funcid': 'A unique ID.',
-
         'funcname': 'A unique function name, also known as an ability or a worker class name.',
-
     },
-
     'ts_job': {
-
         'jobid': 'A unique ID.',
-
         'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
-
         'arg': 'State data for the job, stored as a frozen reference.',
-
         'uniqkey': 'An arbitrary unique reference.',
-
         'insert_time': 'not used.',
-
         'run_after': 'A timestamp before which the job should not be run.',
-
         'grabbed_until': 'Set while a worker is attempting this job; do not retry this job until this is in the past.',
-
         'priority': 'Not used.',
-
         'coalesce': 'A string used to indicate jobs which can be usefully pipelined by a single worker.',
-
     },
-
-
     'ts_note': {
-
         'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
-
         'notekey': 'Not used.',
-
         'value': 'Not used.',
-
     },
-
     'user_group_map': {
-
-    'user_id': 'The user.  (foreign key %(column-profiles-userid)s)',
-
-    'grant_type': '0 if this membership or privilege is explicit. 1 if it is derived from a group hierarchy (see %(the-table-group_group_map)s). 2 if it results from matching a regular expression (see %(column-groups-userregexp)s).' ,
-
-    'group_id': 'The group.  (foreign key %(column-groups-id)s)',
-
-    'isbless': '0 if this row records group membership; 1 if this row records group "bless" privilege.',
-
-    'isderived': '0 if this membership or privilege is explicit.  1 if it is derived (e.g. from %(the-table-group_group_map)s or %(column-groups-userregexp)s).' ,
-
+        'user_id': 'The user.  (foreign key %(column-profiles-userid)s)',
+        'grant_type': '0 if this membership or privilege is explicit. 1 if it is derived from a group hierarchy (see %(the-table-group_group_map)s). 2 if it results from matching a regular expression (see %(column-groups-userregexp)s).',
+        'group_id': 'The group.  (foreign key %(column-groups-id)s)',
+        'isbless': '0 if this row records group membership; 1 if this row records group "bless" privilege.',
+        'isderived': '0 if this membership or privilege is explicit.  1 if it is derived (e.g. from %(the-table-group_group_map)s or %(column-groups-userregexp)s).',
     },
-
     'user_series_map': {
-
-    'user_id': 'The user ID. (foreign key %(column-profiles-userid)s)',
-
-    'series_id': 'The series. (foreign key %(column-series-series_id)s)',
+        'user_id': 'The user ID. (foreign key %(column-profiles-userid)s)',
+        'series_id': 'The series. (foreign key %(column-series-series_id)s)',
     },
-
     'versions': {
-
         'id': 'A unique numeric ID',
-
         'value': 'The name of the version',
-
         'program': 'The product (foreign key %(column-products-product)s)',
-
         'product_id': 'The product (foreign key %(column-products-id)s)',
-
         'isactive': '1 if the version is available for new bugs, 0 if not.',
     },
-
     'votes': {
-
-    'who': 'The user (foreign key %(column-profiles-userid)s)',
-
-    'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
-
-    'count': 'How many votes.',
+        'who': 'The user (foreign key %(column-profiles-userid)s)',
+        'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
+        'count': 'How many votes.',
     },
-
     'watch': {
-
-    'watcher': 'The watching user (foreign key %(column-profiles-userid)s)',
-
-    'watched': 'The watched user (foreign key %(column-profiles-userid)s)',
+        'watcher': 'The watching user (foreign key %(column-profiles-userid)s)',
+        'watched': 'The watched user (foreign key %(column-profiles-userid)s)',
     },
-
     'whine_events': {
-
         'id': 'The whine event ID, used to identify this event.',
-
         'owner_userid': """The user ID of the whine owner (foreign key %(column-profiles-userid)s).  Must match %(column-namedqueries-userid)s for the queries associated with this event (%(column-whine_queries-query_name)s).""",
-
         'subject': 'The Subject of the whine emails.',
-
         'body': 'Text to appear in the body of the whine emails before the bugs table.',
-
         'mailifnobugs': "1 is mail should be sent even if there are no results to the query. 0 if the report shouldn't be sent unless there are results.",
     },
-
     'whine_queries': {
-
-    'id': 'A unique ID for this query.',
-
-    'eventid': 'The whine event ID (foreign key %(column-whine_events-id)s).',
-
-    'query_name': 'The query name (foreign key %(column-namedqueries-name)s).',
-
-    'sortkey':  'A key to order the queries for a given event ID.',
-
-    'onemailperbug': """1 if a separate email message should be sent
+        'id': 'A unique ID for this query.',
+        'eventid': 'The whine event ID (foreign key %(column-whine_events-id)s).',
+        'query_name': 'The query name (foreign key %(column-namedqueries-name)s).',
+        'sortkey': 'A key to order the queries for a given event ID.',
+        'onemailperbug': """1 if a separate email message should be sent
     for each bug matching the query; 0 if a single email should be
     sent covering all the bugs.""",
-
-    'title': 'The title displayed for this query in the message.',
-
+        'title': 'The title displayed for this query in the message.',
     },
-
     'whine_schedules': {
-
-    'id': """a unique ID for this whine schedule.""",
-
-    'eventid': 'The whine event ID (foreign key %(column-whine_events-id)s).',
-
-    'run_day': """The day on which this whine should run.  'All' means
+        'id': """a unique ID for this whine schedule.""",
+        'eventid': 'The whine event ID (foreign key %(column-whine_events-id)s).',
+        'run_day': """The day on which this whine should run.  'All' means
     every day.  'MF' means Monday to Friday inclusive.  A three letter
     weekday abbreviation (e.g. "Mon", "Thu") means only on that day.
     An integer indicates a particular day of the month.  'last' means
     the last day of the month.""",
-
-    'run_time': """The time at which this whine should run.  An
+        'run_time': """The time at which this whine should run.  An
     integer indicates an hour of the day.  An interval (e.g. "15min",
     "30min") indicates that the whine should run repeatedly at that
     interval.""",
-
-    'run_next': """The time and date at which the whine should next be
+        'run_next': """The time and date at which the whine should next be
     run.  NULL if the whine has been changed and not rescheduled
     yet.""",
-
-    'mailto_userid': """The ID of the user to whom to send whine
+        'mailto_userid': """The ID of the user to whom to send whine
     messages (foreign key %(column-profiles-userid)s).""",
-
-    'mailto': "Either a user ID (foreign key %(column-profiles-userid)s) or group ID (foreign key %(column-groups-id)s) identifying the user or users to whom to send whine messages.",
-
-    'mailto_type': "0 if the mailto field is a user ID, 1 if it is a group ID.",
-
+        'mailto': "Either a user ID (foreign key %(column-profiles-userid)s) or group ID (foreign key %(column-groups-id)s) identifying the user or users to whom to send whine messages.",
+        'mailto_type': "0 if the mailto field is a user ID, 1 if it is a group ID.",
     },
 }
 
@@ -2157,40 +1599,22 @@ column_remark = {
 # otherwise changed.
 
 column_renamed = {
-
     'votes': {
-
-    'vote_count': 'count',
-
+        'vote_count': 'count',
     },
-
     'series': {
-
-    'is_public': 'public',
-
+        'is_public': 'public',
     },
-
     'series_data': {
-
-    'series_date': 'date',
-
-    'series_value': 'value',
-
+        'series_date': 'date',
+        'series_value': 'value',
     },
-
     'series_categories': {
-
-    'category_id': 'id',
-
+        'category_id': 'id',
     },
-
-
     'fielddefs': {
-
-    'fieldid': 'id',
-
+        'fieldid': 'id',
     },
-
 }
 
 # This is a map from table name to a map from column name to HTML
@@ -2203,15 +1627,10 @@ column_renamed = {
 column_added_remark = {
     'attachments': {
         'isobsolete': None,
-
         'isprivate': None,
-
         'isurl': None,
-
         'modification_time': None,
-
-        },
-
+    },
     'bug_see_also': {
         'id': None,
         'class': 'Definitions for allowable types of remote bug report instances were moved into subclasses of Bugzilla::BugURL.',
@@ -2219,307 +1638,160 @@ column_added_remark = {
     'bug_severity': {
         'visibility_value_id': None,
     },
-
     'bug_status': {
         'is_open': None,
         'visibility_value_id': None,
-        },
-
+    },
     'bugs': {
-
         'alias': None,
-
         'deadline': None,
-
         'keywords': None,
-
         'everconfirmed': None,
-
         'lastdiffed': None,
-
         'product_id': 'replacing "product"',
-
         'component_id': 'replacing "component"',
-
         'reporter_accessible': None,
-
         'assignee_accessible': None,
-
         'qacontact_accessible': None,
-
         'cclist_accessible': None,
-
         'estimated_time': None,
-
         'groupset': None,
-
         'qa_contact': None,
-
         'remaining_time': None,
-
         'status_whiteboard': None,
-
         'target_milestone': None,
-
         'votes': None,
-
-        },
-
+    },
     'bugs_activity': {
-
         'attach_id': None,
-
         'fieldid': 'replacing "field"',
-
         'bug_when': 'replacing "when"',
-
         'added': 'replacing "newvalue"',
-
         'removed': 'replacing "oldvalue"',
-
         'comment_id': None,
-
-        },
-
+    },
     'classifications': {
-
         'sortkey': None,
-
-        },
-
+    },
     'components': {
-
         'description': None,
-
         'name': 'replacing "value"',
-
         'id': 'replacing "value" as the primary key',
-
         'initialqacontact': None,
-
         'product_id': 'replacing "program"',
-
         'isactive': None,
-
-        },
-
+    },
     'fielddefs': {
-
         'obsolete': None,
-
         'custom': None,
-
         'type': None,
-
         'enter_bug': None,
-
         'buglist': None,
-
         'value_field_id': None,
-
         'visibility_field_id': None,
-
         'visibility_value_id': None,
-
         'reverse_desc': None,
-
         'is_mandatory': None,
-
         'is_numeric': None,
-
     },
-
     'flags': {
-
-    'is_active': None,
-
+        'is_active': None,
     },
-
     'flagtypes': {
-
-    'grant_group_id': None,
-
-    'request_group_id': None,
-
+        'grant_group_id': None,
+        'request_group_id': None,
     },
-
     'group_group_map': {
-
         'grant_type': 'replacing "isbless"',
-
-        },
-
+    },
     'group_control_map': {
-
         'editbugs': None,
         'editcomponents': None,
         'canconfirm': None,
-
-        },
-
+    },
     'groups': {
-
-    'id': 'replacing "bit"',
-
-    'isactive': None,
-
-    'last_changed': None,
-
-    'icon_url': None,
-
-    },
-
-    'logincookies': {
-
-    'ipaddr': 'replacing hostname',
-
-    },
-
-    'longdescs': {
-
-    'type': None,
-
-    'extra_data': None,
-
-    'comment_id': None,
-
-    'already_wrapped': None,
-
-    'isprivate': None,
-
-    'work_time': None,
-
-    },
-
-    'milestones': {
-
-        'product_id': 'replacing "product"',
-
-        'id': None,
-
+        'id': 'replacing "bit"',
         'isactive': None,
-
+        'last_changed': None,
+        'icon_url': None,
     },
-
-    'namedqueries': {
-
-    'query_type': None,
-
-    'id': None,
-
+    'logincookies': {
+        'ipaddr': 'replacing hostname',
     },
-
-    'op_sys': {
-
-        'visibility_value_id': None,
-
+    'longdescs': {
+        'type': None,
+        'extra_data': None,
+        'comment_id': None,
+        'already_wrapped': None,
+        'isprivate': None,
+        'work_time': None,
     },
-
-    'priority': {
-
-        'visibility_value_id': None,
-
-    },
-
-    'products': {
-
-        'classification_id': None,
-
-        'votestoconfirm': None,
-
-        'defaultmilestone': None,
-
-        'disallownew': None,
-
-        'maxvotesperbug': None,
-
-        'votesperuser': None,
-
-        'id': 'replacing "product" as the table key',
-
-        'name': 'replacing "product" as the product name',
-
-        'isactive': 'replacing and inverting "disallownew" for better readability',
-
-        'allows_unconfirmed': 'Removing the relationship between votestoconfirm and whether or not the UNCONFIRMED status is available (Bug 162060)',
-
-    },
-
-    'profiles': {
-
-        'blessgroupset': None,
-
-        'groupset': None,
-
-        'newemailtech': None,
-
-        'emailnotification': None,
-
-        'mybugslink': None,
-
-        'disabledtext': None,
-
-        'extern_id': None,
-
-        'emailflags': None,
-
-        'refreshed_when': None,
-
-        'disable_mail': None,
-
-        'is_enabled': 'For query performance reasons it was better to check a boolean than try to check if %(column-profiles-disabledtext)s was zero length or not.',
-
-    },
-
-    'quips': {
-
-        'approved': None,
-
-    },
-
-    'rep_platform': {
-
-        'visibility_value_id': None,
-
-    },
-
-    'resolution': {
-
-        'visibility_value_id': None,
-
-    },
-
-    'series': {
-
-    'public': None,
-
-    },
-
-    'setting': {
-
-    'subclass': None,
-    },
-
-    'user_group_map': {
-
-    'grant_type': 'replacing "isderived"',
-
-    },
-
-    'versions': {
-
-        'product_id': 'replacing "program"',
-
+    'milestones': {
+        'product_id': 'replacing "product"',
         'id': None,
-
-        'isactive': '1 if this version is available for new bugs, 0 if not.',
-
+        'isactive': None,
     },
-
+    'namedqueries': {
+        'query_type': None,
+        'id': None,
+    },
+    'op_sys': {
+        'visibility_value_id': None,
+    },
+    'priority': {
+        'visibility_value_id': None,
+    },
+    'products': {
+        'classification_id': None,
+        'votestoconfirm': None,
+        'defaultmilestone': None,
+        'disallownew': None,
+        'maxvotesperbug': None,
+        'votesperuser': None,
+        'id': 'replacing "product" as the table key',
+        'name': 'replacing "product" as the product name',
+        'isactive': 'replacing and inverting "disallownew" for better readability',
+        'allows_unconfirmed': 'Removing the relationship between votestoconfirm and whether or not the UNCONFIRMED status is available (Bug 162060)',
+    },
+    'profiles': {
+        'blessgroupset': None,
+        'groupset': None,
+        'newemailtech': None,
+        'emailnotification': None,
+        'mybugslink': None,
+        'disabledtext': None,
+        'extern_id': None,
+        'emailflags': None,
+        'refreshed_when': None,
+        'disable_mail': None,
+        'is_enabled': 'For query performance reasons it was better to check a boolean than try to check if %(column-profiles-disabledtext)s was zero length or not.',
+    },
+    'quips': {
+        'approved': None,
+    },
+    'rep_platform': {
+        'visibility_value_id': None,
+    },
+    'resolution': {
+        'visibility_value_id': None,
+    },
+    'series': {
+        'public': None,
+    },
+    'setting': {
+        'subclass': None,
+    },
+    'user_group_map': {
+        'grant_type': 'replacing "isderived"',
+    },
+    'versions': {
+        'product_id': 'replacing "program"',
+        'id': None,
+        'isactive': '1 if this version is available for new bugs, 0 if not.',
+    },
     'whine_events': {
         'mailifnobugs': None,
     },
-
     'whine_schedules': {
         'mailto': None,
         'mailto_type': None,
@@ -2535,157 +1807,85 @@ column_added_remark = {
 
 column_removed_remark = {
     'attachments': {
-
         'thedata': 'moved to %(the-table-attach_data)s',
-
         'isurl': 'detection logic was added to detect URLs instead of needing to be told by the uploader.',
-
-        },
-
+    },
     'bugs': {
-
         'area': None,
-
         'long_desc': 'moved to %(the-table-longdescs)s',
-
         'groupset': 'replaced by %(the-table-bug_group_map)s',
-
         'product': 'replaced by "product_id"',
-
         'component': 'replaced by "component_id"',
-
         'assignee_accessible': None,
-
         'qacontact_accessible': None,
-
         'votes': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
-
         'keywords': 'This was only used for caching. Improved indexing made this field unnecessary.',
-
-        },
-
+    },
     'bugs_activity': {
-
         'field': 'replaced by "fieldid"',
-
         'oldvalue': 'replaced by "removed"',
-
         'when': 'replaced by "bug_when"',
-
         'newvalue': 'replaced by "added"',
-
-        },
-
+    },
     'components': {
-
         'value': 'replaced by "name" and "id"',
-
         'program': 'replaced by "product_id"',
-
-        },
-
+    },
     'fielddefs': {
         'obsolete': None,
         'visibility_value_id': 'Moved to %(column-field_visibility-value_id)s',
-        },
-
+    },
     'flags': {
         'is_active': None,
-        },
-
+    },
     'groups': {
-
         'bit': 'replaced by "id"',
-
         'last_changed': 'redundant',
-
-        },
-
+    },
     'group_group_map': {
-
         'isbless': 'replaced by "grant_type"',
-
-        },
-
+    },
     'logincookies': {
-
-    'cryptpassword': None,
-
-    'hostname': 'replaced by "ipaddr"',
-
+        'cryptpassword': None,
+        'hostname': 'replaced by "ipaddr"',
     },
-
     'milestones': {
-
-    'product': 'replaced by "product_id"',
-
+        'product': 'replaced by "product_id"',
     },
-
     'namedqueries': {
-
         'watchfordiffs': None,
-
         'linkinfooter': 'replaced by %(the-table-namedqueries_link_in_footer)s.',
-
         'query_type': 'replaced by %(the-table-tags)s and %(the-table-bug_tag)s.',
-
     },
-
     'products': {
-
         'product': 'replaced with "id" and "name"',
-
         'disallownew': 'replaced by "isactive"',
-
         'milestoneurl': 'very rarely used and UI was confusing (Bug 369489)',
-
         'votesperuser': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
-
         'maxvotesperbug': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
-
         'votestoconfirm': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
     },
-
     'profiles': {
-
-    'password': None,
-
-    'emailflags': 'replaced by %(the-table-email_setting)s',
-
-    'groupset': 'replaced by %(the-table-user_group_map)s',
-
-    'emailnotification': 'replaced in part by %(column-profiles-emailflags)s',
-
-    'newemailtech': None,
-
-    'blessgroupset': 'replaced by %(the-table-user_group_map)s',
-
-    'refreshed_when': 'redundant',
-
+        'password': None,
+        'emailflags': 'replaced by %(the-table-email_setting)s',
+        'groupset': 'replaced by %(the-table-user_group_map)s',
+        'emailnotification': 'replaced in part by %(column-profiles-emailflags)s',
+        'newemailtech': None,
+        'blessgroupset': 'replaced by %(the-table-user_group_map)s',
+        'refreshed_when': 'redundant',
     },
-
     'series': {
-
         'last_viewed': 'was never used, so removed. (bug 519032)',
-
     },
-
     'user_group_map': {
-
-    'isderived': 'replaced by "grant_type"',
-
+        'isderived': 'replaced by "grant_type"',
     },
-
     'versions': {
-
-    'program': 'replaced by "product_id"',
-
+        'program': 'replaced by "product_id"',
     },
-
     'whine_schedules': {
         'mailto_userid': None,
     },
-
 }
 
 # This is a map from table name to a map from index name to HTML
@@ -2702,22 +1902,21 @@ index_remark = {
         'creation_ts': None,
         'attachments_submitter_id_idx': None,
         'attachments_modification_time_idx': None,
-        },
+    },
     'attach_data': {
         'PRIMARY': None,
-        },
+    },
     'attachstatusdefs': {
         'PRIMARY': None,
-        },
+    },
     'attachstatuses': {
         'PRIMARY': None,
-        },
-    'audit_log': {
-        },
+    },
+    'audit_log': {},
     'bug_group_map': {
         'bug_id': None,
         'group_id': None,
-        },
+    },
     'bug_see_also': {
         'PRIMARY': None,
         'bug_see_also_bug_id_idx': None,
@@ -2759,7 +1958,7 @@ index_remark = {
         'target_milestone': None,
         'qa_contact': None,
         'votes': None,
-        },
+    },
     'bugs_activity': {
         'bug_id': None,
         'when': None,
@@ -2768,26 +1967,25 @@ index_remark = {
         'fieldid': None,
         'bugs_activity_who_idx': None,
         'bugs_activity_added_idx': None,
-        },
+    },
     'bugs_fulltext': {
         'PRIMARY': None,
         'bugs_fulltext_short_desc_idx': None,
         'bugs_fulltext_comments_idx': None,
         'bugs_fulltext_comments_noprivate_idx': None,
-        },
-    'bz_schema': {
     },
+    'bz_schema': {},
     'category_group_map': {
         'category_id': None,
-        },
+    },
     'cc': {
         'who': None,
         'bug_id': None,
-        },
+    },
     'classifications': {
         'PRIMARY': None,
         'name': None,
-        },
+    },
     'components': {
         'PRIMARY': None,
         'product_id': None,
@@ -2795,19 +1993,19 @@ index_remark = {
         'bug_id': None,
         'bug_when': None,
         'fieldid': None,
-        },
+    },
     'component_cc': {
-    'component_cc_user_id_idx': None,
+        'component_cc_user_id_idx': None,
     },
     'dependencies': {
         'blocked': None,
         'dependson': None,
-        },
+    },
     'duplicates': {
         'PRIMARY': None,
-        },
+    },
     'email_setting': {
-    'email_setting_user_id_idx': None,
+        'email_setting_user_id_idx': None,
     },
     'fielddefs': {
         'PRIMARY': None,
@@ -2815,70 +2013,70 @@ index_remark = {
         'sortkey': None,
         'fielddefs_value_field_id_idx': None,
         'fielddefs_is_mandatory_idx': None,
-        },
+    },
     'field_visibility': {
         'field_visibility_field_id_idx': None,
-        },
+    },
     'flagexclusions': {
         'type_id': None,
-        },
+    },
     'flaginclusions': {
         'type_id': None,
-        },
+    },
     'flags': {
         'PRIMARY': None,
         'bug_id': None,
         'setter_id': None,
         'requestee_id': None,
         'flags_type_id_idx': None,
-        },
+    },
     'flagtypes': {
         'PRIMARY': None,
-        },
+    },
     'group_control_map': {
         'product_id': None,
         'group_id': None,
-        },
+    },
     'group_group_map': {
         'member_id': None,
-        },
+    },
     'groups': {
         'PRIMARY': None,
         'bit': None,
         'name': None,
-        },
+    },
     'keyworddefs': {
         'PRIMARY': None,
         'name': None,
-        },
+    },
     'keywords': {
         'keywordid': None,
         'bug_id': None,
-        },
+    },
     'logincookies': {
         'PRIMARY': None,
         'lastused': None,
-        },
+    },
     'login_failure': {
         'login_failure_user_id_idx': None,
-        },
+    },
     'longdescs': {
         'PRIMARY': None,
         'bug_id': None,
         'who': None,
         'bug_when': None,
         'thetext': None,
-        },
+    },
     'milestones': {
         'PRIMARY': None,
         'product': None,
         'product_id': None,
-        },
+    },
     'namedqueries': {
         'PRIMARY': None,
         'userid': None,
         'watchfordiffs': None,
-        },
+    },
     'namedqueries_link_in_footer': {
         'namedqueries_link_in_footer_id_idx': None,
         'namedqueries_link_in_footer_userid_idx': None,
@@ -2888,93 +2086,93 @@ index_remark = {
         'namedquery_group_map_namedquery_id_idx': None,
     },
     'op_sys': {
-    'PRIMARY': None,
-    'op_sys_sortkey_idx': None,
-    'op_sys_value_idx': None,
-    'op_sys_visibility_value_id_idx': None,
+        'PRIMARY': None,
+        'op_sys_sortkey_idx': None,
+        'op_sys_value_idx': None,
+        'op_sys_visibility_value_id_idx': None,
     },
     'priority': {
-    'PRIMARY': None,
-    'priority_sortkey_idx': None,
-    'priority_value_idx': None,
-    'priority_visibility_value_id_idx': None,
+        'PRIMARY': None,
+        'priority_sortkey_idx': None,
+        'priority_value_idx': None,
+        'priority_visibility_value_id_idx': None,
     },
     'products': {
         'PRIMARY': None,
         'name': None,
-        },
+    },
     'profile_search': {
         'PRIMARY': None,
         'profile_search_user_id': None,
         'profile_search_user_id_idx': None,
     },
     'profile_setting': {
-    'profile_setting_value_unique_idx': None,
+        'profile_setting_value_unique_idx': None,
     },
     'profiles': {
         'PRIMARY': None,
         'login_name': None,
         'profiles_extern_id_idx': None,
-        },
+    },
     'profiles_activity': {
         'userid': None,
         'profiles_when': None,
         'fieldid': None,
-        },
+    },
     'quips': {
         'PRIMARY': None,
-        },
+    },
     'rep_platform': {
-    'PRIMARY': None,
-    'rep_platform_sortkey_idx': None,
-    'rep_platform_value_idx': None,
-    'rep_platform_visibility_value_id_idx': None,
+        'PRIMARY': None,
+        'rep_platform_sortkey_idx': None,
+        'rep_platform_value_idx': None,
+        'rep_platform_visibility_value_id_idx': None,
     },
     'resolution': {
-    'PRIMARY': None,
-    'resolution_sortkey_idx': None,
-    'resolution_value_idx': None,
-    'resolution_visibility_value_id_idx': None,
+        'PRIMARY': None,
+        'resolution_sortkey_idx': None,
+        'resolution_value_idx': None,
+        'resolution_visibility_value_id_idx': None,
     },
     'series': {
         'PRIMARY': None,
         'creator': None,
         'creator_2': None,
         'series_category_idx': None,
-        },
+    },
     'series_categories': {
         'PRIMARY': None,
         'name': None,
-        },
+    },
     'series_data': {
         'series_id': None,
-        },
+    },
     'setting': {
-    'PRIMARY': None,
+        'PRIMARY': None,
     },
     'setting_value': {
-    'setting_value_ns_unique_idx': None,
-    'setting_value_nv_unique_idx': None,
+        'setting_value_ns_unique_idx': None,
+        'setting_value_nv_unique_idx': None,
     },
     'shadowlog': {
         'PRIMARY': None,
         'reflected': None,
-        },
+    },
     'status_workflow': {
         'status_workflow_idx': None,
-        },
+    },
     'tag': {
         'PRIMARY': None,
         'tag_user_id_idx': None,
-        },
+    },
     'tags': {
         'PRIMARY': None,
         'tags_user_id_idx': None,
-        },
+    },
     'tokens': {
         'PRIMARY': None,
         'userid': None,
-        },
+    },
     'ts_error': {
         'ts_error_funcid_idx': None,
         'ts_error_error_time_idx': None,
@@ -3000,32 +2198,30 @@ index_remark = {
     },
     'user_group_map': {
         'user_id': None,
-        },
+    },
     'user_series_map': {
         'user_id': None,
         'series_id': None,
-        },
+    },
     'versions': {
         'PRIMARY': None,
         'versions_product_id_idx': None,
-        },
+    },
     'votes': {
         'who': None,
         'bug_id': None,
-        },
+    },
     'watch': {
         'watched': None,
         'watcher': None,
-        },
+    },
     'whine_events': {
         'PRIMARY': None,
     },
-
     'whine_queries': {
         'PRIMARY': None,
         'eventid': None,
     },
-
     'whine_schedules': {
         'PRIMARY': None,
         'run_next': None,
@@ -3035,144 +2231,144 @@ index_remark = {
 
 index_renamed = {
     'attachments': {
-    'attachments_bug_id_idx': 'bug_id',
-    'attachments_creation_ts_idx': 'creation_ts',
+        'attachments_bug_id_idx': 'bug_id',
+        'attachments_creation_ts_idx': 'creation_ts',
     },
     'bug_group_map': {
-    'bug_group_map_bug_id_idx': 'bug_id',
-    'bug_group_map_group_id_idx': 'group_id',
+        'bug_group_map_bug_id_idx': 'bug_id',
+        'bug_group_map_group_id_idx': 'group_id',
     },
     'bugs': {
-    'bugs_votes_idx': 'votes',
-    'bugs_component_id_idx': 'component_id',
-    'bugs_product_id_idx': 'product_id',
-    'bugs_reporter_idx': 'reporter',
-    'bugs_bug_status_idx': 'bug_status',
-    'bugs_short_desc_idx': 'short_desc',
-    'bugs_bug_severity_idx': 'bug_severity',
-    'bugs_priority_idx': 'priority',
-    'bugs_alias_idx': 'alias',
-    'bugs_version_idx': 'version',
-    'bugs_target_milestone_idx': 'target_milestone',
-    'bugs_delta_ts_idx': 'delta_ts',
-    'bugs_assigned_to_idx': 'assigned_to',
-    'bugs_creation_ts_idx': 'creation_ts',
-    'bugs_resolution_idx': 'resolution',
-    'bugs_op_sys_idx': 'op_sys',
-    'bugs_qa_contact_idx': 'qa_contact',
+        'bugs_votes_idx': 'votes',
+        'bugs_component_id_idx': 'component_id',
+        'bugs_product_id_idx': 'product_id',
+        'bugs_reporter_idx': 'reporter',
+        'bugs_bug_status_idx': 'bug_status',
+        'bugs_short_desc_idx': 'short_desc',
+        'bugs_bug_severity_idx': 'bug_severity',
+        'bugs_priority_idx': 'priority',
+        'bugs_alias_idx': 'alias',
+        'bugs_version_idx': 'version',
+        'bugs_target_milestone_idx': 'target_milestone',
+        'bugs_delta_ts_idx': 'delta_ts',
+        'bugs_assigned_to_idx': 'assigned_to',
+        'bugs_creation_ts_idx': 'creation_ts',
+        'bugs_resolution_idx': 'resolution',
+        'bugs_op_sys_idx': 'op_sys',
+        'bugs_qa_contact_idx': 'qa_contact',
     },
     'bugs_activity': {
-    'bugs_activity_bug_id_idx': 'bug_id',
-    'bugs_activity_bug_when_idx': 'bug_when',
-    'bugs_activity_fieldid_idx': 'fieldid',
+        'bugs_activity_bug_id_idx': 'bug_id',
+        'bugs_activity_bug_when_idx': 'bug_when',
+        'bugs_activity_fieldid_idx': 'fieldid',
     },
     'category_group_map': {
-    'category_group_map_category_id_idx': 'category_id',
+        'category_group_map_category_id_idx': 'category_id',
     },
     'cc': {
-    'cc_bug_id_idx': 'bug_id',
-    'cc_who_idx': 'who',
+        'cc_bug_id_idx': 'bug_id',
+        'cc_who_idx': 'who',
     },
     'classifications': {
-    'classifications_name_idx': 'name',
+        'classifications_name_idx': 'name',
     },
     'components': {
-    'components_name_idx': 'name',
-    'components_product_id_idx': 'product_id',
+        'components_name_idx': 'name',
+        'components_product_id_idx': 'product_id',
     },
     'dependencies': {
-    'dependencies_dependson_idx': 'dependson',
-    'dependencies_blocked_idx': 'blocked',
+        'dependencies_dependson_idx': 'dependson',
+        'dependencies_blocked_idx': 'blocked',
     },
     'fielddefs': {
-    'fielddefs_name_idx': 'name',
-    'fielddefs_sortkey_idx': 'sortkey',
+        'fielddefs_name_idx': 'name',
+        'fielddefs_sortkey_idx': 'sortkey',
     },
     'flagexclusions': {
-    'flagexclusions_type_id_idx': 'type_id',
+        'flagexclusions_type_id_idx': 'type_id',
     },
     'flaginclusions': {
-    'flaginclusions_type_id_idx': 'type_id',
+        'flaginclusions_type_id_idx': 'type_id',
     },
     'flags': {
-    'flags_bug_id_idx': 'bug_id',
-    'flags_setter_id_idx': 'setter_id',
-    'flags_requestee_id_idx': 'requestee_id',
+        'flags_bug_id_idx': 'bug_id',
+        'flags_setter_id_idx': 'setter_id',
+        'flags_requestee_id_idx': 'requestee_id',
     },
     'group_control_map': {
-    'group_control_map_group_id_idx': 'group_id',
-    'group_control_map_product_id_idx': 'product_id',
+        'group_control_map_group_id_idx': 'group_id',
+        'group_control_map_product_id_idx': 'product_id',
     },
     'group_group_map': {
-    'group_group_map_member_id_idx': 'member_id',
+        'group_group_map_member_id_idx': 'member_id',
     },
     'groups': {
-    'groups_name_idx': 'name',
+        'groups_name_idx': 'name',
     },
     'keyworddefs': {
-    'keyworddefs_name_idx': 'name',
+        'keyworddefs_name_idx': 'name',
     },
     'keywords': {
-    'keywords_bug_id_idx': 'bug_id',
-    'keywords_keywordid_idx': 'keywordid',
+        'keywords_bug_id_idx': 'bug_id',
+        'keywords_keywordid_idx': 'keywordid',
     },
     'logincookies': {
-    'logincookies_lastused_idx': 'lastused',
+        'logincookies_lastused_idx': 'lastused',
     },
     'longdescs': {
-    'longdescs_bug_id_idx': 'bug_id',
-    'longdescs_bug_when_idx': 'bug_when',
-    'longdescs_thetext_idx': 'thetext',
-    'longdescs_who_idx': 'who',
+        'longdescs_bug_id_idx': 'bug_id',
+        'longdescs_bug_when_idx': 'bug_when',
+        'longdescs_thetext_idx': 'thetext',
+        'longdescs_who_idx': 'who',
     },
     'milestones': {
-    'milestones_product_id_idx': 'product_id',
+        'milestones_product_id_idx': 'product_id',
     },
     'namedqueries': {
-    'namedqueries_userid_idx': 'userid',
+        'namedqueries_userid_idx': 'userid',
     },
     'products': {
-    'products_name_idx': 'name',
+        'products_name_idx': 'name',
     },
     'profiles': {
-    'profiles_login_name_idx': 'login_name',
+        'profiles_login_name_idx': 'login_name',
     },
     'profiles_activity': {
-    'profiles_activity_profiles_when_idx': 'profiles_when',
-    'profiles_activity_userid_idx': 'userid',
-    'profiles_activity_fieldid_idx': 'fieldid',
+        'profiles_activity_profiles_when_idx': 'profiles_when',
+        'profiles_activity_userid_idx': 'userid',
+        'profiles_activity_fieldid_idx': 'fieldid',
     },
     'series': {
-    'series_creator_idx': 'creator_2',
+        'series_creator_idx': 'creator_2',
     },
     'series_categories': {
-    'series_categories_name_idx': 'name',
+        'series_categories_name_idx': 'name',
     },
     'series_data': {
-    'series_data_series_id_idx': 'series_id',
+        'series_data_series_id_idx': 'series_id',
     },
     'tokens': {
-    'tokens_userid_idx': 'userid',
+        'tokens_userid_idx': 'userid',
     },
     'user_group_map': {
-    'user_group_map_user_id_idx': 'user_id',
+        'user_group_map_user_id_idx': 'user_id',
     },
     'votes': {
-    'votes_bug_id_idx': 'bug_id',
-    'votes_who_idx': 'who',
+        'votes_bug_id_idx': 'bug_id',
+        'votes_who_idx': 'who',
     },
     'watch': {
-    'watch_watched_idx': 'watched',
-    'watch_watcher_idx': 'watcher',
+        'watch_watched_idx': 'watched',
+        'watch_watcher_idx': 'watcher',
     },
     'whine_queries': {
-    'whine_queries_eventid_idx': 'eventid',
+        'whine_queries_eventid_idx': 'eventid',
     },
     'whine_schedules': {
-    'whine_schedules_eventid_idx': 'eventid',
-    'whine_schedules_run_next_idx': 'run_next',
+        'whine_schedules_eventid_idx': 'eventid',
+        'whine_schedules_run_next_idx': 'run_next',
     },
-    }
+}
 
 
 index_removed_remark = {
@@ -3182,38 +2378,30 @@ index_removed_remark = {
         'product': 'replaced by "product_id"',
         'component': 'replaced by "component_id"',
         'votes': 'The Voting feature was moved to an extension.',
-        },
-
+    },
     'bugs_activity': {
         'when': 'replaced by "bug_when"',
         'field': 'replaced by "fieldid"',
-        },
-
+    },
     'groups': {
         'bit': 'replaced by "PRIMARY"',
-        },
-
+    },
     'longdescs': {
         'thetext': 'replaced by %(the-table-bugs_fulltext)s',
-        },
-
+    },
     'milestones': {
         'product': 'replaced by "product_id"',
-        },
-
+    },
     'namedqueries': {
         'watchfordiffs': None,
-        },
-
+    },
     'profile_search': {
         'profile_search_user_id': 'renamed to %(index-profile_search-profile_search_user_id_idx)s',
-        },
-
+    },
     'series': {
         'creator': None,
-        },
-
-    }
+    },
+}
 
 index_added_remark = {
     'bugs': {
@@ -3227,112 +2415,89 @@ index_added_remark = {
         'short_desc': None,
         'votes': None,
     },
-
     'bug_see_also': {
         'PRIMARY': None,
     },
-
     'bug_severity': {
         'bug_severity_visibility_value_id_idx': None,
     },
-    
     'bug_status': {
         'bug_status_visibility_value_id_idx': None,
     },
-    
     'attachments': {
         'attachments_submitter_id_idx': None,
         'attachments_modification_time_idx': None,
     },
-
     'bugs_activity': {
         'bug_when': 'replacing "when"',
         'bugs_activity_who_idx': None,
         'bugs_activity_added_idx': None,
         'fieldid': 'replacing "field"',
         'field': None,
-        },
-
+    },
     'cc': {
         'bug_id': None,
         'who': None,
-        },
-
+    },
     'components': {
         'PRIMARY': None,
         'name': None,
         'product_id': None,
-        },
-
+    },
     'fielddefs': {
         'fielddefs_value_field_id_idx': None,
         'fielddefs_is_mandatory_idx': None,
     },
-    
     'flags': {
         'flags_type_id_idx': None,
     },
-
     'groups': {
         'PRIMARY': 'replacing "bit"',
-        },
-
+    },
     'longdescs': {
         'PRIMARY': None,
         'who': None,
         'thetext': None,
-        },
-
+    },
     'milestones': {
         'PRIMARY': None,
         'product_id': 'replacing "product"',
-        },
-
+    },
     'namedqueries': {
         'PRIMARY': None,
-        },
-
+    },
     'op_sys': {
         'op_sys_visibility_value_id_idx': None,
-        },
-
+    },
     'priority': {
         'priority_visibility_value_id_idx': None,
-        },
-
+    },
     'profiles': {
         'profiles_extern_id_idx': None,
-        },
-
+    },
     'rep_platform': {
         'rep_platform_visibility_value_id_idx': None,
-        },
-
+    },
     'resolution': {
         'resolution_visibility_value_id_idx': None,
-        },
-
+    },
     'products': {
         'PRIMARY': None,
         'name': None,
-        },
-
+    },
     'profile_search': {
         'profile_search_user_id_idx': 'renamed from %(index-profile_search-profile_search_user_id_idx)s',
-        },
-
+    },
     'series': {
         'series_category_idx': None,
     },
-
     'versions': {
         'PRIMARY': None,
         'versions_product_id_idx': None,
     },
+}
 
-    }
-
-notation_guide="""
+notation_guide = """
 <h3><a id="notes-colours" name="notes-colours">Schema Change Notation</a></h3>
 
 <p>Where the Bugzilla schema has been changed between
@@ -3377,7 +2542,8 @@ colored as follows:</p>
 # This page header and footer are used when generating a schema doc
 # standalone rather than through CGI.
 
-header = ["""<?xml version="1.0" encoding="UTF-8"?>
+header = [
+    """<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
@@ -3409,9 +2575,11 @@ header = ["""<?xml version="1.0" encoding="UTF-8"?>
 dynamically generated on %(DATE)s</address>
 
 </div>
-"""]
+"""
+]
 
-footer = ["""
+footer = [
+    """
 <hr />
 
 <p> <small>This document is copyright &copy; 2001-2003 Perforce Software, Inc.  All rights reserved.</small> </p>
@@ -3441,7 +2609,8 @@ footer = ["""
 # This prelude is included in the generated schema doc prior to the
 # schema itself.
 
-prelude=["""
+prelude = [
+    """
 
 <center>
 <p>Quick links to <a href="#notes-tables">table definitions</a>:</p>
@@ -3473,10 +2642,8 @@ and administrators.</p>
 
 <p>Bugzilla is a defect tracking system, written in Perl with a CGI
 web GUI.  By default it uses MySQL to store its tables.""",
-
-('2.22', None, """%(VERSION_STRING)s PostgreSQL is also supported."""),
-
-"""</p>
+    ('2.22', None, """%(VERSION_STRING)s PostgreSQL is also supported."""),
+    """</p>
 
 %(NOTATION_GUIDE)s
 
@@ -3493,32 +2660,38 @@ for each product is in turn divided into the components of that
 product.  Several properties of a new bug (e.g. ownership) are
 determined by the product and component to which it belongs.  Each
 component is represented by a row in %(the-table-components)s.""",
-
-('2.2', None, """ %(VERSION_STRING)sEach product is represented by a
-row in %(the-table-products)s."""),
-
-"""</p>""",
-
-("2.19.1", None, """
+    (
+        '2.2',
+        None,
+        """ %(VERSION_STRING)sEach product is represented by a
+row in %(the-table-products)s.""",
+    ),
+    """</p>""",
+    (
+        "2.19.1",
+        None,
+        """
 
 <p>%(VERSION_STRING)sProducts are grouped by "classification".  This
 is optional and controlled by the parameter 'useclassification'.  The
 classifications are used to help in finding bugs and in constructing
 meaningful time series, but have no other semantics in Bugzilla.
 There is a default classification, with ID 1, meaning
-"Unclassified".</p> """),
-
-"""<h3><a id="notes-workflow" name="notes-workflow">Workflow</a></h3>
+"Unclassified".</p> """,
+    ),
+    """<h3><a id="notes-workflow" name="notes-workflow">Workflow</a></h3>
 
 <p>Each bug has a status (%(column-bugs-bug_status)s).  If a bug has a
 status which shows it has been resolved, it also has a resolution
 (%(column-bugs-resolution)s), otherwise the resolution field is empty.</p>""",
-
-('3.1.1', None, """<p>%(VERSION_STRING)sWorkflow is configurable.  The
+    (
+        '3.1.1',
+        None,
+        """<p>%(VERSION_STRING)sWorkflow is configurable.  The
 possible status values are stored in %(the-table-bug_status)s; the
-transitions in %(the-table-status_workflow)s.</p>"""),
-
-"""<p>This table shows the possible values and valid transitions of
+transitions in %(the-table-status_workflow)s.</p>""",
+    ),
+    """<p>This table shows the possible values and valid transitions of
 the status field in the default workflow.</p>
 
 <table border="1" cellspacing="0" cellpadding="5">
@@ -3535,8 +2708,10 @@ the status field in the default workflow.</p>
   </tr>
 
 """,
-('2.10', '3.6.13',
-"""<tr%(VERSION_COLOUR)s valign="top" align="left">
+    (
+        '2.10',
+        '3.6.13',
+        """<tr%(VERSION_COLOUR)s valign="top" align="left">
 
     <td>UNCONFIRMED</td>
 
@@ -3549,9 +2724,12 @@ the status field in the default workflow.</p>
         to RESOLVED by resolution<br />
     </td>
 
-  </tr>"""),
-('3.7.1', None,
-"""<tr%(VERSION_COLOUR)s valign="top" align="left">
+  </tr>""",
+    ),
+    (
+        '3.7.1',
+        None,
+        """<tr%(VERSION_COLOUR)s valign="top" align="left">
 
     <td>UNCONFIRMED</td>
 
@@ -3564,9 +2742,9 @@ the status field in the default workflow.</p>
         to RESOLVED by resolution<br />
     </td>
 
-  </tr>"""),
-
-"""<tr valign="top" align="left">
+  </tr>""",
+    ),
+    """<tr valign="top" align="left">
 
     <td>NEW</td>
 
@@ -3655,11 +2833,18 @@ the status field in the default workflow.</p>
 <p>This table shows the allowable values of the resolution field.  The
 values "FIXED", "MOVED", and "DUPLICATE" have special meaning for
 Bugzilla.  The other values may be changed, """,
-(None, '2.19.2', """%(VERSION_STRING)sby editing the schema of %(the-table-bugs)s, """),
-('2.19.3', '2.23.2', """%(VERSION_STRING)sby manually updating %(the-table-resolution)s, """),
-('2.23.3', None, """%(VERSION_STRING)sby using editvalues.cgi, """),
-
-"""to add, remove, or rename values as necessary.</p>
+    (
+        None,
+        '2.19.2',
+        """%(VERSION_STRING)sby editing the schema of %(the-table-bugs)s, """,
+    ),
+    (
+        '2.19.3',
+        '2.23.2',
+        """%(VERSION_STRING)sby manually updating %(the-table-resolution)s, """,
+    ),
+    ('2.23.3', None, """%(VERSION_STRING)sby using editvalues.cgi, """),
+    """to add, remove, or rename values as necessary.</p>
 
 <table border="1" cellspacing="0" cellpadding="5">
   <tr valign="top" align="left">
@@ -3716,11 +2901,13 @@ Bugzilla.  The other values may be changed, """,
 
     <td>This is a duplicate of an existing bug A description comment
         is added to this effect""",
-
-        ('2.12', None, """, and %(VERSION_STRING)sa record is added to
-        %(the-table-duplicates)s"""),
-
-""".</td> </tr>
+    (
+        '2.12',
+        None,
+        """, and %(VERSION_STRING)sa record is added to
+        %(the-table-duplicates)s""",
+    ),
+    """.</td> </tr>
 
   <tr>
 
@@ -3731,16 +2918,19 @@ Bugzilla.  The other values may be changed, """,
   </tr>
 
 """,
-('2.12', None,
-"""  <tr%(VERSION_COLOUR)s>
+    (
+        '2.12',
+        None,
+        """  <tr%(VERSION_COLOUR)s>
 
     <td>MOVED</td>
 
     <td>%(VERSION_STRING)sThis bug has been moved to another database.</td>
 
 </tr>
-"""),
-"""</table>
+""",
+    ),
+    """</table>
 
 <h3><a id="notes-users" name="notes-users">Users</a></h3>
 
@@ -3752,23 +2942,27 @@ Bugzilla.  The other values may be changed, """,
 <h3><a id="notes-authentication" name="notes-authentication">Authentication</a></h3>
 
 """,
-
-('2.19.1', None,"""<p>%(VERSION_STRING)sThere are various
+    (
+        '2.19.1',
+        None,
+        """<p>%(VERSION_STRING)sThere are various
 authentication mechanisms, including "environment variable
 authentication" (Bugzilla/Auth/Login/WWW/Env.pm) which uses
 environment variables to pass an external user ID
 (%(column-profiles-extern_id)s) to the Bugzilla CGI.  The rest of this
 section describes the password-based authentication which has always
-been in Bugzilla and which is still widely used.</p>"""),
-
-"""<p>Each user has a password, used to authenticate that user to
+been in Bugzilla and which is still widely used.</p>""",
+    ),
+    """<p>Each user has a password, used to authenticate that user to
 Bugzilla.  The password is stored in %(column-profiles-cryptpassword)s in
 encrypted form.""",
-
-(None, '2.12', """  %(VERSION_STRING)s it is also stored in
-%(column-profiles-password)s as plaintext."""),
-
-"""</p>
+    (
+        None,
+        '2.12',
+        """  %(VERSION_STRING)s it is also stored in
+%(column-profiles-password)s as plaintext.""",
+    ),
+    """</p>
 
 <p>On a successful login, Bugzilla generates a pair of cookies for the
 user's browser.  On subsequent accesses, a user gets access if these
@@ -3777,46 +2971,60 @@ cookie checks pass:</p>
 <ul>
 
   <li>they have both Bugzilla_login and Bugzilla_logincookie cookies;</li>""",
-
-(None, '2.17.3',"""<li>%(VERSION_STRING)sTheir Bugzilla_login is the
+    (
+        None,
+        '2.17.3',
+        """<li>%(VERSION_STRING)sTheir Bugzilla_login is the
   %(column-profiles-login_name)s of a row in
-  %(the-table-profiles)s;</li>"""),
-
-('2.17.4', None,"""<li>%(VERSION_STRING)sTheir Bugzilla_login is the
+  %(the-table-profiles)s;</li>""",
+    ),
+    (
+        '2.17.4',
+        None,
+        """<li>%(VERSION_STRING)sTheir Bugzilla_login is the
   %(column-profiles-userid)s of a row in
-  %(the-table-profiles)s;</li>"""),
-
-"""
+  %(the-table-profiles)s;</li>""",
+    ),
+    """
   <li>their Bugzilla_logincookie matches a row in %(the-table-logincookies)s;</li>
 
   <li>the userids of these two rows match;</li>
 
 """,
+    (
+        None,
+        '2.14.5',
+        """<li>%(VERSION_STRING)sthe cryptpasswords of these two rows match;</li>
 
-(None, '2.14.5',
-"""<li>%(VERSION_STRING)sthe cryptpasswords of these two rows match;</li>
+  """,
+    ),
+    (
+        None,
+        '2.14.1',
+        """<li>%(VERSION_STRING)s%(column-logincookies-hostname)s matches the CGI REMOTE_HOST;</li>
 
-  """),
+  """,
+    ),
+    (
+        '2.14.2',
+        None,
+        """<li>%(VERSION_STRING)s%(column-logincookies-ipaddr)s matches the CGI REMOTE_ADDR;</li>
 
-(None, '2.14.1',
-"""<li>%(VERSION_STRING)s%(column-logincookies-hostname)s matches the CGI REMOTE_HOST;</li>
-
-  """),
-
-('2.14.2', None,
-"""<li>%(VERSION_STRING)s%(column-logincookies-ipaddr)s matches the CGI REMOTE_ADDR;</li>
-
-  """),
-
-('2.10', '4.1.2',
-"""<li>%(VERSION_STRING)s%(column-profiles-disabledtext)s is empty.</li>
-  """),
-
-('4.1.3', None,
-"""<li>%(VERSION_STRING)s%(column-profiles-is_enabled)s is 1.</li>
-  """),
-
-"""</ul>
+  """,
+    ),
+    (
+        '2.10',
+        '4.1.2',
+        """<li>%(VERSION_STRING)s%(column-profiles-disabledtext)s is empty.</li>
+  """,
+    ),
+    (
+        '4.1.3',
+        None,
+        """<li>%(VERSION_STRING)s%(column-profiles-is_enabled)s is 1.</li>
+  """,
+    ),
+    """</ul>
 
 <p>If the cookie checks fail, the user has to login (with their
 password), in which case a new row is added to
@@ -3825,23 +3033,31 @@ cookies.</p>
 
 <p>Rows in %(the-table-logincookies)s are deleted after 30 days (at
 user login time).</p>""",
-
-('2.8', '3.6.13', """<h3><a id="notes-voting" name="notes-voting">Voting</a></h3>
+    (
+        '2.8',
+        '3.6.13',
+        """<h3><a id="notes-voting" name="notes-voting">Voting</a></h3>
 
 <p>%(VERSION_STRING)sUsers may vote for bugs which they think are
 important.  A user can vote for a bug more than once.  Votes are
-recorded in %(the-table-votes)s.</p>"""),
-
-('2.10', '3.6.13', """%(VERSION_STRING)sThe maximum number of votes per
+recorded in %(the-table-votes)s.</p>""",
+    ),
+    (
+        '2.10',
+        '3.6.13',
+        """%(VERSION_STRING)sThe maximum number of votes per
 bug per user is product-dependent.  Whether or not project managers
 pay any attention to votes is up to them, apart from the "confirmation
 by acclamation" process, which is as follows:</p>
 
 <p>New bugs have the status UNCONFIRMED.  To enter the main workflow,
 they need the status NEW.  To get the status NEW, they need a
-particular number of votes which is product-dependent.</p>"""),
-
-('2.10', None, """<h3><a id="notes-milestones" name="notes-milestones">Milestones</a></h3>
+particular number of votes which is product-dependent.</p>""",
+    ),
+    (
+        '2.10',
+        None,
+        """<h3><a id="notes-milestones" name="notes-milestones">Milestones</a></h3>
 
 <p>%(VERSION_STRING)sProducts may have "milestones" defined.  The
 intention is that a milestone should be a point in a project at which
@@ -3858,15 +3074,19 @@ have a default target milestone, which is given to new bugs.</p>
 <p>Milestones for a product have a "sort key", which allows them to be
 presented in a specific order in the user interface.</p>
 
-<p>Milestones are kept in %(the-table-milestones)s.</p>"""),
-
-"""<h3><a id="notes-versions" name="notes-versions">Versions</a></h3>
+<p>Milestones are kept in %(the-table-milestones)s.</p>""",
+    ),
+    """<h3><a id="notes-versions" name="notes-versions">Versions</a></h3>
 
 <p>Products may have versions.  This allows more accurate bug
-reporting: "we saw it in 1.3.7b3".""", ('2.10', None, """Versions are
-totally independent of milestones."""),
-
-"""</p>
+reporting: "we saw it in 1.3.7b3".""",
+    (
+        '2.10',
+        None,
+        """Versions are
+totally independent of milestones.""",
+    ),
+    """</p>
 
 <h3><a id="notes-parameters" name="notes-parameters">Parameters</a></h3>
 
@@ -3874,13 +3094,23 @@ totally independent of milestones."""),
 set in editparams.cgi.  The current values are stored in data/params.
 They are <b>not</b> stored in the database.</p>
 <p>""",
-(None, '2.21.1', """%(VERSION_STRING)sThe set of parameters is defined in defparams.pl."""),
-('2.22rc1',None,"""%(VERSION_STRING)sThe set of parameters is defined in the modules in Bugzilla/Config/."""),
-"""</p>
+    (
+        None,
+        '2.21.1',
+        """%(VERSION_STRING)sThe set of parameters is defined in defparams.pl.""",
+    ),
+    (
+        '2.22rc1',
+        None,
+        """%(VERSION_STRING)sThe set of parameters is defined in the modules in Bugzilla/Config/.""",
+    ),
+    """</p>
 
 """,
-
-('2.4', None, """<h3><a id="notes-groups" name="notes-groups">Groups</a></h3>
+    (
+        '2.4',
+        None,
+        """<h3><a id="notes-groups" name="notes-groups">Groups</a></h3>
 
 <p>%(VERSION_STRING)sBugzilla has "groups" of users.  Membership of a
 group allows a user to perform certain tasks.  Each group is
@@ -3897,9 +3127,12 @@ represented by a row of %(the-table-groups)s.</p>
 
   </tr>
 
-"""),
-
-('2.17.1', None, """  <tr %(VERSION_COLOUR)s align="left" valign="top">
+""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """  <tr %(VERSION_COLOUR)s align="left" valign="top">
 
     <td>admin</td>
 
@@ -3907,33 +3140,45 @@ represented by a row of %(the-table-groups)s.</p>
 
   </tr>
 
-"""),
-
-('2.4', None, """ <tr align="left" valign="top">
+""",
+    ),
+    (
+        '2.4',
+        None,
+        """ <tr align="left" valign="top">
 
     <td>tweakparams</td>
 
     <td>Can tweak operating parameters</td>
 
-  </tr>"""),
-
-('2.4', '2.8', """<tr %(VERSION_COLOUR)s align="left" valign="top">
+  </tr>""",
+    ),
+    (
+        '2.4',
+        '2.8',
+        """<tr %(VERSION_COLOUR)s align="left" valign="top">
 
     <td>editgroupmembers</td>
 
     <td>%(VERSION_STRING)sCan put people in and out of groups</td>
 
-  </tr>"""),
-
-('2.10', None, """<tr %(VERSION_COLOUR)s align="left" valign="top">
+  </tr>""",
+    ),
+    (
+        '2.10',
+        None,
+        """<tr %(VERSION_COLOUR)s align="left" valign="top">
 
     <td>editusers</td>
 
     <td>Can edit or disable users</td>
 
-  </tr>"""),
-
-('2.4', None, """<tr align="left" valign="top">
+  </tr>""",
+    ),
+    (
+        '2.4',
+        None,
+        """<tr align="left" valign="top">
 
     <td>creategroups</td>
 
@@ -3947,9 +3192,12 @@ represented by a row of %(the-table-groups)s.</p>
 
     <td>Can create, destroy, and edit components and other controls (e.g. flagtypes).</td>
 
-  </tr>"""),
-
-  ('2.10', None, """<tr %(VERSION_COLOUR)s align="left" valign="top">
+  </tr>""",
+    ),
+    (
+        '2.10',
+        None,
+        """<tr %(VERSION_COLOUR)s align="left" valign="top">
 
     <td>editkeywords</td>
 
@@ -3971,9 +3219,12 @@ represented by a row of %(the-table-groups)s.</p>
 
     <td>%(VERSION_STRING)sCan confirm a bug</td>
 
-  </tr>"""),
-
-('2.19.1', None, """  <tr %(VERSION_COLOUR)s align="left" valign="top">
+  </tr>""",
+    ),
+    (
+        '2.19.1',
+        None,
+        """  <tr %(VERSION_COLOUR)s align="left" valign="top">
 
     <td>editclassifications</td>
 
@@ -3997,9 +3248,12 @@ represented by a row of %(the-table-groups)s.</p>
 
   </tr>
 
-"""),
-
-('2.22rc1', None, """  <tr %(VERSION_COLOUR)s align="left" valign="top">
+""",
+    ),
+    (
+        '2.22rc1',
+        None,
+        """  <tr %(VERSION_COLOUR)s align="left" valign="top">
 
     <td>bz_sudoers</td>
 
@@ -4015,63 +3269,98 @@ represented by a row of %(the-table-groups)s.</p>
 
   </tr>
 
-"""),
-
-('2.4', None, """</table>
+""",
+    ),
+    (
+        '2.4',
+        None,
+        """</table>
 
 <p>New groups may be added and used to control access to sets of bugs.
 These "bug groups" have %(column-groups-isbuggroup)s set to 1.  A bug
 may be in any number of bug groups.  To see a bug, a user must be a
-member of all the bug groups which the bug is in.</p>"""),
-
-('2.10', None, """<p>%(VERSION_STRING)sIf the parameter "usebuggroups"
+member of all the bug groups which the bug is in.</p>""",
+    ),
+    (
+        '2.10',
+        None,
+        """<p>%(VERSION_STRING)sIf the parameter "usebuggroups"
 is on, each product automatically has a bug group associated with it.
 If the parameter "usebuggroupsentry" is also on, a user must be in the
 product's bug group in order to create new bugs for the
-product.</p>"""),
-
-('2.10', None, """<p>%(VERSION_STRING)sUsers may be added to a group
+product.</p>""",
+    ),
+    (
+        '2.10',
+        None,
+        """<p>%(VERSION_STRING)sUsers may be added to a group
 by any user who has the "bless" property for that group.  The "bless"
-property itself may only be conferred by an administrator.</p>"""),
-
-('2.4', None, """<p>Group membership for new users and new groups is
+property itself may only be conferred by an administrator.</p>""",
+    ),
+    (
+        '2.4',
+        None,
+        """<p>Group membership for new users and new groups is
 determined by matching %(column-groups-userregexp)s against the user's
-email address."""),
+email address.""",
+    ),
+    (
+        '2.10',
+        None,
+        """%(VERSION_STRING)sThe default configuration has
+universal regexps for the "editbugs" and "canconfirm" groups.""",
+    ),
+    (
+        '2.4',
+        None,
+        """</p>
 
-('2.10', None, """%(VERSION_STRING)sThe default configuration has
-universal regexps for the "editbugs" and "canconfirm" groups."""),
-
-('2.4', None, """</p>
-
-<p>"""),
-
-('2.4', '2.16.7', """%(VERSION_STRING)sEach group corresponds to a bit
+<p>""",
+    ),
+    (
+        '2.4',
+        '2.16.7',
+        """%(VERSION_STRING)sEach group corresponds to a bit
 in a 64-bit bitset, %(column-groups-bit)s.  User
 membership in a group is conferred by the bit being set in %(column-profiles-groupset)s.  Bug
-membership in a bug group is conferred by the bit being set in %(column-bugs-groupset)s."""),
-
-('2.10', '2.16.7', """%(VERSION_STRING)sThe bless
-privilege for a group is conferred by the bit being set in %(column-profiles-blessgroupset)s."""),
-
-('2.17.1', None, """%(VERSION_STRING)sUser membership in a group is
+membership in a bug group is conferred by the bit being set in %(column-bugs-groupset)s.""",
+    ),
+    (
+        '2.10',
+        '2.16.7',
+        """%(VERSION_STRING)sThe bless
+privilege for a group is conferred by the bit being set in %(column-profiles-blessgroupset)s.""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """%(VERSION_STRING)sUser membership in a group is
 conferred by a row in %(the-table-user_group_map)s, with
 %(column-user_group_map-isbless)s set to 0.  The bless privilege for a
 group is conferred by a row with %(column-user_group_map-isbless)s set
 to 1.  Bug membership in a bug group is conferred by a row in
-%(the-table-bug_group_map)s."""),
-
-('2.4', None, """</p>"""),
-
-('2.17.1', None, """<p>%(VERSION_STRING)sGroups may be configured so
+%(the-table-bug_group_map)s.""",
+    ),
+    ('2.4', None, """</p>"""),
+    (
+        '2.17.1',
+        None,
+        """<p>%(VERSION_STRING)sGroups may be configured so
 that membership in one group automatically confers membership or the
 "bless" privilege for another group.  This is controlled by
-%(the-table-group_group_map)s.</p>"""),
-
-('2.19.1', None, """<p>%(VERSION_STRING)sGroups may be configured so
+%(the-table-group_group_map)s.</p>""",
+    ),
+    (
+        '2.19.1',
+        None,
+        """<p>%(VERSION_STRING)sGroups may be configured so
 that the existence of a group is not visible to members of another
-group. This is controlled by %(the-table-group_group_map)s.</p>"""),
-
-('2.17.3', None, """<p>%(VERSION_STRING)sA product may be configured
+group. This is controlled by %(the-table-group_group_map)s.</p>""",
+    ),
+    (
+        '2.17.3',
+        None,
+        """<p>%(VERSION_STRING)sA product may be configured
 so that membership in one or more groups is required to perform
 certain actions on bugs in the product.  Whether or not a new bug for
 the product is placed in a group is also configurable (note that user
@@ -4181,40 +3470,63 @@ permitted, as follows:</p>
 </tr>
 </table>
 
-"""),
-
-('2.6', None, """<h3><a id="notes-attachments" name="notes-attachments">Attachments</a></h3>
+""",
+    ),
+    (
+        '2.6',
+        None,
+        """<h3><a id="notes-attachments" name="notes-attachments">Attachments</a></h3>
 
 <p>%(VERSION_STRING)sUsers can upload attachments to bugs.  An
 attachments can be marked as a patch.  Attachments are stored in
-%(the-table-attachments)s."""),
-
-('2.16rc1', '2.16.7', """%(VERSION_STRING)sAttachments can be marked as
-"obsolete"."""),
-
-('2.6', '2.20.7', """%(VERSION_STRING)sAttachment data is stored in
-%(column-attachments-thedata)s."""),
-
-('2.21.1', None, """%(VERSION_STRING)sAttachment data is stored in
-%(the-table-attach_data)s."""),
-
-('2.22rc1', None, """%(VERSION_STRING)sAttachments can be URLs, marked
+%(the-table-attachments)s.""",
+    ),
+    (
+        '2.16rc1',
+        '2.16.7',
+        """%(VERSION_STRING)sAttachments can be marked as
+"obsolete".""",
+    ),
+    (
+        '2.6',
+        '2.20.7',
+        """%(VERSION_STRING)sAttachment data is stored in
+%(column-attachments-thedata)s.""",
+    ),
+    (
+        '2.21.1',
+        None,
+        """%(VERSION_STRING)sAttachment data is stored in
+%(the-table-attach_data)s.""",
+    ),
+    (
+        '2.22rc1',
+        None,
+        """%(VERSION_STRING)sAttachments can be URLs, marked
 by the flag %(column-attachments-isurl)s.  The URL itself is stored in
-%(column-attach_data-thedata)s."""),
-
-"""</p>""",
-
-('2.16rc1', '2.16.7', """<p>%(VERSION_STRING)sEach attachment may have
+%(column-attach_data-thedata)s.""",
+    ),
+    """</p>""",
+    (
+        '2.16rc1',
+        '2.16.7',
+        """<p>%(VERSION_STRING)sEach attachment may have
 one of a number of "status" keywords associated with it.  The status
 keywords are user-defined on a per-product basis.  The set of status
 keywords is defined in %(the-table-attachstatusdefs)s.  Whether a
 given attachment has a given status keyword is defined by
-%(the-table-attachstatuses)s.</p>"""),
-
-('2.17.1', None, """<p>%(VERSION_STRING)sAttachment statuses are
-implemented with the <a href="#notes-flags">flags</a> system.</p>"""),
-
-('2.17.1', None, """
+%(the-table-attachstatuses)s.</p>""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """<p>%(VERSION_STRING)sAttachment statuses are
+implemented with the <a href="#notes-flags">flags</a> system.</p>""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """
 
 <h3><a id="notes-flags" name="notes-flags">Flags</a></h3>
 
@@ -4251,9 +3563,12 @@ attachments).  This is recorded in %(the-table-flagexclusions)s.</p>
 <p>Various features of flag types may be disabled: they can be made
 inactive, not requestable, not "requesteeable", not "multiplicable".</p>
 
-"""),
-
-('2.10', None, """
+""",
+    ),
+    (
+        '2.10',
+        None,
+        """
 
 <h3><a id="notes-keywords" name="notes-keywords">Keywords</a></h3>
 
@@ -4264,9 +3579,12 @@ finding related bugs.  The keywords are stored in
 keywords is stored in %(the-table-keywords)s, and also in
 %(column-bugs-keywords)s.</p>
 
-"""),
-
-('2.6', None, """<h3><a id="notes-dependencies" name="notes-dependencies">Dependencies</a></h3>
+""",
+    ),
+    (
+        '2.6',
+        None,
+        """<h3><a id="notes-dependencies" name="notes-dependencies">Dependencies</a></h3>
 
 <p>%(VERSION_STRING)sBugs may depend on other bugs being fixed.  That
 is, it may be impossible to fix one bug until another one is fixed.
@@ -4274,20 +3592,22 @@ Bugzilla records and displays such information and uses it to notify
 users when a bug changes (all contacts for all dependent bugs are
 notified when a bug changes).</p>
 
-<p>Dependencies are recorded in %(the-table-dependencies)s.</p>"""),
-
-"""<h3><a id="notes-activity" name="notes-activity">Activity</a></h3>
+<p>Dependencies are recorded in %(the-table-dependencies)s.</p>""",
+    ),
+    """<h3><a id="notes-activity" name="notes-activity">Activity</a></h3>
 
 <p>Bugzilla keeps a record of changes made to bugs.  This record is in
 %(the-table-bugs_activity)s.  Each row in this table records a change
 to a field in %(the-table-bugs)s.""",
-
-('2.10', None, """%(VERSION_STRING)sThe fields are referred to by a
+    (
+        '2.10',
+        None,
+        """%(VERSION_STRING)sThe fields are referred to by a
 number which is looked up in %(the-table-fielddefs)s.  This table
 records the name of the field and also a longer description used to
-display activity tables."""),
-
-"""</p>
+display activity tables.""",
+    ),
+    """</p>
 
 <h3><a id="notes-severity" name="notes-severity">Severity</a></h3>
 
@@ -4295,12 +3615,14 @@ display activity tables."""),
 indicating the severity of the impact of the bug.  There is no code in
 Bugzilla which distinguishes the values of this field, although it may
 naturally be used in queries.""",
-
-('2.19.3', None, """%(VERSION_STRING)sThe set of values available for
+    (
+        '2.19.3',
+        None,
+        """%(VERSION_STRING)sThe set of values available for
 this field is stored in %(table-bug_severity)s and can be controlled
-by the administrator. """),
-
-"""The intended meanings of the built-in values of this field are as
+by the administrator. """,
+    ),
+    """The intended meanings of the built-in values of this field are as
 follows:</p>
 
 <table border="1" cellspacing="0" cellpadding="5">
@@ -4375,66 +3697,96 @@ users:</p>
 </ul>
 
 <p>""",
-
-('2.12', None , """%(VERSION_STRING)sIndividual users may filter
+    (
+        '2.12',
+        None,
+        """%(VERSION_STRING)sIndividual users may filter
 these messages according to the way in which the bug changes and their
 relationship to the bug.
-"""),
-
-('2.12', '2.19.2' , """%(VERSION_STRING)sThese filtering preferences are
+""",
+    ),
+    (
+        '2.12',
+        '2.19.2',
+        """%(VERSION_STRING)sThese filtering preferences are
 recorded in %(column-profiles-emailflags)s.
-"""),
-
-('2.19.3', None , """%(VERSION_STRING)sThese filtering preferences are
+""",
+    ),
+    (
+        '2.19.3',
+        None,
+        """%(VERSION_STRING)sThese filtering preferences are
 recorded in the %(table-email_setting)s table.
-"""),
+""",
+    ),
+    (
+        '2.12',
+        None,
+        """</p>
 
-('2.12', None, """</p>
-
-<p>"""),
-
-(None, '2.17.3', """%(VERSION_STRING)sThis is handled by the "processmail" script.  """),
-
-('2.17.4', None, """%(VERSION_STRING)sThis is handled by the
+<p>""",
+    ),
+    (
+        None,
+        '2.17.3',
+        """%(VERSION_STRING)sThis is handled by the "processmail" script.  """,
+    ),
+    (
+        '2.17.4',
+        None,
+        """%(VERSION_STRING)sThis is handled by the
 Bugzilla::Bugmail module, which is invoked by the template system
 (from Bugzilla::Template) when it encounters a call to SendBugMail()
-in a template.  """),
-
-('3.3.1', None, """</p>%(VERSION_STRING)sIf the parameter
+in a template.  """,
+    ),
+    (
+        '3.3.1',
+        None,
+        """</p>%(VERSION_STRING)sIf the parameter
 "use_mailer_queue" is set, all email is queued to be sent
 asynchronously.  This is managed by a third-party general-purpose Perl
 job queueing system called TheSchwartz, using several database tables
 of its own (%(table-ts_error)s, %(table-ts_exitstatus)s,
-%(table-ts_funcmap)s, %(table-ts_job)s, and %(table-ts_note)s)."""),
-
-"""</p>
+%(table-ts_funcmap)s, %(table-ts_job)s, and %(table-ts_note)s).""",
+    ),
+    """</p>
 
 <h3><a id="notes-descriptions" name="notes-descriptions">Long descriptions</a></h3>
 
 <p>Each bug has a number of comments associated with it. """,
-
-(None, '2.8', """%(VERSION_STRING)sThese are stored concatenated in
-%(column-bugs-long_desc)s"""),
-
-('2.10', None, """%(VERSION_STRING)sThese are stored individually in
-%(the-table-longdescs)s."""),
-
-"""</p>
+    (
+        None,
+        '2.8',
+        """%(VERSION_STRING)sThese are stored concatenated in
+%(column-bugs-long_desc)s""",
+    ),
+    (
+        '2.10',
+        None,
+        """%(VERSION_STRING)sThese are stored individually in
+%(the-table-longdescs)s.""",
+    ),
+    """</p>
 
 <p>They are displayed as the "Description" on the bug form, ordered by
 date and annotated with the user and date.  Users can add new comments
 with the "Additional comment" field on the bug form.</p>""",
-
-('2.10', None, """<h3><a id="notes-namedqueries" name="notes-namedqueries">Named queries</a></h3>
+    (
+        '2.10',
+        None,
+        """<h3><a id="notes-namedqueries" name="notes-namedqueries">Named queries</a></h3>
 
 <p>%(VERSION_STRING)sUsers can name queries.  Links to named query
 pages appear in a navigation footer bar on most Bugzilla pages.  A
 query named "(Default query)" is a user's default query.  Named
 queries are stored in %(the-table-namedqueries)s.</p>
 
-"""),
-
-('2.23.3', None, """<p>%(VERSION_STRING)sIf the parameter
+""",
+    ),
+    (
+        '2.23.3',
+        None,
+        """<p>%(VERSION_STRING)sIf the parameter
 "querysharegroup" is set, it names a group of users who are empowered
 to share named queries.  An empowered user can share a given named
 query they create with all the members of a group, as long as he or
@@ -4447,11 +3799,12 @@ control whether or not that query appears in his or her navigation
 footer bar.  This is recorded in
 %(the-table-namedqueries_link_in_footer)s.</p>
 
-"""),
-
-('2.17.5', None,
-
-"""<h3><a id="notes-charts" name="notes-charts">Charts</a></h3>
+""",
+    ),
+    (
+        '2.17.5',
+        None,
+        """<h3><a id="notes-charts" name="notes-charts">Charts</a></h3>
 
 <p>%(VERSION_STRING)sBugzilla can draw general time-series charts.
 There are a number of default time series.  Each product has a default
@@ -4470,31 +3823,49 @@ This script stores the data in %(the-table-series_data)s.</p>
 <p>Series have categories and subcategories, which are provided in
 order to make it easier to manage large numbers of series.  They are
 normalized in %(the-table-series_categories)s.</p>
-"""),
-
-('2.17.5', None, """<p>By default, a time series is "private": only
+""",
+    ),
+    (
+        '2.17.5',
+        None,
+        """<p>By default, a time series is "private": only
 visible to the user who created it. An administrator may make a time
-series "public", or visible to other users."""),
+series "public", or visible to other users.""",
+    ),
+    (
+        '2.17.5',
+        '2.18rc2',
+        """%(VERSION_STRING)s this is determined by the
+"subscription" system (see below).""",
+    ),
+    (
+        '2.18rc3',
+        None,
+        """%(VERSION_STRING)sthis is determined by
+%(column-series-public)s.""",
+    ),
+    (
+        '2.17.5',
+        None,
+        """</p>
 
-('2.17.5', '2.18rc2', """%(VERSION_STRING)s this is determined by the
-"subscription" system (see below)."""),
-
-('2.18rc3', None, """%(VERSION_STRING)sthis is determined by
-%(column-series-public)s."""),
-
-('2.17.5', None, """</p>
-
-"""),
-
-('2.17.5', '2.18rc2', """<p>%(VERSION_STRING)sIf a series is "private"
+""",
+    ),
+    (
+        '2.17.5',
+        '2.18rc2',
+        """<p>%(VERSION_STRING)sIf a series is "private"
 (not "public") then users may "subscribe" to it.  Each user is
 automatically subscribed to any series created by that user.  The
 subscription is recorded in %(the-table-user_series_map)s.  If all
 users unsubscribe from a time series, data will stop being collected
 on it (by setting the period to 0 days).  A series is "public" if
-%(column-user_series_map-user_id)s is zero.</p> """),
-
-('2.18rc3', None, """<p>%(VERSION_STRING)sVisibility of a time series
+%(column-user_series_map-user_id)s is zero.</p> """,
+    ),
+    (
+        '2.18rc3',
+        None,
+        """<p>%(VERSION_STRING)sVisibility of a time series
 to a user is determined on a per-category basis using the groups
 system.  The group memberships required to see a time series in a
 given category are recorded in %(the-table-category_group_map)s.  A
@@ -4502,9 +3873,12 @@ user may see a time series if they are in all the groups for the
 category <em>and</em> either ths user created the series or it is
 public.</p>
 
-"""),
-
-('2.10', None, """<h3><a id="notes-watchers"
+""",
+    ),
+    (
+        '2.10',
+        None,
+        """<h3><a id="notes-watchers"
 name="notes-watchers">Watchers</a></h3>
 
 <p>%(VERSION_STRING)sBugzilla lets users "watch" each other; receiving
@@ -4514,18 +3888,24 @@ up by the user preferences (userprefs.cgi), recorded in
 %(the-table-watch)s and handled by the <a href="#notes-email">email
 subsystem</a>.</p>
 
-"""),
-
-('2.10', '2.17.1', """
+""",
+    ),
+    (
+        '2.10',
+        '2.17.1',
+        """
 <h3><a id="notes-shadow" name="notes-shadow">Shadow database</a></h3>
 
 <p>%(VERSION_STRING)s: Bugzilla can maintain a shadow, read-only copy
 of everything in another database (with the parameter "shadowdb").  If
 the parameter "queryagainstshadowdb" is on, queries were run against
 the shadow.  A record of SQL activity since the last reflection is
-kept in %(the-table-shadowlog)s.</p>"""),
-
-('2.17.1', None, """
+kept in %(the-table-shadowlog)s.</p>""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """
 <h3><a id="notes-time-tracking" name="notes-time-tracking">Time tracking</a></h3>
 
 <p>%(VERSION_STRING)s Bugzilla can track time for each bug, if the
@@ -4553,12 +3933,15 @@ timetrackinggroup.</p>
 Est.": the current estimate of the total effort required to fix the
 bug. "Hours Worked" as a percentage of "Current Est" is shown as "%%
 Complete". "Current Est" deducted from "Orig. Est" is shown as
-"Gain"</p>"""),
-
-('2.19.3', None, """
-<p>%(VERSION_STRING)s%(column-bugs-deadline)s records a calendar deadline for the bug.</p>"""),
-
-"""<h3><a id="notes-whine" name="notes-whine">The Whine System</a></h3>
+"Gain"</p>""",
+    ),
+    (
+        '2.19.3',
+        None,
+        """
+<p>%(VERSION_STRING)s%(column-bugs-deadline)s records a calendar deadline for the bug.</p>""",
+    ),
+    """<h3><a id="notes-whine" name="notes-whine">The Whine System</a></h3>
 
 <p>Bugzilla has a system for sending "whine" email messages to
 specified users on a regular basis.  This system relies on the
@@ -4571,8 +3954,10 @@ changed for a certain number of days, it sends a message to the bug's
 owner.  The number of days is controlled by a Bugzilla parameter
 called "whinedays".  The content of the email message is controlled by
 a Bugzilla parameter called "whinemail".</p>""",
-
-('2.19.1', None, """<p>%(VERSION_STRING)sThe <code>whine.pl</code>
+    (
+        '2.19.1',
+        None,
+        """<p>%(VERSION_STRING)sThe <code>whine.pl</code>
 script runs a separate whine system, which allows a number of whine
 schedules to be established with varying frequency (up to every 15
 minutes), criteria, and content of whine messages.  It is configured
@@ -4595,12 +3980,18 @@ days (every day, a particular day of the week, weekdays only, a
 particular day of the month, the last day of the month) and times (a
 particular hour, or every 15, 30, or 60 minutes).</p>
 
-"""),
-
-('2.19.3', None, """
-<p>%(VERSION_STRING)sWhines may be scheduled for groups as well as users.</p>"""),
-
-('2.19.1', None, """
+""",
+    ),
+    (
+        '2.19.3',
+        None,
+        """
+<p>%(VERSION_STRING)sWhines may be scheduled for groups as well as users.</p>""",
+    ),
+    (
+        '2.19.1',
+        None,
+        """
 <p>A whine schedule, stored in %(the-table-whine_schedules)s,
 specifies the frequency with which an email should be sent to a
 particular user.  The email is specified with a whine event (see
@@ -4618,9 +4009,12 @@ href="#notes-namedqueries">named query</a>, to which a title is given
 for use in email messages.  Whine queries are stored in
 %(the-table-whine_queries)s.  A whine query may specify that a
 separate message is to be sent for each bug found.</p>
-"""),
-
-('2.19.3', None, """
+""",
+    ),
+    (
+        '2.19.3',
+        None,
+        """
 <h3><a id="notes-settings" name="notes-settings">Settings</a></h3>
 
 <p>%(VERSION_STRING)sThere are several user-interface preferences,
@@ -4630,39 +4024,56 @@ in the %(table-setting)s table, and possible values in the
 value for each preference (%(column-setting-default_value)s) and
 determine whether users are able to override the default
 (%(column-setting-is_enabled)s).  The user's individual preferences
-are recorded in the %(table-profile_setting)s table.</p>"""),
-
-"""
+are recorded in the %(table-profile_setting)s table.</p>""",
+    ),
+    """
 
 <h3><a id="notes-quips" name="notes-quips">Quips</a></h3>
 
 <p>Bugzilla supports "quips": small text messages, often humorous,
 which appear along with search results.  The quips are selected at
 random from a set.</p>""",
-
-(None, '2.16.7', """<p>%(VERSION_STRING)sThe quips are stored in a
-file called "data/comments"."""),
-
-('2.17.1', None, """ %(VERSION_STRING)sThe quips are stored in
-%(the-table-quips)s.</p>"""),
-
-('2.14', None, """<p>%(VERSION_STRING)sQuips may be entered or deleted
-using <code>quips.cgi</code>.</p>"""),
-
-('2.17.4', None, """<p>%(VERSION_STRING)sQuips may be entered by any
+    (
+        None,
+        '2.16.7',
+        """<p>%(VERSION_STRING)sThe quips are stored in a
+file called "data/comments".""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """ %(VERSION_STRING)sThe quips are stored in
+%(the-table-quips)s.</p>""",
+    ),
+    (
+        '2.14',
+        None,
+        """<p>%(VERSION_STRING)sQuips may be entered or deleted
+using <code>quips.cgi</code>.</p>""",
+    ),
+    (
+        '2.17.4',
+        None,
+        """<p>%(VERSION_STRING)sQuips may be entered by any
 user but must be approved by an administrator before they can be
-displayed.</p>"""),
-
-('3.3.2', None, """
+displayed.</p>""",
+    ),
+    (
+        '3.3.2',
+        None,
+        """
 <h3><a id="notes-see_also" name="notes-see_also">References to other Bugzillas</a></h3>
 
 <p>%(VERSION_STRING)sBugzilla can record connections to bugs in other
 instances of Bugzilla, if the parameter "use_see_also" is set.  The
 connections are displayed as clickable URLs and are stored as URLs in
 %(the-table-bug_see_also)s.  They are validated according to the
-system's notion of a valid form for Bugzilla URLs.</p> """),
-
-('2.23.1', None, """
+system's notion of a valid form for Bugzilla URLs.</p> """,
+    ),
+    (
+        '2.23.1',
+        None,
+        """
 <h3><a id="notes-customfields" name="notes-customfields">Custom Fields</a></h3>
 
 <p>%(VERSION_STRING)sBugzilla supports custom fields.  Each custom
@@ -4675,9 +4086,12 @@ to 1.  The type of each custom field is specified by
 <p>The value 1 (FIELD_TYPE_FREETEXT) indicates a free-form text field
 (type varchar(255)).</p>
 
-"""),
-
-('2.23.3', None, """
+""",
+    ),
+    (
+        '2.23.3',
+        None,
+        """
 
 <p>%(VERSION_STRING)sThe value 2 (FIELD_TYPE_SINGLE_SELECT) indicates
 a single-select field (type varchar(64), not null, default '---').
@@ -4727,9 +4141,12 @@ like this:</p>
 <td>-</td>
 <td>1 if this value is currently available, 0 otherwise</td>
 </tr>
-"""),
-
-('3.3.1', None, """
+""",
+    ),
+    (
+        '3.3.1',
+        None,
+        """
 <tr %(VERSION_COLOUR)s align="left" valign="top">
 <th><a id="column-customfield-visibility_value_id" name="column-customfield-visibility_value_id">visibility_value_id</a></th>
 <td>smallint</td>
@@ -4737,9 +4154,12 @@ like this:</p>
 <td>-</td>
 <td>If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.</td>
 </tr>
-"""),
-
-('2.23.3', None, """
+""",
+    ),
+    (
+        '2.23.3',
+        None,
+        """
 
 </tbody></table>
 
@@ -4776,22 +4196,25 @@ like this:</p>
 <td>-</td>
 </tr>
 
-"""),
-
-('3.3.1', None, """
+""",
+    ),
+    (
+        '3.3.1',
+        None,
+        """
 <tr %(VERSION_COLOUR)s align="left" valign="top">
 <th><a id="index-customfield-cf_field_visibility_value_id_idx" name="index-customfield-cf_field_visibility_value_id_idx">cf_&lt;field&gt;_visibility_value_id_idx</a></th>
 <td>visibility_value_id</td>
 <td>-</td>
 <td>-</td>
 </tr>
-"""),
-
-('2.23.3', None, '</tbody></table>'),
-
-('3.1.2', None,
-
-"""<p>%(VERSION_STRING)sThe value 3 (FIELD_TYPE_MULTI_SELECT)
+""",
+    ),
+    ('2.23.3', None, '</tbody></table>'),
+    (
+        '3.1.2',
+        None,
+        """<p>%(VERSION_STRING)sThe value 3 (FIELD_TYPE_MULTI_SELECT)
 indicates a multi-select field.  The allowable values of that field
 are stored in a <code>cf_&lt;name&gt;</code> table as for
 FIELD_TYPE_SINGLE_SELECT, above.  The actual values of the field are
@@ -4850,28 +4273,36 @@ they are stored in another table, with the name
 
 <p>%(VERSION_STRING)sThe value 4 (FIELD_TYPE_TEXTAREA)
 indicates a large text-box field (type mediumtext).</p>
-"""),
-
-('3.1.3', None,
-
-"""<p>%(VERSION_STRING)sThe value 5 (FIELD_TYPE_DATETIME)
+""",
+    ),
+    (
+        '3.1.3',
+        None,
+        """<p>%(VERSION_STRING)sThe value 5 (FIELD_TYPE_DATETIME)
 indicates a date/time field (type datetime).</p>
-"""),
-
-('3.3.1', None,
-
-"""<p>%(VERSION_STRING)sThe value 6 (FIELD_TYPE_BUG_ID)
+""",
+    ),
+    (
+        '3.3.1',
+        None,
+        """<p>%(VERSION_STRING)sThe value 6 (FIELD_TYPE_BUG_ID)
 indicates a bug ID field (type mediumint).</p>
-"""),
-
-('2.23.1', '2.23.2', """<p>%(VERSION_STRING)sCustom fields are
+""",
+    ),
+    (
+        '2.23.1',
+        '2.23.2',
+        """<p>%(VERSION_STRING)sCustom fields are
 manipulated from the command-line with the <code>customfield.pl</code>
-script.</p>"""),
-
-('2.23.3', None, """<p>%(VERSION_STRING)sCustom fields are configured
-using <code>editfield.cgi</code>.</p>"""),
-
-"""<h3><a id="notes-tables" name="notes-tables">List of tables</a></h3>
+script.</p>""",
+    ),
+    (
+        '2.23.3',
+        None,
+        """<p>%(VERSION_STRING)sCustom fields are configured
+using <code>editfield.cgi</code>.</p>""",
+    ),
+    """<h3><a id="notes-tables" name="notes-tables">List of tables</a></h3>
 
 %(TABLES_TABLE)s
 
@@ -4883,7 +4314,8 @@ using <code>editfield.cgi</code>.</p>"""),
 # This afterword is included in the generated schema doc after the
 # schema itself.
 
-afterword = ["""
+afterword = [
+    """
 
 <h2><a id="section-4" name="section-4">4. Bugzilla History</a></h2>
 
@@ -4914,7 +4346,10 @@ afterword = ["""
 <h3><a id="history-schema-changes" name="history-schema-changes">Bugzilla Schema Changes</a></h3>
 
 """,
-('2.2', '2.2', """<p>In Bugzilla release 2.2, the following schema
+    (
+        '2.2',
+        '2.2',
+        """<p>In Bugzilla release 2.2, the following schema
 changes were made:</p>
 
 <ul>
@@ -4941,8 +4376,12 @@ changes were made:</p>
 
 </ul>
 
-"""),
-('2.4', '2.4', """<p>In Bugzilla release 2.4, the following schema
+""",
+    ),
+    (
+        '2.4',
+        '2.4',
+        """<p>In Bugzilla release 2.4, the following schema
 changes were made:</p>
 
 <ul>
@@ -4964,8 +4403,12 @@ changes were made:</p>
 
 </ul>
 
-"""),
-('2.6', '2.6', """<p>In Bugzilla release 2.6, the following schema
+""",
+    ),
+    (
+        '2.6',
+        '2.6',
+        """<p>In Bugzilla release 2.6, the following schema
 changes were made:</p>
 
 <ul>
@@ -4986,8 +4429,12 @@ changes were made:</p>
 
 </ul>
 
-"""),
-('2.8', '2.8', """<p>In Bugzilla release 2.8, the following schema
+""",
+    ),
+    (
+        '2.8',
+        '2.8',
+        """<p>In Bugzilla release 2.8, the following schema
 changes were made:</p>
 
 <ul>
@@ -5004,9 +4451,12 @@ changes were made:</p>
 
 </ul>
 
-"""),
-
-('2.10', '2.10', """<p>In Bugzilla release 2.10, the following schema changes were
+""",
+    ),
+    (
+        '2.10',
+        '2.10',
+        """<p>In Bugzilla release 2.10, the following schema changes were
 made:</p>
 
 <ul>
@@ -5068,8 +4518,12 @@ made:</p>
 
 </ul>
 
-"""),
-('2.12', '2.12', """<p>In Bugzilla release 2.12, the following schema changes were
+""",
+    ),
+    (
+        '2.12',
+        '2.12',
+        """<p>In Bugzilla release 2.12, the following schema changes were
 made:</p>
 
 <ul>
@@ -5095,8 +4549,12 @@ made:</p>
 
 </ul>
 
-"""),
-('2.14', '2.14', """<p>In Bugzilla release 2.14, the following schema changes were
+""",
+    ),
+    (
+        '2.14',
+        '2.14',
+        """<p>In Bugzilla release 2.14, the following schema changes were
 made:</p>
 
 <ul>
@@ -5138,12 +4596,19 @@ made:</p>
   <li>%(column-profiles-disabledtext)s
   changed back to "not null".</li>
 
-</ul>"""),
+</ul>""",
+    ),
+    (
+        '2.14',
+        '2.14.1',
+        """<p>The schema is identical in Bugzilla releases 2.14 and 2.14.1.</p>
 
-('2.14', '2.14.1', """<p>The schema is identical in Bugzilla releases 2.14 and 2.14.1.</p>
-
-"""),
-('2.14.2', '2.14.2', """<p>In Bugzilla release 2.14.2, the following schema change was
+""",
+    ),
+    (
+        '2.14.2',
+        '2.14.2',
+        """<p>In Bugzilla release 2.14.2, the following schema change was
 made:</p>
 
 <ul>
@@ -5153,14 +4618,20 @@ made:</p>
 
 </ul>
 
-"""),
-
-('2.14.2', '2.14.5', """<p>The schema is identical in Bugzilla releases 2.14.2, 2.14.3,
+""",
+    ),
+    (
+        '2.14.2',
+        '2.14.5',
+        """<p>The schema is identical in Bugzilla releases 2.14.2, 2.14.3,
 2.14.4, and 2.14.5.</p>
 
-"""),
-
-('2.16rc1', '2.16', """<p>In Bugzilla release 2.16 (and the release candidates 2.16rc1 and
+""",
+    ),
+    (
+        '2.16rc1',
+        '2.16',
+        """<p>In Bugzilla release 2.16 (and the release candidates 2.16rc1 and
 2.16rc2), the following schema changes were made:</p>
 
 <ul>
@@ -5189,14 +4660,20 @@ made:</p>
 
 </ul>
 
-"""),
-
-('2.16rc1', '2.16.11', """<p>The schema is identical in Bugzilla releases 2.16rc1, 2.16rc2,
+""",
+    ),
+    (
+        '2.16rc1',
+        '2.16.11',
+        """<p>The schema is identical in Bugzilla releases 2.16rc1, 2.16rc2,
 2.16, 2.16.1, 2.16.2, 2.16.3, 2.16.4, 2.16.5, 2.16.6, 2.16.7, 2.16.8, 2.16.9, 2.16.10, and 2.16.11.</p>
 
-"""),
-
-('2.17.1', '2.17.1', """<p>In Bugzilla release 2.17.1, the following schema changes were
+""",
+    ),
+    (
+        '2.17.1',
+        '2.17.1',
+        """<p>In Bugzilla release 2.17.1, the following schema changes were
 made:</p>
 
 <ul>
@@ -5269,9 +4746,12 @@ made:</p>
 
 </ul>
 
-"""),
-
-('2.17.3', '2.17.3', """<p>In Bugzilla release 2.17.3, the following schema changes were
+""",
+    ),
+    (
+        '2.17.3',
+        '2.17.3',
+        """<p>In Bugzilla release 2.17.3, the following schema changes were
 made:</p>
 
 <ul>
@@ -5282,9 +4762,12 @@ made:</p>
 
 </ul>
 
-"""),
-
-('2.17.4', '2.17.4', """<p>In Bugzilla release 2.17.4, the following schema changes were
+""",
+    ),
+    (
+        '2.17.4',
+        '2.17.4',
+        """<p>In Bugzilla release 2.17.4, the following schema changes were
 made:</p>
 
 <ul>
@@ -5293,8 +4776,12 @@ made:</p>
 
 </ul>
 
-"""),
-('2.17.5', '2.17.5', """<p>In Bugzilla release 2.17.5, the following schema changes were
+""",
+    ),
+    (
+        '2.17.5',
+        '2.17.5',
+        """<p>In Bugzilla release 2.17.5, the following schema changes were
 made:</p>
 
 <ul>
@@ -5313,13 +4800,19 @@ made:</p>
 
 </ul>
 
-"""),
+""",
+    ),
+    (
+        '2.17.5',
+        '2.17.6',
+        """<p>The schema is identical in Bugzilla releases 2.17.5 and 2.17.6.</p>
 
-('2.17.5', '2.17.6', """<p>The schema is identical in Bugzilla releases 2.17.5 and 2.17.6.</p>
-
-"""),
-
-('2.17.7', '2.17.7', """<p>In Bugzilla 2.17.7, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.17.7',
+        '2.17.7',
+        """<p>In Bugzilla 2.17.7, the following schema changes were made:</p>
 
 <ul>
 
@@ -5327,9 +4820,12 @@ made:</p>
   changed to "not null".</li>
 
 </ul>
-"""),
-
-('2.18rc1', '2.18rc1', """<p>In Bugzilla 2.18rc1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.18rc1',
+        '2.18rc1',
+        """<p>In Bugzilla 2.18rc1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5341,13 +4837,19 @@ made:</p>
   added.</li>
 
 </ul>
-"""),
+""",
+    ),
+    (
+        '2.18rc2',
+        '2.18rc2',
+        """<p>The schema is identical in Bugzilla releases 2.18rc1 and 2.18rc2.</p>
 
-('2.18rc2', '2.18rc2', """<p>The schema is identical in Bugzilla releases 2.18rc1 and 2.18rc2.</p>
-
-"""),
-
-('2.18rc3', '2.18rc3', """<p>In Bugzilla 2.18rc3, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.18rc3',
+        '2.18rc3',
+        """<p>In Bugzilla 2.18rc3, the following schema changes were made:</p>
 
 <ul>
 
@@ -5365,13 +4867,19 @@ made:</p>
   was renamed as %(column-series_data-series_value)s.</li>
 
 </ul>
-"""),
+""",
+    ),
+    (
+        '2.18',
+        '2.18',
+        """<p>The schema is identical in Bugzilla releases 2.18rc3 and 2.18.</p>
 
-('2.18', '2.18', """<p>The schema is identical in Bugzilla releases 2.18rc3 and 2.18.</p>
-
-"""),
-
-('2.18.1', '2.18.1', """<p>In Bugzilla 2.18.1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.18.1',
+        '2.18.1',
+        """<p>In Bugzilla 2.18.1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5380,22 +4888,31 @@ made:</p>
   <li>%(column-quips-userid)s was changed from "not null default 0" to "null".</li>
 
 </ul>
-"""),
-
-('2.18.2', '2.18.2', """<p>In Bugzilla 2.18.2, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.18.2',
+        '2.18.2',
+        """<p>In Bugzilla 2.18.2, the following schema changes were made:</p>
 
 <ul>
 
   <li>%(column-bugs-creation_ts)s changed from "not null" to "null".</li>
 
 </ul>
-"""),
+""",
+    ),
+    (
+        '2.18.3',
+        '2.18.6',
+        """<p>The schema is identical in Bugzilla releases 2.18.2, 2.18.3, 2.18.4, 2.18.5, and 2.18.6.</p>
 
-('2.18.3', '2.18.6', """<p>The schema is identical in Bugzilla releases 2.18.2, 2.18.3, 2.18.4, 2.18.5, and 2.18.6.</p>
-
-"""),
-
-('2.19.1', '2.19.1', """<p>In Bugzilla 2.19.1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.19.1',
+        '2.19.1',
+        """<p>In Bugzilla 2.19.1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5429,9 +4946,12 @@ made:</p>
   href="#notes-whine">the new whining system</a>.</li>
 
 </ul>
-"""),
-
-('2.19.2', '2.19.2', """<p>In Bugzilla 2.19.2, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.19.2',
+        '2.19.2',
+        """<p>In Bugzilla 2.19.2, the following schema changes were made:</p>
 
 <ul>
 
@@ -5439,9 +4959,12 @@ made:</p>
   %(column-flagtypes-request_group_id)s were added.</li>
 
 </ul>
-"""),
-
-('2.19.3', '2.19.3', """<p>In Bugzilla 2.19.3, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.19.3',
+        '2.19.3',
+        """<p>In Bugzilla 2.19.3, the following schema changes were made:</p>
 
 <ul>
 
@@ -5506,31 +5029,43 @@ made:</p>
   <li>%(column-quips-userid)s was changed from "not null default 0" to "null".</li>
 
   </ul>
-"""),
-
-('2.20rc1', '2.20rc1', """<p>In Bugzilla 2.20rc1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.20rc1',
+        '2.20rc1',
+        """<p>In Bugzilla 2.20rc1, the following schema changes were made:</p>
 
 <ul>
 
   <li>%(column-bugs-creation_ts)s changed from "not null" to "null".</li>
 
 </ul>
-"""),
-
-('2.20rc2', '2.20rc2', """<p>In Bugzilla 2.20rc2, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.20rc2',
+        '2.20rc2',
+        """<p>In Bugzilla 2.20rc2, the following schema changes were made:</p>
 
 <ul>
 
   <li>%(column-attachments-bug_id)s was added to the index %(index-attachments-attachments_submitter_id_idx)s.</li>
 
 </ul>
-"""),
+""",
+    ),
+    (
+        '2.20',
+        '2.20.7',
+        """<p>The schema is identical in Bugzilla releases 2.20rc2, 2.20, 2.20.1, 2.20.2, 2.20.3, 2.20.4, 2.20.5, 2.20.6, and 2.20.7.</p>
 
-('2.20', '2.20.7', """<p>The schema is identical in Bugzilla releases 2.20rc2, 2.20, 2.20.1, 2.20.2, 2.20.3, 2.20.4, 2.20.5, 2.20.6, and 2.20.7.</p>
-
-"""),
-
-('2.21.1', '2.21.1', """<p>In Bugzilla 2.21.1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.21.1',
+        '2.21.1',
+        """<p>In Bugzilla 2.21.1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5540,9 +5075,12 @@ made:</p>
   <li>%(column-series-public)s was renamed %(column-series-is_public)s ("public" is a keyword in Oracle).</li>
 
 </ul>
-"""),
-
-('2.22rc1', '2.22rc1', """<p>In Bugzilla 2.22rc1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.22rc1',
+        '2.22rc1',
+        """<p>In Bugzilla 2.22rc1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5555,13 +5093,19 @@ made:</p>
   (and therefore harder-to-guess) cookie.</li>
 
 </ul>
-"""),
+""",
+    ),
+    (
+        '2.22',
+        '2.22.7',
+        """<p>The schema is identical in Bugzilla releases 2.22rc1, 2.22, 2.22.1, 2.22.2, 2.22.3, 2.22.4, 2.22.5, 2.22.6, and 2.22.7.</p>
 
-('2.22', '2.22.7', """<p>The schema is identical in Bugzilla releases 2.22rc1, 2.22, 2.22.1, 2.22.2, 2.22.3, 2.22.4, 2.22.5, 2.22.6, and 2.22.7.</p>
-
-"""),
-
-('2.23.1', '2.23.1', """<p>In Bugzilla 2.23.1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.23.1',
+        '2.23.1',
+        """<p>In Bugzilla 2.23.1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5576,18 +5120,24 @@ made:</p>
   <li>%(column-longdescs-comment_id)s was added, as a primary key on %(table-longdescs)s.</li>
 
 </ul>
-"""),
-
-('2.23.2', '2.23.2', """<p>In Bugzilla 2.23.2, the following schema change was made:</p>
+""",
+    ),
+    (
+        '2.23.2',
+        '2.23.2',
+        """<p>In Bugzilla 2.23.2, the following schema change was made:</p>
 
 <ul>
 
   <li>%(column-bugs-short_desc)s changed from mediumtext to varchar(255).</li>
 
 </ul>
-"""),
-
-('2.23.3', '2.23.3', """<p>In Bugzilla 2.23.3, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '2.23.3',
+        '2.23.3',
+        """<p>In Bugzilla 2.23.3, the following schema changes were made:</p>
 
 <ul>
 
@@ -5628,8 +5178,12 @@ made:</p>
 
   <li>%(column-profiles-refreshed_when)s and %(column-groups-last_changed)s were removed.</li>
 
-</ul>"""),
-('2.23.4', '2.23.4', """<p>In Bugzilla 2.23.4, the following schema changes were made:</p>
+</ul>""",
+    ),
+    (
+        '2.23.4',
+        '2.23.4',
+        """<p>In Bugzilla 2.23.4, the following schema changes were made:</p>
 
 <ul>
 
@@ -5645,13 +5199,19 @@ made:</p>
     <li>%(column-longdescs-type)s and %(column-longdescs-extra_data)s were added.</li>
 
 </ul>
-"""),
+""",
+    ),
+    (
+        '3.0rc1',
+        '3.0.9',
+        """<p>The schema is identical in Bugzilla releases 2.23.4, 3.0rc1, 3.0, 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.0.7, 3.0.8, and 3.0.9.</p>
 
-('3.0rc1', '3.0.9', """<p>The schema is identical in Bugzilla releases 2.23.4, 3.0rc1, 3.0, 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.0.7, 3.0.8, and 3.0.9.</p>
-
-"""),
-
-('3.1.1', '3.1.1', """<p>In Bugzilla 3.1.1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '3.1.1',
+        '3.1.1',
+        """<p>In Bugzilla 3.1.1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5662,9 +5222,12 @@ were added, to provide configurable <a href="#notes-workflow">workflow</a>.</li>
 
 </ul>
 
-"""),
-
-('3.1.2', '3.1.2', """<p>In Bugzilla 3.1.2, the following schema change was made:</p>
+""",
+    ),
+    (
+        '3.1.2',
+        '3.1.2',
+        """<p>In Bugzilla 3.1.2, the following schema change was made:</p>
 
 <ul>
 
@@ -5674,9 +5237,12 @@ were added, to provide configurable <a href="#notes-workflow">workflow</a>.</li>
 
 </ul>
 
-"""),
-
-('3.1.3', '3.1.3', """<p>In Bugzilla 3.1.3, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '3.1.3',
+        '3.1.3',
+        """<p>In Bugzilla 3.1.3, the following schema changes were made:</p>
 
 <ul>
 
@@ -5698,9 +5264,12 @@ added.</li>
 
 </ul>
 
-"""),
-
-('3.1.4', '3.1.4', """<p>In Bugzilla 3.1.4, the following schema change was made:</p>
+""",
+    ),
+    (
+        '3.1.4',
+        '3.1.4',
+        """<p>In Bugzilla 3.1.4, the following schema change was made:</p>
 
 <ul>
 
@@ -5710,13 +5279,19 @@ performance of full-text searching.</li>
 
 </ul>
 
-"""),
+""",
+    ),
+    (
+        '3.2rc1',
+        '3.2.5',
+        """<p>The schema is identical in Bugzilla releases 3.1.4, 3.2rc1, 3.2rc2, 3.2, 3.2.1, 3.2.2, 3.2.3, 3.2.4, and 3.2.5.</p>
 
-('3.2rc1', '3.2.5', """<p>The schema is identical in Bugzilla releases 3.1.4, 3.2rc1, 3.2rc2, 3.2, 3.2.1, 3.2.2, 3.2.3, 3.2.4, and 3.2.5.</p>
-
-"""),
-
-('3.3.1', '3.3.1', """<p>In Bugzilla 3.3.1, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '3.3.1',
+        '3.3.1',
+        """<p>In Bugzilla 3.3.1, the following schema changes were made:</p>
 
 <ul>
 
@@ -5750,9 +5325,12 @@ allow the availability of individual values of single-select and multi-select fi
 
 </ul>
 
-"""),
-
-('3.3.2', '3.3.2', """<p>In Bugzilla 3.3.2, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '3.3.2',
+        '3.3.2',
+        """<p>In Bugzilla 3.3.2, the following schema changes were made:</p>
 
 <ul>
 
@@ -5762,13 +5340,19 @@ allow the availability of individual values of single-select and multi-select fi
 
 </ul>
 
-"""),
+""",
+    ),
+    (
+        '3.3.3',
+        '3.3.3',
+        """<p>The schema is identical in Bugzilla releases 3.3.2 and 3.3.3.</p>
 
-('3.3.3', '3.3.3', """<p>The schema is identical in Bugzilla releases 3.3.2 and 3.3.3.</p>
-
-"""),
-
-('3.3.4', '3.3.4', """<p>In Bugzilla 3.3.4, the following schema changes were made:</p>
+""",
+    ),
+    (
+        '3.3.4',
+        '3.3.4',
+        """<p>In Bugzilla 3.3.4, the following schema changes were made:</p>
 
 <ul>
 
@@ -5776,13 +5360,16 @@ allow the availability of individual values of single-select and multi-select fi
 
 </ul>
 
-"""),
+""",
+    ),
+    (
+        '3.4rc1',
+        '3.4.1',
+        """<p>The schema is identical in Bugzilla releases 3.3.4, 3.4rc1, 3.4, 3.4.1, and 3.4.2.</p>
 
-('3.4rc1', '3.4.1', """<p>The schema is identical in Bugzilla releases 3.3.4, 3.4rc1, 3.4, 3.4.1, and 3.4.2.</p>
-
-"""),
-
-"""<h2><a id="section-5" name="section-5">5. Example queries</a></h2>
+""",
+    ),
+    """<h2><a id="section-5" name="section-5">5. Example queries</a></h2>
 
 <p>To select bug number <em>n</em>:</p>
 
@@ -5811,8 +5398,10 @@ select login_name from cc, profiles
 </code></blockquote>
 
 """,
-
-('2.10', None, """<p>%(VERSION_STRING)sTo select the long descriptions
+    (
+        '2.10',
+        None,
+        """<p>%(VERSION_STRING)sTo select the long descriptions
 of bug <em>n</em>, together with the name and email address of the
 commenters:</p>
 
@@ -5823,23 +5412,28 @@ select profiles.login_name, profiles.realname,
  where profiles.userid = longdescs.who
    and longdescs.bug_id = <em>n</em>
  order by longdescs.bug_when
-</code></blockquote>"""),
-
-('2.4', None, """<p>To find out the groups of user <em>n</em>:</p>"""),
-
-('2.4', '2.16.7', """<p>%(VERSION_STRING)s</p>
+</code></blockquote>""",
+    ),
+    ('2.4', None, """<p>To find out the groups of user <em>n</em>:</p>"""),
+    (
+        '2.4',
+        '2.16.7',
+        """<p>%(VERSION_STRING)s</p>
 
 <blockquote><code>
 select groupset from profiles where userid = <em>n</em>
-</code></blockquote>"""),
-
-('2.17.1', None, """<p>%(VERSION_STRING)s</p>
+</code></blockquote>""",
+    ),
+    (
+        '2.17.1',
+        None,
+        """<p>%(VERSION_STRING)s</p>
 
 <blockquote><code>
 select group_id from user_group_map where userid = <em>n</em> and isbless=0
-</code></blockquote>"""),
-
-"""<h2><a id="section-A" name="section-A">A. References</a></h2>
+</code></blockquote>""",
+    ),
+    """<h2><a id="section-A" name="section-A">A. References</a></h2>
 
 
 <h2><a id="section-B" name="section-B">B. Document History</a></h2>
@@ -6231,7 +5825,8 @@ by <code>%(SCRIPT_ID)s</code><br/>
 from <code>%(REMARKS_ID)s</code></small></p>
 </div>
 
-""",]
+""",
+]
 
 remarks_id = '$Id$'
 

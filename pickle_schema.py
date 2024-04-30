@@ -21,12 +21,15 @@ import pickle
 import sys
 import os
 
+
 class BzSchemaPickleException(Exception):
     def __init__(self, message):
         super().__init__(message)
         self.message = message
+
     def __str__(self):
         return self.message
+
 
 def fetchall(cursor):
     rows = cursor.fetchall()
@@ -35,16 +38,18 @@ def fetchall(cursor):
         rows = []
     return rows
 
+
 def select_rows(cursor, select):
     rows = cursor.execute(select)
-    if cursor.description == None :
-        raise BzSchemaPickleException("Trying to fetch rows from non-select '%s'"
-                      % select)
+    if cursor.description == None:
+        raise BzSchemaPickleException(
+            "Trying to fetch rows from non-select '%s'" % select
+        )
     values = fetchall(cursor)
-    if values == None :
-        raise BzSchemaPickleException("Select '%s' returned unfetchable rows."
-                      % select)
+    if values == None:
+        raise BzSchemaPickleException("Select '%s' returned unfetchable rows." % select)
     return values
+
 
 def column_names(cursor):
     keys = []
@@ -52,38 +57,46 @@ def column_names(cursor):
         keys.append(cursor.description[i][0])
     return keys
 
+
 def fetch_rows_as_list_of_dictionaries(cursor, select):
     results = []
     values = select_rows(cursor, select)
     keys = column_names(cursor)
     for value in values:
-        result={}
-        if len(keys) != len(value) :
-            raise BzSchemaPickleException("Select '%s' returns %d keys but %d columns."
-                          % (select, len(keys), len(value)))
+        result = {}
+        if len(keys) != len(value):
+            raise BzSchemaPickleException(
+                "Select '%s' returns %d keys but %d columns."
+                % (select, len(keys), len(value))
+            )
         for j in range(len(keys)):
             result[keys[j]] = value[j]
         results.append(result)
     return results
 
+
 def pickle_schema(schema_version, db_name):
     default_file = os.path.expanduser('~/.my.cnf')
-    db = MySQLdb.connect(database=db_name,
-            read_default_file=default_file, read_default_group='pickle_schema')
+    db = MySQLdb.connect(
+        database=db_name,
+        read_default_file=default_file,
+        read_default_group='pickle_schema',
+    )
     cursor = db.cursor()
     tables = [x[0] for x in select_rows(cursor, 'show tables')]
     schema = {}
     for table in tables:
-        columns = fetch_rows_as_list_of_dictionaries(cursor,
-                                                     'describe %s' % table)
-        indexes = fetch_rows_as_list_of_dictionaries(cursor,
-                                                     'show index from %s' % table)
+        columns = fetch_rows_as_list_of_dictionaries(cursor, 'describe %s' % table)
+        indexes = fetch_rows_as_list_of_dictionaries(
+            cursor, 'show index from %s' % table
+        )
         schema[table] = (columns, indexes)
     db.close()
     f = open('pickles/%s' % schema_version, 'wb')
     pickle.dump((schema_version, schema), f)
     f.close()
-    
+
+
 if __name__ == "__main__":
     try:
         (schema_version, db_name) = sys.argv[1:]
@@ -98,7 +111,7 @@ if __name__ == "__main__":
 # B. DOCUMENT HISTORY
 #
 # 2004-11-11 NB  Created, partly from make_schema_doc.py.
-# 
+#
 #
 # C. COPYRIGHT AND LICENSE
 #

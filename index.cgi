@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 
+#
 #                              Ravenbrook
 #                     <http://www.ravenbrook.com/>
 #
@@ -14,8 +14,9 @@
 # rather than having it obscured by this CGI front-end.
 
 from index import *
+
 if __name__ == '__main__':
-  show_page()
+    show_page()
 
 # A. REFERENCES
 #

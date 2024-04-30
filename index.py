@@ -47,33 +47,35 @@ import schema_remarks
 #
 # This could be separated out into a module of its own.
 
+
 class BzSchemaException(Exception):
     def __init__(self, status, status_message, error_message):
         super().__init__(error_message)
         self.status = status
         self.status_message = status_message
         self.error_message = error_message
+
     def __str__(self):
         return self.error_message
 
+
 class webpage:
-    body = ''                 # Page body
-    body = None               # Body of page: list of strings.
-    directory_links = None    # Directories to link to in header, footer
-    h1 = None                 # Top-level header (if None, use title)
-    status = 200              # HTTP status of output
-    status_message = 'OK'     # Message to go with the status
-    title = 'Web page'        # Page title
-    debug_messages = []       # no debug messages yet!
-    debug_level = 0           # don't accumulate any debug messages
+    body = ''  # Page body
+    body = None  # Body of page: list of strings.
+    directory_links = None  # Directories to link to in header, footer
+    h1 = None  # Top-level header (if None, use title)
+    status = 200  # HTTP status of output
+    status_message = 'OK'  # Message to go with the status
+    title = 'Web page'  # Page title
+    debug_messages = []  # no debug messages yet!
+    debug_level = 0  # don't accumulate any debug messages
 
     def __init__(self):
         self.body = []
         self.title = "Default webpage title"
         self.debug_messages = []
         self.debug_level = 0
-        self.directory_links = [
-            ]
+        self.directory_links = []
 
     # Append a line of HTML to the body of the webpage.
     def b(self, s):
@@ -99,8 +101,11 @@ class webpage:
     # like "Thu, 01 Dec 1994 16:00:00 GMT".
     def print_expires(self):
         print('Expires:', end=' ')
-        print(time.strftime("%a, %d %b %Y 00:00:00 GMT",
-                            time.gmtime(time.time() + 60*60*24)))
+        print(
+            time.strftime(
+                "%a, %d %b %Y 00:00:00 GMT", time.gmtime(time.time() + 60 * 60 * 24)
+            )
+        )
 
     # Prepare the body of the webpage by making calls to the b() method.
     # This is a placeholder that should be overridden in subclasses of
@@ -128,19 +133,24 @@ class webpage:
         print('Content-Type: text/html')
         print()
         print('<?xml version="1.0" encoding="UTF-8"?>')
-        print ('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
-               'Transitional//EN" "DTD/xhtml1-transitional.dtd">')
-        print ('<html xmlns="http://www.w3.org/1999/xhtml" '
-               'xml:lang="en" lang="en">')
+        print(
+            '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 '
+            'Transitional//EN" "DTD/xhtml1-transitional.dtd">'
+        )
+        print('<html xmlns="http://www.w3.org/1999/xhtml" ' 'xml:lang="en" lang="en">')
         print('<head>')
         print('<title>', html.escape(self.title), '</title>')
         print('</head>')
-        print ('<body bgcolor="#FFFFFF" text="#000000" link="#000099" '
-               'vlink="#660066" alink="#FF0000">')
-        print ('<a href="https://github.com/bugzilla/bugzilla-schema">'
-               '<img style="position: absolute; top: 0; right: 0; border: 0;"'
-               'src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"'
-               'alt="Fork me on GitHub"></a>')
+        print(
+            '<body bgcolor="#FFFFFF" text="#000000" link="#000099" '
+            'vlink="#660066" alink="#FF0000">'
+        )
+        print(
+            '<a href="https://github.com/bugzilla/bugzilla-schema">'
+            '<img style="position: absolute; top: 0; right: 0; border: 0;"'
+            'src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"'
+            'alt="Fork me on GitHub"></a>'
+        )
         print('<div align="center">')
         self.print_directory_links()
         print('<hr />')
@@ -152,28 +162,34 @@ class webpage:
 
     # Print the coyright message and the license conditions.
     def print_copyright(self):
-        print ('<p><small>This document is copyright &copy; 2001-2013 '
-               'Perforce Software, Inc.  All rights reserved.</small></p>\n')
+        print(
+            '<p><small>This document is copyright &copy; 2001-2013 '
+            'Perforce Software, Inc.  All rights reserved.</small></p>\n'
+        )
 
-        print ('<p><small>Redistribution and use of this document in any form, '
-               'with or without modification, is permitted provided that '
-               'redistributions of this document retain the above copyright '
-               'notice, this condition and the following disclaimer.</small></p>\n')
+        print(
+            '<p><small>Redistribution and use of this document in any form, '
+            'with or without modification, is permitted provided that '
+            'redistributions of this document retain the above copyright '
+            'notice, this condition and the following disclaimer.</small></p>\n'
+        )
 
-        print('<p><small><strong>This document is provided by the copyright '
-              'holders and contributors "as is" and any express or implied '
-              'warranties, including, but not limited to, the implied warranties '
-              'of merchantability and fitness for a particular purpose are '
-              'disclaimed. In no event shall the copyright holders and '
-              'contributors be liable for any direct, indirect, incidental, '
-              'special, exemplary, or consequential damages (including, but '
-              'not limited to, procurement of substitute goods or services; '
-              'loss of use, data, or profits; or business interruption) '
-              'however caused and on any theory of liability, whether in '
-              'contract, strict liability, or tort (including negligence or '
-              'otherwise) arising in any way out of the use of this document, '
-              'even if advised of the possibility of such damage. '
-              '</strong></small></p>\n')
+        print(
+            '<p><small><strong>This document is provided by the copyright '
+            'holders and contributors "as is" and any express or implied '
+            'warranties, including, but not limited to, the implied warranties '
+            'of merchantability and fitness for a particular purpose are '
+            'disclaimed. In no event shall the copyright holders and '
+            'contributors be liable for any direct, indirect, incidental, '
+            'special, exemplary, or consequential damages (including, but '
+            'not limited to, procurement of substitute goods or services; '
+            'loss of use, data, or profits; or business interruption) '
+            'however caused and on any theory of liability, whether in '
+            'contract, strict liability, or tort (including negligence or '
+            'otherwise) arising in any way out of the use of this document, '
+            'even if advised of the possibility of such damage. '
+            '</strong></small></p>\n'
+        )
 
     def log(self, level, message):
         if level <= self.debug_level:
@@ -245,9 +261,11 @@ class webpage:
             print(b)
         self.print_footer()
 
+
 # 2. SCHEMA WEBPAGE CLASS
 #
 # This is a base class for all the schema webpage classes in section 3.
+
 
 class schema_webpage(webpage):
     def __init__(self, form, action):
@@ -255,7 +273,7 @@ class schema_webpage(webpage):
         webpage.__init__(self)
         self.action = action
         self.form = form
-        self.directory_links.append(( '', 'Bugzilla Schema' ))
+        self.directory_links.append(('', 'Bugzilla Schema'))
 
     # Return the form parameter named by parameter, as a string.  Return
     # None if there is no such parameter or if the parameter is the
@@ -277,12 +295,15 @@ class schema_webpage(webpage):
     def check_bugzilla_version(self, param):
         version = self.param(param)
         if not version:
-            raise BzSchemaException(400, 'Bad form parameters',
-                          'No %s parameter.' % param)
+            raise BzSchemaException(
+                400, 'Bad form parameters', 'No %s parameter.' % param
+            )
         if not version in schema_remarks.version_order:
-            raise BzSchemaException(404, 'No such Bugzilla version',
-                          'No such Bugzilla version: %s.'
-                          % version)
+            raise BzSchemaException(
+                404,
+                'No such Bugzilla version',
+                'No such Bugzilla version: %s.' % version,
+            )
         return version
 
     def check_bugzilla_from(self):
@@ -290,8 +311,9 @@ class schema_webpage(webpage):
 
     def check_bugzilla_to(self):
         v = self.check_bugzilla_version('to')
-        if (schema_remarks.version_order.index(v) >=
-            schema_remarks.version_order.index(self.from_version)):
+        if schema_remarks.version_order.index(v) >= schema_remarks.version_order.index(
+            self.from_version
+        ):
             self.to_version = v
         else:
             self.to_version = self.from_version
@@ -308,8 +330,9 @@ class schema_webpage(webpage):
         try:
             debug_level = int(level)
         except ValueError:
-            raise BzSchemaException(404, 'Bad debugging level',
-                          'Bad debugging level: %s.' % level)
+            raise BzSchemaException(
+                404, 'Bad debugging level', 'Bad debugging level: %s.' % level
+            )
         if debug_level < 0:
             level = 0
         self.debug_level = debug_level
@@ -320,6 +343,7 @@ class schema_webpage(webpage):
 #
 # Each subclass of schema_webpage implements a particular kind of report.
 
+
 class range_webpage(schema_webpage):
     def check_form_parameters(self):
         self.check_bugzilla_from()
@@ -327,21 +351,25 @@ class range_webpage(schema_webpage):
 
     def prepare_body(self):
         if self.from_version == self.to_version:
-            self.title = ('Bugzilla Schema for Version %s' % self.from_version)
+            self.title = 'Bugzilla Schema for Version %s' % self.from_version
         else:
-            self.title = ('Bugzilla Schema for Versions %s to %s' % (self.from_version,
-                                                                     self.to_version))
+            self.title = 'Bugzilla Schema for Versions %s to %s' % (
+                self.from_version,
+                self.to_version,
+            )
         self.h1 = self.title
         self.b(make_schema_doc.make_body(self.from_version, self.to_version))
+
 
 class single_webpage(schema_webpage):
     def check_form_parameters(self):
         self.check_bugzilla_single()
 
     def prepare_body(self):
-        self.title = ('Bugzilla Schema for Version %s' % self.version)
+        self.title = 'Bugzilla Schema for Version %s' % self.version
         self.h1 = self.title
         self.b(make_schema_doc.make_body(self.version, self.version))
+
 
 class index_webpage(schema_webpage):
     def prepare_body(self):
@@ -349,16 +377,18 @@ class index_webpage(schema_webpage):
         self.title = 'Bugzilla Schema Documentation'
         self.b('<div align="center">')
 
-        self.b('<p>This service generates documentation for the database schema of '
-               '<a href="http://bugzilla.org/">Bugzilla</a> defect-tracking software. '
-               'It can produce documentation for the schema of any historical version, '
-               'or of the schema changes between any two versions.</p>'
-               '<p>It was written by staff at <a href="http://www.ravenbrook.com/">Ravenbrook '
-               'Limited</a>, as part of the <a href="http://www.ravenbrook.com/project/p4dti">'
-               'P4DTI</a> project under contract to <a href="http://www.perforce.com">Perforce, '
-               'Inc.</a> '
-               'The source code and data for this service are open source and available '
-               'at <a href="http://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>')
+        self.b(
+            '<p>This service generates documentation for the database schema of '
+            '<a href="http://bugzilla.org/">Bugzilla</a> defect-tracking software. '
+            'It can produce documentation for the schema of any historical version, '
+            'or of the schema changes between any two versions.</p>'
+            '<p>It was written by staff at <a href="http://www.ravenbrook.com/">Ravenbrook '
+            'Limited</a>, as part of the <a href="http://www.ravenbrook.com/project/p4dti">'
+            'P4DTI</a> project under contract to <a href="http://www.perforce.com">Perforce, '
+            'Inc.</a> '
+            'The source code and data for this service are open source and available '
+            'at <a href="http://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>'
+        )
 
         self.b('<table>')
         self.b('<tr><td>')
@@ -389,14 +419,16 @@ class index_webpage(schema_webpage):
         self.b('</td></tr>')
         ####
         self.b('</table>')
-        self.b('<p>Note that this tool was just recently resurrected and is '
+        self.b(
+            '<p>Note that this tool was just recently resurrected and is '
             'still in the process of being updated. While the version numbers are loaded for '
             'every version that currently exists, much of the schema data has not yet been '
             'loaded. The newest version currently available is '
-            f'{schema_remarks.default_last_version}.</p>')
+            f'{schema_remarks.default_last_version}.</p>'
+        )
         self.b('</div>')
 
-    def options(self, options, selected = None):
+    def options(self, options, selected=None):
         if selected == None:
             selected = options[-1]
         for o in options:
@@ -413,7 +445,8 @@ action_class_map = {
     'single': single_webpage,
     'range': range_webpage,
     'index': index_webpage,
-    }
+}
+
 
 def show_page():
     form = cgi.FieldStorage()
@@ -426,6 +459,7 @@ def show_page():
     else:
         action_class = index_webpage
     action_class(form, action).print_page()
+
 
 # A. REFERENCES
 #
