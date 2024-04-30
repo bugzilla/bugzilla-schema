@@ -681,6 +681,11 @@ def get_versioned_tables(first, last):
         new_schema, errors = get_schema.get_schema(schema_name, errors)
         pair_up_schema(bz_name, new_schema)
         schemas.append((bz_name, new_schema))
+    # if we have errors at this point, it's fatal, there's no point
+    # in letting make_versioned_schema spew a ton more of them.
+    if errors:
+        e = str.join('<br/>\n', errors)
+        raise BzSchemaProcessingException(e)
     schema = make_versioned_schema(schemas,
                                    colours,
                                    tr)
