@@ -264,8 +264,8 @@ version_order = [
     '5.9.1',
 ]
 
-default_first_version = '4.2.16'
-default_last_version = '4.4.14'
+default_first_version = '5.0'
+default_last_version = '5.2'
 
 
 # Bugzilla schema versions.  A map from Bugzilla version to
