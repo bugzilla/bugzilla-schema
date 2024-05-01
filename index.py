@@ -420,13 +420,6 @@ class index_webpage(schema_webpage):
         self.b('</td></tr>')
         ####
         self.b('</table>')
-        self.b(
-            '<p>Note that this tool was just recently resurrected and is '
-            'still in the process of being updated. While the version numbers are loaded for '
-            'every version that currently exists, much of the schema data has not yet been '
-            'loaded. The newest version currently available is '
-            f'{schema_remarks.default_last_version}.</p>'
-        )
         self.b('</div>')
 
     def options(self, options, selected=None):
