@@ -494,9 +494,9 @@ version_schema_map = {
     '5.0.5': '5.0rc1',
     '5.0.6': '5.0.6',
     '5.2': '5.0.6',
-    '5.1.1': 'not-yet-loaded',
-    '5.1.2': 'not-yet-loaded',
-    '5.3.3': 'not-yet-loaded',
+    '5.1.1': '5.1.1',
+    '5.1.2': '5.1.1',
+    '5.3.3': '5.1.1',
     '5.9.1': '5.9.1',
 }
 
@@ -763,6 +763,7 @@ table_remark = {
     'dependencies': 'Which bugs <a href="#notes-dependencies">depend</a> on other bugs.',
     'duplicates': 'Which bugs are duplicates of which other bugs.',
     'email_bug_ignore': 'Stores lists of bugs users have opted not to receive notifications about.',
+    'email_rates': 'Logs timestamps of messages sent to users so that they can be rate-limited.',
     'email_setting': 'Per-user settings controlling when email is sent to that user.',
     'fielddefs': 'The properties of each bug field.',
     'field_visibility': 'Tracks when custom fields are visible based on other fields on the bug.',
@@ -844,6 +845,7 @@ table_added_remark = {
     'dependencies': None,
     'duplicates': None,
     'email_bug_ignore': None,
+    'email_rates': 'Bug 1062739',
     'email_setting': 'Replaces %(column-profiles-emailflags)s',
     'field_visibility': 'Replaced %(column-fielddefs-visibility_field_id)s',
     'fielddefs': None,
@@ -1170,6 +1172,11 @@ column_remark = {
         'user_id': 'The user ignoring the bug. (foreign key %(column-profiles-userid)s)',
         'bug_id': 'The bug being ignored. (foreign key %(column-bugs-bug_id)s)',
     },
+    'email_rates': {
+        'id': None,
+        'recipient': 'The user for whom the message is intended. (foreign key %(column-profiles-userid)s)',
+        'message_ts': 'The timestamp of when the message was sent.',
+    },
     'email_setting': {
         'user_id': 'The user to whom this setting applies (foreign key %(column-profiles-userid)s).',
         'relationship': 'The relationship between the user and the bug.  0: Assignee; 1: QA contact; 2: Reporter; 3: CC; 4: Voter; 100: for global events, which do not depend on a relationship.',
@@ -1303,6 +1310,7 @@ column_remark = {
         'id': 'A unique number identifying this keyword.',
         'name': 'The keyword itself.',
         'description': 'The meaning of the keyword.',
+        'is_active': '1 if active, 0 if archived.',
     },
     'keywords': {
         'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
@@ -1424,7 +1432,18 @@ column_remark = {
     },
     'profiles': {
         'userid': 'A unique identifier for the user.  Used in other tables to identify this user.',
-        'login_name': 'The user\'s email address.  Used when logging in or providing mailto: links.',
+        'login_name': [
+            (
+                None,
+                '5.2',
+                'The user\'s email address.  Used when logging in or providing mailto: links.'
+            ),
+            (
+                '5.1.1',
+                None,
+                'The user\'s username. Used when logging in and displayed to other users.'
+            ),
+        ],
         'password': 'The user\'s password, in plaintext.',
         'cryptpassword': [
             'The user\'s password.',
@@ -1452,6 +1471,7 @@ column_remark = {
         'disable_mail': '1 to disable all mail to this user; 0 for mail to depend on the per-user email settings in %(table-email_setting)s.',
         'is_enabled': '1 if the account is enabled, 0 if it is disabled and prevented from logging in.',
         'last_seen_date': 'Date the user last logged in.',
+        'email': "The user's email address.",
     },
     'profiles_activity': {
         'userid': 'The profile which has changed (foreign key %(column-profiles-userid)s)',
@@ -1601,6 +1621,7 @@ column_remark = {
         'description': 'User-supplied description to identify the purpose of the key.',
         'revoked': '1 if revoked, 0 if active.',
         'last_used': 'Timestamp of the last time it was used.',
+        'app_id': 'Null if user-created API key. Contains a callback name if tied to a specific callback.',
     },
     'user_group_map': {
         'user_id': 'The user.  (foreign key %(column-profiles-userid)s)',
@@ -1791,6 +1812,9 @@ column_added_remark = {
         'last_changed': None,
         'icon_url': None,
     },
+    'keyworddefs': {
+        'is_active': 'Bug 69267',
+    },
     'logincookies': {
         'ipaddr': 'replacing hostname',
     },
@@ -1843,6 +1867,7 @@ column_added_remark = {
         'disable_mail': None,
         'is_enabled': 'For query performance reasons it was better to check a boolean than try to check if %(column-profiles-disabledtext)s was zero length or not.',
         'last_seen_date': None,
+        'email': 'Bug 218917',
     },
     'profiles_activity': {
         'id': None,
@@ -1861,6 +1886,9 @@ column_added_remark = {
     },
     'setting': {
         'subclass': None,
+    },
+    'user_api_keys': {
+        'app_id': 'Bug 1170722',
     },
     'user_group_map': {
         'grant_type': 'replacing "isderived"',
@@ -2072,7 +2100,9 @@ index_remark = {
         'bugs_fulltext_comments_idx': None,
         'bugs_fulltext_comments_noprivate_idx': None,
     },
-    'bz_schema': {},
+    'bz_schema': {
+        'bz_schema_version_idx': None,
+    },
     'category_group_map': {
         'category_id': None,
     },
@@ -2104,6 +2134,10 @@ index_remark = {
     },
     'email_bug_ignore': {
         'email_bug_ignore_user_id_idx': None,
+    },
+    'email_rates': {
+        'PRIMARY': None,
+        'email_rates_idx': None,
     },
     'email_setting': {
         'email_setting_user_id_idx': None,
@@ -2229,6 +2263,7 @@ index_remark = {
         'PRIMARY': None,
         'login_name': None,
         'profiles_extern_id_idx': None,
+        'profiles_email_idx': None,
     },
     'profiles_activity': {
         'userid': None,
@@ -2321,6 +2356,7 @@ index_remark = {
         'PRIMARY': None,
         'user_api_keys_api_key_idx': None,
         'user_api_keys_user_id_idx': None,
+        'user_api_keys_user_id_app_id_idx': None,
     },
     'user_group_map': {
         'user_id': None,
@@ -2568,6 +2604,9 @@ index_added_remark = {
         'PRIMARY': None,
         'bugs_activity_removed_idx': None,
     },
+    'bz_schema': {
+        'bz_schema_version_idx': None,
+    },
     'cc': {
         'bug_id': None,
         'who': None,
@@ -2607,6 +2646,7 @@ index_added_remark = {
     },
     'profiles': {
         'profiles_extern_id_idx': None,
+        'profiles_email_idx': None,
     },
     'profiles_activity': {
         'PRIMARY': None,
@@ -2626,6 +2666,9 @@ index_added_remark = {
     },
     'series': {
         'series_category_idx': None,
+    },
+    'user_api_keys': {
+        'user_api_keys_user_id_app_id_idx': None,
     },
     'versions': {
         'PRIMARY': None,
@@ -5957,7 +6000,7 @@ select group_id from user_group_map where userid = <em>n</em> and isbless=0
 
     <td><a href="https://github.com/justdave">justdave</a></td>
 
-    <td>Add releases </td> 4.3.1, 4.3.2, 4.3.3, 4.4rc1, 4.4rc2, 4.4, 4.4.1, 4.4.2, 4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7, 4.4.8, 4.4.9, 4.4.10, 4.4.11, 4.4.12, 4.4.13, 4.4.14, 4.5.1, 4.5.2, 4.5.3, 4.5.4, 4.5.5, 4.5.6, 5.0rc1, 5.0rc2, 5.0rc3, 5.0, 5.0.1, 5.0.2, 5.0.3, 5.0.4, 5.0.4.1, 5.0.5, 5.0.6, and 5.2.</td>
+    <td>Add releases </td> 4.3.1, 4.3.2, 4.3.3, 4.4rc1, 4.4rc2, 4.4, 4.4.1, 4.4.2, 4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7, 4.4.8, 4.4.9, 4.4.10, 4.4.11, 4.4.12, 4.4.13, 4.4.14, 4.5.1, 4.5.2, 4.5.3, 4.5.4, 4.5.5, 4.5.6, 5.0rc1, 5.0rc2, 5.0rc3, 5.0, 5.0.1, 5.0.2, 5.0.3, 5.0.4, 5.0.4.1, 5.0.5, 5.0.6, 5.2, 5.1.1, 5.1.2, and 5.3.3</td>
 
   </tr>
 
