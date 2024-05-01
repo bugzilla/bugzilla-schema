@@ -264,8 +264,8 @@ version_order = [
     '5.9.1',
 ]
 
-default_first_version = '4.0.18'
-default_last_version = '4.2.16'
+default_first_version = '4.2.16'
+default_last_version = '4.4.14'
 
 
 # Bugzilla schema versions.  A map from Bugzilla version to
@@ -456,44 +456,44 @@ version_schema_map = {
     '4.2.14': '4.2.1',
     '4.2.15': '4.2.1',
     '4.2.16': '4.2.1',
-    '4.3.1': 'not-yet-loaded',
-    '4.3.2': 'not-yet-loaded',
-    '4.3.3': 'not-yet-loaded',
-    '4.4rc1': 'not-yet-loaded',
-    '4.4rc2': 'not-yet-loaded',
-    '4.4': 'not-yet-loaded',
-    '4.4.1': 'not-yet-loaded',
-    '4.4.2': 'not-yet-loaded',
-    '4.4.3': 'not-yet-loaded',
-    '4.4.4': 'not-yet-loaded',
-    '4.4.5': 'not-yet-loaded',
-    '4.4.6': 'not-yet-loaded',
-    '4.4.7': 'not-yet-loaded',
-    '4.4.8': 'not-yet-loaded',
-    '4.4.9': 'not-yet-loaded',
-    '4.4.10': 'not-yet-loaded',
-    '4.4.11': 'not-yet-loaded',
-    '4.4.12': 'not-yet-loaded',
-    '4.4.13': 'not-yet-loaded',
-    '4.4.14': 'not-yet-loaded',
-    '4.5.1': 'not-yet-loaded',
-    '4.5.2': 'not-yet-loaded',
-    '4.5.3': 'not-yet-loaded',
-    '4.5.4': 'not-yet-loaded',
-    '4.5.5': 'not-yet-loaded',
-    '4.5.6': 'not-yet-loaded',
-    '5.0rc1': 'not-yet-loaded',
-    '5.0rc2': 'not-yet-loaded',
-    '5.0rc3': 'not-yet-loaded',
-    '5.0': 'not-yet-loaded',
-    '5.0.1': 'not-yet-loaded',
-    '5.0.2': 'not-yet-loaded',
-    '5.0.3': 'not-yet-loaded',
-    '5.0.4': 'not-yet-loaded',
-    '5.0.4.1': 'not-yet-loaded',
-    '5.0.5': 'not-yet-loaded',
-    '5.0.6': 'not-yet-loaded',
-    '5.2': 'not-yet-loaded',
+    '4.3.1': '4.3.1',
+    '4.3.2': '4.3.2',
+    '4.3.3': '4.3.3',
+    '4.4rc1': '4.3.3',
+    '4.4rc2': '4.4rc2',
+    '4.4': '4.4rc2',
+    '4.4.1': '4.4rc2',
+    '4.4.2': '4.4rc2',
+    '4.4.3': '4.4rc2',
+    '4.4.4': '4.4rc2',
+    '4.4.5': '4.4rc2',
+    '4.4.6': '4.4rc2',
+    '4.4.7': '4.4rc2',
+    '4.4.8': '4.4rc2',
+    '4.4.9': '4.4rc2',
+    '4.4.10': '4.4rc2',
+    '4.4.11': '4.4rc2',
+    '4.4.12': '4.4rc2',
+    '4.4.13': '4.4rc2',
+    '4.4.14': '4.4rc2',
+    '4.5.1': '4.5.1',
+    '4.5.2': '4.5.2',
+    '4.5.3': '4.5.2',
+    '4.5.4': '4.5.2',
+    '4.5.5': '4.5.5',
+    '4.5.6': '4.5.6',
+    '5.0rc1': '5.0rc1',
+    '5.0rc2': '5.0rc1',
+    '5.0rc3': '5.0rc1',
+    '5.0': '5.0rc1',
+    '5.0.1': '5.0rc1',
+    '5.0.2': '5.0rc1',
+    '5.0.3': '5.0rc1',
+    '5.0.4': '5.0rc1',
+    '5.0.4.1': '5.0rc1',
+    '5.0.5': '5.0rc1',
+    '5.0.6': '5.0.6',
+    '5.2': '5.0.6',
     '5.1.1': 'not-yet-loaded',
     '5.1.2': 'not-yet-loaded',
     '5.3.3': 'not-yet-loaded',
@@ -749,8 +749,10 @@ table_remark = {
     'bug_see_also': '<a href="#notes-see_also">Related bugs</a> in other Bugzillas.',
     'bug_severity': 'The severity values of bugs.',
     'bug_status': 'The status values of bugs.',
+    'bug_user_last_visit': 'Keeps track of the last time a user looked at a bug when logged in. This allows jumping to the last-viewed comment when you next return to the bug.',
     'bugs': 'The bugs themselves.',
     'bugs_activity': '<a href="#notes-activity">Activity</a> on the bugs table.',
+    'bugs_aliases': 'A mapping of bugs to their aliases.',
     'bugs_fulltext': 'All the descriptive text on bugs, to speed up searching.',
     'bz_schema': 'The database schema itself.',
     'category_group_map': 'Which groups does a user have to be in to view chart data in a given category.  See <a href="#notes-charts">the notes on charts</a>. ',
@@ -760,6 +762,7 @@ table_remark = {
     'components': 'One row for each component.  See <a href="#notes-products">the notes on products and components.</a>',
     'dependencies': 'Which bugs <a href="#notes-dependencies">depend</a> on other bugs.',
     'duplicates': 'Which bugs are duplicates of which other bugs.',
+    'email_bug_ignore': 'Stores lists of bugs users have opted not to receive notifications about.',
     'email_setting': 'Per-user settings controlling when email is sent to that user.',
     'fielddefs': 'The properties of each bug field.',
     'field_visibility': 'Tracks when custom fields are visible based on other fields on the bug.',
@@ -775,6 +778,10 @@ table_remark = {
     'logincookies': 'Bugzilla generates a cookie each time a user logs in, and uses it for subsequent authentication.  The cookies generated are stored in this table.  For more information, see <a href="#notes-authentication">the notes on authentication</a>.',
     'login_failure': 'Log of failed user login attempts. Records for a given user are cleared when they successfully log in. Users are locked out if they exceed MAX_LOGIN_ATTEMPTS in LOGIN_LOCKOUT_INTERVAL minutes (defined in Bugzilla::Constants).',
     'longdescs': 'Long bug <a href="#notes-descriptions">descriptions</a>.',
+    'longdescs_tags': 'Tags on comments are stored here.',
+    'longdescs_tags_activity': 'Activity log of changes to comment tags.',
+    'longdescs_tags_weights': 'This table caches the number of comments that are tagged with each comment tag.',
+    'mail_staging': 'outbound notification emails are staged here if a notification happens while a database transaction is active. The messages are then sent as a batch after the transaction is closed.',
     'milestones': 'Development <a href="#notes-milestones">milestones</a>.',
     'namedqueries': 'Named <a href="#notes-namedqueries">queries</a>.',
     'namedquery_group_map': 'Controls whether a <a href="#notes-namedqueries">named query</a> is shared with other users (other members of a group).',
@@ -788,6 +795,7 @@ table_remark = {
     'profiles_activity': 'This table is for recording changes to %(the-table-profiles)s. Currently it only records changes to group membership made with editusers.cgi.  This allows the administrator to track group inflation.  There is currently no code to inspect this table; only to add to it.',
     'quips': 'A table of <a href="#notes-quips">quips</a>.',
     'rep_platform': 'The possible values of the "platform" field of a bug.',
+    'reports': 'Reports generated from report.cgi are saved in this table.',
     'resolution': 'The possible values of the "resolution" field of a bug.',
     'series': 'Properties of the time-series datasets available (e.g. for plotting charts).  See <a href="#notes-charts">the notes on charts</a>.',
     'series_categories': None,
@@ -804,6 +812,7 @@ table_remark = {
     'ts_funcmap': 'The table of functions for TheSchwartz asynchronous job-queueing system.',
     'ts_job': 'The job queue managed by TheSchwartz asynchronous job-queueing system.',
     'ts_note': 'Notes on jobs for TheSchwartz asynchronous job-queueing system.  Apparently not used.',
+    'user_api_keys': 'User generated API keys for web services are stored here.',
     'user_group_map': 'This table records which users are members of each group, or can "bless" each group.  See <a href="#notes-groups">the notes on groups</a>.',
     'user_series_map': 'User subscriptions to time-series datasets.  See <a href="#notes-charts">the notes on charts</a>.',
     'versions': 'Product <a href="#notes-versions">versions</a>.',
@@ -825,6 +834,8 @@ table_added_remark = {
     'bug_severity': 'Removing enumerated types',
     'bug_status': 'Removing enumerated types',
     'bug_tag': None,
+    'bug_user_last_visit': 'Bug 489028',
+    'bugs_aliases': 'Formerly %(column-bugs-alias)s but moved to a table so it could have a one-to-many relationship. Bug 1012506.',
     'bugs_fulltext': 'Improving full-text search speed',
     'bz_schema': None,
     'category_group_map': 'Part of the new charting system',
@@ -832,6 +843,7 @@ table_added_remark = {
     'classifications': None,
     'dependencies': None,
     'duplicates': None,
+    'email_bug_ignore': None,
     'email_setting': 'Replaces %(column-profiles-emailflags)s',
     'field_visibility': 'Replaced %(column-fielddefs-visibility_field_id)s',
     'fielddefs': None,
@@ -846,6 +858,10 @@ table_added_remark = {
     'keyworddefs': None,
     'login_failure': 'Supporting new feature to lock out users who repeatedly fail logging in',
     'longdescs': None,
+    'longdescs_tags': 'Bug 793963',
+    'longdescs_tags_activity': 'Bug 793963',
+    'longdescs_tags_weights': 'Bug 793963',
+    'mail_staging': 'Bug 448574',
     'milestones': None,
     'namedqueries': None,
     'namedqueries_link_in_footer': 'Replacing %(column-namedqueries-linkinfooter)s',
@@ -858,6 +874,7 @@ table_added_remark = {
     'profiles_activity': None,
     'quips': None,
     'rep_platform': 'Removing enumerated types',
+    'reports': 'Ability to save reports added in Bug 319598',
     'resolution': 'Removing enumerated types',
     'series': 'Part of the new charting system',
     'series_categories': 'Part of the new charting system',
@@ -874,6 +891,7 @@ table_added_remark = {
     'ts_funcmap': 'For asynchronous mail',
     'ts_job': 'For asynchronous mail',
     'ts_note': 'For asynchronous mail',
+    'user_api_keys': 'Bug 726696',
     'user_group_map': 'Part of the new groups system',
     'user_series_map': 'Part of the new charting system',
     'votes': None,
@@ -979,6 +997,12 @@ column_remark = {
             ),
         ],
     },
+    'bug_user_last_visit': {
+        'id': None,
+        'user_id': 'The user who visited the bug. (foreign key %(column-profiles-userid)s)',
+        'bug_id': 'The bug which was visited. (foreign key %(column-bugs-bug_id)s)',
+        'last_visit_ts': 'When the bug was visited.',
+    },
     'bugs': {
         'area': 'The development area of the bug.',
         'bug_id': 'The bug ID.',
@@ -1073,6 +1097,11 @@ column_remark = {
         'added': 'The new value of this field, or values which have been added for multi-value fields such as %(column-bugs-keywords)s,  %(the-table-cc)s, and %(the-table-dependencies)s',
         'removed': 'The old value of this field, or values which have been removed for multi-value fields such as %(column-bugs-keywords)s, %(the-table-cc)s, and %(the-table-dependencies)s',
         'comment_id': 'The comment on the bug that was made at the same time as or most-recently previous to this change. (foreign key %(column-longdescs-comment_id)s)',
+        'id': None,
+    },
+    'bugs_aliases': {
+        'alias': 'The alias name.',
+        'bug_id': 'The bug this alias belongs to. (foreign key %(column-bugs-bug_id)s)',
     },
     'bugs_fulltext': {
         'bug_id': 'Which bug (foreign key %(column-bugs-bug_id)s)',
@@ -1137,6 +1166,10 @@ column_remark = {
         'dupe_of': 'The bug which is duplicated (foreign key %(column-bugs-bug_id)s)',
         'dupe': 'The duplicate bug (foreign key %(column-bugs-bug_id)s)',
     },
+    'email_bug_ignore': {
+        'user_id': 'The user ignoring the bug. (foreign key %(column-profiles-userid)s)',
+        'bug_id': 'The bug being ignored. (foreign key %(column-bugs-bug_id)s)',
+    },
     'email_setting': {
         'user_id': 'The user to whom this setting applies (foreign key %(column-profiles-userid)s).',
         'relationship': 'The relationship between the user and the bug.  0: Assignee; 1: QA contact; 2: Reporter; 3: CC; 4: Voter; 100: for global events, which do not depend on a relationship.',
@@ -1200,6 +1233,7 @@ column_remark = {
         'reverse_desc': 'Label for a list of bugs that link to a bug with this field. For example, if the description is "Is a duplicate of", the reverse description would be "Duplicates of this bug". Leave blank to disable the list for this bug.',
         'is_mandatory': '1 if the field is required on the new bug form, 0 if it is not.',
         'is_numeric': '1 if the field is numeric, 0 if it is not.',
+        'long_desc': 'User-readable description of the field. Shown in a tooltip when you hover the field on the bug.',
     },
     'flagexclusions': {
         'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
@@ -1293,11 +1327,35 @@ column_remark = {
         'comment_id': 'A unique ID for this comment.',
         'type': 'The type of a comment, used to identify and localize the text of comments which are automatically added by Bugzilla. 0 for a normal comment. 1 for a comment marking this bug as a duplicate of another.  2 for a comment marking another bug as a duplicate of this.  3 for a comment recording a transition to NEW by voting.  4 for a comment recording that this bug has been moved.',
         'extra_data': 'Used in conjunction with %(column-longdescs-type)s to provide the variable data in localized text of an automatic comment.  For instance, a duplicate bug number.',
+        'is_markdown': '1 if comment is formatted in markdown, 0 if plaintext.',
+    },
+    'longdescs_tags': {
+        'id': None,
+        'comment_id': 'The comment on which the tag exists. (foreign key %(column-longdescs-comment_id)s)',
+        'tag': 'The tag which is on the comment.',
+    },
+    'longdescs_tags_activity': {
+        'id': None,
+        'bug_id': 'The bug on which the change was made. (foreign key %(column-bugs-bug_id)s)',
+        'comment_id': 'The comment on which the change was made. (foreign key %(column-longdescs-comment_id)s)',
+        'who': 'The user who made the change. (foreign key %(column-profiles-userid)s)',
+        'bug_when': 'When the change was made.',
+        'added': 'The new value.',
+        'removed': 'The old value.',
+    },
+    'longdescs_tags_weights': {
+        'id': None,
+        'tag': 'The name of the tag.',
+        'weight': 'The number of comments tagged with this tag.',
     },
     'login_failure': {
         'user_id': 'the user who failed a login (foreign key %(column-profiles-userid)s)',
         'login_time': 'when the failure occurred',
         'ip_addr': 'the IP address of the client that failed the login',
+    },
+    'mail_staging': {
+        'id': None,
+        'message': 'The message being queued.',
     },
     'milestones': {
         'id': 'A unique numeric ID',
@@ -1393,6 +1451,7 @@ column_remark = {
         'extern_id': 'The ID for environmental authentication (see <a href="#notes-authentication">the notes on authentication</a>).',
         'disable_mail': '1 to disable all mail to this user; 0 for mail to depend on the per-user email settings in %(table-email_setting)s.',
         'is_enabled': '1 if the account is enabled, 0 if it is disabled and prevented from logging in.',
+        'last_seen_date': 'Date the user last logged in.',
     },
     'profiles_activity': {
         'userid': 'The profile which has changed (foreign key %(column-profiles-userid)s)',
@@ -1401,6 +1460,7 @@ column_remark = {
         'fieldid': 'The ID of the changed field (foreign key %(column-fielddefs-id)s)',
         'oldvalue': 'The old value',
         'newvalue': 'The new value.',
+        'id': None,
     },
     'quips': {
         'quipid': 'A unique ID.',
@@ -1414,6 +1474,12 @@ column_remark = {
         'sortkey': 'A number used to determine the order in which values are shown.',
         'id': 'a unique ID.',
         'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+    },
+    'reports': {
+        'id': None,
+        'user_id': 'The owner of the report. (foreign key %(column-profiles-userid)s)',
+        'name': 'The name of the report.',
+        'query': 'The query used to generate the report.',
     },
     'resolution': {
         'value': 'A possible value of the field',
@@ -1527,6 +1593,14 @@ column_remark = {
         'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
         'notekey': 'Not used.',
         'value': 'Not used.',
+    },
+    'user_api_keys': {
+        'id': None,
+        'user_id': 'The user the key belongs to. (foreign key %(column-profiles-userid)s)',
+        'api_key': 'The API key.',
+        'description': 'User-supplied description to identify the purpose of the key.',
+        'revoked': '1 if revoked, 0 if active.',
+        'last_used': 'Timestamp of the last time it was used.',
     },
     'user_group_map': {
         'user_id': 'The user.  (foreign key %(column-profiles-userid)s)',
@@ -1669,6 +1743,7 @@ column_added_remark = {
         'added': 'replacing "newvalue"',
         'removed': 'replacing "oldvalue"',
         'comment_id': None,
+        'id': None,
     },
     'classifications': {
         'sortkey': None,
@@ -1693,6 +1768,7 @@ column_added_remark = {
         'reverse_desc': None,
         'is_mandatory': None,
         'is_numeric': None,
+        'long_desc': 'Bug 728138',
     },
     'flags': {
         'is_active': None,
@@ -1725,6 +1801,7 @@ column_added_remark = {
         'already_wrapped': None,
         'isprivate': None,
         'work_time': None,
+        'is_markdown': 'Bug 330707',
     },
     'milestones': {
         'product_id': 'replacing "product"',
@@ -1765,6 +1842,10 @@ column_added_remark = {
         'refreshed_when': None,
         'disable_mail': None,
         'is_enabled': 'For query performance reasons it was better to check a boolean than try to check if %(column-profiles-disabledtext)s was zero length or not.',
+        'last_seen_date': None,
+    },
+    'profiles_activity': {
+        'id': None,
     },
     'quips': {
         'approved': None,
@@ -1820,6 +1901,7 @@ column_removed_remark = {
         'qacontact_accessible': None,
         'votes': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
         'keywords': 'This was only used for caching. Improved indexing made this field unnecessary.',
+        'alias': 'Moved to %(the-table-bugs_aliases)s. Bug 1012506',
     },
     'bugs_activity': {
         'field': 'replaced by "fieldid"',
@@ -1848,6 +1930,9 @@ column_removed_remark = {
     'logincookies': {
         'cryptpassword': None,
         'hostname': 'replaced by "ipaddr"',
+    },
+    'longdescs': {
+        'is_markdown': 'Backed out of the 5.0 branch.',
     },
     'milestones': {
         'product': 'replaced by "product_id"',
@@ -1912,7 +1997,9 @@ index_remark = {
     'attachstatuses': {
         'PRIMARY': None,
     },
-    'audit_log': {},
+    'audit_log': {
+        'audit_log_class_idx': None,
+    },
     'bug_group_map': {
         'bug_id': None,
         'group_id': None,
@@ -1935,6 +2022,11 @@ index_remark = {
     },
     'bug_tag': {
         'bug_tag_bug_id_idx': None,
+    },
+    'bug_user_last_visit': {
+        'PRIMARY': None,
+        'bug_user_last_visit_idx': None,
+        'bug_user_last_visit_last_visit_ts_idx': None,
     },
     'bugs': {
         'PRIMARY': None,
@@ -1967,6 +2059,12 @@ index_remark = {
         'fieldid': None,
         'bugs_activity_who_idx': None,
         'bugs_activity_added_idx': None,
+        'PRIMARY': None,
+        'bugs_activity_removed_idx': None,
+    },
+    'bugs_aliases': {
+        'bugs_aliases_alias_idx': None,
+        'bugs_aliases_bug_id_idx': None,
     },
     'bugs_fulltext': {
         'PRIMARY': None,
@@ -2003,6 +2101,9 @@ index_remark = {
     },
     'duplicates': {
         'PRIMARY': None,
+    },
+    'email_bug_ignore': {
+        'email_bug_ignore_user_id_idx': None,
     },
     'email_setting': {
         'email_setting_user_id_idx': None,
@@ -2067,6 +2168,21 @@ index_remark = {
         'bug_when': None,
         'thetext': None,
     },
+    'longdescs_tags': {
+        'PRIMARY': None,
+        'longdescs_tags_idx': None, 
+    },
+    'longdescs_tags_activity': {
+        'PRIMARY': None,
+        'longdescs_tags_activity_bug_id_idx': None,
+    },
+    'longdescs_tags_weights': {
+        'PRIMARY': None,
+        'longdescs_tags_weights_tag_idx': None,
+    },
+    'mail_staging': {
+        'PRIMARY': None,
+    },
     'milestones': {
         'PRIMARY': None,
         'product': None,
@@ -2118,6 +2234,7 @@ index_remark = {
         'userid': None,
         'profiles_when': None,
         'fieldid': None,
+        'PRIMARY': None,
     },
     'quips': {
         'PRIMARY': None,
@@ -2127,6 +2244,10 @@ index_remark = {
         'rep_platform_sortkey_idx': None,
         'rep_platform_value_idx': None,
         'rep_platform_visibility_value_id_idx': None,
+    },
+    'reports': {
+        'PRIMARY': None,
+        'reports_user_id_idx': None,
     },
     'resolution': {
         'PRIMARY': None,
@@ -2195,6 +2316,11 @@ index_remark = {
     },
     'ts_note': {
         'ts_note_jobid_idx': None,
+    },
+    'user_api_keys': {
+        'PRIMARY': None,
+        'user_api_keys_api_key_idx': None,
+        'user_api_keys_user_id_idx': None,
     },
     'user_group_map': {
         'user_id': None,
@@ -2378,6 +2504,7 @@ index_removed_remark = {
         'product': 'replaced by "product_id"',
         'component': 'replaced by "component_id"',
         'votes': 'The Voting feature was moved to an extension.',
+        'alias': None,
     },
     'bugs_activity': {
         'when': 'replaced by "bug_when"',
@@ -2404,6 +2531,22 @@ index_removed_remark = {
 }
 
 index_added_remark = {
+    'attachments': {
+        'attachments_submitter_id_idx': None,
+        'attachments_modification_time_idx': None,
+    },
+    'audit_log': {
+        'audit_log_class_idx': None,
+    },
+    'bug_see_also': {
+        'PRIMARY': None,
+    },
+    'bug_severity': {
+        'bug_severity_visibility_value_id_idx': None,
+    },
+    'bug_status': {
+        'bug_status_visibility_value_id_idx': None,
+    },
     'bugs': {
         'alias': None,
         'component_id': 'replacing "component"',
@@ -2415,25 +2558,15 @@ index_added_remark = {
         'short_desc': None,
         'votes': None,
     },
-    'bug_see_also': {
-        'PRIMARY': None,
-    },
-    'bug_severity': {
-        'bug_severity_visibility_value_id_idx': None,
-    },
-    'bug_status': {
-        'bug_status_visibility_value_id_idx': None,
-    },
-    'attachments': {
-        'attachments_submitter_id_idx': None,
-        'attachments_modification_time_idx': None,
-    },
     'bugs_activity': {
+        'id': None,
         'bug_when': 'replacing "when"',
         'bugs_activity_who_idx': None,
         'bugs_activity_added_idx': None,
         'fieldid': 'replacing "field"',
         'field': None,
+        'PRIMARY': None,
+        'bugs_activity_removed_idx': None,
     },
     'cc': {
         'bug_id': None,
@@ -2474,6 +2607,9 @@ index_added_remark = {
     },
     'profiles': {
         'profiles_extern_id_idx': None,
+    },
+    'profiles_activity': {
+        'PRIMARY': None,
     },
     'rep_platform': {
         'rep_platform_visibility_value_id_idx': None,
@@ -5812,6 +5948,16 @@ select group_id from user_group_map where userid = <em>n</em> and isbless=0
     <td><a href="https://github.com/justdave">justdave</a></td>
 
     <td>Add ancient releases 4.2rc1, 4.2rc2, 4.2, 4.2.1, 4.2.2, 4.2.3, 4.2.4, 4.2.5, 4.2.6, 4.2.7, 4.2.8, 4.2.9, 4.2.10, 4.2.11, 4.2.12, 4.2.13, 4.2.14, 4.2.15, and 4.2.16.</td>
+
+  </tr>
+
+  <tr valign="top">
+
+    <td>2024-05-01</td>
+
+    <td><a href="https://github.com/justdave">justdave</a></td>
+
+    <td>Add releases </td> 4.3.1, 4.3.2, 4.3.3, 4.4rc1, 4.4rc2, 4.4, 4.4.1, 4.4.2, 4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7, 4.4.8, 4.4.9, 4.4.10, 4.4.11, 4.4.12, 4.4.13, 4.4.14, 4.5.1, 4.5.2, 4.5.3, 4.5.4, 4.5.5, 4.5.6, 5.0rc1, 5.0rc2, 5.0rc3, 5.0, 5.0.1, 5.0.2, 5.0.3, 5.0.4, 5.0.4.1, 5.0.5, 5.0.6, and 5.2.</td>
 
   </tr>
 
