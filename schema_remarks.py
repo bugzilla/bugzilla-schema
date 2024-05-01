@@ -2761,7 +2761,7 @@ footer = [
     """
 <hr />
 
-<p> <small>This document is copyright &copy; 2001-2003 Perforce Software, Inc.  All rights reserved.</small> </p>
+<p> <small>This document is copyright &copy; 2001-2003 Perforce Software, Inc.  &copy; 2024 Bugzilla Contributors. All rights reserved.</small> </p>
 
 <p> <small>Redistribution and use of this document in any form, with or without modification, is permitted provided that redistributions of this document retain the above copyright notice, this condition and the following disclaimer.</small> </p>
 

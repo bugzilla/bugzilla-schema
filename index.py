@@ -164,7 +164,8 @@ class webpage:
     def print_copyright(self):
         print(
             '<p><small>This document is copyright &copy; 2001-2013 '
-            'Perforce Software, Inc.  All rights reserved.</small></p>\n'
+            'Perforce Software, Inc. &copy; 2024 Bugzilla '
+            'Contributors.  All rights reserved.</small></p>\n'
         )
 
         print(
