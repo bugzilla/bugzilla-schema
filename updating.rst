@@ -49,11 +49,11 @@ For any given release of Bugzilla, the process goes something like this:
 - To validate that you got the version numbers entered in all the right
   spots, you can run::
 
-  > ./make_schema_doc.py --validate
+  > ./make_schema_doc.py validate
 
-- Then get a plain schema doc, either through the CGI or by hand::
+- Then test the schema doc, either through the CGI or by hand::
 
-  > ./make_schema_doc.py 3.0.0 3.8.12 foo.html
+  > ./make_schema_doc.py test 3.0.0 3.8.12
 
   This will generate a list of errors, complaining about schema
   changes (new or removed tables, columns or indexes) which aren't

@@ -21,6 +21,7 @@ import re
 import types
 import time
 import sys
+import argparse
 
 import schema_remarks
 import get_schema
@@ -868,8 +869,9 @@ def make_tables(first, last):
     return (header, body, footer)
 
 
-def write_file(first, last, filename):
-    file = open(filename, 'w')
+def write_file(first, last, file):
+    # file = open(filename, 'w')
+    # file is an already-open filehandle
     (header, body, footer) = make_tables(first, last)
     file.write(header)
     file.write(body)
@@ -877,12 +879,26 @@ def write_file(first, last, filename):
     file.close()
 
 
-def make_body(first, last):
-    (header, body, footer) = make_tables(first, last)
-    return body
+def test_schema_remarks(args):
+    first = args.first
+    last = args.last
+    file = args.file
+    if last == None:
+        last = first
+    if file:
+        write_file(first, last, file)
+    else:
+        try:
+            (header, body, footer) = make_tables(first, last)
+        except BzSchemaProcessingException as e:
+            message = e.message
+            message = message.replace('<br/>', '')
+            print(message)
+            sys.exit()
+        print("Succeeded!")
 
 
-def validate_schema_remarks():
+def validate_schema_remarks(*args, **kwargs):
     for v in schema_remarks.version_order:
         if not v in schema_remarks.version_schema_map:
             errors.append(
@@ -912,32 +928,56 @@ def validate_schema_remarks():
                 f"Version {v} found in version_remark is not listed in version_schema_map"
             )
     if errors:
-        e = str.join('<br/>\n', errors)
-        raise BzSchemaProcessingException(e)
+        print(str.join('\n', errors))
+        sys.exit()
     print("Versions validated.")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2 and sys.argv[1] == '--validate':
-        validate_schema_remarks()
-    elif len(sys.argv) == 3:
-        (first, last) = sys.argv[1:]
-        try:
-            (header, body, footer) = make_tables(first, last)
-        except BzSchemaProcessingException as e:
-            print(e.message)
-            sys.exit()
-        print("Succeeded!")
-    else:
-        try:
-            (first, last, filename) = sys.argv[1:]
-        except ValueError:
-            print(
-                "Please pass the starting and ending schema versions and an optional filename to output to,"
-            )
-            print("or pass --validate to check for version number sanity.")
-            sys.exit()
-        write_file(first, last, filename)
+    parser = argparse.ArgumentParser(
+        description="A utility for generating schema comparison documents."
+    )
+    subparsers = parser.add_subparsers(
+        required=True,
+        metavar='subcommand',
+        help='Type `%(prog)s {subcommand} -h` for additional help',
+        title='Available subcommands',
+    )
+    parser_validate = subparsers.add_parser(
+        'validate',
+        help='Validate that the version-related lists are in sync with each other',
+        description='Validate that the version-related lists are in sync with each other',
+    )
+    parser_validate.set_defaults(func=validate_schema_remarks)
+    parser_test = subparsers.add_parser(
+        'test',
+        help='Test schema document generation. By default it only prints errors or a success message.',
+        description='Test schema document generation. By default it only prints errors or a success message.',
+    )
+    parser_test.add_argument(
+        'first',
+        metavar="first",
+        choices=schema_remarks.version_order,
+        help="The starting version of the schemas to compare, or the single version to display if 'last' is not provided.",
+    )
+    parser_test.add_argument(
+        'last',
+        metavar="last",
+        choices=schema_remarks.version_order,
+        nargs="?",
+        default=None,
+        help="The destination version of the schema to compare",
+    )
+    parser_test.add_argument(
+        '-f',
+        dest="file",
+        metavar='FILENAME',
+        type=argparse.FileType('w'),
+        help="A file to write the generated schema doc to. Passing - will write it to standard out.",
+    )
+    parser_test.set_defaults(func=test_schema_remarks)
+    args = parser.parse_args()
+    args.func(args)
 
 # A. REFERENCES
 #
