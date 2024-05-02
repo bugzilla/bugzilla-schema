@@ -918,14 +918,22 @@ def validate_schema_remarks():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == '--validate':
+    if len(sys.argv) == 2 and sys.argv[1] == '--validate':
         validate_schema_remarks()
+    elif len(sys.argv) == 3:
+        (first, last) = sys.argv[1:]
+        try:
+            (header, body, footer) = make_tables(first, last)
+        except BzSchemaProcessingException as e:
+            print(e.message)
+            sys.exit()
+        print("Succeeded!")
     else:
         try:
             (first, last, filename) = sys.argv[1:]
         except ValueError:
             print(
-                "Please pass the starting and ending schema versions and a filename to output to,"
+                "Please pass the starting and ending schema versions and an optional filename to output to,"
             )
             print("or pass --validate to check for version number sanity.")
             sys.exit()
