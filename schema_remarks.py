@@ -648,7 +648,7 @@ version_remark = [
     ('3.4.14', '2012-01-31', 'A security patch release'),
     ('3.6.8', '2012-01-31', 'A security patch release'),
     ('4.0.4', '2012-01-31', 'A security patch release'),
-    ('4.2rc1', '2012-01-31', 'A release candidate'),
+    ('4.2rc2', '2012-01-31', 'A release candidate'),
     ('4.0.5', '2012-02-22', 'A patch release'),
     ('4.2', '2012-02-22', ''),
     ('3.6.9', '2012-04-18', 'A security patch release'),
