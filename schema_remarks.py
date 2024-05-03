@@ -648,7 +648,7 @@ version_remark = [
     ('3.4.14', '2012-01-31', 'A security patch release'),
     ('3.6.8', '2012-01-31', 'A security patch release'),
     ('4.0.4', '2012-01-31', 'A security patch release'),
-    ('4.2rc2', '2012-01-31', 'A release candidate'),
+    ('4.2rc1', '2012-01-31', 'A release candidate'),
     ('4.0.5', '2012-02-22', 'A patch release'),
     ('4.2', '2012-02-22', ''),
     ('3.6.9', '2012-04-18', 'A security patch release'),
@@ -733,6 +733,7 @@ version_remark = [
     ('5.9.1', '2024-05-??', 'A not-yet-released development release'),
 ]
 
+
 # This is a map from table name to an HTML remark concerning that
 # table, which is output before the schema for that table.
 #
@@ -740,108 +741,328 @@ version_remark = [
 # we know to add a remark later.
 
 table_remark = {
-    'attachments': 'Bug <a href="#notes-attachments">attachments</a>.',
+    'antispam_comment_blocklist': 'TODO',
+    'antispam_domain_blocklist': 'TODO',
+    'antispam_ip_blocklist': 'TODO',
     'attach_data': 'The content of <a href="#notes-attachments">attachments</a>.',
+    'attachment_storage_class': 'TODO',
+    'attachments': 'Bug <a href="#notes-attachments">attachments</a>.',
     'attachstatusdefs': 'Attachment status definitions.',
     'attachstatuses': 'Attachment statuses.',
-    'audit_log': 'Changes to anything that subclasses Bugzilla::Object (such as users, products, components) get logged here. A class can exclude itself from being logged by including `use constant AUDIT_UPDATES => 1;` within the object .pm file. Attachments, Bugs, Comments, and Flags are excluded as they are tracked in %(table-bugs_activity)s.',
-    'bug_group_map': 'Which bugs are in which groups.  See <a href="#notes-groups">the notes on groups</a>.',
+    'audit_log': (
+        'Changes to anything that subclasses Bugzilla::Object (such as '
+        'users, products, components) get logged here. A class can '
+        'exclude itself from being logged by including `use constant '
+        'AUDIT_UPDATES => 1;` within the object .pm file. Attachments, '
+        'Bugs, Comments, and Flags are excluded as they are tracked in '
+        '%(table-bugs_activity)s.'
+    ),
+    'bug_group_map': (
+        'Which bugs are in which groups.  See <a '
+        'href="#notes-groups">the notes on groups</a>.'
+    ),
+    'bug_interest': 'TODO',
+    'bug_mentors': 'TODO',
     'bug_see_also': '<a href="#notes-see_also">Related bugs</a> in other Bugzillas.',
     'bug_severity': 'The severity values of bugs.',
     'bug_status': 'The status values of bugs.',
-    'bug_user_last_visit': 'Keeps track of the last time a user looked at a bug when logged in. This allows jumping to the last-viewed comment when you next return to the bug.',
+    'bug_type': 'TODO',
+    'bug_user_agent': 'TODO',
+    'bug_user_last_visit': (
+        'Keeps track of the last time a user looked at a bug '
+        'when logged in. This allows jumping to the '
+        'last-viewed comment when you next return to the bug.'
+    ),
+    'bugmail_filters': 'TODO',
     'bugs': 'The bugs themselves.',
     'bugs_activity': '<a href="#notes-activity">Activity</a> on the bugs table.',
     'bugs_aliases': 'A mapping of bugs to their aliases.',
     'bugs_fulltext': 'All the descriptive text on bugs, to speed up searching.',
     'bz_schema': 'The database schema itself.',
-    'category_group_map': 'Which groups does a user have to be in to view chart data in a given category.  See <a href="#notes-charts">the notes on charts</a>. ',
-    'cc': 'Users who have asked to receive <a href="#notes-email">email</a> when a bug changes.',
-    'component_cc': 'Users to put on the <a href="#notes-email">CC list</a> for a new bug in a given component.',
-    'classifications': 'Product classifications. See <a href="#notes-products">the notes on products</a>.',
-    'components': 'One row for each component.  See <a href="#notes-products">the notes on products and components.</a>',
-    'dependencies': 'Which bugs <a href="#notes-dependencies">depend</a> on other bugs.',
+    'category_group_map': (
+        'Which groups does a user have to be in to view chart '
+        'data in a given category.  See <a '
+        'href="#notes-charts">the notes on charts</a>. '
+    ),
+    'cc': (
+        'Users who have asked to receive <a href="#notes-email">email</a> when '
+        'a bug changes.'
+    ),
+    'classifications': (
+        'Product classifications. See <a '
+        'href="#notes-products">the notes on products</a>.'
+    ),
+    'component_cc': (
+        'Users to put on the <a href="#notes-email">CC list</a> for a '
+        'new bug in a given component.'
+    ),
+    'component_reviewers': 'TODO',
+    'component_watch': 'TODO',
+    'components': (
+        'One row for each component.  See <a href="#notes-products">the '
+        'notes on products and components.</a>'
+    ),
+    'dependencies': (
+        'Which bugs <a href="#notes-dependencies">depend</a> on other bugs.'
+    ),
     'duplicates': 'Which bugs are duplicates of which other bugs.',
-    'email_bug_ignore': 'Stores lists of bugs users have opted not to receive notifications about.',
-    'email_rates': 'Logs timestamps of messages sent to users so that they can be rate-limited.',
+    'email_bug_ignore': (
+        'Stores lists of bugs users have opted not to receive notifications about.'
+    ),
+    'email_rates': (
+        'Logs timestamps of messages sent to users so that they can be rate-limited.'
+    ),
     'email_setting': 'Per-user settings controlling when email is sent to that user.',
+    'field_visibility': (
+        'Tracks when custom fields are visible based on other fields on the bug.'
+    ),
     'fielddefs': 'The properties of each bug field.',
-    'field_visibility': 'Tracks when custom fields are visible based on other fields on the bug.',
-    'flagexclusions': 'It may be forbidden to set a given flag on an item (bug or attachment) if that item is in a given product and/or component.  This table records such exclusions.  See the notes on <a href="#notes-flags">flags</a>.',
-    'flaginclusions': 'An item (bug or attachment) may be required to be in a given product and/or component for a flag to be set.  This table records such requirements. See the notes on <a href="#notes-flags">flags</a>.',
-    'flags': 'This table records the flags set on bugs or attachments. See the notes on <a href="#notes-flags">flags</a>.',
-    'flagtypes': 'The types of flags available for bugs and attachments.  See the notes on <a href="#notes-flags">flags</a>.',
-    'group_control_map': 'This table describes the relationship of groups to products (whether membership in a given group is required for entering or editing a bug in a given product).  See <a href="#notes-groups">the notes on groups</a>.',
-    'group_group_map': 'Groups can be configured such that membership of one group automatically confers rights over some other groups.  This table records that configuration.  See <a href="#notes-groups">the notes on groups</a>.',
-    'groups': 'This table describes a number of user groups.  Each group allows its members to perform a restricted activity.  See <a href="#notes-groups">the notes on groups</a>. ',
-    'keyworddefs': 'Names and definitions of the keywords.  See <a href="#notes-keywords">the notes on keywords</a>.',
-    'keywords': 'Bugs may have keywords.  This table defines which bugs have which keywords.  The keywords are defined in %(the-table-keyworddefs)s.',
-    'logincookies': 'Bugzilla generates a cookie each time a user logs in, and uses it for subsequent authentication.  The cookies generated are stored in this table.  For more information, see <a href="#notes-authentication">the notes on authentication</a>.',
-    'login_failure': 'Log of failed user login attempts. Records for a given user are cleared when they successfully log in. Users are locked out if they exceed MAX_LOGIN_ATTEMPTS in LOGIN_LOCKOUT_INTERVAL minutes (defined in Bugzilla::Constants).',
+    'flag_state_activity': 'TODO',
+    'flagexclusions': (
+        'It may be forbidden to set a given flag on an item (bug or '
+        'attachment) if that item is in a given product and/or '
+        'component.  This table records such exclusions.  See the '
+        'notes on <a href="#notes-flags">flags</a>.'
+    ),
+    'flaginclusions': (
+        'An item (bug or attachment) may be required to be in a '
+        'given product and/or component for a flag to be set.  This '
+        'table records such requirements. See the notes on <a '
+        'href="#notes-flags">flags</a>.'
+    ),
+    'flags': (
+        'This table records the flags set on bugs or attachments. See the '
+        'notes on <a href="#notes-flags">flags</a>.'
+    ),
+    'flagtype_comments': 'TODO',
+    'flagtypes': (
+        'The types of flags available for bugs and attachments.  See the '
+        'notes on <a href="#notes-flags">flags</a>.'
+    ),
+    'group_control_map': (
+        'This table describes the relationship of groups to '
+        'products (whether membership in a given group is '
+        'required for entering or editing a bug in a given '
+        'product).  See <a href="#notes-groups">the notes on '
+        'groups</a>.'
+    ),
+    'group_group_map': (
+        'Groups can be configured such that membership of one '
+        'group automatically confers rights over some other '
+        'groups.  This table records that configuration.  See <a '
+        'href="#notes-groups">the notes on groups</a>.'
+    ),
+    'groups': (
+        'This table describes a number of user groups.  Each group allows '
+        'its members to perform a restricted activity.  See <a '
+        'href="#notes-groups">the notes on groups</a>. '
+    ),
+    'job_last_run': 'TODO',
+    'keyworddefs': (
+        'Names and definitions of the keywords.  See <a '
+        'href="#notes-keywords">the notes on keywords</a>.'
+    ),
+    'keywords': (
+        'Bugs may have keywords.  This table defines which bugs have '
+        'which keywords.  The keywords are defined in '
+        '%(the-table-keyworddefs)s.'
+    ),
+    'login_failure': (
+        'Log of failed user login attempts. Records for a given user '
+        'are cleared when they successfully log in. Users are locked '
+        'out if they exceed MAX_LOGIN_ATTEMPTS in '
+        'LOGIN_LOCKOUT_INTERVAL minutes (defined in '
+        'Bugzilla::Constants).'
+    ),
+    'logincookies': (
+        'Bugzilla generates a cookie each time a user logs in, and '
+        'uses it for subsequent authentication.  The cookies '
+        'generated are stored in this table.  For more information, '
+        'see <a href="#notes-authentication">the notes on '
+        'authentication</a>.'
+    ),
     'longdescs': 'Long bug <a href="#notes-descriptions">descriptions</a>.',
+    'longdescs_activity': 'TODO',
     'longdescs_tags': 'Tags on comments are stored here.',
     'longdescs_tags_activity': 'Activity log of changes to comment tags.',
-    'longdescs_tags_weights': 'This table caches the number of comments that are tagged with each comment tag.',
-    'mail_staging': 'outbound notification emails are staged here if a notification happens while a database transaction is active. The messages are then sent as a batch after the transaction is closed.',
+    'longdescs_tags_weights': (
+        'This table caches the number of comments that are '
+        'tagged with each comment tag.'
+    ),
+    'mail_staging': (
+        'outbound notification emails are staged here if a '
+        'notification happens while a database transaction is active. '
+        'The messages are then sent as a batch after the transaction '
+        'is closed.'
+    ),
     'milestones': 'Development <a href="#notes-milestones">milestones</a>.',
+    'mydashboard': 'TODO',
+    'nag_defer': 'TODO',
+    'nag_settings': 'TODO',
+    'nag_watch': 'TODO',
     'namedqueries': 'Named <a href="#notes-namedqueries">queries</a>.',
-    'namedquery_group_map': 'Controls whether a <a href="#notes-namedqueries">named query</a> is shared with other users (other members of a group).',
-    'namedqueries_link_in_footer': 'Controls whether a <a href="#notes-namedqueries">named query</a> appears in a given user\'s navigation footer.',
+    'namedqueries_link_in_footer': (
+        'Controls whether a <a '
+        'href="#notes-namedqueries">named query</a> '
+        'appears in a given user\'s navigation footer.'
+    ),
+    'namedquery_group_map': (
+        'Controls whether a <a '
+        'href="#notes-namedqueries">named query</a> is shared '
+        'with other users (other members of a group).'
+    ),
+    'oauth2_client': 'TODO',
+    'oauth2_client_scope': 'TODO',
+    'oauth2_jwt': 'TODO',
+    'oauth2_scope': 'TODO',
     'op_sys': 'The possible values of the "operating system" field of a bug.',
+    'phabbugz': 'TODO',
     'priority': 'The possible values of the "priority" field of a bug.',
-    'products': 'One row for each product.  See <a href="#notes-products">the notes on products.</a>',
-    'profile_search': 'The most-recent SAVE_NUM_SEARCHES (defined in Bugzilla::Constants) searches a user has run are stored here, so that the Next/Prev links in a bug that was opened from a list will continue to work even if you have multiple browser tabs open with different searches.',
+    'product_reviewers': 'TODO',
+    'products': (
+        'One row for each product.  See <a href="#notes-products">the '
+        'notes on products.</a>'
+    ),
+    'profile_mfa': 'TODO',
+    'profile_search': (
+        'The most-recent SAVE_NUM_SEARCHES (defined in '
+        'Bugzilla::Constants) searches a user has run are stored '
+        'here, so that the Next/Prev links in a bug that was opened '
+        'from a list will continue to work even if you have '
+        'multiple browser tabs open with different searches.'
+    ),
     'profile_setting': 'User preference settings.',
-    'profiles': 'Describes Bugzilla <a href="#notes-users">users</a>.  One row per user.',
-    'profiles_activity': 'This table is for recording changes to %(the-table-profiles)s. Currently it only records changes to group membership made with editusers.cgi.  This allows the administrator to track group inflation.  There is currently no code to inspect this table; only to add to it.',
+    'profiles': (
+        'Describes Bugzilla <a href="#notes-users">users</a>.  One row per user.'
+    ),
+    'profiles_activity': (
+        'This table is for recording changes to '
+        '%(the-table-profiles)s. Currently it only records '
+        'changes to group membership made with editusers.cgi.  '
+        'This allows the administrator to track group '
+        'inflation.  There is currently no code to inspect this '
+        'table; only to add to it.'
+    ),
+    'profiles_statistics': 'TODO',
+    'profiles_statistics_products': 'TODO',
+    'profiles_statistics_recalc': 'TODO',
+    'profiles_statistics_status': 'TODO',
+    'push': 'TODO',
+    'push_backlog': 'TODO',
+    'push_backoff': 'TODO',
+    'push_log': 'TODO',
+    'push_notify': 'TODO',
+    'push_options': 'TODO',
     'quips': 'A table of <a href="#notes-quips">quips</a>.',
+    'regressions': 'TODO',
     'rep_platform': 'The possible values of the "platform" field of a bug.',
+    'report_ping': 'TODO',
     'reports': 'Reports generated from report.cgi are saved in this table.',
     'resolution': 'The possible values of the "resolution" field of a bug.',
-    'series': 'Properties of the time-series datasets available (e.g. for plotting charts).  See <a href="#notes-charts">the notes on charts</a>.',
+    'series': (
+        'Properties of the time-series datasets available (e.g. for '
+        'plotting charts).  See <a href="#notes-charts">the notes on '
+        'charts</a>.'
+    ),
     'series_categories': None,
-    'series_data': 'Data for plotting time-series charts.  See <a href="#notes-charts">the notes on charts</a>.',
+    'series_data': (
+        'Data for plotting time-series charts.  See <a '
+        'href="#notes-charts">the notes on charts</a>.'
+    ),
     'setting': 'Identifies the set of user preferences.',
     'setting_value': 'Possible values for user preferences.',
-    'shadowlog': 'A log of SQL activity; used for updating <a href="#notes-shadow">shadow databases</a>.',
-    'status_workflow': 'Identifies allowable <a href="#notes-workflow">workflow</a> transitions.',
+    'shadowlog': (
+        'A log of SQL activity; used for updating <a '
+        'href="#notes-shadow">shadow databases</a>.'
+    ),
+    'status_workflow': (
+        'Identifies allowable <a href="#notes-workflow">workflow</a> transitions.'
+    ),
     'tag': None,
     'tags': None,
-    'tokens': 'Tokens are sent to users to track activities such as creating new accounts and changing email addresses or passwords.  They are also sent to browsers and used to track workflow, to prevent security problems (e.g. so that one can only delete groups from a session last seen on a group management page).',
-    'ts_error': 'A log of errors from TheSchwartz asynchronous job-queueing system.  Rows are aged out of this table after seven days.',
-    'ts_exitstatus': 'A log of job completions from TheSchwartz asynchronous job-queueing system.',
-    'ts_funcmap': 'The table of functions for TheSchwartz asynchronous job-queueing system.',
+    'token_data': 'TODO',
+    'tokens': (
+        'Tokens are sent to users to track activities such as creating new '
+        'accounts and changing email addresses or passwords.  They are also '
+        'sent to browsers and used to track workflow, to prevent security '
+        'problems (e.g. so that one can only delete groups from a session '
+        'last seen on a group management page).'
+    ),
+    'tracking_flags': 'TODO',
+    'tracking_flags_bugs': 'TODO',
+    'tracking_flags_values': 'TODO',
+    'tracking_flags_visibility': 'TODO',
+    'ts_error': (
+        'A log of errors from TheSchwartz asynchronous job-queueing '
+        'system.  Rows are aged out of this table after seven days.'
+    ),
+    'ts_exitstatus': (
+        'A log of job completions from TheSchwartz asynchronous job-queueing system.'
+    ),
+    'ts_funcmap': (
+        'The table of functions for TheSchwartz asynchronous job-queueing system.'
+    ),
     'ts_job': 'The job queue managed by TheSchwartz asynchronous job-queueing system.',
-    'ts_note': 'Notes on jobs for TheSchwartz asynchronous job-queueing system.  Apparently not used.',
+    'ts_note': (
+        'Notes on jobs for TheSchwartz asynchronous job-queueing system.  '
+        'Apparently not used.'
+    ),
     'user_api_keys': 'User generated API keys for web services are stored here.',
-    'user_group_map': 'This table records which users are members of each group, or can "bless" each group.  See <a href="#notes-groups">the notes on groups</a>.',
-    'user_series_map': 'User subscriptions to time-series datasets.  See <a href="#notes-charts">the notes on charts</a>.',
+    'user_group_map': (
+        'This table records which users are members of each group, '
+        'or can "bless" each group.  See <a '
+        'href="#notes-groups">the notes on groups</a>.'
+    ),
+    'user_request_log': 'TODO',
+    'user_series_map': (
+        'User subscriptions to time-series datasets.  See <a '
+        'href="#notes-charts">the notes on charts</a>.'
+    ),
     'versions': 'Product <a href="#notes-versions">versions</a>.',
     'votes': '<a href="#notes-voting">votes</a>.',
     'watch': '<a href="#notes-watchers">watchers</a>.',
-    'whine_events': 'One row for each regular whine event. See <a href="#notes-whine">the notes on whining</a>.',
+    'webhooks': 'TODO',
+    'whine_events': (
+        'One row for each regular whine event. See <a '
+        'href="#notes-whine">the notes on whining</a>.'
+    ),
     'whine_queries': 'See <a href="#notes-whine">the notes on whining</a>.',
     'whine_schedules': 'See <a href="#notes-whine">the notes on whining</a>.',
 }
 
+
 table_added_remark = {
-    'attachments': None,
+    'antispam_comment_blocklist': 'TODO',
+    'antispam_domain_blocklist': 'TODO',
+    'antispam_ip_blocklist': 'TODO',
     'attach_data': 'Speeding up attachment queries',
+    'attachment_storage_class': 'TODO',
+    'attachments': None,
     'attachstatusdefs': None,
     'attachstatuses': None,
     'audit_log': None,
     'bug_group_map': 'Part of the new groups system',
+    'bug_interest': 'TODO',
+    'bug_mentors': 'TODO',
     'bug_see_also': None,
     'bug_severity': 'Removing enumerated types',
     'bug_status': 'Removing enumerated types',
     'bug_tag': None,
+    'bug_type': 'TODO',
+    'bug_user_agent': 'TODO',
     'bug_user_last_visit': 'Bug 489028',
-    'bugs_aliases': 'Formerly %(column-bugs-alias)s but moved to a table so it could have a one-to-many relationship. Bug 1012506.',
+    'bugmail_filters': 'TODO',
+    'bugs_aliases': (
+        'Formerly %(column-bugs-alias)s but moved to a table so it '
+        'could have a one-to-many relationship. Bug 1012506.'
+    ),
     'bugs_fulltext': 'Improving full-text search speed',
     'bz_schema': None,
     'category_group_map': 'Part of the new charting system',
-    'component_cc': None,
     'classifications': None,
+    'component_cc': None,
+    'component_reviewers': 'TODO',
+    'component_watch': 'TODO',
     'dependencies': None,
     'duplicates': None,
     'email_bug_ignore': None,
@@ -849,33 +1070,62 @@ table_added_remark = {
     'email_setting': 'Replaces %(column-profiles-emailflags)s',
     'field_visibility': 'Replaced %(column-fielddefs-visibility_field_id)s',
     'fielddefs': None,
+    'flag_state_activity': 'TODO',
     'flagexclusions': 'Part of the new flags system',
     'flaginclusions': 'Part of the new flags system',
     'flags': 'Part of the new flags system',
+    'flagtype_comments': 'TODO',
     'flagtypes': 'Part of the new flags system',
     'group_control_map': 'Part of the new groups system',
     'group_group_map': 'Part of the new groups system',
     'groups': None,
-    'keywords': None,
+    'job_last_run': 'TODO',
     'keyworddefs': None,
-    'login_failure': 'Supporting new feature to lock out users who repeatedly fail logging in',
+    'keywords': None,
+    'login_failure': (
+        'Supporting new feature to lock out users who repeatedly fail logging in'
+    ),
     'longdescs': None,
+    'longdescs_activity': 'TODO',
     'longdescs_tags': 'Bug 793963',
     'longdescs_tags_activity': 'Bug 793963',
     'longdescs_tags_weights': 'Bug 793963',
     'mail_staging': 'Bug 448574',
     'milestones': None,
+    'mydashboard': 'TODO',
+    'nag_defer': 'TODO',
+    'nag_settings': 'TODO',
+    'nag_watch': 'TODO',
     'namedqueries': None,
     'namedqueries_link_in_footer': 'Replacing %(column-namedqueries-linkinfooter)s',
     'namedquery_group_map': None,
+    'oauth2_client': 'TODO',
+    'oauth2_client_scope': 'TODO',
+    'oauth2_jwt': 'TODO',
+    'oauth2_scope': 'TODO',
     'op_sys': 'Removing enumerated types',
+    'phabbugz': 'TODO',
     'priority': 'Removing enumerated types',
+    'product_reviewers': 'TODO',
     'products': None,
+    'profile_mfa': 'TODO',
     'profile_search': None,
     'profile_setting': None,
     'profiles_activity': None,
+    'profiles_statistics': 'TODO',
+    'profiles_statistics_products': 'TODO',
+    'profiles_statistics_recalc': 'TODO',
+    'profiles_statistics_status': 'TODO',
+    'push': 'TODO',
+    'push_backlog': 'TODO',
+    'push_backoff': 'TODO',
+    'push_log': 'TODO',
+    'push_notify': 'TODO',
+    'push_options': 'TODO',
     'quips': None,
+    'regressions': 'TODO',
     'rep_platform': 'Removing enumerated types',
+    'report_ping': 'TODO',
     'reports': 'Ability to save reports added in Bug 319598',
     'resolution': 'Removing enumerated types',
     'series': 'Part of the new charting system',
@@ -887,7 +1137,12 @@ table_added_remark = {
     'status_workflow': 'Part of the custom workflow system',
     'tag': 'Renamed from %(table-tags)s',
     'tags': None,
+    'token_data': 'TODO',
     'tokens': None,
+    'tracking_flags': 'TODO',
+    'tracking_flags_bugs': 'TODO',
+    'tracking_flags_values': 'TODO',
+    'tracking_flags_visibility': 'TODO',
     'ts_error': 'For asynchronous mail',
     'ts_exitstatus': 'For asynchronous mail',
     'ts_funcmap': 'For asynchronous mail',
@@ -895,22 +1150,34 @@ table_added_remark = {
     'ts_note': 'For asynchronous mail',
     'user_api_keys': 'Bug 726696',
     'user_group_map': 'Part of the new groups system',
+    'user_request_log': 'TODO',
     'user_series_map': 'Part of the new charting system',
     'votes': None,
     'watch': None,
+    'webhooks': 'TODO',
     'whine_events': 'Part of the new whine system',
     'whine_queries': 'Part of the new whine system',
     'whine_schedules': 'Part of the new whine system',
 }
 
+
 table_removed_remark = {
     'attachstatusdefs': 'replaced by the flag tables',
     'attachstatuses': ' replaced by the flag tables',
-    'shadowlog': 'similar functionality now available using MySQL\'s replication facilities',
-    'user_series_map': 'partially replaced by %(the-table-category_group_map)s',
-    'votes': 'The Voting feature was moved to an extension. The table is not deleted on upgrade if it exists.',
+    'bugs_aliases': 'TODO',
+    'mail_staging': 'TODO',
+    'reports': 'TODO',
+    'shadowlog': (
+        "similar functionality now available using MySQL's replication facilities"
+    ),
     'tags': 'Was renamed to %(table-tag)s',
+    'user_series_map': 'partially replaced by %(the-table-category_group_map)s',
+    'votes': (
+        'The Voting feature was moved to an extension. The table is not '
+        'deleted on upgrade if it exists.'
+    ),
 }
+
 
 # This is a map from table name to a map from column name to HTML
 # remark for that column.  At present, these remarks include schema
@@ -920,72 +1187,126 @@ table_removed_remark = {
 # so we know to add a remark later.
 
 column_remark = {
-    'attachments': {
-        'attach_id': 'a unique ID.',
-        'bug_id': 'the bug to which this is attached (foreign key %(column-bugs-bug_id)s)',
-        'creation_ts': 'the creation time.',
-        'description': 'a description of the attachment.',
-        'mimetype': 'the MIME type of the attachment.',
-        'modification_time': 'the modification time of the attachment.',
-        'ispatch': 'non-zero if this attachment is a patch file.',
-        'isprivate': 'Non-zero if this attachment is "private", i.e. only visible to members of the "insider" group.',
-        'isobsolete': 'Non-zero if this attachment is marked as obsolete.',
-        'isurl': 'Non-zero if this attachment is actually a URL.',
-        'filename': 'the filename of the attachment.',
-        'thedata': 'the content of the attachment.',
-        'submitter_id': 'the userid of the attachment (foreign key %(column-profiles-userid)s)',
-    },
+    'antispam_comment_blocklist': {'id': 'TODO', 'word': 'TODO'},
+    'antispam_domain_blocklist': {'comment': 'TODO', 'domain': 'TODO', 'id': 'TODO'},
+    'antispam_ip_blocklist': {'comment': 'TODO', 'id': 'TODO', 'ip_address': 'TODO'},
     'attach_data': {
         'id': 'The attachment id (foreign key %(column-attachments-attach_id)s).',
         'thedata': 'the content of the attachment.',
     },
+    'attachment_storage_class': {
+        'extra_data': 'TODO',
+        'id': 'TODO',
+        'storage_class': 'TODO',
+    },
+    'attachments': {
+        'attach_id': 'a unique ID.',
+        'attach_size': 'TODO',
+        'bug_id': (
+            'the bug to which this is attached (foreign key %(column-bugs-bug_id)s)'
+        ),
+        'creation_ts': 'the creation time.',
+        'description': 'a description of the attachment.',
+        'filename': 'the filename of the attachment.',
+        'isobsolete': 'Non-zero if this attachment is marked as obsolete.',
+        'ispatch': 'non-zero if this attachment is a patch file.',
+        'isprivate': (
+            'Non-zero if this attachment is "private", i.e. '
+            'only visible to members of the "insider" group.'
+        ),
+        'isurl': 'Non-zero if this attachment is actually a URL.',
+        'mimetype': 'the MIME type of the attachment.',
+        'modification_time': 'the modification time of the attachment.',
+        'submitter_id': (
+            'the userid of the attachment (foreign key %(column-profiles-userid)s)'
+        ),
+        'thedata': 'the content of the attachment.',
+    },
     'attachstatusdefs': {
+        'description': 'The description of the attachment status.',
         'id': 'a unique ID.',
         'name': 'the name of the attachment status.',
-        'description': 'The description of the attachment status.',
-        'sortkey': 'A number used to determine the order in which attachment statuses are shown.',
-        'product': 'The product for which bugs can have attachments with this status (foreign key %(column-products-product)s)',
+        'product': (
+            'The product for which bugs can have '
+            'attachments with this status (foreign key '
+            '%(column-products-product)s)'
+        ),
+        'sortkey': (
+            'A number used to determine the order in '
+            'which attachment statuses are shown.'
+        ),
     },
     'attachstatuses': {
-        'attach_id': 'The id of the attachment (foreign key %(column-attachments-attach_id)s)',
+        'attach_id': (
+            'The id of the attachment (foreign key %(column-attachments-attach_id)s)'
+        ),
         'statusid': 'The id of the status (foreign key %(column-attachstatusdefs-id)s)',
     },
     'audit_log': {
-        'user_id': '',
-        'class': 'The class of the item being modified (such as Bugzilla::User)',
-        'object_id': 'The ID of the item such as the userid) that was modified',
-        'field': 'The name of the field being modified',
-        'removed': 'The value that was removed',
         'added': 'The value that was added',
         'at_time': 'Timestamp of the change',
+        'class': 'The class of the item being modified (such as Bugzilla::User)',
+        'field': 'The name of the field being modified',
+        'object_id': 'The ID of the item such as the userid) that was modified',
+        'removed': 'The value that was removed',
+        'user_id': '',
     },
     'bug_group_map': {
         'bug_id': 'The bug id, (foreign key %(column-bugs-bug_id)s)',
         'group_id': 'The group id, (foreign key %(column-groups-id)s)',
     },
+    'bug_interest': {
+        'bug_id': 'TODO',
+        'id': 'TODO',
+        'modification_time': 'TODO',
+        'user_id': 'TODO',
+    },
+    'bug_mentors': {'bug_id': 'TODO', 'user_id': 'TODO'},
     'bug_see_also': {
         'bug_id': 'The bug id, (foreign key %(column-bugs-bug_id)s)',
+        'class': (
+            'The class of the object defining the remote '
+            'reference. Should be a subclass of '
+            'Bugzilla::BugUrl.'
+        ),
         'id': 'A unique ID for the table row',
-        'class': 'The class of the object defining the remote reference. Should be a subclass of Bugzilla::BugUrl.',
         'value': 'The URL of a related bug in another Bugzilla.',
     },
     'bug_severity': {
-        'value': 'A possible value of the field',
+        'id': 'a unique ID.',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
         'sortkey': 'A number used to determine the order in which values are shown.',
-        'id': 'a unique ID.',
-        'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+        'value': 'A possible value of the field',
+        'visibility_value_id': (
+            'If set, this value is only available '
+            'if the chooser field (identified by '
+            '%(column-fielddefs-value_field_id)s) '
+            'has the value with this ID.  Foreign '
+            'key &lt;field&gt;.id, for example '
+            '%(column-products-id)s or <a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
     },
     'bug_status': {
-        'value': 'A possible value of the field',
+        'id': 'a unique ID.',
+        'is_open': '1 if the status is "Open", 0 if it is "Closed".',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
         'sortkey': 'A number used to determine the order in which values are shown.',
-        'is_open': '1 if the status is "Open", 0 if it is "Closed".',
-        'id': 'a unique ID.',
-        'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+        'value': 'A possible value of the field',
+        'visibility_value_id': (
+            'If set, this value is only available '
+            'if the chooser field (identified by '
+            '%(column-fielddefs-value_field_id)s) '
+            'has the value with this ID.  Foreign '
+            'key &lt;field&gt;.id, for example '
+            '%(column-products-id)s or <a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
     },
     'bug_tag': {
-        'bug_id': 'A bug with this tag applied to it. (foreign key %(column-bugs-bug_id)s)',
+        'bug_id': (
+            'A bug with this tag applied to it. (foreign key %(column-bugs-bug_id)s)'
+        ),
         'tag_id': [
             (
                 None,
@@ -999,18 +1320,44 @@ column_remark = {
             ),
         ],
     },
+    'bug_type': {
+        'id': 'TODO',
+        'isactive': 'TODO',
+        'sortkey': 'TODO',
+        'value': 'TODO',
+        'visibility_value_id': 'TODO',
+    },
+    'bug_user_agent': {'bug_id': 'TODO', 'id': 'TODO', 'user_agent': 'TODO'},
     'bug_user_last_visit': {
-        'id': None,
-        'user_id': 'The user who visited the bug. (foreign key %(column-profiles-userid)s)',
         'bug_id': 'The bug which was visited. (foreign key %(column-bugs-bug_id)s)',
+        'id': None,
         'last_visit_ts': 'When the bug was visited.',
+        'user_id': (
+            'The user who visited the bug. (foreign key %(column-profiles-userid)s)'
+        ),
+    },
+    'bugmail_filters': {
+        'action': 'TODO',
+        'changer_id': 'TODO',
+        'component_id': 'TODO',
+        'field_name': 'TODO',
+        'id': 'TODO',
+        'product_id': 'TODO',
+        'relationship': 'TODO',
+        'user_id': 'TODO',
     },
     'bugs': {
+        'alias': 'An alias for the bug which can be used instead of the bug number.',
         'area': 'The development area of the bug.',
-        'bug_id': 'The bug ID.',
-        'groupset': 'The groups which this bug occupies. Each group corresponds to one bit. See %(the-table-groups)s.',
-        'assigned_to': 'The current owner of the bug  (foreign key %(column-profiles-userid)s).',
+        'assigned_to': (
+            'The current owner of the bug  (foreign key %(column-profiles-userid)s).'
+        ),
+        'assignee_accessible': (
+            '1 if the assignee can see this bug (even if '
+            'in the wrong group); 0 otherwise.'
+        ),
         'bug_file_loc': 'A URL which points to more information about the bug.',
+        'bug_id': 'The bug ID.',
         'bug_severity': [
             'See the <a href="#notes-severity">notes</a>.',
             (
@@ -1027,10 +1374,47 @@ column_remark = {
                 '%(VERSION_STRING)sforeign key %(column-bug_status-value)s.',
             ),
         ],
-        'creation_ts': 'The times of the bug\'s creation.',
-        'delta_ts': 'The timestamp of the last update.  This includes updates to some related tables (e.g. %(the-table-longdescs)s).',
+        'bug_type': 'TODO',
+        'cclist_accessible': (
+            '1 if people on the CC list can see this bug '
+            '(even if in the wrong group); 0 otherwise.'
+        ),
+        'cf_crash_signature': 'TODO',
+        'cf_last_resolved': 'TODO',
+        'cf_rank': 'TODO',
+        'cf_user_story': 'TODO',
+        'component': 'The product component (foreign key %(column-components-value)s)',
+        'component_id': 'The product component (foreign key %(column-components-id)s)',
+        'creation_ts': "The times of the bug's creation.",
+        'deadline': 'The deadline for this bug (a date).',
+        'delta_ts': (
+            'The timestamp of the last update.  This includes '
+            'updates to some related tables (e.g. '
+            '%(the-table-longdescs)s).'
+        ),
+        'estimated_time': (
+            'The original estimate of the total effort '
+            'required to fix this bug (in hours).'
+        ),
+        'everconfirmed': (
+            '1 if this bug has ever been confirmed.  This is '
+            'used for validation of some sort.'
+        ),
+        'filed_via': 'TODO',
+        'groupset': (
+            'The groups which this bug occupies. Each group '
+            'corresponds to one bit. See %(the-table-groups)s.'
+        ),
+        'keywords': (
+            'A set of keywords.  Note that this duplicates the '
+            'information in %(the-table-keywords)s. (foreign key '
+            '%(column-keyworddefs-name)s)'
+        ),
+        'lastdiffed': (
+            'The time at which information about this bug changing '
+            'was last emailed to the cc list.'
+        ),
         'long_desc': 'A long description of the bug.',
-        'short_desc': 'A short description of the bug.',
         'op_sys': [
             'The operating system on which the bug was observed.',
             ('2.19.3', None, '%(VERSION_STRING)sforeign key %(column-op_sys-value)s.'),
@@ -1050,6 +1434,15 @@ column_remark = {
         ],
         'product': 'The product (foreign key %(column-products-product)s)',
         'product_id': 'The product (foreign key %(column-products-id)s)',
+        'qa_contact': 'The QA contact (foreign key %(column-profiles-userid)s)',
+        'qacontact_accessible': (
+            '1 if the QA contact can see this bug (even '
+            'if in the wrong group); 0 otherwise.'
+        ),
+        'remaining_time': (
+            'The current estimate of the remaining effort '
+            'required to fix this bug (in hours).'
+        ),
         'rep_platform': [
             'The platform on which the bug was reported.',
             (
@@ -1058,10 +1451,13 @@ column_remark = {
                 '%(VERSION_STRING)sforeign key %(column-rep_platform-value)s.',
             ),
         ],
-        'reporter': 'The user who reported this (foreign key %(column-profiles-userid)s)',
-        'version': 'The product version (foreign key %(column-versions-value)s)',
-        'component': 'The product component (foreign key %(column-components-value)s)',
-        'component_id': 'The product component (foreign key %(column-components-id)s)',
+        'reporter': (
+            'The user who reported this (foreign key %(column-profiles-userid)s)'
+        ),
+        'reporter_accessible': (
+            '1 if the reporter can see this bug (even if '
+            'in the wrong group); 0 otherwise.'
+        ),
         'resolution': [
             'The bug\'s <a href="#notes-workflow">resolution</a>',
             (
@@ -1070,36 +1466,50 @@ column_remark = {
                 '%(VERSION_STRING)sforeign key %(column-resolution-value)s.',
             ),
         ],
-        'target_milestone': 'The milestone by which this bug should be resolved.  (foreign key %(column-milestones-value)s)',
-        'qa_contact': 'The QA contact (foreign key %(column-profiles-userid)s)',
+        'restrict_comments': 'TODO',
+        'short_desc': 'A short description of the bug.',
         'status_whiteboard': 'This seems to be just a small whiteboard field.',
+        'target_milestone': (
+            'The milestone by which this bug should be '
+            'resolved.  (foreign key '
+            '%(column-milestones-value)s)'
+        ),
+        'version': 'The product version (foreign key %(column-versions-value)s)',
         'votes': 'The number of votes.',
-        'keywords': 'A set of keywords.  Note that this duplicates the information in %(the-table-keywords)s. (foreign key %(column-keyworddefs-name)s)',
-        'lastdiffed': 'The time at which information about this bug changing was last emailed to the cc list.',
-        'everconfirmed': '1 if this bug has ever been confirmed.  This is used for validation of some sort.',
-        'reporter_accessible': '1 if the reporter can see this bug (even if in the wrong group); 0 otherwise.',
-        'assignee_accessible': '1 if the assignee can see this bug (even if in the wrong group); 0 otherwise.',
-        'qacontact_accessible': '1 if the QA contact can see this bug (even if in the wrong group); 0 otherwise.',
-        'cclist_accessible': '1 if people on the CC list can see this bug (even if in the wrong group); 0 otherwise.',
-        'estimated_time': 'The original estimate of the total effort required to fix this bug (in hours).',
-        'remaining_time': 'The current estimate of the remaining effort required to fix this bug (in hours).',
-        'alias': 'An alias for the bug which can be used instead of the bug number.',
-        'deadline': 'The deadline for this bug (a date).',
     },
     'bugs_activity': {
+        'added': (
+            'The new value of this field, or values which have '
+            'been added for multi-value fields such as '
+            '%(column-bugs-keywords)s,  %(the-table-cc)s, and '
+            '%(the-table-dependencies)s'
+        ),
+        'attach_id': (
+            'If the change was to an attachment, the ID of '
+            'the attachment (foreign key '
+            '%(column-attachments-attach_id)s)'
+        ),
         'bug_id': 'Which bug (foreign key %(column-bugs-bug_id)s)',
-        'who': 'Which user (foreign key %(column-profiles-userid)s)',
-        'when': 'When was the change made?',
         'bug_when': 'When was the change made?',
+        'comment_id': (
+            'The comment on the bug that was made at the '
+            'same time as or most-recently previous to '
+            'this change. (foreign key '
+            '%(column-longdescs-comment_id)s)'
+        ),
         'field': 'What was the field?',
         'fieldid': 'What was the fieldid? (foreign key %(column-fielddefs-id)s)',
-        'attach_id': 'If the change was to an attachment, the ID of the attachment (foreign key %(column-attachments-attach_id)s)',
-        'oldvalue': 'The head of the old value.',
-        'newvalue': 'The head of the new value.',
-        'added': 'The new value of this field, or values which have been added for multi-value fields such as %(column-bugs-keywords)s,  %(the-table-cc)s, and %(the-table-dependencies)s',
-        'removed': 'The old value of this field, or values which have been removed for multi-value fields such as %(column-bugs-keywords)s, %(the-table-cc)s, and %(the-table-dependencies)s',
-        'comment_id': 'The comment on the bug that was made at the same time as or most-recently previous to this change. (foreign key %(column-longdescs-comment_id)s)',
         'id': None,
+        'newvalue': 'The head of the new value.',
+        'oldvalue': 'The head of the old value.',
+        'removed': (
+            'The old value of this field, or values which '
+            'have been removed for multi-value fields such '
+            'as %(column-bugs-keywords)s, %(the-table-cc)s, '
+            'and %(the-table-dependencies)s'
+        ),
+        'when': 'When was the change made?',
+        'who': 'Which user (foreign key %(column-profiles-userid)s)',
     },
     'bugs_aliases': {
         'alias': 'The alias name.',
@@ -1107,16 +1517,29 @@ column_remark = {
     },
     'bugs_fulltext': {
         'bug_id': 'Which bug (foreign key %(column-bugs-bug_id)s)',
-        'short_desc': 'The bug\'s short description (%(column-bugs-short_desc)s)',
-        'comments': 'The bug\'s comments, concatenated (%(column-longdescs-thetext)s)',
-        'comments_noprivate': 'Those comments visible to non-members of the "insider" group (i.e. with %(column-longdescs-isprivate)s zero).',
+        'comments': "The bug's comments, concatenated (%(column-longdescs-thetext)s)",
+        'comments_noprivate': (
+            'Those comments visible to '
+            'non-members of the "insider" group '
+            '(i.e. with '
+            '%(column-longdescs-isprivate)s '
+            'zero).'
+        ),
+        'short_desc': "The bug's short description (%(column-bugs-short_desc)s)",
     },
     'bz_schema': {
-        'version': 'The version number of the abstract schema data structures.  This is <em>not</em> the schema version; it does not change as tables, columns, and indexes are added and removed.',
         'schema_data': 'A Perl Storable (serialized version) of the abstract schema.',
+        'version': (
+            'The version number of the abstract schema data '
+            'structures.  This is <em>not</em> the schema '
+            'version; it does not change as tables, columns, and '
+            'indexes are added and removed.'
+        ),
     },
     'category_group_map': {
-        'category_id': 'The series category (foreign key %(column-series_categories-id)s)',
+        'category_id': (
+            'The series category (foreign key %(column-series_categories-id)s)'
+        ),
         'group_id': 'The group.  (foreign key %(column-groups-id)s)',
     },
     'cc': {
@@ -1124,19 +1547,40 @@ column_remark = {
         'who': 'The user (foreign key %(column-profiles-userid)s)',
     },
     'classifications': {
+        'description': 'A description of the classification',
         'id': 'The classification id.',
         'name': 'The classification name.',
-        'description': 'A description of the classification',
-        'sortkey': 'A number used to determine the order in which classifications are shown.',
+        'sortkey': (
+            'A number used to determine the order in which classifications are shown.'
+        ),
+    },
+    'component_cc': {
+        'component_id': 'The component id (foreign key %(column-components-id)s).',
+        'user_id': 'The user id (foreign key %(column-profiles-userid)s).',
+    },
+    'component_reviewers': {
+        'component_id': 'TODO',
+        'display_name': 'TODO',
+        'id': 'TODO',
+        'sortkey': 'TODO',
+        'user_id': 'TODO',
+    },
+    'component_watch': {
+        'component_id': 'TODO',
+        'component_prefix': 'TODO',
+        'id': 'TODO',
+        'product_id': 'TODO',
+        'user_id': 'TODO',
     },
     'components': {
-        'name': 'The component id.',
+        'bug_description_template': 'TODO',
+        'default_bug_type': 'TODO',
+        'description': 'A description of the component.',
         'id': 'The component id.',
-        'value': 'The component name.',
-        'program': 'The product (foreign key %(column-products-product)s)',
-        'product_id': 'The product (foreign key %(column-products-id)s)',
         'initialowner': [
-            'The default initial owner of bugs in this component.  On component creation, this is set to the user who creates the component.',
+            'The default initial owner of bugs in this '
+            'component.  On component creation, this is '
+            'set to the user who creates the component.',
             (
                 None,
                 '2.10',
@@ -1145,7 +1589,10 @@ column_remark = {
             ('2.12', None, '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
         ],
         'initialqacontact': [
-            'The initial "qa_contact" field for bugs of this component. Note that the use of the qa_contact field is optional, parameterized by Param("useqacontact").',
+            'The initial "qa_contact" field for bugs '
+            'of this component. Note that the use of '
+            'the qa_contact field is optional, '
+            'parameterized by Param("useqacontact").',
             (
                 None,
                 '2.10',
@@ -1153,67 +1600,133 @@ column_remark = {
             ),
             ('2.12', None, '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
         ],
-        'description': 'A description of the component.',
         'isactive': '1 if this component is available for new bugs, 0 if not.',
-    },
-    'component_cc': {
-        'component_id': 'The component id (foreign key %(column-components-id)s).',
-        'user_id': 'The user id (foreign key %(column-profiles-userid)s).',
+        'name': 'The component id.',
+        'product_id': 'The product (foreign key %(column-products-id)s)',
+        'program': 'The product (foreign key %(column-products-product)s)',
+        'triage_owner_id': 'TODO',
+        'value': 'The component name.',
+        'watch_user': 'TODO',
     },
     'dependencies': {
         'blocked': 'Which bug is blocked (foreign key %(column-bugs-bug_id)s)',
         'dependson': 'Which bug does it depend on (foreign key %(column-bugs-bug_id)s)',
     },
     'duplicates': {
-        'dupe_of': 'The bug which is duplicated (foreign key %(column-bugs-bug_id)s)',
         'dupe': 'The duplicate bug (foreign key %(column-bugs-bug_id)s)',
+        'dupe_of': 'The bug which is duplicated (foreign key %(column-bugs-bug_id)s)',
     },
     'email_bug_ignore': {
-        'user_id': 'The user ignoring the bug. (foreign key %(column-profiles-userid)s)',
         'bug_id': 'The bug being ignored. (foreign key %(column-bugs-bug_id)s)',
+        'user_id': (
+            'The user ignoring the bug. (foreign key %(column-profiles-userid)s)'
+        ),
     },
     'email_rates': {
         'id': None,
-        'recipient': 'The user for whom the message is intended. (foreign key %(column-profiles-userid)s)',
         'message_ts': 'The timestamp of when the message was sent.',
+        'recipient': (
+            'The user for whom the message is intended. '
+            '(foreign key %(column-profiles-userid)s)'
+        ),
     },
     'email_setting': {
-        'user_id': 'The user to whom this setting applies (foreign key %(column-profiles-userid)s).',
-        'relationship': 'The relationship between the user and the bug.  0: Assignee; 1: QA contact; 2: Reporter; 3: CC; 4: Voter; 100: for global events, which do not depend on a relationship.',
-        'event': 'The event on which an email should be sent.  1: added or removed from this capacity; 2: new comments are added; 3: new attachment is added; 4: attachment data is changed; 5: severity, priority, status, or milestone are changed; 6: resolved or reopened; 7: keywords change; 8: CC list changed; 0: any other change.<br><br>These are overridden and an email is not sent in the following circumstances, unless a suitable row is also present: 50: if the bug is unconfirmed; 51: if the change was by this user.<br><br>Global events are 100: a flag has been requested of this user; 101: This user has requested a flag.',
+        'event': (
+            'The event on which an email should be sent.  1: '
+            'added or removed from this capacity; 2: new '
+            'comments are added; 3: new attachment is added; '
+            '4: attachment data is changed; 5: severity, '
+            'priority, status, or milestone are changed; 6: '
+            'resolved or reopened; 7: keywords change; 8: CC '
+            'list changed; 0: any other change.<br><br>These '
+            'are overridden and an email is not sent in the '
+            'following circumstances, unless a suitable row is '
+            'also present: 50: if the bug is unconfirmed; 51: '
+            'if the change was by this user.<br><br>Global '
+            'events are 100: a flag has been requested of this '
+            'user; 101: This user has requested a flag.'
+        ),
+        'relationship': (
+            'The relationship between the user and the '
+            'bug.  0: Assignee; 1: QA contact; 2: '
+            'Reporter; 3: CC; 4: Voter; 100: for global '
+            'events, which do not depend on a '
+            'relationship.'
+        ),
+        'user_id': (
+            'The user to whom this setting applies (foreign '
+            'key %(column-profiles-userid)s).'
+        ),
     },
     'field_visibility': {
         'field_id': 'ID of the field to match (foreign key %(column-fielddefs-id)s)',
         'value_id': 'ID of the value to match?  TODO',
     },
     'fielddefs': {
-        'id': 'primary key for this table',
-        'name': 'field name or definition (some fields are names of other tables or of fields in other tables).',
+        'buglist': (
+            '1 for a field which can be used as a display or '
+            'order column in a bug list, 0 otherwise.'
+        ),
+        'custom': (
+            '1 for a custom field, 0 otherwise. Part of <a '
+            'href="#notes-customfields">the custom fields '
+            'system</a>.'
+        ),
         'description': 'long description',
-        'mailhead': 'whether or not to send the field description in mail notifications.',
-        'sortkey': 'the order of fields in mail notifications.',
+        'enter_bug': (
+            '1 for a field which is present on the bug entry form, 0 otherwise.'
+        ),
+        'id': 'primary key for this table',
+        'is_mandatory': (
+            '1 if the field is required on the new bug form, 0 if it is not.'
+        ),
+        'is_numeric': '1 if the field is numeric, 0 if it is not.',
+        'long_desc': (
+            'User-readable description of the field. Shown in '
+            'a tooltip when you hover the field on the bug.'
+        ),
+        'mailhead': (
+            'whether or not to send the field description in mail notifications.'
+        ),
+        'name': (
+            'field name or definition (some fields are names of '
+            'other tables or of fields in other tables).'
+        ),
         'obsolete': '1 if this field no longer exists, 0 otherwise.',
+        'reverse_desc': (
+            'Label for a list of bugs that link to a bug '
+            'with this field. For example, if the '
+            'description is "Is a duplicate of", the '
+            'reverse description would be "Duplicates of '
+            'this bug". Leave blank to disable the list for '
+            'this bug.'
+        ),
+        'sortkey': 'the order of fields in mail notifications.',
         'type': [
             'The field type. 0 (FIELD_TYPE_UNKNOWN) for most non-custom fields.',
             (
                 '2.23.1',
                 None,
-                '%(VERSION_STRING)s1 (FIELD_TYPE_FREETEXT) for a single-line text field. ',
+                '%(VERSION_STRING)s1 (FIELD_TYPE_FREETEXT) for a '
+                'single-line text field. ',
             ),
             (
                 '2.23.3',
                 None,
-                '%(VERSION_STRING)s2 (FIELD_TYPE_SINGLE_SELECT) for a single-select field. ',
+                '%(VERSION_STRING)s2 (FIELD_TYPE_SINGLE_SELECT) for a '
+                'single-select field. ',
             ),
             (
                 '3.1.2',
                 None,
-                '%(VERSION_STRING)s3 (FIELD_TYPE_MULTI_SELECT) for a multi-select field. ',
+                '%(VERSION_STRING)s3 (FIELD_TYPE_MULTI_SELECT) for a '
+                'multi-select field. ',
             ),
             (
                 '3.1.2',
                 None,
-                '%(VERSION_STRING)s4 (FIELD_TYPE_TEXTAREA) for a large text box field. ',
+                '%(VERSION_STRING)s4 (FIELD_TYPE_TEXTAREA) for a '
+                'large text box field. ',
             ),
             (
                 '3.1.3',
@@ -1231,226 +1744,475 @@ column_remark = {
                 '%(VERSION_STRING)s7 (FIELD_TYPE_BUG_URLS) for a list of bug URLs. ',
             ),
         ],
-        'custom': '1 for a custom field, 0 otherwise. Part of <a href="#notes-customfields">the custom fields system</a>.',
-        'enter_bug': '1 for a field which is present on the bug entry form, 0 otherwise.',
-        'buglist': '1 for a field which can be used as a display or order column in a bug list, 0 otherwise.',
-        'value_field_id': 'If not NULL, the ID of a (single-select or multi-select) <i>chooser field</i>, which controls the visibility of individual values of this field.  Only applies to single-select and multi-select fields.  Foreign ney %(column-fielddefs-id)s.',
-        'visibility_field_id': 'If not NULL, the ID of a (single-select or multi-select) <i>control field</i> which controls the visibility of this field.  Only applies to custom fields.  Foreign key %(column-fielddefs-id)s.',
-        'visibility_value_id': 'If not NULL, and the control field (with ID visibility_field_id) does not have a value with this ID, this field is not visible.  Only applies to custom fields.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
-        'reverse_desc': 'Label for a list of bugs that link to a bug with this field. For example, if the description is "Is a duplicate of", the reverse description would be "Duplicates of this bug". Leave blank to disable the list for this bug.',
-        'is_mandatory': '1 if the field is required on the new bug form, 0 if it is not.',
-        'is_numeric': '1 if the field is numeric, 0 if it is not.',
-        'long_desc': 'User-readable description of the field. Shown in a tooltip when you hover the field on the bug.',
+        'value_field_id': (
+            'If not NULL, the ID of a (single-select or '
+            'multi-select) <i>chooser field</i>, which '
+            'controls the visibility of individual values '
+            'of this field.  Only applies to '
+            'single-select and multi-select fields.  '
+            'Foreign ney %(column-fielddefs-id)s.'
+        ),
+        'visibility_field_id': (
+            'If not NULL, the ID of a (single-select '
+            'or multi-select) <i>control field</i> '
+            'which controls the visibility of this '
+            'field.  Only applies to custom fields.  '
+            'Foreign key %(column-fielddefs-id)s.'
+        ),
+        'visibility_value_id': (
+            'If not NULL, and the control field '
+            '(with ID visibility_field_id) does not '
+            'have a value with this ID, this field '
+            'is not visible.  Only applies to custom '
+            'fields.  Foreign key &lt;field&gt;.id, '
+            'for example %(column-products-id)s or '
+            '<a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
+    },
+    'flag_state_activity': {
+        'attachment_id': 'TODO',
+        'bug_id': 'TODO',
+        'flag_id': 'TODO',
+        'flag_when': 'TODO',
+        'id': 'TODO',
+        'requestee_id': 'TODO',
+        'setter_id': 'TODO',
+        'status': 'TODO',
+        'type_id': 'TODO',
     },
     'flagexclusions': {
+        'component_id': (
+            'The component, or NULL for "any". (foreign key %(column-components-id)s)'
+        ),
+        'product_id': (
+            'The product, or NULL for "any".  (foreign key %(column-products-id)s)'
+        ),
         'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
-        'product_id': 'The product, or NULL for "any".  (foreign key %(column-products-id)s)',
-        'component_id': 'The component, or NULL for "any". (foreign key %(column-components-id)s)',
     },
     'flaginclusions': {
+        'component_id': (
+            'The component, or NULL for "any". (foreign key %(column-components-id)s)'
+        ),
+        'product_id': (
+            'The product, or NULL for "any".  (foreign key %(column-products-id)s)'
+        ),
         'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
-        'product_id': 'The product, or NULL for "any".  (foreign key %(column-products-id)s)',
-        'component_id': 'The component, or NULL for "any". (foreign key %(column-components-id)s)',
     },
     'flags': {
-        'id': 'A unique ID.',
-        'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
-        'status': "'+' (granted), '-' (denied), or '?' (requested).",
+        'attach_id': (
+            'The attachment, or NULL if this flag is not on an '
+            'attachment. (foreign key '
+            '%(column-attachments-attach_id)s)'
+        ),
         'bug_id': 'The bug.  (foreign key %(column-bugs-bug_id)s)',
-        'attach_id': 'The attachment, or NULL if this flag is not on an attachment. (foreign key %(column-attachments-attach_id)s)',
         'creation_date': 'The date the flag was created.',
-        'modification_date': 'The date the flag was most recently modified or created.',
-        'setter_id': 'The ID of the user who created, or most recently modified, this flag (foreign key %(column-profiles-userid)s)',
-        'requestee_id': 'The ID of the user to whom this request flag is addressed, or NULL for non-requestee flags (foreign key %(column-profiles-userid)s)',
+        'id': 'A unique ID.',
         'is_active': '0 if this flag has been deleted; 1 otherwise.',
+        'modification_date': 'The date the flag was most recently modified or created.',
+        'requestee_id': (
+            'The ID of the user to whom this request flag is '
+            'addressed, or NULL for non-requestee flags '
+            '(foreign key %(column-profiles-userid)s)'
+        ),
+        'setter_id': (
+            'The ID of the user who created, or most recently '
+            'modified, this flag (foreign key '
+            '%(column-profiles-userid)s)'
+        ),
+        'status': "'+' (granted), '-' (denied), or '?' (requested).",
+        'type_id': 'The flag type.  (foreign key %(column-flagtypes-id)s)',
     },
+    'flagtype_comments': {'comment': 'TODO', 'on_status': 'TODO', 'type_id': 'TODO'},
     'flagtypes': {
-        'id': 'The flag type ID',
-        'name': 'The short flag name',
+        'cc_list': (
+            'A string containing email addresses to which '
+            'notification of requests for this flag should be '
+            'sent. This is filtered using the groups system '
+            'before messages are actually sent, so that users '
+            'not entitled to see a bug don\'t receive '
+            'notifications concerning it.'
+        ),
+        'default_requestee': 'TODO',
         'description': 'The description of the flag',
-        'cc_list': "A string containing email addresses to which notification of requests for this flag should be sent. This is filtered using the groups system before messages are actually sent, so that users not entitled to see a bug don't receive notifications concerning it.",
-        'target_type': "'a' for attachment flags, 'b' for bug flags",
+        'grant_group_id': (
+            'Group membership required to grant this '
+            'flag.  (foreign key %(column-groups-id)s)'
+        ),
+        'id': 'The flag type ID',
         'is_active': '1 if the flag appears in the UI and can be set; 0 otherwise.',
+        'is_multiplicable': (
+            '1 if multiple instances of this flag may '
+            'be set on the same item; 0 otherwise.'
+        ),
         'is_requestable': '1 if the flag may be requested; 0 otherwise.',
-        'is_requesteeble': '1 if a request for this flag may be aimed at a particular user; 0 otherwise.',
-        'is_multiplicable': '1 if multiple instances of this flag may be set on the same item; 0 otherwise.',
+        'is_requesteeble': (
+            '1 if a request for this flag may be aimed '
+            'at a particular user; 0 otherwise.'
+        ),
+        'name': 'The short flag name',
+        'request_group_id': (
+            'Group membership required to request this '
+            'flag.  (foreign key %(column-groups-id)s)'
+        ),
         'sortkey': 'An integer used for sorting flags for display.',
-        'request_group_id': 'Group membership required to request this flag.  (foreign key %(column-groups-id)s)',
-        'grant_group_id': 'Group membership required to grant this flag.  (foreign key %(column-groups-id)s)',
+        'target_type': "'a' for attachment flags, 'b' for bug flags",
     },
     'group_control_map': {
+        'canconfirm': (
+            '1 if membership of this group enables '
+            'confirmation of bugs in this product; 0 '
+            'otherwise.'
+        ),
+        'canedit': (
+            '1 if membership of this group is required '
+            'to edit a bug in this product; 0 otherwise.'
+        ),
+        'editbugs': (
+            '1 if membership of this group enables '
+            'editing bugs in this product; 0 otherwise. '
+            'Note: membership of all \'canedit\' groups '
+            'is also required.'
+        ),
+        'editcomponents': (
+            '1 if membership of this group '
+            'enables editing product-specific '
+            'configuration such as components and '
+            'flagtypes; 0 otherwise.'
+        ),
+        'entry': (
+            '1 if membership of this group is required to '
+            'enter a bug in this product; 0 otherwise.'
+        ),
         'group_id': 'The group.  (foreign key %(column-groups-id)s)',
+        'membercontrol': (
+            'Determines what control members of '
+            'this group have over whether a bug '
+            'for this product is placed in this '
+            'group. 0 (NA/no control): forbidden.  '
+            '1 (Shown): permitted.  2 (Default): '
+            'permitted and by default.  3 '
+            '(Mandatory): always.'
+        ),
+        'othercontrol': (
+            'Determines what control '
+            'non-group-members have over whether a '
+            'new bug for this product is placed in '
+            'this group.  Group membership of '
+            'existing bugs can only be changed by '
+            'members of the relevant group. 0 '
+            '(NA/no control): forbidden. 1 (Shown): '
+            'permitted.  2 (Default): permitted and '
+            'by default.  3 (Mandatory): always.  '
+            'Allowable values depend on the value '
+            'of membercontrol.  See <a '
+            'href="#notes-groups">the notes on '
+            'groups</a>.'
+        ),
         'product_id': 'The product.  (foreign key %(column-products-id)s)',
-        'entry': '1 if membership of this group is required to enter a bug in this product; 0 otherwise.',
-        'membercontrol': 'Determines what control members of this group have over whether a bug for this product is placed in this group. 0 (NA/no control): forbidden.  1 (Shown): permitted.  2 (Default): permitted and by default.  3 (Mandatory): always.',
-        'othercontrol': 'Determines what control non-group-members have over whether a new bug for this product is placed in this group.  Group membership of existing bugs can only be changed by members of the relevant group. 0 (NA/no control): forbidden. 1 (Shown): permitted.  2 (Default): permitted and by default.  3 (Mandatory): always.  Allowable values depend on the value of membercontrol.  See <a href="#notes-groups">the notes on groups</a>.',
-        'canedit': '1 if membership of this group is required to edit a bug in this product; 0 otherwise.',
-        'editcomponents': '1 if membership of this group enables editing product-specific configuration such as components and flagtypes; 0 otherwise.',
-        'editbugs': '1 if membership of this group enables editing bugs in this product; 0 otherwise. Note: membership of all \'canedit\' groups is also required.',
-        'canconfirm': '1 if membership of this group enables confirmation of bugs in this product; 0 otherwise.',
     },
     'group_group_map': {
-        'member_id': 'The group whose membership grants membership or "bless" privilege for another group.(foreign key %(column-groups-id)s)',
-        'grantor_id': 'The group whose membership or "bless" privilege is automatically granted.(foreign key %(column-groups-id)s)',
-        'isbless': '0 if membership is granted; 1 if just "bless" privilege is granted ("bless" does not imply membership).',
-        'grant_type': '0 if membership is granted; 1 if just "bless" privilege is granted ("bless" does not imply membership), 2 if visibility is granted.',
+        'grant_type': (
+            '0 if membership is granted; 1 if just '
+            '"bless" privilege is granted ("bless" does '
+            'not imply membership), 2 if visibility is '
+            'granted.'
+        ),
+        'grantor_id': (
+            'The group whose membership or "bless" '
+            'privilege is automatically '
+            'granted.(foreign key %(column-groups-id)s)'
+        ),
+        'isbless': (
+            '0 if membership is granted; 1 if just "bless" '
+            'privilege is granted ("bless" does not imply '
+            'membership).'
+        ),
+        'member_id': (
+            'The group whose membership grants '
+            'membership or "bless" privilege for another '
+            'group.(foreign key %(column-groups-id)s)'
+        ),
     },
     'groups': {
         'bit': '2^n for some n.  Assigned automatically.',
-        'name': 'A short name for the group.',
         'description': 'A long description of the group.',
-        'isbuggroup': '1 if this is a group controlling access to a set of bugs.',
-        'userregexp': 'a regexp used to determine membership of new users.',
-        'isactive': '1 if bugs can be added to this group; 0 otherwise.',
+        'icon_url': (
+            'The URL of an icon for the group (e.g. to be shown '
+            'next to bug comments made by members of the group).'
+        ),
         'id': 'The group id',
-        'icon_url': 'The URL of an icon for the group (e.g. to be shown next to bug comments made by members of the group).',
+        'idle_member_removal': 'TODO',
+        'isactive': '1 if bugs can be added to this group; 0 otherwise.',
+        'isbuggroup': '1 if this is a group controlling access to a set of bugs.',
         'last_changed': 'A timestamp showing when this group was last changed.',
+        'name': 'A short name for the group.',
+        'owner_user_id': 'TODO',
+        'userregexp': 'a regexp used to determine membership of new users.',
     },
+    'job_last_run': {'id': 'TODO', 'last_run': 'TODO', 'name': 'TODO'},
     'keyworddefs': {
-        'id': 'A unique number identifying this keyword.',
-        'name': 'The keyword itself.',
         'description': 'The meaning of the keyword.',
+        'id': 'A unique number identifying this keyword.',
         'is_active': '1 if active, 0 if archived.',
+        'name': 'The keyword itself.',
     },
     'keywords': {
         'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
         'keywordid': 'The keyword ID (foreign key %(column-keyworddefs-id)s)',
     },
+    'login_failure': {
+        'ip_addr': 'the IP address of the client that failed the login',
+        'login_time': 'when the failure occurred',
+        'user_id': (
+            'the user who failed a login (foreign key %(column-profiles-userid)s)'
+        ),
+    },
     'logincookies': {
         'cookie': 'The cookie',
-        'userid': 'The user id; (foreign key %(column-profiles-userid)s)',
         'cryptpassword': 'The encrypted password used on this login.',
         'hostname': 'The CGI REMOTE_HOST for this login.',
+        'id': 'TODO',
         'ipaddr': 'The CGI REMOTE_ADDR for this login.',
         'lastused': 'The timestamp of this login.',
+        'restrict_ipaddr': 'TODO',
+        'userid': 'The user id; (foreign key %(column-profiles-userid)s)',
     },
     'longdescs': {
+        'already_wrapped': (
+            'Non-zero if this comment is word-wrapped in '
+            'the database (and so should not be wrapped '
+            'for display).'
+        ),
         'bug_id': 'the bug (foreign key %(column-bugs-bug_id)s)',
-        'who': 'the user who added this text (foreign key %(column-profiles-userid)s)',
         'bug_when': 'when the text was added',
-        'thetext': 'the text itself.',
-        'isprivate': 'Non-zero if this comment is "private", i.e. only visible to members of the "insider" group.',
-        'work_time': 'Number of hours worked on this bug (for time tracking purposes).',
-        'already_wrapped': 'Non-zero if this comment is word-wrapped in the database (and so should not be wrapped for display).',
         'comment_id': 'A unique ID for this comment.',
-        'type': 'The type of a comment, used to identify and localize the text of comments which are automatically added by Bugzilla. 0 for a normal comment. 1 for a comment marking this bug as a duplicate of another.  2 for a comment marking another bug as a duplicate of this.  3 for a comment recording a transition to NEW by voting.  4 for a comment recording that this bug has been moved.',
-        'extra_data': 'Used in conjunction with %(column-longdescs-type)s to provide the variable data in localized text of an automatic comment.  For instance, a duplicate bug number.',
+        'edit_count': 'TODO',
+        'extra_data': (
+            'Used in conjunction with '
+            '%(column-longdescs-type)s to provide the '
+            'variable data in localized text of an automatic '
+            'comment.  For instance, a duplicate bug number.'
+        ),
         'is_markdown': '1 if comment is formatted in markdown, 0 if plaintext.',
+        'isprivate': (
+            'Non-zero if this comment is "private", i.e. only '
+            'visible to members of the "insider" group.'
+        ),
+        'thetext': 'the text itself.',
+        'type': (
+            'The type of a comment, used to identify and localize '
+            'the text of comments which are automatically added by '
+            'Bugzilla. 0 for a normal comment. 1 for a comment '
+            'marking this bug as a duplicate of another.  2 for a '
+            'comment marking another bug as a duplicate of this.  3 '
+            'for a comment recording a transition to NEW by '
+            'voting.  4 for a comment recording that this bug has '
+            'been moved.'
+        ),
+        'who': 'the user who added this text (foreign key %(column-profiles-userid)s)',
+        'work_time': 'Number of hours worked on this bug (for time tracking purposes).',
+    },
+    'longdescs_activity': {
+        'change_when': 'TODO',
+        'comment_id': 'TODO',
+        'is_hidden': 'TODO',
+        'old_comment': 'TODO',
+        'who': 'TODO',
     },
     'longdescs_tags': {
+        'comment_id': (
+            'The comment on which the tag exists. '
+            '(foreign key '
+            '%(column-longdescs-comment_id)s)'
+        ),
         'id': None,
-        'comment_id': 'The comment on which the tag exists. (foreign key %(column-longdescs-comment_id)s)',
         'tag': 'The tag which is on the comment.',
     },
     'longdescs_tags_activity': {
-        'id': None,
-        'bug_id': 'The bug on which the change was made. (foreign key %(column-bugs-bug_id)s)',
-        'comment_id': 'The comment on which the change was made. (foreign key %(column-longdescs-comment_id)s)',
-        'who': 'The user who made the change. (foreign key %(column-profiles-userid)s)',
-        'bug_when': 'When the change was made.',
         'added': 'The new value.',
+        'bug_id': (
+            'The bug on which the change was made. (foreign key %(column-bugs-bug_id)s)'
+        ),
+        'bug_when': 'When the change was made.',
+        'comment_id': (
+            'The comment on which the change '
+            'was made. (foreign key '
+            '%(column-longdescs-comment_id)s)'
+        ),
+        'id': None,
         'removed': 'The old value.',
+        'who': 'The user who made the change. (foreign key %(column-profiles-userid)s)',
     },
     'longdescs_tags_weights': {
         'id': None,
         'tag': 'The name of the tag.',
         'weight': 'The number of comments tagged with this tag.',
     },
-    'login_failure': {
-        'user_id': 'the user who failed a login (foreign key %(column-profiles-userid)s)',
-        'login_time': 'when the failure occurred',
-        'ip_addr': 'the IP address of the client that failed the login',
-    },
-    'mail_staging': {
-        'id': None,
-        'message': 'The message being queued.',
-    },
+    'mail_staging': {'id': None, 'message': 'The message being queued.'},
     'milestones': {
         'id': 'A unique numeric ID',
-        'value': 'The name of the milestone (e.g. "3.1 RTM", "0.1.37", "tweakfor BigCustomer", etc).',
+        'isactive': '1 if this milestone is available for new bugs, 0 if not.',
         'product': 'The product (foreign key %(column-products-product)s)',
         'product_id': 'The product (foreign key %(column-products-id)s)',
         'sortkey': 'A number used for sorting milestones for a given product.',
-        'isactive': '1 if this milestone is available for new bugs, 0 if not.',
+        'value': (
+            'The name of the milestone (e.g. "3.1 RTM", "0.1.37", '
+            '"tweakfor BigCustomer", etc).'
+        ),
     },
+    'mydashboard': {'namedquery_id': 'TODO', 'user_id': 'TODO'},
+    'nag_defer': {'defer_until': 'TODO', 'flag_id': 'TODO', 'id': 'TODO'},
+    'nag_settings': {
+        'id': 'TODO',
+        'setting_name': 'TODO',
+        'setting_value': 'TODO',
+        'user_id': 'TODO',
+    },
+    'nag_watch': {'id': 'TODO', 'nagged_id': 'TODO', 'watcher_id': 'TODO'},
     'namedqueries': {
         'id': 'A unique number identifying this query.',
-        'userid': 'The user whose query this is (foreign key %(column-profiles-userid)s)',
+        'linkinfooter': (
+            'Whether or not the query should appear in the foot of every page.'
+        ),
         'name': 'The name of the query.',
-        'watchfordiffs': 'Unused.',
-        'linkinfooter': 'Whether or not the query should appear in the foot of every page.',
         'query': 'The query (text to append to the query page URL).',
-        'query_type': '1 (LIST_OF_BUGS) if the query is simply a list of bug IDs, 0 (QUERY_LIST) if it is a genuine query.',
+        'query_type': (
+            '1 (LIST_OF_BUGS) if the query is simply a '
+            'list of bug IDs, 0 (QUERY_LIST) if it is a '
+            'genuine query.'
+        ),
+        'userid': (
+            'The user whose query this is (foreign key %(column-profiles-userid)s)'
+        ),
+        'watchfordiffs': 'Unused.',
     },
     'namedqueries_link_in_footer': {
         'namedquery_id': 'The query id (foreign key %(column-namedqueries-id)s).',
         'user_id': 'The user id (foreign key %(column-profiles-userid)s).',
     },
     'namedquery_group_map': {
-        'namedquery_id': 'The query id (foreign key %(column-namedqueries-id)s).',
         'group_id': 'The group id (foreign key %(column-groups-id)s).',
+        'namedquery_id': 'The query id (foreign key %(column-namedqueries-id)s).',
     },
+    'oauth2_client': {
+        'active': 'TODO',
+        'client_id': 'TODO',
+        'description': 'TODO',
+        'id': 'TODO',
+        'last_modified': 'TODO',
+        'secret': 'TODO',
+    },
+    'oauth2_client_scope': {'client_id': 'TODO', 'id': 'TODO', 'scope_id': 'TODO'},
+    'oauth2_jwt': {
+        'client_id': 'TODO',
+        'expires': 'TODO',
+        'id': 'TODO',
+        'jti': 'TODO',
+        'type': 'TODO',
+        'user_id': 'TODO',
+    },
+    'oauth2_scope': {'description': 'TODO', 'id': 'TODO', 'name': 'TODO'},
     'op_sys': {
-        'value': 'A possible value of the field',
+        'id': 'a unique ID.',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
         'sortkey': 'A number used to determine the order in which values are shown.',
-        'id': 'a unique ID.',
-        'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+        'value': 'A possible value of the field',
+        'visibility_value_id': (
+            'If set, this value is only available if '
+            'the chooser field (identified by '
+            '%(column-fielddefs-value_field_id)s) has '
+            'the value with this ID.  Foreign key '
+            '&lt;field&gt;.id, for example '
+            '%(column-products-id)s or <a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
     },
+    'phabbugz': {'id': 'TODO', 'name': 'TODO', 'value': 'TODO'},
     'priority': {
-        'value': 'A possible value of the field',
+        'id': 'a unique ID.',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
         'sortkey': 'A number used to determine the order in which values are shown.',
-        'id': 'a unique ID.',
-        'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+        'value': 'A possible value of the field',
+        'visibility_value_id': (
+            'If set, this value is only available if '
+            'the chooser field (identified by '
+            '%(column-fielddefs-value_field_id)s) has '
+            'the value with this ID.  Foreign key '
+            '&lt;field&gt;.id, for example '
+            '%(column-products-id)s or <a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
+    },
+    'product_reviewers': {
+        'display_name': 'TODO',
+        'id': 'TODO',
+        'product_id': 'TODO',
+        'sortkey': 'TODO',
+        'user_id': 'TODO',
     },
     'products': {
-        'product': 'The name of the product.',
-        'id': 'The product ID.',
-        'name': 'The product name.',
+        'allows_unconfirmed': (
+            '1 if new bugs can be UNCONFIRMED, 0 if they always start as NEW'
+        ),
+        'bug_description_template': 'TODO',
+        'classification_id': (
+            'The classification ID (foreign key %(column-classifications-id)s).'
+        ),
+        'default_bug_type': 'TODO',
+        'default_op_sys_id': 'TODO',
+        'default_platform_id': 'TODO',
+        'defaultmilestone': (
+            'The default milestone for a new bug '
+            '(foreign key %(column-milestones-value)s)'
+        ),
         'description': 'The description of the product',
-        'milestoneurl': 'The URL of a document describing the product milestones.',
         'disallownew': 'New bugs can only be created for this product if this is 0.',
-        'votesperuser': 'Total votes which a single user has for bugs of this product.',
-        'maxvotesperbug': 'Maximum number of votes which a bug may have.',
-        'votestoconfirm': 'How many votes are required for this bug to become NEW.',
-        'defaultmilestone': 'The default milestone for a new bug (foreign key %(column-milestones-value)s)',
-        'classification_id': 'The classification ID (foreign key %(column-classifications-id)s).',
+        'id': 'The product ID.',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
-        'allows_unconfirmed': '1 if new bugs can be UNCONFIRMED, 0 if they always start as NEW',
+        'maxvotesperbug': 'Maximum number of votes which a bug may have.',
+        'milestoneurl': 'The URL of a document describing the product milestones.',
+        'nag_interval': 'TODO',
+        'name': 'The product name.',
+        'product': 'The name of the product.',
+        'reviewer_required': 'TODO',
+        'security_group_id': 'TODO',
+        'votesperuser': 'Total votes which a single user has for bugs of this product.',
+        'votestoconfirm': 'How many votes are required for this bug to become NEW.',
     },
+    'profile_mfa': {'id': 'TODO', 'name': 'TODO', 'user_id': 'TODO', 'value': 'TODO'},
     'profile_search': {
-        'id': 'A unique ID for the list, specified as list_id in the URL parameters.',
-        'user_id': 'The ID of the user who ran the search. (foreign key %(column-profiles-userid)s)',
         'bug_list': 'The list of bug numbers returned by the search.',
+        'id': 'A unique ID for the list, specified as list_id in the URL parameters.',
         'list_order': 'The sort order specified by the user.',
+        'user_id': (
+            'The ID of the user who ran the search. '
+            '(foreign key %(column-profiles-userid)s)'
+        ),
     },
     'profile_setting': {
-        'setting_name': 'The name of the setting (foreign key %(column-setting-name)s).',
-        'user_id': 'The user (foreign key %(column-profiles-userid)s).',
+        'setting_name': (
+            'The name of the setting (foreign key %(column-setting-name)s).'
+        ),
         'setting_value': 'The value (foreign key %(column-setting_value-value)s).',
+        'user_id': 'The user (foreign key %(column-profiles-userid)s).',
     },
     'profiles': {
-        'userid': 'A unique identifier for the user.  Used in other tables to identify this user.',
-        'login_name': [
-            (
-                None,
-                '5.2',
-                'The user\'s email address.  Used when logging in or providing mailto: links.'
-            ),
-            (
-                '5.1.1',
-                None,
-                'The user\'s username. Used when logging in and displayed to other users.'
-            ),
-        ],
-        'password': 'The user\'s password, in plaintext.',
+        'blessgroupset': (
+            'Indicates the groups into which this user is '
+            'able to introduce other users.'
+        ),
+        'bounce_count': 'TODO',
+        'comment_count': 'TODO',
+        'creation_ts': 'TODO',
         'cryptpassword': [
-            'The user\'s password.',
+            "The user's password.",
             (
                 None,
                 '2.12',
-                '%(VERSION_STRING)sThe MySQL function <code>encrypt</code> is used to encrypt passwords.',
+                '%(VERSION_STRING)sThe MySQL function '
+                '<code>encrypt</code> is used to encrypt '
+                'passwords.',
             ),
             (
                 '2.14',
@@ -1458,156 +2220,374 @@ column_remark = {
                 '%(VERSION_STRING)sThe Perl function <code>crypt</code> is used.',
             ),
         ],
-        'realname': 'The user\'s real name.',
-        'groupset': 'The set of groups to which the user belongs.  Each group corresponds to one bit and confers powers upon the user. See %(the-table-groups)s.',
-        'emailnotification': 'Controls when email reporting bug changes is sent to this user.',
-        'disabledtext': 'If non-empty, indicates that this account has been disabled and gives a reason. ',
-        'newemailtech': 'is non-zero if the user wants to user the "new" email notification technique.',
-        'mybugslink': 'indicates whether a "My Bugs" link should appear at the bottom of each page.',
-        'blessgroupset': 'Indicates the groups into which this user is able to introduce other users.',
-        'emailflags': 'Flags controlling when email messages are sent to this user.',
-        'refreshed_when': 'A timestamp showing when the derived group memberships in %(the-table-user_group_map)s were last updated for this user.',
-        'extern_id': 'The ID for environmental authentication (see <a href="#notes-authentication">the notes on authentication</a>).',
-        'disable_mail': '1 to disable all mail to this user; 0 for mail to depend on the per-user email settings in %(table-email_setting)s.',
-        'is_enabled': '1 if the account is enabled, 0 if it is disabled and prevented from logging in.',
-        'last_seen_date': 'Date the user last logged in.',
+        'disable_mail': (
+            '1 to disable all mail to this user; 0 for mail '
+            'to depend on the per-user email settings in '
+            '%(table-email_setting)s.'
+        ),
+        'disabledtext': (
+            'If non-empty, indicates that this account has '
+            'been disabled and gives a reason. '
+        ),
         'email': "The user's email address.",
+        'emailflags': 'Flags controlling when email messages are sent to this user.',
+        'emailnotification': (
+            'Controls when email reporting bug changes is sent to this user.'
+        ),
+        'extern_id': (
+            'The ID for environmental authentication (see <a '
+            'href="#notes-authentication">the notes on '
+            'authentication</a>).'
+        ),
+        'feedback_request_count': 'TODO',
+        'first_patch_bug_id': 'TODO',
+        'first_patch_reviewed_id': 'TODO',
+        'forget_after_date': 'TODO',
+        'groupset': (
+            'The set of groups to which the user belongs.  Each '
+            'group corresponds to one bit and confers powers '
+            'upon the user. See %(the-table-groups)s.'
+        ),
+        'is_enabled': (
+            '1 if the account is enabled, 0 if it is disabled '
+            'and prevented from logging in.'
+        ),
+        'last_activity_ts': 'TODO',
+        'last_seen_date': 'Date the user last logged in.',
+        'last_statistics_ts': 'TODO',
+        'login_name': [
+            (
+                None,
+                '5.2',
+                "The user's email address.  Used when logging in "
+                "or providing mailto: links.",
+            ),
+            (
+                '5.1.1',
+                None,
+                "The user's username. Used when logging in and "
+                "displayed to other users.",
+            ),
+        ],
+        'mfa': 'TODO',
+        'mfa_required_date': 'TODO',
+        'mybugslink': (
+            'indicates whether a "My Bugs" link should appear '
+            'at the bottom of each page.'
+        ),
+        'needinfo_request_count': 'TODO',
+        'newemailtech': (
+            'is non-zero if the user wants to user the "new" '
+            'email notification technique.'
+        ),
+        'nickname': 'TODO',
+        'password': "The user's password, in plaintext.",
+        'password_change_reason': 'TODO',
+        'password_change_required': 'TODO',
+        'realname': "The user's real name.",
+        'refreshed_when': (
+            'A timestamp showing when the derived group '
+            'memberships in %(the-table-user_group_map)s '
+            'were last updated for this user.'
+        ),
+        'review_request_count': 'TODO',
+        'userid': (
+            'A unique identifier for the user.  Used in other '
+            'tables to identify this user.'
+        ),
     },
     'profiles_activity': {
-        'userid': 'The profile which has changed (foreign key %(column-profiles-userid)s)',
-        'who': 'The user who changed it (foreign key %(column-profiles-userid)s)',
-        'profiles_when': 'When it was changed',
         'fieldid': 'The ID of the changed field (foreign key %(column-fielddefs-id)s)',
-        'oldvalue': 'The old value',
-        'newvalue': 'The new value.',
         'id': None,
+        'newvalue': 'The new value.',
+        'oldvalue': 'The old value',
+        'profiles_when': 'When it was changed',
+        'userid': (
+            'The profile which has changed (foreign key %(column-profiles-userid)s)'
+        ),
+        'who': 'The user who changed it (foreign key %(column-profiles-userid)s)',
+    },
+    'profiles_statistics': {
+        'count': 'TODO',
+        'id': 'TODO',
+        'name': 'TODO',
+        'user_id': 'TODO',
+    },
+    'profiles_statistics_products': {
+        'count': 'TODO',
+        'id': 'TODO',
+        'product': 'TODO',
+        'user_id': 'TODO',
+    },
+    'profiles_statistics_recalc': {'user_id': 'TODO'},
+    'profiles_statistics_status': {
+        'count': 'TODO',
+        'id': 'TODO',
+        'status': 'TODO',
+        'user_id': 'TODO',
+    },
+    'push': {
+        'change_set': 'TODO',
+        'id': 'TODO',
+        'payload': 'TODO',
+        'push_ts': 'TODO',
+        'routing_key': 'TODO',
+    },
+    'push_backlog': {
+        'attempt_ts': 'TODO',
+        'attempts': 'TODO',
+        'change_set': 'TODO',
+        'connector': 'TODO',
+        'id': 'TODO',
+        'last_error': 'TODO',
+        'message_id': 'TODO',
+        'payload': 'TODO',
+        'push_ts': 'TODO',
+        'routing_key': 'TODO',
+    },
+    'push_backoff': {
+        'attempts': 'TODO',
+        'connector': 'TODO',
+        'id': 'TODO',
+        'next_attempt_ts': 'TODO',
+    },
+    'push_log': {
+        'change_set': 'TODO',
+        'connector': 'TODO',
+        'data': 'TODO',
+        'id': 'TODO',
+        'message_id': 'TODO',
+        'processed_ts': 'TODO',
+        'push_ts': 'TODO',
+        'result': 'TODO',
+        'routing_key': 'TODO',
+    },
+    'push_notify': {'bug_id': 'TODO', 'delta_ts': 'TODO', 'id': 'TODO'},
+    'push_options': {
+        'connector': 'TODO',
+        'id': 'TODO',
+        'option_name': 'TODO',
+        'option_value': 'TODO',
     },
     'quips': {
-        'quipid': 'A unique ID.',
-        'userid': 'The user who added this quip (foreign key %(column-profiles-userid)s)',
-        'quip': 'The quip itself.',
         'approved': '1 if this quip has been approved for display, 0 otherwise.',
+        'quip': 'The quip itself.',
+        'quipid': 'A unique ID.',
+        'userid': (
+            'The user who added this quip (foreign key %(column-profiles-userid)s)'
+        ),
     },
+    'regressions': {'regressed_by': 'TODO', 'regresses': 'TODO'},
     'rep_platform': {
-        'value': 'A possible value of the field',
+        'id': 'a unique ID.',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
         'sortkey': 'A number used to determine the order in which values are shown.',
-        'id': 'a unique ID.',
-        'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+        'value': 'A possible value of the field',
+        'visibility_value_id': (
+            'If set, this value is only available '
+            'if the chooser field (identified by '
+            '%(column-fielddefs-value_field_id)s) '
+            'has the value with this ID.  Foreign '
+            'key &lt;field&gt;.id, for example '
+            '%(column-products-id)s or <a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
     },
+    'report_ping': {'class': 'TODO', 'id': 'TODO', 'last_ping_ts': 'TODO'},
     'reports': {
         'id': None,
-        'user_id': 'The owner of the report. (foreign key %(column-profiles-userid)s)',
         'name': 'The name of the report.',
         'query': 'The query used to generate the report.',
+        'user_id': 'The owner of the report. (foreign key %(column-profiles-userid)s)',
     },
     'resolution': {
-        'value': 'A possible value of the field',
+        'id': 'a unique ID.',
         'isactive': '1 if this value is available in the user interface, 0 otherwise',
         'sortkey': 'A number used to determine the order in which values are shown.',
-        'id': 'a unique ID.',
-        'visibility_value_id': 'If set, this value is only available if the chooser field (identified by %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a href="#column-customfield-id">cf_&lt;field&gt;.id</a>.',
+        'value': 'A possible value of the field',
+        'visibility_value_id': (
+            'If set, this value is only available '
+            'if the chooser field (identified by '
+            '%(column-fielddefs-value_field_id)s) '
+            'has the value with this ID.  Foreign '
+            'key &lt;field&gt;.id, for example '
+            '%(column-products-id)s or <a '
+            'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.'
+        ),
     },
     'series': {
-        'series_id': 'A unique ID.',
+        'category': (
+            'The series category. (foreign key %(column-series_categories-id)s)'
+        ),
         'creator': [
-            'The user who created this series (foreign key %(column-profiles-userid)s).',
+            'The user who created this series (foreign key '
+            '%(column-profiles-userid)s).',
             (
                 None,
                 '2.23.2',
-                '%(VERSION_STRING)s 0 if this series is created by checksetup when first installing Bugzilla.',
+                '%(VERSION_STRING)s 0 if this series is created by '
+                'checksetup when first installing Bugzilla.',
             ),
             (
                 '2.23.3',
                 None,
-                '%(VERSION_STRING)s NULL if this series is created by checksetup when first installing Bugzilla.',
+                '%(VERSION_STRING)s NULL if this series is created by '
+                'checksetup when first installing Bugzilla.',
             ),
         ],
-        'category': 'The series category. (foreign key %(column-series_categories-id)s)',
-        'subcategory': 'The series subcategory. (foreign key %(column-series_categories-id)s)',
-        'name': 'The series name.',
         'frequency': 'The period between data samples for this series, in days.',
         'last_viewed': 'The time at which this dataset was last viewed.',
-        'query': 'a snippet of CGI which specifies a subset of bugs, as for query.cgi',
+        'name': 'The series name.',
         'public': '1 if the series is visible to all users, 0 otherwise.',
+        'query': 'a snippet of CGI which specifies a subset of bugs, as for query.cgi',
+        'series_id': 'A unique ID.',
+        'subcategory': (
+            'The series subcategory. (foreign key %(column-series_categories-id)s)'
+        ),
     },
-    'series_categories': {
-        'id': 'A unique ID.',
-        'name': 'The category name.',
-    },
+    'series_categories': {'id': 'A unique ID.', 'name': 'The category name.'},
     'series_data': {
-        'series_id': 'The series ID. (foreign key %(column-series-series_id)s)',
         'date': 'The time point at which this datum was collected.',
-        'value': 'The number of bugs in the dataset at this time point.',
         'series_date': 'The time point at which this datum was collected.',
+        'series_id': 'The series ID. (foreign key %(column-series-series_id)s)',
         'series_value': 'The number of bugs in the dataset at this time point.',
+        'value': 'The number of bugs in the dataset at this time point.',
     },
     'setting': {
-        'default_value': 'the value of this setting which will apply to any user who does not change it.',
-        'is_enabled': '1 if users are able to change this setting; 0 if it is automatic.',
+        'category': 'TODO',
+        'default_value': (
+            'the value of this setting which will apply to '
+            'any user who does not change it.'
+        ),
+        'is_enabled': (
+            '1 if users are able to change this setting; 0 if it is automatic.'
+        ),
         'name': 'The name of the setting.',
-        'subclass': 'The name of the Perl subclass (of Setting) to which this setting applies.',
+        'subclass': (
+            'The name of the Perl subclass (of Setting) to which this setting applies.'
+        ),
     },
     'setting_value': {
-        'sortindex': 'A number used to determine the order in which setting values are shown',
         'name': 'The setting name. (foreign key %(column-setting-name)s)',
+        'sortindex': (
+            'A number used to determine the order in which setting values are shown'
+        ),
         'value': 'The setting value',
     },
     'shadowlog': {
-        'id': 'unique id',
-        'ts': 'timestamp',
-        'reflected': '0',
         'command': 'SQL command',
+        'id': 'unique id',
+        'reflected': '0',
+        'ts': 'timestamp',
     },
     'status_workflow': {
-        'old_status': 'The old bug status, None for bug creation (foreign key %(column-bug_status-id)s)',
         'new_status': 'The new bug status (foreign key %(column-bug_status-id)s)',
+        'old_status': (
+            'The old bug status, None for bug creation '
+            '(foreign key %(column-bug_status-id)s)'
+        ),
         'require_comment': '1 if this transition requires a comment; 0 otherwise.',
     },
     'tag': {
         'id': 'A unique ID for the tag',
         'name': 'The name of the tag. Only unique per user.',
-        'user_id': 'ID of the user this tag belongs to. (foreign key %(column-profiles-userid)s)',
+        'user_id': (
+            'ID of the user this tag belongs to. (foreign key '
+            '%(column-profiles-userid)s)'
+        ),
     },
     'tags': {
         'id': 'A unique ID for the tag',
         'name': 'The name of the tag. Only unique per user.',
-        'user_id': 'ID of the user this tag belongs to. (foreign key %(column-profiles-userid)s)',
+        'user_id': (
+            'ID of the user this tag belongs to. (foreign key '
+            '%(column-profiles-userid)s)'
+        ),
     },
+    'token_data': {'extra_data': 'TODO', 'id': 'TODO', 'token': 'TODO'},
     'tokens': {
-        'userid': 'The user to whom the token was issued.  (foreign key %(column-profiles-userid)s)',
+        'eventdata': 'The expected event, for a session token.',
         'issuedate': 'The date at which the token was issued',
         'token': 'The token itself.',
-        'tokentype': "The type of the token.  Possible values: 'account' when creating a new user account, 'emailold' and 'emailnew' when changing email address, 'password' when changing a password, or 'session' for a session token.",
-        'eventdata': 'The expected event, for a session token.',
+        'tokentype': (
+            "The type of the token.  Possible values: 'account' "
+            "when creating a new user account, 'emailold' and "
+            "'emailnew' when changing email address, 'password' "
+            "when changing a password, or 'session' for a session "
+            "token."
+        ),
+        'userid': (
+            'The user to whom the token was issued.  (foreign key '
+            '%(column-profiles-userid)s)'
+        ),
+    },
+    'tracking_flags': {
+        'description': 'TODO',
+        'enter_bug': 'TODO',
+        'field_id': 'TODO',
+        'id': 'TODO',
+        'is_active': 'TODO',
+        'name': 'TODO',
+        'sortkey': 'TODO',
+        'type': 'TODO',
+    },
+    'tracking_flags_bugs': {
+        'bug_id': 'TODO',
+        'id': 'TODO',
+        'tracking_flag_id': 'TODO',
+        'value': 'TODO',
+    },
+    'tracking_flags_values': {
+        'comment': 'TODO',
+        'enter_bug': 'TODO',
+        'id': 'TODO',
+        'is_active': 'TODO',
+        'setter_group_id': 'TODO',
+        'sortkey': 'TODO',
+        'tracking_flag_id': 'TODO',
+        'value': 'TODO',
+    },
+    'tracking_flags_visibility': {
+        'component_id': 'TODO',
+        'id': 'TODO',
+        'product_id': 'TODO',
+        'tracking_flag_id': 'TODO',
     },
     'ts_error': {
         'error_time': 'The time at which the error occurred.',
+        'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
         'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
         'message': 'The error message.',
-        'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
     },
     'ts_exitstatus': {
-        'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
-        'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
-        'status': 'The exit status.  0 for success.',
         'completion_time': 'The time at which the job finished.',
         'delete_after': 'A time after which this row can be deleted.',
+        'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
+        'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
+        'status': 'The exit status.  0 for success.',
     },
     'ts_funcmap': {
         'funcid': 'A unique ID.',
-        'funcname': 'A unique function name, also known as an ability or a worker class name.',
+        'funcname': (
+            'A unique function name, also known as an ability or a worker class name.'
+        ),
     },
     'ts_job': {
-        'jobid': 'A unique ID.',
-        'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
         'arg': 'State data for the job, stored as a frozen reference.',
-        'uniqkey': 'An arbitrary unique reference.',
+        'coalesce': (
+            'A string used to indicate jobs which can be usefully '
+            'pipelined by a single worker.'
+        ),
+        'funcid': 'The function ID.  Foreign key %(column-ts_funcmap-funcid)s.',
+        'grabbed_until': (
+            'Set while a worker is attempting this job; do '
+            'not retry this job until this is in the past.'
+        ),
         'insert_time': 'not used.',
-        'run_after': 'A timestamp before which the job should not be run.',
-        'grabbed_until': 'Set while a worker is attempting this job; do not retry this job until this is in the past.',
+        'jobid': 'A unique ID.',
         'priority': 'Not used.',
-        'coalesce': 'A string used to indicate jobs which can be usefully pipelined by a single worker.',
+        'run_after': 'A timestamp before which the job should not be run.',
+        'uniqkey': 'An arbitrary unique reference.',
     },
     'ts_note': {
         'jobid': 'The job ID.  Foreign key %(column-ts_job-jobid)s',
@@ -1615,102 +2595,177 @@ column_remark = {
         'value': 'Not used.',
     },
     'user_api_keys': {
-        'id': None,
-        'user_id': 'The user the key belongs to. (foreign key %(column-profiles-userid)s)',
         'api_key': 'The API key.',
+        'app_id': (
+            'Null if user-created API key. Contains a '
+            'callback name if tied to a specific callback.'
+        ),
+        'creation_ts': 'TODO',
         'description': 'User-supplied description to identify the purpose of the key.',
-        'revoked': '1 if revoked, 0 if active.',
+        'id': None,
         'last_used': 'Timestamp of the last time it was used.',
-        'app_id': 'Null if user-created API key. Contains a callback name if tied to a specific callback.',
+        'last_used_ip': 'TODO',
+        'revoked': '1 if revoked, 0 if active.',
+        'sticky': 'TODO',
+        'user_id': (
+            'The user the key belongs to. (foreign key %(column-profiles-userid)s)'
+        ),
     },
     'user_group_map': {
-        'user_id': 'The user.  (foreign key %(column-profiles-userid)s)',
-        'grant_type': '0 if this membership or privilege is explicit. 1 if it is derived from a group hierarchy (see %(the-table-group_group_map)s). 2 if it results from matching a regular expression (see %(column-groups-userregexp)s).',
+        'grant_type': (
+            '0 if this membership or privilege is '
+            'explicit. 1 if it is derived from a group '
+            'hierarchy (see '
+            '%(the-table-group_group_map)s). 2 if it '
+            'results from matching a regular expression '
+            '(see %(column-groups-userregexp)s).'
+        ),
         'group_id': 'The group.  (foreign key %(column-groups-id)s)',
-        'isbless': '0 if this row records group membership; 1 if this row records group "bless" privilege.',
-        'isderived': '0 if this membership or privilege is explicit.  1 if it is derived (e.g. from %(the-table-group_group_map)s or %(column-groups-userregexp)s).',
+        'isbless': (
+            '0 if this row records group membership; 1 if '
+            'this row records group "bless" privilege.'
+        ),
+        'isderived': (
+            '0 if this membership or privilege is '
+            'explicit.  1 if it is derived (e.g. from '
+            '%(the-table-group_group_map)s or '
+            '%(column-groups-userregexp)s).'
+        ),
+        'user_id': 'The user.  (foreign key %(column-profiles-userid)s)',
+    },
+    'user_request_log': {
+        'action': 'TODO',
+        'attach_id': 'TODO',
+        'bug_id': 'TODO',
+        'id': 'TODO',
+        'ip_address': 'TODO',
+        'method': 'TODO',
+        'request_url': 'TODO',
+        'server': 'TODO',
+        'timestamp': 'TODO',
+        'user_agent': 'TODO',
+        'user_id': 'TODO',
     },
     'user_series_map': {
-        'user_id': 'The user ID. (foreign key %(column-profiles-userid)s)',
         'series_id': 'The series. (foreign key %(column-series-series_id)s)',
+        'user_id': 'The user ID. (foreign key %(column-profiles-userid)s)',
     },
     'versions': {
         'id': 'A unique numeric ID',
-        'value': 'The name of the version',
-        'program': 'The product (foreign key %(column-products-product)s)',
-        'product_id': 'The product (foreign key %(column-products-id)s)',
         'isactive': '1 if the version is available for new bugs, 0 if not.',
+        'product_id': 'The product (foreign key %(column-products-id)s)',
+        'program': 'The product (foreign key %(column-products-product)s)',
+        'value': 'The name of the version',
     },
     'votes': {
-        'who': 'The user (foreign key %(column-profiles-userid)s)',
         'bug_id': 'The bug (foreign key %(column-bugs-bug_id)s)',
         'count': 'How many votes.',
+        'who': 'The user (foreign key %(column-profiles-userid)s)',
     },
     'watch': {
-        'watcher': 'The watching user (foreign key %(column-profiles-userid)s)',
         'watched': 'The watched user (foreign key %(column-profiles-userid)s)',
+        'watcher': 'The watching user (foreign key %(column-profiles-userid)s)',
+    },
+    'webhooks': {
+        'component_id': 'TODO',
+        'event': 'TODO',
+        'id': 'TODO',
+        'name': 'TODO',
+        'product_id': 'TODO',
+        'url': 'TODO',
+        'user_id': 'TODO',
     },
     'whine_events': {
-        'id': 'The whine event ID, used to identify this event.',
-        'owner_userid': """The user ID of the whine owner (foreign key %(column-profiles-userid)s).  Must match %(column-namedqueries-userid)s for the queries associated with this event (%(column-whine_queries-query_name)s).""",
-        'subject': 'The Subject of the whine emails.',
         'body': 'Text to appear in the body of the whine emails before the bugs table.',
-        'mailifnobugs': "1 is mail should be sent even if there are no results to the query. 0 if the report shouldn't be sent unless there are results.",
+        'id': 'The whine event ID, used to identify this event.',
+        'mailifnobugs': (
+            '1 is mail should be sent even if there are '
+            'no results to the query. 0 if the report '
+            'shouldn\'t be sent unless there are results.'
+        ),
+        'owner_userid': (
+            'The user ID of the whine owner (foreign key '
+            '%(column-profiles-userid)s).  Must match '
+            '%(column-namedqueries-userid)s for the '
+            'queries associated with this event '
+            '(%(column-whine_queries-query_name)s).'
+        ),
+        'subject': 'The Subject of the whine emails.',
     },
     'whine_queries': {
-        'id': 'A unique ID for this query.',
         'eventid': 'The whine event ID (foreign key %(column-whine_events-id)s).',
+        'id': 'A unique ID for this query.',
+        'onemailperbug': (
+            '1 if a separate email message should be '
+            'sent\n'
+            '    for each bug matching the query; 0 if '
+            'a single email should be\n'
+            '    sent covering all the bugs.'
+        ),
         'query_name': 'The query name (foreign key %(column-namedqueries-name)s).',
         'sortkey': 'A key to order the queries for a given event ID.',
-        'onemailperbug': """1 if a separate email message should be sent
-    for each bug matching the query; 0 if a single email should be
-    sent covering all the bugs.""",
         'title': 'The title displayed for this query in the message.',
     },
     'whine_schedules': {
-        'id': """a unique ID for this whine schedule.""",
         'eventid': 'The whine event ID (foreign key %(column-whine_events-id)s).',
-        'run_day': """The day on which this whine should run.  'All' means
-    every day.  'MF' means Monday to Friday inclusive.  A three letter
-    weekday abbreviation (e.g. "Mon", "Thu") means only on that day.
-    An integer indicates a particular day of the month.  'last' means
-    the last day of the month.""",
-        'run_time': """The time at which this whine should run.  An
-    integer indicates an hour of the day.  An interval (e.g. "15min",
-    "30min") indicates that the whine should run repeatedly at that
-    interval.""",
-        'run_next': """The time and date at which the whine should next be
-    run.  NULL if the whine has been changed and not rescheduled
-    yet.""",
-        'mailto_userid': """The ID of the user to whom to send whine
-    messages (foreign key %(column-profiles-userid)s).""",
-        'mailto': "Either a user ID (foreign key %(column-profiles-userid)s) or group ID (foreign key %(column-groups-id)s) identifying the user or users to whom to send whine messages.",
-        'mailto_type': "0 if the mailto field is a user ID, 1 if it is a group ID.",
+        'id': 'a unique ID for this whine schedule.',
+        'mailto': (
+            'Either a user ID (foreign key '
+            '%(column-profiles-userid)s) or group ID '
+            '(foreign key %(column-groups-id)s) identifying '
+            'the user or users to whom to send whine '
+            'messages.'
+        ),
+        'mailto_type': '0 if the mailto field is a user ID, 1 if it is a group ID.',
+        'mailto_userid': (
+            'The ID of the user to whom to send '
+            'whine\n'
+            '    messages (foreign key '
+            '%(column-profiles-userid)s).'
+        ),
+        'run_day': (
+            'The day on which this whine should run.  '
+            '\'All\' means\n'
+            '    every day.  \'MF\' means Monday to Friday '
+            'inclusive.  A three letter\n'
+            '    weekday abbreviation (e.g. "Mon", "Thu") '
+            'means only on that day.\n'
+            '    An integer indicates a particular day of '
+            'the month.  \'last\' means\n'
+            '    the last day of the month.'
+        ),
+        'run_next': (
+            'The time and date at which the whine should '
+            'next be\n'
+            '    run.  NULL if the whine has been changed '
+            'and not rescheduled\n'
+            '    yet.'
+        ),
+        'run_time': (
+            'The time at which this whine should run.  '
+            'An\n'
+            '    integer indicates an hour of the day.  '
+            'An interval (e.g. "15min",\n'
+            '    "30min") indicates that the whine should '
+            'run repeatedly at that\n'
+            '    interval.'
+        ),
     },
 }
+
 
 # This is a map from table name to a map from column name to canonical
 # column name.  For use when a column has been renamed but not
 # otherwise changed.
 
 column_renamed = {
-    'votes': {
-        'vote_count': 'count',
-    },
-    'series': {
-        'is_public': 'public',
-    },
-    'series_data': {
-        'series_date': 'date',
-        'series_value': 'value',
-    },
-    'series_categories': {
-        'category_id': 'id',
-    },
-    'fielddefs': {
-        'fieldid': 'id',
-    },
+    'fielddefs': {'fieldid': 'id'},
+    'series': {'is_public': 'public'},
+    'series_categories': {'category_id': 'id'},
+    'series_data': {'series_date': 'date', 'series_value': 'value'},
+    'votes': {'vote_count': 'count'},
 }
+
 
 # This is a map from table name to a map from column name to HTML
 # remark for that column.  At present, these remarks include schema
@@ -1721,191 +2776,203 @@ column_renamed = {
 
 column_added_remark = {
     'attachments': {
+        'attach_size': 'TODO',
         'isobsolete': None,
         'isprivate': None,
         'isurl': None,
         'modification_time': None,
     },
     'bug_see_also': {
+        'class': (
+            'Definitions for allowable types of remote bug '
+            'report instances were moved into subclasses of '
+            'Bugzilla::BugURL.'
+        ),
         'id': None,
-        'class': 'Definitions for allowable types of remote bug report instances were moved into subclasses of Bugzilla::BugURL.',
     },
-    'bug_severity': {
-        'visibility_value_id': None,
-    },
-    'bug_status': {
-        'is_open': None,
-        'visibility_value_id': None,
-    },
+    'bug_severity': {'visibility_value_id': None},
+    'bug_status': {'is_open': None, 'visibility_value_id': None},
     'bugs': {
         'alias': None,
+        'assignee_accessible': None,
+        'bug_type': 'TODO',
+        'cclist_accessible': None,
+        'cf_crash_signature': 'TODO',
+        'cf_last_resolved': 'TODO',
+        'cf_rank': 'TODO',
+        'cf_user_story': 'TODO',
+        'component_id': 'replacing "component"',
         'deadline': None,
-        'keywords': None,
+        'estimated_time': None,
         'everconfirmed': None,
+        'filed_via': 'TODO',
+        'groupset': None,
+        'keywords': None,
         'lastdiffed': None,
         'product_id': 'replacing "product"',
-        'component_id': 'replacing "component"',
-        'reporter_accessible': None,
-        'assignee_accessible': None,
-        'qacontact_accessible': None,
-        'cclist_accessible': None,
-        'estimated_time': None,
-        'groupset': None,
         'qa_contact': None,
+        'qacontact_accessible': None,
         'remaining_time': None,
+        'reporter_accessible': None,
+        'restrict_comments': 'TODO',
         'status_whiteboard': None,
         'target_milestone': None,
         'votes': None,
     },
     'bugs_activity': {
-        'attach_id': None,
-        'fieldid': 'replacing "field"',
-        'bug_when': 'replacing "when"',
         'added': 'replacing "newvalue"',
-        'removed': 'replacing "oldvalue"',
+        'attach_id': None,
+        'bug_when': 'replacing "when"',
         'comment_id': None,
+        'fieldid': 'replacing "field"',
         'id': None,
+        'removed': 'replacing "oldvalue"',
     },
-    'classifications': {
-        'sortkey': None,
-    },
+    'classifications': {'sortkey': None},
     'components': {
+        'bug_description_template': 'TODO',
+        'default_bug_type': 'TODO',
         'description': None,
-        'name': 'replacing "value"',
         'id': 'replacing "value" as the primary key',
         'initialqacontact': None,
-        'product_id': 'replacing "program"',
         'isactive': None,
+        'name': 'replacing "value"',
+        'product_id': 'replacing "program"',
+        'triage_owner_id': 'TODO',
+        'watch_user': 'TODO',
     },
     'fielddefs': {
-        'obsolete': None,
-        'custom': None,
-        'type': None,
-        'enter_bug': None,
         'buglist': None,
-        'value_field_id': None,
-        'visibility_field_id': None,
-        'visibility_value_id': None,
-        'reverse_desc': None,
+        'custom': None,
+        'enter_bug': None,
         'is_mandatory': None,
         'is_numeric': None,
         'long_desc': 'Bug 728138',
+        'obsolete': None,
+        'reverse_desc': None,
+        'type': None,
+        'value_field_id': None,
+        'visibility_field_id': None,
+        'visibility_value_id': None,
     },
-    'flags': {
-        'is_active': None,
-    },
+    'flags': {'is_active': None},
     'flagtypes': {
+        'default_requestee': 'TODO',
         'grant_group_id': None,
         'request_group_id': None,
     },
-    'group_group_map': {
-        'grant_type': 'replacing "isbless"',
-    },
-    'group_control_map': {
-        'editbugs': None,
-        'editcomponents': None,
-        'canconfirm': None,
-    },
+    'group_control_map': {'canconfirm': None, 'editbugs': None, 'editcomponents': None},
+    'group_group_map': {'grant_type': 'replacing "isbless"'},
     'groups': {
+        'icon_url': None,
         'id': 'replacing "bit"',
+        'idle_member_removal': 'TODO',
         'isactive': None,
         'last_changed': None,
-        'icon_url': None,
+        'owner_user_id': 'TODO',
     },
-    'keyworddefs': {
-        'is_active': 'Bug 69267',
-    },
+    'keyworddefs': {'is_active': 'Bug 69267'},
     'logincookies': {
+        'id': 'TODO',
         'ipaddr': 'replacing hostname',
+        'restrict_ipaddr': 'TODO',
     },
     'longdescs': {
-        'type': None,
-        'extra_data': None,
-        'comment_id': None,
         'already_wrapped': None,
-        'isprivate': None,
-        'work_time': None,
+        'comment_id': None,
+        'edit_count': 'TODO',
+        'extra_data': None,
         'is_markdown': 'Bug 330707',
+        'isprivate': None,
+        'type': None,
+        'work_time': None,
     },
-    'milestones': {
-        'product_id': 'replacing "product"',
-        'id': None,
-        'isactive': None,
-    },
-    'namedqueries': {
-        'query_type': None,
-        'id': None,
-    },
-    'op_sys': {
-        'visibility_value_id': None,
-    },
-    'priority': {
-        'visibility_value_id': None,
-    },
+    'milestones': {'id': None, 'isactive': None, 'product_id': 'replacing "product"'},
+    'namedqueries': {'id': None, 'query_type': None},
+    'op_sys': {'visibility_value_id': None},
+    'priority': {'visibility_value_id': None},
     'products': {
+        'allows_unconfirmed': (
+            'Removing the relationship between '
+            'votestoconfirm and whether or not the '
+            'UNCONFIRMED status is available (Bug '
+            '162060)'
+        ),
+        'bug_description_template': 'TODO',
         'classification_id': None,
-        'votestoconfirm': None,
+        'default_bug_type': 'TODO',
+        'default_op_sys_id': 'TODO',
+        'default_platform_id': 'TODO',
         'defaultmilestone': None,
         'disallownew': None,
-        'maxvotesperbug': None,
-        'votesperuser': None,
         'id': 'replacing "product" as the table key',
-        'name': 'replacing "product" as the product name',
         'isactive': 'replacing and inverting "disallownew" for better readability',
-        'allows_unconfirmed': 'Removing the relationship between votestoconfirm and whether or not the UNCONFIRMED status is available (Bug 162060)',
+        'maxvotesperbug': None,
+        'nag_interval': 'TODO',
+        'name': 'replacing "product" as the product name',
+        'reviewer_required': 'TODO',
+        'security_group_id': 'TODO',
+        'votesperuser': None,
+        'votestoconfirm': None,
     },
     'profiles': {
         'blessgroupset': None,
-        'groupset': None,
-        'newemailtech': None,
-        'emailnotification': None,
-        'mybugslink': None,
-        'disabledtext': None,
-        'extern_id': None,
-        'emailflags': None,
-        'refreshed_when': None,
+        'bounce_count': 'TODO',
+        'comment_count': 'TODO',
+        'creation_ts': 'TODO',
         'disable_mail': None,
-        'is_enabled': 'For query performance reasons it was better to check a boolean than try to check if %(column-profiles-disabledtext)s was zero length or not.',
-        'last_seen_date': None,
+        'disabledtext': None,
         'email': 'Bug 218917',
+        'emailflags': None,
+        'emailnotification': None,
+        'extern_id': None,
+        'feedback_request_count': 'TODO',
+        'first_patch_bug_id': 'TODO',
+        'first_patch_reviewed_id': 'TODO',
+        'forget_after_date': 'TODO',
+        'groupset': None,
+        'is_enabled': (
+            'For query performance reasons it was better to '
+            'check a boolean than try to check if '
+            '%(column-profiles-disabledtext)s was zero length '
+            'or not.'
+        ),
+        'last_activity_ts': 'TODO',
+        'last_seen_date': None,
+        'last_statistics_ts': 'TODO',
+        'mfa': 'TODO',
+        'mfa_required_date': 'TODO',
+        'mybugslink': None,
+        'needinfo_request_count': 'TODO',
+        'newemailtech': None,
+        'nickname': 'TODO',
+        'password_change_reason': 'TODO',
+        'password_change_required': 'TODO',
+        'refreshed_when': None,
+        'review_request_count': 'TODO',
     },
-    'profiles_activity': {
-        'id': None,
-    },
-    'quips': {
-        'approved': None,
-    },
-    'rep_platform': {
-        'visibility_value_id': None,
-    },
-    'resolution': {
-        'visibility_value_id': None,
-    },
-    'series': {
-        'public': None,
-    },
-    'setting': {
-        'subclass': None,
-    },
+    'profiles_activity': {'id': None},
+    'quips': {'approved': None},
+    'rep_platform': {'visibility_value_id': None},
+    'resolution': {'visibility_value_id': None},
+    'series': {'public': None},
+    'setting': {'category': 'TODO', 'subclass': None},
     'user_api_keys': {
         'app_id': 'Bug 1170722',
+        'creation_ts': 'TODO',
+        'last_used_ip': 'TODO',
+        'sticky': 'TODO',
     },
-    'user_group_map': {
-        'grant_type': 'replacing "isderived"',
-    },
+    'user_group_map': {'grant_type': 'replacing "isderived"'},
     'versions': {
-        'product_id': 'replacing "program"',
         'id': None,
         'isactive': '1 if this version is available for new bugs, 0 if not.',
+        'product_id': 'replacing "program"',
     },
-    'whine_events': {
-        'mailifnobugs': None,
-    },
-    'whine_schedules': {
-        'mailto': None,
-        'mailto_type': None,
-    },
+    'whine_events': {'mailifnobugs': None},
+    'whine_schedules': {'mailto': None, 'mailto_type': None},
 }
+
 
 # This is a map from table name to a map from column name to HTML
 # remark for that column.  At present, these remarks include schema
@@ -1916,90 +2983,92 @@ column_added_remark = {
 
 column_removed_remark = {
     'attachments': {
+        'isurl': (
+            'detection logic was added to detect URLs instead of '
+            'needing to be told by the uploader.'
+        ),
         'thedata': 'moved to %(the-table-attach_data)s',
-        'isurl': 'detection logic was added to detect URLs instead of needing to be told by the uploader.',
     },
     'bugs': {
-        'area': None,
-        'long_desc': 'moved to %(the-table-longdescs)s',
-        'groupset': 'replaced by %(the-table-bug_group_map)s',
-        'product': 'replaced by "product_id"',
-        'component': 'replaced by "component_id"',
-        'assignee_accessible': None,
-        'qacontact_accessible': None,
-        'votes': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
-        'keywords': 'This was only used for caching. Improved indexing made this field unnecessary.',
         'alias': 'Moved to %(the-table-bugs_aliases)s. Bug 1012506',
+        'area': None,
+        'assignee_accessible': None,
+        'component': 'replaced by "component_id"',
+        'groupset': 'replaced by %(the-table-bug_group_map)s',
+        'keywords': (
+            'This was only used for caching. Improved indexing made '
+            'this field unnecessary.'
+        ),
+        'long_desc': 'moved to %(the-table-longdescs)s',
+        'product': 'replaced by "product_id"',
+        'qacontact_accessible': None,
+        'votes': (
+            'The Voting feature was moved to an extension. The column '
+            'is not deleted on upgrade if it exists.'
+        ),
     },
     'bugs_activity': {
         'field': 'replaced by "fieldid"',
+        'newvalue': 'replaced by "added"',
         'oldvalue': 'replaced by "removed"',
         'when': 'replaced by "bug_when"',
-        'newvalue': 'replaced by "added"',
     },
     'components': {
-        'value': 'replaced by "name" and "id"',
         'program': 'replaced by "product_id"',
+        'value': 'replaced by "name" and "id"',
     },
     'fielddefs': {
+        'long_desc': 'TODO',
         'obsolete': None,
         'visibility_value_id': 'Moved to %(column-field_visibility-value_id)s',
     },
-    'flags': {
-        'is_active': None,
-    },
-    'groups': {
-        'bit': 'replaced by "id"',
-        'last_changed': 'redundant',
-    },
-    'group_group_map': {
-        'isbless': 'replaced by "grant_type"',
-    },
-    'logincookies': {
-        'cryptpassword': None,
-        'hostname': 'replaced by "ipaddr"',
-    },
-    'longdescs': {
-        'is_markdown': 'Backed out of the 5.0 branch.',
-    },
-    'milestones': {
-        'product': 'replaced by "product_id"',
-    },
+    'flags': {'is_active': None},
+    'group_group_map': {'isbless': 'replaced by "grant_type"'},
+    'groups': {'bit': 'replaced by "id"', 'last_changed': 'redundant'},
+    'logincookies': {'cryptpassword': None, 'hostname': 'replaced by "ipaddr"'},
+    'longdescs': {'is_markdown': 'Backed out of the 5.0 branch.'},
+    'milestones': {'product': 'replaced by "product_id"'},
     'namedqueries': {
-        'watchfordiffs': None,
         'linkinfooter': 'replaced by %(the-table-namedqueries_link_in_footer)s.',
         'query_type': 'replaced by %(the-table-tags)s and %(the-table-bug_tag)s.',
+        'watchfordiffs': None,
     },
     'products': {
-        'product': 'replaced with "id" and "name"',
         'disallownew': 'replaced by "isactive"',
+        'maxvotesperbug': (
+            'The Voting feature was moved to an extension. '
+            'The column is not deleted on upgrade if it '
+            'exists.'
+        ),
         'milestoneurl': 'very rarely used and UI was confusing (Bug 369489)',
-        'votesperuser': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
-        'maxvotesperbug': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
-        'votestoconfirm': 'The Voting feature was moved to an extension. The column is not deleted on upgrade if it exists.',
+        'product': 'replaced with "id" and "name"',
+        'votesperuser': (
+            'The Voting feature was moved to an extension. '
+            'The column is not deleted on upgrade if it '
+            'exists.'
+        ),
+        'votestoconfirm': (
+            'The Voting feature was moved to an extension. '
+            'The column is not deleted on upgrade if it '
+            'exists.'
+        ),
     },
     'profiles': {
-        'password': None,
-        'emailflags': 'replaced by %(the-table-email_setting)s',
-        'groupset': 'replaced by %(the-table-user_group_map)s',
-        'emailnotification': 'replaced in part by %(column-profiles-emailflags)s',
-        'newemailtech': None,
         'blessgroupset': 'replaced by %(the-table-user_group_map)s',
+        'email': 'TODO',
+        'emailflags': 'replaced by %(the-table-email_setting)s',
+        'emailnotification': 'replaced in part by %(column-profiles-emailflags)s',
+        'groupset': 'replaced by %(the-table-user_group_map)s',
+        'newemailtech': None,
+        'password': None,
         'refreshed_when': 'redundant',
     },
-    'series': {
-        'last_viewed': 'was never used, so removed. (bug 519032)',
-    },
-    'user_group_map': {
-        'isderived': 'replaced by "grant_type"',
-    },
-    'versions': {
-        'program': 'replaced by "product_id"',
-    },
-    'whine_schedules': {
-        'mailto_userid': None,
-    },
+    'series': {'last_viewed': 'was never used, so removed. (bug 519032)'},
+    'user_group_map': {'isderived': 'replaced by "grant_type"'},
+    'versions': {'program': 'replaced by "product_id"'},
+    'whine_schedules': {'mailto_userid': None},
 }
+
 
 # This is a map from table name to a map from index name to HTML
 # remark for that index.  At present, these remarks include schema
@@ -2009,33 +3078,36 @@ column_removed_remark = {
 # so we know to add a remark later.
 
 index_remark = {
+    'antispam_comment_blocklist': {
+        'PRIMARY': 'TODO',
+        'antispam_comment_blocklist_idx': 'TODO',
+    },
+    'antispam_domain_blocklist': {
+        'PRIMARY': 'TODO',
+        'antispam_domain_blocklist_idx': 'TODO',
+    },
+    'antispam_ip_blocklist': {'PRIMARY': 'TODO', 'antispam_ip_blocklist_idx': 'TODO'},
+    'attach_data': {'PRIMARY': None},
+    'attachment_storage_class': {'PRIMARY': 'TODO'},
     'attachments': {
         'PRIMARY': None,
+        'attachments_ispatch_idx': 'TODO',
+        'attachments_modification_time_idx': None,
+        'attachments_submitter_id_idx': None,
         'bug_id': None,
         'creation_ts': None,
-        'attachments_submitter_id_idx': None,
-        'attachments_modification_time_idx': None,
     },
-    'attach_data': {
-        'PRIMARY': None,
+    'attachstatusdefs': {'PRIMARY': None},
+    'attachstatuses': {'PRIMARY': None},
+    'audit_log': {'audit_log_class_idx': None},
+    'bug_group_map': {'bug_id': None, 'group_id': None},
+    'bug_interest': {
+        'PRIMARY': 'TODO',
+        'bug_interest_idx': 'TODO',
+        'bug_interest_user_id_idx': 'TODO',
     },
-    'attachstatusdefs': {
-        'PRIMARY': None,
-    },
-    'attachstatuses': {
-        'PRIMARY': None,
-    },
-    'audit_log': {
-        'audit_log_class_idx': None,
-    },
-    'bug_group_map': {
-        'bug_id': None,
-        'group_id': None,
-    },
-    'bug_see_also': {
-        'PRIMARY': None,
-        'bug_see_also_bug_id_idx': None,
-    },
+    'bug_mentors': {'bug_mentors_bug_id_idx': 'TODO', 'bug_mentors_idx': 'TODO'},
+    'bug_see_also': {'PRIMARY': None, 'bug_see_also_bug_id_idx': None},
     'bug_severity': {
         'PRIMARY': None,
         'bug_severity_sortkey_idx': None,
@@ -2048,185 +3120,150 @@ index_remark = {
         'bug_status_value_idx': None,
         'bug_status_visibility_value_id_idx': None,
     },
-    'bug_tag': {
-        'bug_tag_bug_id_idx': None,
+    'bug_tag': {'bug_tag_bug_id_idx': None},
+    'bug_type': {
+        'PRIMARY': 'TODO',
+        'bug_type_sortkey_idx': 'TODO',
+        'bug_type_value_idx': 'TODO',
+        'bug_type_visibility_value_id_idx': 'TODO',
     },
+    'bug_user_agent': {'PRIMARY': 'TODO', 'bug_user_agent_idx': 'TODO'},
     'bug_user_last_visit': {
         'PRIMARY': None,
         'bug_user_last_visit_idx': None,
         'bug_user_last_visit_last_visit_ts_idx': None,
+    },
+    'bugmail_filters': {
+        'PRIMARY': 'TODO',
+        'bugmail_filters_unique_idx': 'TODO',
+        'bugmail_filters_user_idx': 'TODO',
     },
     'bugs': {
         'PRIMARY': None,
         'alias': None,
         'area': None,
         'assigned_to': None,
-        'creation_ts': None,
-        'delta_ts': None,
         'bug_severity': None,
         'bug_status': None,
+        'bugs_but_type_idx': 'TODO',
+        'component': None,
+        'component_id': None,
+        'creation_ts': None,
+        'delta_ts': None,
         'op_sys': None,
         'priority': None,
         'product': None,
         'product_id': None,
-        'reporter': None,
-        'short_desc': None,
-        'version': None,
-        'component': None,
-        'component_id': None,
-        'resolution': None,
-        'target_milestone': None,
         'qa_contact': None,
+        'reporter': None,
+        'resolution': None,
+        'short_desc': None,
+        'target_milestone': None,
+        'version': None,
         'votes': None,
     },
     'bugs_activity': {
+        'PRIMARY': None,
         'bug_id': None,
-        'when': None,
         'bug_when': None,
+        'bugs_activity_added_idx': None,
+        'bugs_activity_removed_idx': None,
+        'bugs_activity_who_idx': None,
         'field': None,
         'fieldid': None,
-        'bugs_activity_who_idx': None,
-        'bugs_activity_added_idx': None,
-        'PRIMARY': None,
-        'bugs_activity_removed_idx': None,
+        'when': None,
     },
-    'bugs_aliases': {
-        'bugs_aliases_alias_idx': None,
-        'bugs_aliases_bug_id_idx': None,
-    },
+    'bugs_aliases': {'bugs_aliases_alias_idx': None, 'bugs_aliases_bug_id_idx': None},
     'bugs_fulltext': {
         'PRIMARY': None,
-        'bugs_fulltext_short_desc_idx': None,
         'bugs_fulltext_comments_idx': None,
         'bugs_fulltext_comments_noprivate_idx': None,
+        'bugs_fulltext_short_desc_idx': None,
     },
-    'bz_schema': {
-        'bz_schema_version_idx': None,
-    },
-    'category_group_map': {
-        'category_id': None,
-    },
-    'cc': {
-        'who': None,
-        'bug_id': None,
-    },
-    'classifications': {
-        'PRIMARY': None,
-        'name': None,
-    },
+    'bz_schema': {'bz_schema_version_idx': None},
+    'category_group_map': {'category_id': None},
+    'cc': {'bug_id': None, 'who': None},
+    'classifications': {'PRIMARY': None, 'name': None},
+    'component_cc': {'component_cc_user_id_idx': None},
+    'component_reviewers': {'PRIMARY': 'TODO', 'component_reviewers_idx': 'TODO'},
+    'component_watch': {'PRIMARY': 'TODO'},
     'components': {
         'PRIMARY': None,
-        'product_id': None,
-        'name': None,
         'bug_id': None,
         'bug_when': None,
         'fieldid': None,
+        'name': None,
+        'product_id': None,
     },
-    'component_cc': {
-        'component_cc_user_id_idx': None,
-    },
-    'dependencies': {
-        'blocked': None,
-        'dependson': None,
-    },
-    'duplicates': {
-        'PRIMARY': None,
-    },
-    'email_bug_ignore': {
-        'email_bug_ignore_user_id_idx': None,
-    },
+    'dependencies': {'blocked': None, 'dependson': None},
+    'duplicates': {'PRIMARY': None},
+    'email_bug_ignore': {'email_bug_ignore_user_id_idx': None},
     'email_rates': {
         'PRIMARY': None,
         'email_rates_idx': None,
+        'email_rates_message_ts_idx': 'TODO',
     },
-    'email_setting': {
-        'email_setting_user_id_idx': None,
-    },
+    'email_setting': {'email_setting_user_id_idx': None},
+    'field_visibility': {'field_visibility_field_id_idx': None},
     'fielddefs': {
         'PRIMARY': None,
+        'fielddefs_is_mandatory_idx': None,
+        'fielddefs_value_field_id_idx': None,
         'name': None,
         'sortkey': None,
-        'fielddefs_value_field_id_idx': None,
-        'fielddefs_is_mandatory_idx': None,
     },
-    'field_visibility': {
-        'field_visibility_field_id_idx': None,
-    },
-    'flagexclusions': {
-        'type_id': None,
-    },
-    'flaginclusions': {
-        'type_id': None,
-    },
+    'flag_state_activity': {'PRIMARY': 'TODO'},
+    'flagexclusions': {'type_id': None},
+    'flaginclusions': {'type_id': None},
     'flags': {
         'PRIMARY': None,
         'bug_id': None,
-        'setter_id': None,
-        'requestee_id': None,
         'flags_type_id_idx': None,
+        'requestee_id': None,
+        'setter_id': None,
     },
-    'flagtypes': {
-        'PRIMARY': None,
-    },
-    'group_control_map': {
-        'product_id': None,
-        'group_id': None,
-    },
-    'group_group_map': {
-        'member_id': None,
-    },
-    'groups': {
-        'PRIMARY': None,
-        'bit': None,
-        'name': None,
-    },
-    'keyworddefs': {
-        'PRIMARY': None,
-        'name': None,
-    },
-    'keywords': {
-        'keywordid': None,
-        'bug_id': None,
-    },
+    'flagtype_comments': {'flagtype_comments_idx': 'TODO'},
+    'flagtypes': {'PRIMARY': None},
+    'group_control_map': {'group_id': None, 'product_id': None},
+    'group_group_map': {'member_id': None},
+    'groups': {'PRIMARY': None, 'bit': None, 'name': None},
+    'job_last_run': {'PRIMARY': 'TODO', 'job_last_run_name_idx': 'TODO'},
+    'keyworddefs': {'PRIMARY': None, 'name': None},
+    'keywords': {'bug_id': None, 'keywordid': None},
+    'login_failure': {'login_failure_user_id_idx': None},
     'logincookies': {
         'PRIMARY': None,
         'lastused': None,
-    },
-    'login_failure': {
-        'login_failure_user_id_idx': None,
+        'logincookies_cookie_idx': 'TODO',
     },
     'longdescs': {
         'PRIMARY': None,
         'bug_id': None,
-        'who': None,
         'bug_when': None,
         'thetext': None,
+        'who': None,
     },
-    'longdescs_tags': {
-        'PRIMARY': None,
-        'longdescs_tags_idx': None, 
+    'longdescs_activity': {
+        'longdescs_activity_change_when_idx': 'TODO',
+        'longdescs_activity_comment_id_change_when_idx': 'TODO',
+        'longdescs_activity_comment_id_idx': 'TODO',
     },
+    'longdescs_tags': {'PRIMARY': None, 'longdescs_tags_idx': None},
     'longdescs_tags_activity': {
         'PRIMARY': None,
         'longdescs_tags_activity_bug_id_idx': None,
     },
-    'longdescs_tags_weights': {
-        'PRIMARY': None,
-        'longdescs_tags_weights_tag_idx': None,
+    'longdescs_tags_weights': {'PRIMARY': None, 'longdescs_tags_weights_tag_idx': None},
+    'mail_staging': {'PRIMARY': None},
+    'milestones': {'PRIMARY': None, 'product': None, 'product_id': None},
+    'mydashboard': {
+        'mydashboard_namedquery_id_idx': 'TODO',
+        'mydashboard_user_id_idx': 'TODO',
     },
-    'mail_staging': {
-        'PRIMARY': None,
-    },
-    'milestones': {
-        'PRIMARY': None,
-        'product': None,
-        'product_id': None,
-    },
-    'namedqueries': {
-        'PRIMARY': None,
-        'userid': None,
-        'watchfordiffs': None,
-    },
+    'nag_defer': {'PRIMARY': 'TODO', 'nag_defer_idx': 'TODO'},
+    'nag_settings': {'PRIMARY': 'TODO', 'nag_setting_idx': 'TODO'},
+    'nag_watch': {'PRIMARY': 'TODO', 'nag_watch_idx': 'TODO'},
+    'namedqueries': {'PRIMARY': None, 'userid': None, 'watchfordiffs': None},
     'namedqueries_link_in_footer': {
         'namedqueries_link_in_footer_id_idx': None,
         'namedqueries_link_in_footer_userid_idx': None,
@@ -2235,44 +3272,66 @@ index_remark = {
         'namedquery_group_map_group_id_idx': None,
         'namedquery_group_map_namedquery_id_idx': None,
     },
+    'oauth2_client': {'PRIMARY': 'TODO'},
+    'oauth2_client_scope': {'PRIMARY': 'TODO', 'oauth2_client_scope_idx': 'TODO'},
+    'oauth2_jwt': {'PRIMARY': 'TODO', 'oauth2_jwt_jti_type_idx': 'TODO'},
+    'oauth2_scope': {'PRIMARY': 'TODO', 'oauth2_scope_idx': 'TODO'},
     'op_sys': {
         'PRIMARY': None,
         'op_sys_sortkey_idx': None,
         'op_sys_value_idx': None,
         'op_sys_visibility_value_id_idx': None,
     },
+    'phabbugz': {'PRIMARY': 'TODO', 'phabbugz_idx': 'TODO'},
     'priority': {
         'PRIMARY': None,
         'priority_sortkey_idx': None,
         'priority_value_idx': None,
         'priority_visibility_value_id_idx': None,
     },
-    'products': {
-        'PRIMARY': None,
-        'name': None,
-    },
+    'product_reviewers': {'PRIMARY': 'TODO', 'product_reviewers_idx': 'TODO'},
+    'products': {'PRIMARY': None, 'name': None},
+    'profile_mfa': {'PRIMARY': 'TODO', 'profile_mfa_userid_name_idx': 'TODO'},
     'profile_search': {
         'PRIMARY': None,
         'profile_search_user_id': None,
         'profile_search_user_id_idx': None,
     },
-    'profile_setting': {
-        'profile_setting_value_unique_idx': None,
-    },
+    'profile_setting': {'profile_setting_value_unique_idx': None},
     'profiles': {
         'PRIMARY': None,
         'login_name': None,
-        'profiles_extern_id_idx': None,
         'profiles_email_idx': None,
+        'profiles_extern_id_idx': None,
+        'profiles_nickname_idx': 'TODO',
+        'profiles_realname_ft_idx': 'TODO',
     },
     'profiles_activity': {
-        'userid': None,
-        'profiles_when': None,
+        'PRIMARY': None,
         'fieldid': None,
-        'PRIMARY': None,
+        'profiles_when': None,
+        'userid': None,
     },
-    'quips': {
-        'PRIMARY': None,
+    'profiles_statistics': {'PRIMARY': 'TODO', 'profiles_statistics_name_idx': 'TODO'},
+    'profiles_statistics_products': {
+        'PRIMARY': 'TODO',
+        'profiles_statistics_products_idx': 'TODO',
+    },
+    'profiles_statistics_recalc': {'profiles_statistics_recalc_idx': 'TODO'},
+    'profiles_statistics_status': {
+        'PRIMARY': 'TODO',
+        'profiles_statistics_status_idx': 'TODO',
+    },
+    'push': {'PRIMARY': 'TODO'},
+    'push_backlog': {'PRIMARY': 'TODO', 'push_backlog_idx': 'TODO'},
+    'push_backoff': {'PRIMARY': 'TODO', 'push_backoff_idx': 'TODO'},
+    'push_log': {'PRIMARY': 'TODO'},
+    'push_notify': {'PRIMARY': 'TODO', 'push_notify_idx': 'TODO'},
+    'push_options': {'PRIMARY': 'TODO', 'push_options_idx': 'TODO'},
+    'quips': {'PRIMARY': None},
+    'regressions': {
+        'regressions_regressed_by_idx': 'TODO',
+        'regressions_regresses_idx': 'TODO',
     },
     'rep_platform': {
         'PRIMARY': None,
@@ -2280,10 +3339,8 @@ index_remark = {
         'rep_platform_value_idx': None,
         'rep_platform_visibility_value_id_idx': None,
     },
-    'reports': {
-        'PRIMARY': None,
-        'reports_user_id_idx': None,
-    },
+    'report_ping': {'PRIMARY': 'TODO'},
+    'reports': {'PRIMARY': None, 'reports_user_id_idx': None},
     'resolution': {
         'PRIMARY': None,
         'resolution_sortkey_idx': None,
@@ -2296,100 +3353,65 @@ index_remark = {
         'creator_2': None,
         'series_category_idx': None,
     },
-    'series_categories': {
-        'PRIMARY': None,
-        'name': None,
-    },
-    'series_data': {
-        'series_id': None,
-    },
-    'setting': {
-        'PRIMARY': None,
-    },
+    'series_categories': {'PRIMARY': None, 'name': None},
+    'series_data': {'series_id': None},
+    'setting': {'PRIMARY': None},
     'setting_value': {
         'setting_value_ns_unique_idx': None,
         'setting_value_nv_unique_idx': None,
     },
-    'shadowlog': {
-        'PRIMARY': None,
-        'reflected': None,
-    },
-    'status_workflow': {
-        'status_workflow_idx': None,
-    },
-    'tag': {
-        'PRIMARY': None,
-        'tag_user_id_idx': None,
-    },
-    'tags': {
-        'PRIMARY': None,
-        'tags_user_id_idx': None,
-    },
-    'tokens': {
-        'PRIMARY': None,
-        'userid': None,
+    'shadowlog': {'PRIMARY': None, 'reflected': None},
+    'status_workflow': {'status_workflow_idx': None},
+    'tag': {'PRIMARY': None, 'tag_user_id_idx': None},
+    'tags': {'PRIMARY': None, 'tags_user_id_idx': None},
+    'token_data': {'PRIMARY': 'TODO', 'token_data_idx': 'TODO'},
+    'tokens': {'PRIMARY': None, 'userid': None},
+    'tracking_flags': {'PRIMARY': 'TODO', 'tracking_flags_idx': 'TODO'},
+    'tracking_flags_bugs': {'PRIMARY': 'TODO', 'tracking_flags_bugs_idx': 'TODO'},
+    'tracking_flags_values': {'PRIMARY': 'TODO', 'tracking_flags_values_idx': 'TODO'},
+    'tracking_flags_visibility': {
+        'PRIMARY': 'TODO',
+        'tracking_flags_visibility_idx': 'TODO',
     },
     'ts_error': {
-        'ts_error_funcid_idx': None,
         'ts_error_error_time_idx': None,
+        'ts_error_funcid_idx': None,
         'ts_error_jobid_idx': None,
     },
     'ts_exitstatus': {
         'PRIMARY': None,
-        'ts_exitstatus_funcid_idx': None,
         'ts_exitstatus_delete_after_idx': None,
+        'ts_exitstatus_funcid_idx': None,
     },
-    'ts_funcmap': {
-        'PRIMARY': None,
-        'ts_funcmap_funcname_idx': None,
-    },
+    'ts_funcmap': {'PRIMARY': None, 'ts_funcmap_funcname_idx': None},
     'ts_job': {
         'PRIMARY': None,
+        'ts_job_coalesce_idx': None,
         'ts_job_funcid_idx': None,
         'ts_job_run_after_idx': None,
-        'ts_job_coalesce_idx': None,
     },
-    'ts_note': {
-        'ts_note_jobid_idx': None,
-    },
+    'ts_note': {'ts_note_jobid_idx': None},
     'user_api_keys': {
         'PRIMARY': None,
         'user_api_keys_api_key_idx': None,
-        'user_api_keys_user_id_idx': None,
         'user_api_keys_user_id_app_id_idx': None,
+        'user_api_keys_user_id_idx': None,
     },
-    'user_group_map': {
-        'user_id': None,
+    'user_group_map': {'user_id': None},
+    'user_request_log': {
+        'PRIMARY': 'TODO',
+        'user_user_request_log_user_id_idx': 'TODO',
     },
-    'user_series_map': {
-        'user_id': None,
-        'series_id': None,
-    },
-    'versions': {
-        'PRIMARY': None,
-        'versions_product_id_idx': None,
-    },
-    'votes': {
-        'who': None,
-        'bug_id': None,
-    },
-    'watch': {
-        'watched': None,
-        'watcher': None,
-    },
-    'whine_events': {
-        'PRIMARY': None,
-    },
-    'whine_queries': {
-        'PRIMARY': None,
-        'eventid': None,
-    },
-    'whine_schedules': {
-        'PRIMARY': None,
-        'run_next': None,
-        'eventid': None,
-    },
+    'user_series_map': {'series_id': None, 'user_id': None},
+    'versions': {'PRIMARY': None, 'versions_product_id_idx': None},
+    'votes': {'bug_id': None, 'who': None},
+    'watch': {'watched': None, 'watcher': None},
+    'webhooks': {'PRIMARY': 'TODO', 'webhooks_userid_name_idx': 'TODO'},
+    'whine_events': {'PRIMARY': None},
+    'whine_queries': {'PRIMARY': None, 'eventid': None},
+    'whine_schedules': {'PRIMARY': None, 'eventid': None, 'run_next': None},
 }
+
 
 index_renamed = {
     'attachments': {
@@ -2401,131 +3423,83 @@ index_renamed = {
         'bug_group_map_group_id_idx': 'group_id',
     },
     'bugs': {
-        'bugs_votes_idx': 'votes',
-        'bugs_component_id_idx': 'component_id',
-        'bugs_product_id_idx': 'product_id',
-        'bugs_reporter_idx': 'reporter',
-        'bugs_bug_status_idx': 'bug_status',
-        'bugs_short_desc_idx': 'short_desc',
-        'bugs_bug_severity_idx': 'bug_severity',
-        'bugs_priority_idx': 'priority',
         'bugs_alias_idx': 'alias',
-        'bugs_version_idx': 'version',
-        'bugs_target_milestone_idx': 'target_milestone',
-        'bugs_delta_ts_idx': 'delta_ts',
         'bugs_assigned_to_idx': 'assigned_to',
+        'bugs_bug_severity_idx': 'bug_severity',
+        'bugs_bug_status_idx': 'bug_status',
+        'bugs_component_id_idx': 'component_id',
         'bugs_creation_ts_idx': 'creation_ts',
-        'bugs_resolution_idx': 'resolution',
+        'bugs_delta_ts_idx': 'delta_ts',
         'bugs_op_sys_idx': 'op_sys',
+        'bugs_priority_idx': 'priority',
+        'bugs_product_id_idx': 'product_id',
         'bugs_qa_contact_idx': 'qa_contact',
+        'bugs_reporter_idx': 'reporter',
+        'bugs_resolution_idx': 'resolution',
+        'bugs_short_desc_idx': 'short_desc',
+        'bugs_target_milestone_idx': 'target_milestone',
+        'bugs_version_idx': 'version',
+        'bugs_votes_idx': 'votes',
     },
     'bugs_activity': {
         'bugs_activity_bug_id_idx': 'bug_id',
         'bugs_activity_bug_when_idx': 'bug_when',
         'bugs_activity_fieldid_idx': 'fieldid',
     },
-    'category_group_map': {
-        'category_group_map_category_id_idx': 'category_id',
-    },
-    'cc': {
-        'cc_bug_id_idx': 'bug_id',
-        'cc_who_idx': 'who',
-    },
-    'classifications': {
-        'classifications_name_idx': 'name',
-    },
+    'category_group_map': {'category_group_map_category_id_idx': 'category_id'},
+    'cc': {'cc_bug_id_idx': 'bug_id', 'cc_who_idx': 'who'},
+    'classifications': {'classifications_name_idx': 'name'},
     'components': {
         'components_name_idx': 'name',
         'components_product_id_idx': 'product_id',
     },
     'dependencies': {
-        'dependencies_dependson_idx': 'dependson',
         'dependencies_blocked_idx': 'blocked',
+        'dependencies_dependson_idx': 'dependson',
     },
-    'fielddefs': {
-        'fielddefs_name_idx': 'name',
-        'fielddefs_sortkey_idx': 'sortkey',
-    },
-    'flagexclusions': {
-        'flagexclusions_type_id_idx': 'type_id',
-    },
-    'flaginclusions': {
-        'flaginclusions_type_id_idx': 'type_id',
-    },
+    'fielddefs': {'fielddefs_name_idx': 'name', 'fielddefs_sortkey_idx': 'sortkey'},
+    'flagexclusions': {'flagexclusions_type_id_idx': 'type_id'},
+    'flaginclusions': {'flaginclusions_type_id_idx': 'type_id'},
     'flags': {
         'flags_bug_id_idx': 'bug_id',
-        'flags_setter_id_idx': 'setter_id',
         'flags_requestee_id_idx': 'requestee_id',
+        'flags_setter_id_idx': 'setter_id',
     },
     'group_control_map': {
         'group_control_map_group_id_idx': 'group_id',
         'group_control_map_product_id_idx': 'product_id',
     },
-    'group_group_map': {
-        'group_group_map_member_id_idx': 'member_id',
-    },
-    'groups': {
-        'groups_name_idx': 'name',
-    },
-    'keyworddefs': {
-        'keyworddefs_name_idx': 'name',
-    },
+    'group_group_map': {'group_group_map_member_id_idx': 'member_id'},
+    'groups': {'groups_name_idx': 'name'},
+    'keyworddefs': {'keyworddefs_name_idx': 'name'},
     'keywords': {
         'keywords_bug_id_idx': 'bug_id',
         'keywords_keywordid_idx': 'keywordid',
     },
-    'logincookies': {
-        'logincookies_lastused_idx': 'lastused',
-    },
+    'logincookies': {'logincookies_lastused_idx': 'lastused'},
     'longdescs': {
         'longdescs_bug_id_idx': 'bug_id',
         'longdescs_bug_when_idx': 'bug_when',
         'longdescs_thetext_idx': 'thetext',
         'longdescs_who_idx': 'who',
     },
-    'milestones': {
-        'milestones_product_id_idx': 'product_id',
-    },
-    'namedqueries': {
-        'namedqueries_userid_idx': 'userid',
-    },
-    'products': {
-        'products_name_idx': 'name',
-    },
-    'profiles': {
-        'profiles_login_name_idx': 'login_name',
-    },
+    'milestones': {'milestones_product_id_idx': 'product_id'},
+    'namedqueries': {'namedqueries_userid_idx': 'userid'},
+    'products': {'products_name_idx': 'name'},
+    'profiles': {'profiles_login_name_idx': 'login_name'},
     'profiles_activity': {
+        'profiles_activity_fieldid_idx': 'fieldid',
         'profiles_activity_profiles_when_idx': 'profiles_when',
         'profiles_activity_userid_idx': 'userid',
-        'profiles_activity_fieldid_idx': 'fieldid',
     },
-    'series': {
-        'series_creator_idx': 'creator_2',
-    },
-    'series_categories': {
-        'series_categories_name_idx': 'name',
-    },
-    'series_data': {
-        'series_data_series_id_idx': 'series_id',
-    },
-    'tokens': {
-        'tokens_userid_idx': 'userid',
-    },
-    'user_group_map': {
-        'user_group_map_user_id_idx': 'user_id',
-    },
-    'votes': {
-        'votes_bug_id_idx': 'bug_id',
-        'votes_who_idx': 'who',
-    },
-    'watch': {
-        'watch_watched_idx': 'watched',
-        'watch_watcher_idx': 'watcher',
-    },
-    'whine_queries': {
-        'whine_queries_eventid_idx': 'eventid',
-    },
+    'series': {'series_creator_idx': 'creator_2'},
+    'series_categories': {'series_categories_name_idx': 'name'},
+    'series_data': {'series_data_series_id_idx': 'series_id'},
+    'tokens': {'tokens_userid_idx': 'userid'},
+    'user_group_map': {'user_group_map_user_id_idx': 'user_id'},
+    'votes': {'votes_bug_id_idx': 'bug_id', 'votes_who_idx': 'who'},
+    'watch': {'watch_watched_idx': 'watched', 'watch_watcher_idx': 'watcher'},
+    'whine_queries': {'whine_queries_eventid_idx': 'eventid'},
     'whine_schedules': {
         'whine_schedules_eventid_idx': 'eventid',
         'whine_schedules_run_next_idx': 'run_next',
@@ -2535,146 +3509,100 @@ index_renamed = {
 
 index_removed_remark = {
     'bugs': {
-        'area': None,
-        'short_desc': 'replaced by use of LIKE',
-        'product': 'replaced by "product_id"',
-        'component': 'replaced by "component_id"',
-        'votes': 'The Voting feature was moved to an extension.',
         'alias': None,
+        'area': None,
+        'component': 'replaced by "component_id"',
+        'product': 'replaced by "product_id"',
+        'short_desc': 'replaced by use of LIKE',
+        'votes': 'The Voting feature was moved to an extension.',
     },
     'bugs_activity': {
-        'when': 'replaced by "bug_when"',
         'field': 'replaced by "fieldid"',
+        'when': 'replaced by "bug_when"',
     },
-    'groups': {
-        'bit': 'replaced by "PRIMARY"',
-    },
-    'longdescs': {
-        'thetext': 'replaced by %(the-table-bugs_fulltext)s',
-    },
-    'milestones': {
-        'product': 'replaced by "product_id"',
-    },
-    'namedqueries': {
-        'watchfordiffs': None,
-    },
+    'bz_schema': {'bz_schema_version_idx': 'TODO'},
+    'groups': {'bit': 'replaced by "PRIMARY"'},
+    'longdescs': {'thetext': 'replaced by %(the-table-bugs_fulltext)s'},
+    'milestones': {'product': 'replaced by "product_id"'},
+    'namedqueries': {'watchfordiffs': None},
     'profile_search': {
-        'profile_search_user_id': 'renamed to %(index-profile_search-profile_search_user_id_idx)s',
+        'profile_search_user_id': (
+            'renamed to %(index-profile_search-profile_search_user_id_idx)s'
+        )
     },
-    'series': {
-        'creator': None,
-    },
+    'profiles': {'profiles_email_idx': 'TODO'},
+    'series': {'creator': None},
 }
+
 
 index_added_remark = {
     'attachments': {
-        'attachments_submitter_id_idx': None,
+        'attachments_ispatch_idx': 'TODO',
         'attachments_modification_time_idx': None,
+        'attachments_submitter_id_idx': None,
     },
-    'audit_log': {
-        'audit_log_class_idx': None,
-    },
-    'bug_see_also': {
-        'PRIMARY': None,
-    },
-    'bug_severity': {
-        'bug_severity_visibility_value_id_idx': None,
-    },
-    'bug_status': {
-        'bug_status_visibility_value_id_idx': None,
-    },
+    'audit_log': {'audit_log_class_idx': None},
+    'bug_see_also': {'PRIMARY': None},
+    'bug_severity': {'bug_severity_visibility_value_id_idx': None},
+    'bug_status': {'bug_status_visibility_value_id_idx': None},
     'bugs': {
         'alias': None,
+        'bugs_but_type_idx': 'TODO',
         'component_id': 'replacing "component"',
+        'creation_ts': None,
+        'op_sys': None,
         'product_id': 'replacing "product"',
         'qa_contact': None,
-        'target_milestone': None,
-        'op_sys': None,
-        'creation_ts': None,
         'short_desc': None,
+        'target_milestone': None,
         'votes': None,
     },
     'bugs_activity': {
-        'id': None,
+        'PRIMARY': None,
         'bug_when': 'replacing "when"',
-        'bugs_activity_who_idx': None,
         'bugs_activity_added_idx': None,
-        'fieldid': 'replacing "field"',
-        'field': None,
-        'PRIMARY': None,
         'bugs_activity_removed_idx': None,
+        'bugs_activity_who_idx': None,
+        'field': None,
+        'fieldid': 'replacing "field"',
+        'id': None,
     },
-    'bz_schema': {
-        'bz_schema_version_idx': None,
-    },
-    'cc': {
-        'bug_id': None,
-        'who': None,
-    },
-    'components': {
-        'PRIMARY': None,
-        'name': None,
-        'product_id': None,
-    },
+    'bz_schema': {'bz_schema_version_idx': None},
+    'cc': {'bug_id': None, 'who': None},
+    'components': {'PRIMARY': None, 'name': None, 'product_id': None},
+    'email_rates': {'email_rates_message_ts_idx': 'TODO'},
     'fielddefs': {
-        'fielddefs_value_field_id_idx': None,
         'fielddefs_is_mandatory_idx': None,
+        'fielddefs_value_field_id_idx': None,
     },
-    'flags': {
-        'flags_type_id_idx': None,
-    },
-    'groups': {
-        'PRIMARY': 'replacing "bit"',
-    },
-    'longdescs': {
-        'PRIMARY': None,
-        'who': None,
-        'thetext': None,
-    },
-    'milestones': {
-        'PRIMARY': None,
-        'product_id': 'replacing "product"',
-    },
-    'namedqueries': {
-        'PRIMARY': None,
-    },
-    'op_sys': {
-        'op_sys_visibility_value_id_idx': None,
-    },
-    'priority': {
-        'priority_visibility_value_id_idx': None,
+    'flags': {'flags_type_id_idx': None},
+    'groups': {'PRIMARY': 'replacing "bit"'},
+    'logincookies': {'logincookies_cookie_idx': 'TODO'},
+    'longdescs': {'PRIMARY': None, 'thetext': None, 'who': None},
+    'milestones': {'PRIMARY': None, 'product_id': 'replacing "product"'},
+    'namedqueries': {'PRIMARY': None},
+    'op_sys': {'op_sys_visibility_value_id_idx': None},
+    'priority': {'priority_visibility_value_id_idx': None},
+    'products': {'PRIMARY': None, 'name': None},
+    'profile_search': {
+        'profile_search_user_id_idx': (
+            'renamed from %(index-profile_search-profile_search_user_id_idx)s'
+        )
     },
     'profiles': {
-        'profiles_extern_id_idx': None,
         'profiles_email_idx': None,
+        'profiles_extern_id_idx': None,
+        'profiles_nickname_idx': 'TODO',
+        'profiles_realname_ft_idx': 'TODO',
     },
-    'profiles_activity': {
-        'PRIMARY': None,
-    },
-    'rep_platform': {
-        'rep_platform_visibility_value_id_idx': None,
-    },
-    'resolution': {
-        'resolution_visibility_value_id_idx': None,
-    },
-    'products': {
-        'PRIMARY': None,
-        'name': None,
-    },
-    'profile_search': {
-        'profile_search_user_id_idx': 'renamed from %(index-profile_search-profile_search_user_id_idx)s',
-    },
-    'series': {
-        'series_category_idx': None,
-    },
-    'user_api_keys': {
-        'user_api_keys_user_id_app_id_idx': None,
-    },
-    'versions': {
-        'PRIMARY': None,
-        'versions_product_id_idx': None,
-    },
+    'profiles_activity': {'PRIMARY': None},
+    'rep_platform': {'rep_platform_visibility_value_id_idx': None},
+    'resolution': {'resolution_visibility_value_id_idx': None},
+    'series': {'series_category_idx': None},
+    'user_api_keys': {'user_api_keys_user_id_app_id_idx': None},
+    'versions': {'PRIMARY': None, 'versions_product_id_idx': None},
 }
+
 
 notation_guide = """
 <h3><a id="notes-colours" name="notes-colours">Schema Change Notation</a></h3>
