@@ -31,7 +31,7 @@ import get_schema
 
 class BzSchemaProcessingException(Exception):
     def __init__(self, errors):
-        message = 'foobar' #'<br />\n'.join(errors)
+        message = '<br />\n'.join(errors)
         super().__init__(message)
         self.message = message
         self.errors = errors
@@ -384,8 +384,8 @@ def output_schema(schema, remarks, colours, bugzilla_versions):
             ' ', [process(r, bugzilla_versions, dict) for r in thisremarks]
         )
         tables_table_rows.append(
-            ('<th%s><a href="#table-%s">%s</a></th>\n\n' % (colour, table, table))
-            + ('    <td%s>%s</td>\n\n' % (colour, remark))
+            '<th%s><a href="#table-%s">%s</a></th>\n\n' % (colour, table, table)
+            + '    <td%s>%s</td>\n\n' % (colour, remark)
         )
         quick_tables_table_rows.append(
             '<th%s><a href="#table-%s">%s</a></th>\n\n' % (colour, table, table)
@@ -787,13 +787,15 @@ def get_versioned_tables(first, last):
     if not first in schema_remarks.version_schema_map:
         raise BzSchemaProcessingException(
             [
-                f"I know version '{first}' exists, but I seem to be missing the data for it."
+                f"I know version '{first}' exists, but I seem to be missing the data"
+                " for it."
             ]
         )
     if not last in schema_remarks.version_schema_map:
         raise BzSchemaProcessingException(
             [
-                f"I know version '{last}' exists, but I seem to be missing the data for it."
+                f"I know version '{last}' exists, but I seem to be missing the data"
+                " for it."
             ]
         )
     schema_name = schema_remarks.version_schema_map[first]
@@ -872,9 +874,11 @@ def make_tables(first, last):
         raise BzSchemaProcessingException(errors)
     return (header, body, footer)
 
+
 def make_body(first, last):
     (header, body, footer) = make_tables(first, last)
     return body
+
 
 def write_file(first, last, file):
     # file = open(filename, 'w')
@@ -983,27 +987,138 @@ def generate_schema_remarks(args):
                         case _:
                             print(f"Unhandled error: {error}")
         var_dict = {
-            'version_order': format_str('version_order = %s' % pformat(schema_remarks.version_order), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'default_first_version': format_str('default_first_version = %s' % pformat(schema_remarks.default_first_version), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'default_last_version': format_str('default_last_version = %s' % pformat(schema_remarks.default_last_version), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'version_schema_map': format_str('version_schema_map = %s' % pformat(schema_remarks.version_schema_map), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'version_remark': format_str('version_remark = %s' % pformat(schema_remarks.version_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'table_remark': format_str('table_remark = %s' % pformat(schema_remarks.table_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'table_added_remark': format_str('table_added_remark = %s' % pformat(schema_remarks.table_added_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'table_removed_remark': format_str('table_removed_remark = %s' % pformat(schema_remarks.table_removed_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'column_remark': format_str('column_remark = %s' % pformat(schema_remarks.column_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'column_renamed': format_str('column_renamed = %s' % pformat(schema_remarks.column_renamed), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'column_added_remark': format_str('column_added_remark = %s' % pformat(schema_remarks.column_added_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'column_removed_remark': format_str('column_removed_remark = %s' % pformat(schema_remarks.column_removed_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'index_remark': format_str('index_remark = %s' % pformat(schema_remarks.index_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'index_renamed': format_str('index_renamed = %s' % pformat(schema_remarks.index_renamed), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'index_removed_remark': format_str('index_removed_remark = %s' % pformat(schema_remarks.index_removed_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'index_added_remark': format_str('index_added_remark = %s' % pformat(schema_remarks.index_added_remark), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'notation_guide': format_str('notation_guide = %s' % pformat(schema_remarks.notation_guide), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'header': format_str('header = %s' % pformat(schema_remarks.header), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'footer': format_str('footer = %s' % pformat(schema_remarks.footer), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'prelude': format_str('prelude = %s' % pformat(schema_remarks.prelude), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
-            'afterword': format_str('afterword = %s' % pformat(schema_remarks.afterword), mode=FileMode(string_normalization=False,experimental_string_processing=True)),
+            'version_order': format_str(
+                'version_order = %s' % pformat(schema_remarks.version_order),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'default_first_version': format_str(
+                'default_first_version = %s'
+                % pformat(schema_remarks.default_first_version),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'default_last_version': format_str(
+                'default_last_version = %s'
+                % pformat(schema_remarks.default_last_version),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'version_schema_map': format_str(
+                'version_schema_map = %s' % pformat(schema_remarks.version_schema_map),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'version_remark': format_str(
+                'version_remark = %s' % pformat(schema_remarks.version_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'table_remark': format_str(
+                'table_remark = %s' % pformat(schema_remarks.table_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'table_added_remark': format_str(
+                'table_added_remark = %s' % pformat(schema_remarks.table_added_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'table_removed_remark': format_str(
+                'table_removed_remark = %s'
+                % pformat(schema_remarks.table_removed_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'column_remark': format_str(
+                'column_remark = %s' % pformat(schema_remarks.column_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'column_renamed': format_str(
+                'column_renamed = %s' % pformat(schema_remarks.column_renamed),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'column_added_remark': format_str(
+                'column_added_remark = %s'
+                % pformat(schema_remarks.column_added_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'column_removed_remark': format_str(
+                'column_removed_remark = %s'
+                % pformat(schema_remarks.column_removed_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'index_remark': format_str(
+                'index_remark = %s' % pformat(schema_remarks.index_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'index_renamed': format_str(
+                'index_renamed = %s' % pformat(schema_remarks.index_renamed),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'index_removed_remark': format_str(
+                'index_removed_remark = %s'
+                % pformat(schema_remarks.index_removed_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'index_added_remark': format_str(
+                'index_added_remark = %s' % pformat(schema_remarks.index_added_remark),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'notation_guide': format_str(
+                'notation_guide = %s' % pformat(schema_remarks.notation_guide),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'header': format_str(
+                'header = %s' % pformat(schema_remarks.header),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'footer': format_str(
+                'footer = %s' % pformat(schema_remarks.footer),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'prelude': format_str(
+                'prelude = %s' % pformat(schema_remarks.prelude),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
+            'afterword': format_str(
+                'afterword = %s' % pformat(schema_remarks.afterword),
+                mode=FileMode(
+                    string_normalization=False, experimental_string_processing=True
+                ),
+            ),
         }
 
         with open('schema_remarks_template.txt', 'r') as infile:
@@ -1012,7 +1127,10 @@ def generate_schema_remarks(args):
             output = template.format(**var_dict)
             outfile.write(output)
         print("Wrote changes to schema_remarks_new.py.")
-        print("diff the changes from schema_remarks.py and if you like them, move it overtop of it.")
+        print(
+            "diff the changes from schema_remarks.py and if you like them, move it"
+            " overtop of it."
+        )
         sys.exit()
     print("No changes detected.")
 
@@ -1021,7 +1139,8 @@ def validate_schema_remarks(args):
     for v in schema_remarks.version_order:
         if not v in schema_remarks.version_schema_map:
             errors.append(
-                f"Version {v} found in version_order is not listed in version_schema_map"
+                f"Version {v} found in version_order is not listed in"
+                " version_schema_map"
             )
         if len([item for item in schema_remarks.version_remark if item[0] == v]) < 1:
             errors.append(
@@ -1030,11 +1149,13 @@ def validate_schema_remarks(args):
     for v in schema_remarks.version_schema_map.keys():
         if not v in schema_remarks.version_order:
             errors.append(
-                f"Version {v} found in version_schema_map is not listed in version_order"
+                f"Version {v} found in version_schema_map is not listed in"
+                " version_order"
             )
         if len([item for item in schema_remarks.version_remark if item[0] == v]) < 1:
             errors.append(
-                f"Version {v} found in version_schema_map is not listed in version_remark"
+                f"Version {v} found in version_schema_map is not listed in"
+                " version_remark"
             )
     for item in schema_remarks.version_remark:
         v = item[0]
@@ -1044,7 +1165,8 @@ def validate_schema_remarks(args):
             )
         if not v in schema_remarks.version_schema_map:
             errors.append(
-                f"Version {v} found in version_remark is not listed in version_schema_map"
+                f"Version {v} found in version_remark is not listed in"
+                " version_schema_map"
             )
     if errors:
         print(str.join('\n', errors))
@@ -1065,19 +1187,30 @@ if __name__ == "__main__":
     parser_validate = subparsers.add_parser(
         'validate',
         help='Validate that the version-related lists are in sync with each other',
-        description='Validate that the version-related lists are in sync with each other',
+        description=(
+            'Validate that the version-related lists are in sync with each other'
+        ),
     )
     parser_validate.set_defaults(func=validate_schema_remarks)
     parser_test = subparsers.add_parser(
         'test',
-        help='Test schema document generation. By default it only prints errors or a success message.',
-        description='Test schema document generation. By default it only prints errors or a success message.',
+        help=(
+            'Test schema document generation. By default it only prints errors or a'
+            ' success message.'
+        ),
+        description=(
+            'Test schema document generation. By default it only prints errors or a'
+            ' success message.'
+        ),
     )
     parser_test.add_argument(
         'first',
         metavar="first",
         choices=schema_remarks.version_order,
-        help="The starting version of the schemas to compare, or the single version to display if 'last' is not provided.",
+        help=(
+            "The starting version of the schemas to compare, or the single version to"
+            " display if 'last' is not provided."
+        ),
     )
     parser_test.add_argument(
         'last',
@@ -1092,19 +1225,35 @@ if __name__ == "__main__":
         dest="file",
         metavar='FILENAME',
         type=argparse.FileType('w'),
-        help="A file to write the generated schema doc to. Passing - will write it to standard out.",
+        help=(
+            "A file to write the generated schema doc to. Passing - will write it to"
+            " standard out."
+        ),
     )
     parser_test.set_defaults(func=test_schema_remarks)
     parser_generate = subparsers.add_parser(
         'generate',
-        help='Add all of the missing remarks from a new schema to schema_remarks.py for you as TODO items.',
-        description='Add all of the missing remarks from a new schema to schema_remarks.py for you to as TODO items. Saves you the trouble of searching through the massive file looking for the right spot in alphabetical order to put them. Two benefits: gets a schema live faster (just without things documented), and you can search for TODO in the file to find the things that need updating.',
+        help=(
+            'Add all of the missing remarks from a new schema to schema_remarks.py for'
+            ' you as TODO items.'
+        ),
+        description=(
+            'Add all of the missing remarks from a new schema to schema_remarks.py for'
+            ' you to as TODO items. Saves you the trouble of searching through the'
+            ' massive file looking for the right spot in alphabetical order to put'
+            ' them. Two benefits: gets a schema live faster (just without things'
+            ' documented), and you can search for TODO in the file to find the things'
+            ' that need updating.'
+        ),
     )
     parser_generate.add_argument(
         'first',
         metavar="first",
         choices=schema_remarks.version_order,
-        help="The starting version of the schemas to compare, or the single version to display if 'last' is not provided.",
+        help=(
+            "The starting version of the schemas to compare, or the single version to"
+            " display if 'last' is not provided."
+        ),
     )
     parser_generate.add_argument(
         'last',
