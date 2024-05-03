@@ -868,6 +868,9 @@ def make_tables(first, last):
         raise BzSchemaProcessingException(e)
     return (header, body, footer)
 
+def make_body(first, last):
+    (header, body, footer) = make_tables(first, last)
+    return body
 
 def write_file(first, last, file):
     # file = open(filename, 'w')
