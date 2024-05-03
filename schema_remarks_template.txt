@@ -1,0 +1,165 @@
+#             Perforce Defect Tracking Integration Project
+#              <http://www.ravenbrook.com/project/p4dti/>
+#
+#  SCHEMA-REMARKS.PY -- REMARKS FOR BUGZILLA SCHEMA DOCUMENTATION
+#
+#             Nick Barnes, Ravenbrook Limited, 2003-07-07
+#
+#
+# 1. INTRODUCTION
+#
+# This module contains data structures holding remarks concerning
+# the Bugzilla schema.  These remarks are automatically included in the
+# Bugzilla schema doc by the code in  make_schema_doc.py.
+#
+# The intended readership is project developers.
+#
+# This document is not confidential.
+
+import string
+import re
+
+# All the strings here are going to be passed to Python's % formatting
+# operator, with a dictionary on the right-hand-side containing various
+# strings which can therefore be automatically inserted.
+#
+# %(column-foo-bar)s turns into a link "foo.bar" to column bar of table foo.
+#
+# %(table-foo)s turns into a link "foo" to table foo.
+#
+# %(the-table-foo)s turns into "the foo table" where "foo" is a link
+#  to table foo.
+#
+# and some other special-case strings such as VERSION_STRING,
+# VERSION_COLOUR, and so on.
+
+# Bugzilla versions which we know about, in order.
+
+{version_order}
+{default_first_version}{default_last_version}
+
+# Bugzilla schema versions.  A map from Bugzilla version to
+# the version which introduces the schema used in that version.
+
+{version_schema_map}
+{version_remark}
+
+# This is a map from table name to an HTML remark concerning that
+# table, which is output before the schema for that table.
+#
+# Tables with no attached remarks are given 'None' as a placeholder, so
+# we know to add a remark later.
+
+{table_remark}
+
+{table_added_remark}
+
+{table_removed_remark}
+
+# This is a map from table name to a map from column name to HTML
+# remark for that column.  At present, these remarks include schema
+# change comments (which will eventually be generated automatically).
+#
+# Columns with no attached remarks are given 'None' as a placeholder,
+# so we know to add a remark later.
+
+{column_remark}
+
+# This is a map from table name to a map from column name to canonical
+# column name.  For use when a column has been renamed but not
+# otherwise changed.
+
+{column_renamed}
+
+# This is a map from table name to a map from column name to HTML
+# remark for that column.  At present, these remarks include schema
+# change comments (which will eventually be generated automatically).
+#
+# Columns with no attached remarks are given 'None' as a placeholder,
+# so we know to add a remark later.
+
+{column_added_remark}
+
+# This is a map from table name to a map from column name to HTML
+# remark for that column.  At present, these remarks include schema
+# change comments (which will eventually be generated automatically).
+#
+# Columns with no attached remarks are given 'None' as a placeholder,
+# so we know to add a remark later.
+
+{column_removed_remark}
+
+# This is a map from table name to a map from index name to HTML
+# remark for that index.  At present, these remarks include schema
+# change comments (which will eventually be generated automatically).
+#
+# Indexes with no attached remarks are given 'None' as a placeholder,
+# so we know to add a remark later.
+
+{index_remark}
+
+{index_renamed}
+
+{index_removed_remark}
+
+{index_added_remark}
+
+{notation_guide}
+
+# This page header and footer are used when generating a schema doc
+# standalone rather than through CGI.
+
+{header}
+{footer}
+# This prelude is included in the generated schema doc prior to the
+# schema itself.
+
+{prelude}
+# This afterword is included in the generated schema doc after the
+# schema itself.
+
+{afterword}
+remarks_id = '$Id$'
+
+# A. REFERENCES
+#
+#
+# B. DOCUMENT HISTORY
+#
+# 2003-07-08 NB Created.
+# 2003-07-09 NB See the history section of the "afterword" for
+#               subsequent history items.
+#
+#
+# C. COPYRIGHT AND LICENSE
+#
+# This file is copyright (c) 2003 Perforce Software, Inc.  All rights
+# reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+# 1.  Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#
+# 2.  Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in
+#     the documentation and/or other materials provided with the
+#     distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+# OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+# TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+# USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+# DAMAGE.
+#
+#
+# $Id$
