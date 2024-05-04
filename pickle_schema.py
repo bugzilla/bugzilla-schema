@@ -16,11 +16,10 @@
 #
 # This document is not confidential.
 
-import MySQLdb
 import pickle
-import sys
 import os
 
+import MySQLdb
 
 class BzSchemaPickleException(Exception):
     def __init__(self, message):
@@ -96,14 +95,6 @@ def pickle_schema(schema_version, db_name):
     pickle.dump((schema_version, schema), f)
     f.close()
 
-
-if __name__ == "__main__":
-    try:
-        (schema_version, db_name) = sys.argv[1:]
-    except ValueError:
-        print("Please pass the schema version and the database name.")
-        sys.exit()
-    pickle_schema(schema_version, db_name)
 
 # A. REFERENCES
 #

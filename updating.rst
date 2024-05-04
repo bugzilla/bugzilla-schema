@@ -20,15 +20,13 @@ For any given release of Bugzilla, the process goes something like this:
 
 - If there are schema changes, or if you aren't sure, download the
   full Bugzilla release, do a vanilla install on your MySQL, then run
-  ``./pickle_schema.py version db_name``.  For
+  ``./schema-tool pickle version db_name``.  For
   instance::
 
-  > ./pickle_schema.py 3.8.12 bugs
+  > ./schema-tool pickle 3.8.12 bugs
 
-  For this to work you will have to have MySQLdb (the Python MySQL interface
-  library).  You can install it with ``pip install mysqlclient``.  It will use
-  your database host and credentials from the ``[pickle_schema]`` section of
-  ``.my.cnf`` in your home directory. For example
+  This uses your database host and credentials from the ``[pickle_schema]``
+  section of ``.my.cnf`` in your home directory. For example
 
   .. code-block:: ini
 

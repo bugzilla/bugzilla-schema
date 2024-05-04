@@ -4,9 +4,9 @@
 #             Perforce Defect Tracking Integration Project
 #              <http://www.ravenbrook.com/project/p4dti/>
 #
-#  MAKE_SCHEMA_DOC.PY -- GENERATE BUGZILLA SCHEMA DOCUMENTATION
+#        SCHEMA-TOOL -- COMMAND LINE INTERFACE TO SCHEMA MODULES
 #
-#             Nick Barnes, Ravenbrook Limited, 2003-07-07
+#            David Miller, Zarro Boogs Corporation, 2024-05-04
 #
 #
 # 1. INTRODUCTION
@@ -28,10 +28,10 @@ import argparse
 import subprocess
 from pprint import pformat
 from black import Mode, format_str
-from collections import OrderedDict
 
 import schema_remarks
-from make_schema_doc import BzSchemaProcessingException, make_tables, version_compare
+from make_schema_doc import BzSchemaProcessingException, make_tables
+from pickle_schema import pickle_schema
 
 
 def write_file(first, last, file):
@@ -259,7 +259,8 @@ def generate_schema_remarks(args):
             output = template.format(**var_dict)
             outfile.write(output)
         subprocess.run(
-            ["diff", "-u", "--color", "schema_remarks.py", "schema_remarks_new.py"]
+            ["diff", "-u", "--color", "schema_remarks.py", "schema_remarks_new.py"],
+            check=True,
         )
         print("Wrote changes to schema_remarks_new.py.")
         print("If these changes are okay, move it overtop of schema_remarks.py")
@@ -306,6 +307,9 @@ def validate_schema_remarks(_args):
         sys.exit()
     print("Versions validated.")
 
+def pickle_parser(args):
+    pickle_schema(args.version, args.db_name)
+    print("Success!")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -400,6 +404,22 @@ if __name__ == "__main__":
         help="The destination version of the schema to compare",
     )
     parser_generate.set_defaults(func=generate_schema_remarks)
+    parser_pickle = subparsers.add_parser(
+        "pickle",
+        help="Generate a pickle file for a specific version",
+        description="Generate a pickle file for a specific version",
+    )
+    parser_pickle.add_argument(
+        'version',
+        metavar = 'version',
+        help="The Bugzilla version number associated with the schema",
+    )
+    parser_pickle.add_argument(
+        'db_name',
+        metavar='db_name',
+        help="The name of the database to analyze"
+    )
+    parser_pickle.set_defaults(func=pickle_parser)
     main_args = parser.parse_args()
     main_args.func(main_args)
 
@@ -408,12 +428,12 @@ if __name__ == "__main__":
 #
 # B. DOCUMENT HISTORY
 #
-# 2001-03-08 NB Created.
+# 2024-05-04 Created.
 #
 #
 # C. COPYRIGHT AND LICENSE
 #
-# This file is copyright (c) 2001 Perforce Software, Inc.  All rights
+# This file is copyright (c) 2024 Bugzilla Project Contributors. All rights
 # reserved.
 #
 # Redistribution and use in source and binary forms, with or without
