@@ -1,0 +1,4 @@
+mysqlclient
+black>=21.0 # need 21 for py3.10 compat
+argparse
+click<8.1 # 8.1 breaks black 21

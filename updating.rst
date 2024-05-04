@@ -49,11 +49,11 @@ For any given release of Bugzilla, the process goes something like this:
 - To validate that you got the version numbers entered in all the right
   spots, you can run::
 
-  > ./make_schema_doc.py validate
+  > ./schema-tool validate
 
 - Then test the schema doc, either through the CGI or by hand::
 
-  > ./make_schema_doc.py test 3.0.0 3.8.12
+  > ./schema-tool test 3.0.0 3.8.12
 
   This will generate a list of errors, complaining about schema
   changes (new or removed tables, columns or indexes) which aren't
@@ -100,8 +100,8 @@ For any given release of Bugzilla, the process goes something like this:
   versions needs to be shown, appropriately marked.
   
 - Here are some examples.  Look at the "Groups" section of these:
-  <http://www.ravenbrook.com/tool/bugzilla-schema/?action=range&from=2.8&to=2.12&view=View+schema#notes-groups>
-  <http://www.ravenbrook.com/tool/bugzilla-schema/?action=range&from=2.8&to=3.2&view=View+schema#notes-groups>
+  <https://schema.bugzilla.org/?action=range&from=2.8&to=2.12&view=View+schema#notes-groups>
+  <https://schema.bugzilla.org/?action=range&from=2.8&to=3.2&view=View+schema#notes-groups>
   
   All those "From 2.10" and "Up to and including 2.8" and "From 2.12
   to 2.16" remarks, and the colours, are automatically generated and

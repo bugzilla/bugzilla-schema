@@ -1,0 +1,445 @@
+#!./venvwrapper.sh
+# vim:syntax=python
+#
+#             Perforce Defect Tracking Integration Project
+#              <http://www.ravenbrook.com/project/p4dti/>
+#
+#  MAKE_SCHEMA_DOC.PY -- GENERATE BUGZILLA SCHEMA DOCUMENTATION
+#
+#             Nick Barnes, Ravenbrook Limited, 2003-07-07
+#
+#
+# 1. INTRODUCTION
+#
+
+# This module generates Bugzilla schema documentation.
+#
+# The intended readership is project developers.
+#
+# This document is not confidential.
+
+"""
+A utility for generating schema comparison documents and performing maintenance on the schema data.
+"""
+
+import re
+import sys
+import argparse
+import subprocess
+from pprint import pformat
+from black import Mode, format_str
+from collections import OrderedDict
+
+import schema_remarks
+from make_schema_doc import BzSchemaProcessingException, make_tables, version_compare
+
+
+def write_file(first, last, file):
+    # file = open(filename, 'w')
+    # file is an already-open filehandle
+    (header, body, footer) = make_tables(first, last)
+    file.write(header)
+    file.write(body)
+    file.write(footer)
+    file.close()
+
+
+def test_schema_remarks(args):
+    first = args.first
+    last = args.last
+    file = args.file
+    if last is None:
+        last = first
+    if file:
+        write_file(first, last, file)
+    else:
+        try:
+            make_tables(first, last)
+        except BzSchemaProcessingException as e:
+            print('\n'.join(e.errors))
+            sys.exit()
+        print("Succeeded!")
+
+
+class regex_in:
+    r"""
+    An object that can be compared with a regex for use in match..case
+
+    Note the `as m` in in the case specification:
+
+    match regex_in(validated_string):
+        case r'\d(\d)' as m:
+            print(f'The second digit is {m[1]}')
+            print(f'The whole match is {m.match}')
+    """
+
+    string: str
+    match: re.Match = None
+
+    def __init__(self, thestring):
+        self.string = thestring
+
+    def __eq__(self, other: str | re.Pattern):
+        if isinstance(other, str):
+            other = re.compile(other)
+        assert isinstance(other, re.Pattern)
+        self.match = other.fullmatch(self.string)
+        return self.match is not None
+
+    def __getitem__(self, group):
+        return self.match[group]
+
+
+def fix_error(error):
+    match regex_in(error):
+        case r"No column remarks for table '(\S+)'\." as m:
+            if not m[1] in schema_remarks.table_remark:
+                schema_remarks.table_remark[m[1]] = 'TODO'
+            schema_remarks.column_remark[m[1]] = {}
+        case r"Table '(\S+)' has no remark for column '(\S+)'\." as m:
+            schema_remarks.column_remark[m[1]][m[2]] = 'TODO'
+        case r"No index remarks for table '(\S+)'\." as m:
+            if not m[1] in schema_remarks.table_remark:
+                schema_remarks.table_remark[m[1]] = 'TODO'
+            schema_remarks.index_remark[m[1]] = {}
+        case r"Table '(\S+)' has no remark for index '(\S+)'\." as m:
+            schema_remarks.index_remark[m[1]][m[2]] = 'TODO'
+        case r"No remark to add table (\S+)" as m:
+            schema_remarks.table_added_remark[m[1]] = 'TODO'
+        case r"No remark to remove table (\S+)" as m:
+            schema_remarks.table_removed_remark[m[1]] = 'TODO'
+        case r"No remark to add column (\S+)\.(\S+)\." as m:
+            if not m[1] in schema_remarks.column_added_remark:
+                schema_remarks.column_added_remark[m[1]] = {}
+            schema_remarks.column_added_remark[m[1]][m[2]] = 'TODO'
+        case r"No remark to remove column (\S+)\.(\S+)\." as m:
+            if not m[1] in schema_remarks.column_removed_remark:
+                schema_remarks.column_removed_remark[m[1]] = {}
+            schema_remarks.column_removed_remark[m[1]][m[2]] = 'TODO'
+        case r"No remark to add index (\S+):(\S+)\." as m:
+            if not m[1] in schema_remarks.index_added_remark:
+                schema_remarks.index_added_remark[m[1]] = {}
+            schema_remarks.index_added_remark[m[1]][m[2]] = 'TODO'
+        case r"No remark to remove index (\S+):(\S+)\." as m:
+            if not m[1] in schema_remarks.index_removed_remark:
+                schema_remarks.index_removed_remark[m[1]] = {}
+            schema_remarks.index_removed_remark[m[1]][m[2]] = 'TODO'
+        case _:
+            print(f"Unhandled error: {error}")
+
+
+def version_map_formatter(version_map):
+    output = '{\n'
+    for version in schema_remarks.version_order:
+        output += f"    '{version}': '{version_map[version]}',\n"
+    output += '}\n'
+    return output
+
+
+def generate_schema_remarks(args):
+    first = args.first
+    last = args.last
+    if last is None:
+        last = first
+    print(f"generating missing remarks for {first} .. {last}")
+    try:
+        make_tables(first, last)
+    except BzSchemaProcessingException as e:
+        for error in e.errors:
+            fix_error(error)
+        # pprint(schema_remarks.column_remark)
+        if first != last:
+            # we're comparing two versions, run it a second time to catch some
+            # added/removed errors that get masked by the main remarks being
+            # missing on the first pass
+            try:
+                make_tables(first, last)
+            except BzSchemaProcessingException as e:
+                for error in e.errors:
+                    fix_error(error)
+
+        mode = Mode(  # pylint: disable=unexpected-keyword-arg
+            string_normalization=False,
+            unstable=True,
+        )
+        var_dict = {
+            'version_order': format_str(
+                f'version_order = {pformat(schema_remarks.version_order)}',
+                mode=mode,
+            ),
+            'default_first_version': format_str(
+                'default_first_version ='
+                f' {pformat(schema_remarks.default_first_version)}',
+                mode=mode,
+            ),
+            'default_last_version': format_str(
+                'default_last_version ='
+                f' {pformat(schema_remarks.default_last_version)}',
+                mode=mode,
+            ),
+            'version_schema_map': (
+                f'version_schema_map = {version_map_formatter(schema_remarks.version_schema_map)}'
+            ),
+            'version_remark': format_str(
+                f'version_remark = {pformat(schema_remarks.version_remark)}',
+                mode=mode,
+            ),
+            'table_remark': format_str(
+                f'table_remark = {pformat(schema_remarks.table_remark)}',
+                mode=mode,
+            ),
+            'table_added_remark': format_str(
+                f'table_added_remark = {pformat(schema_remarks.table_added_remark)}',
+                mode=mode,
+            ),
+            'table_removed_remark': format_str(
+                'table_removed_remark ='
+                f' {pformat(schema_remarks.table_removed_remark)}',
+                mode=mode,
+            ),
+            'column_remark': format_str(
+                f'column_remark = {pformat(schema_remarks.column_remark)}',
+                mode=mode,
+            ),
+            'column_renamed': format_str(
+                f'column_renamed = {pformat(schema_remarks.column_renamed)}',
+                mode=mode,
+            ),
+            'column_added_remark': format_str(
+                f'column_added_remark = {pformat(schema_remarks.column_added_remark)}',
+                mode=mode,
+            ),
+            'column_removed_remark': format_str(
+                'column_removed_remark ='
+                f' {pformat(schema_remarks.column_removed_remark)}',
+                mode=mode,
+            ),
+            'index_remark': format_str(
+                f'index_remark = {pformat(schema_remarks.index_remark)}',
+                mode=mode,
+            ),
+            'index_renamed': format_str(
+                f'index_renamed = {pformat(schema_remarks.index_renamed)}',
+                mode=mode,
+            ),
+            'index_removed_remark': format_str(
+                'index_removed_remark ='
+                f' {pformat(schema_remarks.index_removed_remark)}',
+                mode=mode,
+            ),
+            'index_added_remark': format_str(
+                f'index_added_remark = {pformat(schema_remarks.index_added_remark)}',
+                mode=mode,
+            ),
+            'notation_guide': format_str(
+                f'notation_guide = {pformat(schema_remarks.notation_guide)}',
+                mode=mode,
+            ),
+            'header': format_str(
+                f'header = {pformat(schema_remarks.header)}',
+                mode=mode,
+            ),
+            'footer': format_str(
+                f'footer = {pformat(schema_remarks.footer)}',
+                mode=mode,
+            ),
+            'prelude': format_str(
+                f'prelude = {pformat(schema_remarks.prelude)}',
+                mode=mode,
+            ),
+            'afterword': format_str(
+                f'afterword = {pformat(schema_remarks.afterword)}',
+                mode=mode,
+            ),
+        }
+
+        with open('template_schema_remarks.txt', 'r', encoding='utf-8') as infile:
+            template = infile.read()
+        with open('schema_remarks_new.py', 'w', encoding='utf-8') as outfile:
+            output = template.format(**var_dict)
+            outfile.write(output)
+        subprocess.run(
+            ["diff", "-u", "--color", "schema_remarks.py", "schema_remarks_new.py"]
+        )
+        print("Wrote changes to schema_remarks_new.py.")
+        print("If these changes are okay, move it overtop of schema_remarks.py")
+        sys.exit()
+    print("No changes detected.")
+
+
+def validate_schema_remarks(_args):
+    errors = []
+    for v in schema_remarks.version_order:
+        if not v in schema_remarks.version_schema_map:
+            errors.append(
+                f"Version {v} found in version_order is not listed in"
+                " version_schema_map"
+            )
+        if len([item for item in schema_remarks.version_remark if item[0] == v]) < 1:
+            errors.append(
+                f"Version {v} found in version_order is not listed in version_remark"
+            )
+    for v in list(schema_remarks.version_schema_map.keys()):
+        if not v in schema_remarks.version_order:
+            errors.append(
+                f"Version {v} found in version_schema_map is not listed in"
+                " version_order"
+            )
+        if len([item for item in schema_remarks.version_remark if item[0] == v]) < 1:
+            errors.append(
+                f"Version {v} found in version_schema_map is not listed in"
+                " version_remark"
+            )
+    for item in schema_remarks.version_remark:
+        v = item[0]
+        if not v in schema_remarks.version_order:
+            errors.append(
+                f"Version {v} found in version_remark is not listed in version_order"
+            )
+        if not v in schema_remarks.version_schema_map:
+            errors.append(
+                f"Version {v} found in version_remark is not listed in"
+                " version_schema_map"
+            )
+    if errors:
+        print(str.join('\n', errors))
+        sys.exit()
+    print("Versions validated.")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description=(
+            "A utility for generating schema comparison documents and performing"
+            " maintenance on the schema data."
+        )
+    )
+    subparsers = parser.add_subparsers(
+        required=True,
+        metavar='subcommand',
+        help='Type `%(prog)s {subcommand} -h` for additional help',
+        title='Available subcommands',
+    )
+    parser_validate = subparsers.add_parser(
+        'validate',
+        help='Validate that the version-related lists are in sync with each other',
+        description=(
+            'Validate that the version-related lists are in sync with each other'
+        ),
+    )
+    parser_validate.set_defaults(func=validate_schema_remarks)
+    parser_test = subparsers.add_parser(
+        'test',
+        help=(
+            'Test schema document generation. By default it only prints errors or a'
+            ' success message.'
+        ),
+        description=(
+            'Test schema document generation. By default it only prints errors or a'
+            ' success message.'
+        ),
+    )
+    parser_test.add_argument(
+        'first',
+        metavar="first",
+        choices=schema_remarks.version_order,
+        help=(
+            "The starting version of the schemas to compare, or the single version to"
+            " display if 'last' is not provided."
+        ),
+    )
+    parser_test.add_argument(
+        'last',
+        metavar="last",
+        choices=schema_remarks.version_order,
+        nargs="?",
+        default=None,
+        help="The destination version of the schema to compare",
+    )
+    parser_test.add_argument(
+        '-f',
+        dest="file",
+        metavar='FILENAME',
+        type=argparse.FileType('w'),
+        help=(
+            "A file to write the generated schema doc to. Passing - will write it to"
+            " standard out."
+        ),
+    )
+    parser_test.set_defaults(func=test_schema_remarks)
+    parser_generate = subparsers.add_parser(
+        'generate',
+        help=(
+            'Add all of the missing remarks from a new schema to schema_remarks.py for'
+            ' you as TODO items.'
+        ),
+        description=(
+            'Add all of the missing remarks from a new schema to schema_remarks.py for'
+            ' you to as TODO items. Saves you the trouble of searching through the'
+            ' massive file looking for the right spot in alphabetical order to put'
+            ' them. Two benefits: gets a schema live faster (just without things'
+            ' documented), and you can search for TODO in the file to find the things'
+            ' that need updating.'
+        ),
+    )
+    parser_generate.add_argument(
+        'first',
+        metavar="first",
+        choices=schema_remarks.version_order,
+        help=(
+            "The starting version of the schemas to compare, or the single version to"
+            " display if 'last' is not provided."
+        ),
+    )
+    parser_generate.add_argument(
+        'last',
+        metavar="last",
+        choices=schema_remarks.version_order,
+        nargs="?",
+        default=None,
+        help="The destination version of the schema to compare",
+    )
+    parser_generate.set_defaults(func=generate_schema_remarks)
+    main_args = parser.parse_args()
+    main_args.func(main_args)
+
+# A. REFERENCES
+#
+#
+# B. DOCUMENT HISTORY
+#
+# 2001-03-08 NB Created.
+#
+#
+# C. COPYRIGHT AND LICENSE
+#
+# This file is copyright (c) 2001 Perforce Software, Inc.  All rights
+# reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+# 1.  Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#
+# 2.  Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in
+#     the documentation and/or other materials provided with the
+#     distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+# HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+# OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+# TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+# USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+# DAMAGE.
+#
+#
+# $Id$

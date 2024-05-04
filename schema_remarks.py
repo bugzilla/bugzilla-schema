@@ -273,6 +273,10 @@ default_last_version = '5.2'
 
 version_schema_map = {
     '2.0': '2.0',
+    '2.2': '2.2',
+    '2.4': '2.4',
+    '2.6': '2.6',
+    '2.8': '2.8',
     '2.10': '2.10',
     '2.12': '2.12',
     '2.14': '2.14',
@@ -281,10 +285,10 @@ version_schema_map = {
     '2.14.3': '2.14.2',
     '2.14.4': '2.14.2',
     '2.14.5': '2.14.2',
+    '2.16rc1': '2.16',
+    '2.16rc2': '2.16',
     '2.16': '2.16',
     '2.16.1': '2.16',
-    '2.16.10': '2.16',
-    '2.16.11': '2.16',
     '2.16.2': '2.16',
     '2.16.3': '2.16',
     '2.16.4': '2.16',
@@ -293,14 +297,17 @@ version_schema_map = {
     '2.16.7': '2.16',
     '2.16.8': '2.16',
     '2.16.9': '2.16',
-    '2.16rc1': '2.16',
-    '2.16rc2': '2.16',
+    '2.16.10': '2.16',
+    '2.16.11': '2.16',
     '2.17.1': '2.17.1',
     '2.17.3': '2.17.3',
     '2.17.4': '2.17.4',
     '2.17.5': '2.17.5',
     '2.17.6': '2.17.5',
     '2.17.7': '2.17.7',
+    '2.18rc1': '2.18rc1',
+    '2.18rc2': '2.18rc1',
+    '2.18rc3': '2.18rc3',
     '2.18': '2.18rc3',
     '2.18.1': '2.18.1',
     '2.18.2': '2.18.2',
@@ -308,13 +315,11 @@ version_schema_map = {
     '2.18.4': '2.18.2',
     '2.18.5': '2.18.2',
     '2.18.6': '2.18.2',
-    '2.18rc1': '2.18rc1',
-    '2.18rc2': '2.18rc1',
-    '2.18rc3': '2.18rc3',
     '2.19.1': '2.19.1',
     '2.19.2': '2.19.2',
     '2.19.3': '2.19.3',
-    '2.2': '2.2',
+    '2.20rc1': '2.20rc1',
+    '2.20rc2': '2.20rc2',
     '2.20': '2.20rc2',
     '2.20.1': '2.20rc2',
     '2.20.2': '2.20rc2',
@@ -323,9 +328,8 @@ version_schema_map = {
     '2.20.5': '2.20rc2',
     '2.20.6': '2.20rc2',
     '2.20.7': '2.20rc2',
-    '2.20rc1': '2.20rc1',
-    '2.20rc2': '2.20rc2',
     '2.21.1': '2.21.1',
+    '2.22rc1': '2.22rc1',
     '2.22': '2.22rc1',
     '2.22.1': '2.22rc1',
     '2.22.2': '2.22rc1',
@@ -334,18 +338,13 @@ version_schema_map = {
     '2.22.5': '2.22rc1',
     '2.22.6': '2.22rc1',
     '2.22.7': '2.22rc1',
-    '2.22rc1': '2.22rc1',
     '2.23.1': '2.23.1',
     '2.23.2': '2.23.2',
     '2.23.3': '2.23.3',
     '2.23.4': '2.23.4',
-    '2.4': '2.4',
-    '2.6': '2.6',
-    '2.8': '2.8',
+    '3.0rc1': '2.23.4',
     '3.0': '2.23.4',
     '3.0.1': '2.23.4',
-    '3.0.10': '2.23.4',
-    '3.0.11': '2.23.4',
     '3.0.2': '2.23.4',
     '3.0.3': '2.23.4',
     '3.0.4': '2.23.4',
@@ -354,14 +353,16 @@ version_schema_map = {
     '3.0.7': '2.23.4',
     '3.0.8': '2.23.4',
     '3.0.9': '2.23.4',
-    '3.0rc1': '2.23.4',
+    '3.0.10': '2.23.4',
+    '3.0.11': '2.23.4',
     '3.1.1': '3.1.1',
     '3.1.2': '3.1.2',
     '3.1.3': '3.1.3',
     '3.1.4': '3.1.4',
+    '3.2rc1': '3.1.4',
+    '3.2rc2': '3.1.4',
     '3.2': '3.1.4',
     '3.2.1': '3.1.4',
-    '3.2.10': '3.1.4',
     '3.2.2': '3.1.4',
     '3.2.3': '3.1.4',
     '3.2.4': '3.1.4',
@@ -370,19 +371,14 @@ version_schema_map = {
     '3.2.7': '3.1.4',
     '3.2.8': '3.1.4',
     '3.2.9': '3.1.4',
-    '3.2rc1': '3.1.4',
-    '3.2rc2': '3.1.4',
+    '3.2.10': '3.1.4',
     '3.3.1': '3.3.1',
     '3.3.2': '3.3.2',
     '3.3.3': '3.3.2',
     '3.3.4': '3.3.4',
+    '3.4rc1': '3.3.4',
     '3.4': '3.3.4',
     '3.4.1': '3.3.4',
-    '3.4.10': '3.3.4',
-    '3.4.11': '3.3.4',
-    '3.4.12': '3.3.4',
-    '3.4.13': '3.3.4',
-    '3.4.14': '3.3.4',
     '3.4.2': '3.3.4',
     '3.4.3': '3.3.4',
     '3.4.4': '3.3.4',
@@ -391,16 +387,17 @@ version_schema_map = {
     '3.4.7': '3.3.4',
     '3.4.8': '3.3.4',
     '3.4.9': '3.3.4',
-    '3.4rc1': '3.3.4',
+    '3.4.10': '3.3.4',
+    '3.4.11': '3.3.4',
+    '3.4.12': '3.3.4',
+    '3.4.13': '3.3.4',
+    '3.4.14': '3.3.4',
     '3.5.1': '3.5.1',
     '3.5.2': '3.5.1',
     '3.5.3': '3.5.3',
+    '3.6rc1': '3.5.3',
     '3.6': '3.5.3',
     '3.6.1': '3.5.3',
-    '3.6.10': '3.5.3',
-    '3.6.11': '3.5.3',
-    '3.6.12': '3.5.3',
-    '3.6.13': '3.5.3',
     '3.6.2': '3.5.3',
     '3.6.3': '3.5.3',
     '3.6.4': '3.5.3',
@@ -409,12 +406,25 @@ version_schema_map = {
     '3.6.7': '3.5.3',
     '3.6.8': '3.5.3',
     '3.6.9': '3.5.3',
-    '3.6rc1': '3.5.3',
+    '3.6.10': '3.5.3',
+    '3.6.11': '3.5.3',
+    '3.6.12': '3.5.3',
+    '3.6.13': '3.5.3',
     '3.7.1': '3.7.1',
     '3.7.2': '3.7.2',
     '3.7.3': '3.7.2',
+    '4.0rc1': '4.0rc1',
+    '4.0rc2': '4.0rc1',
     '4.0': '4.0rc1',
     '4.0.1': '4.0rc1',
+    '4.0.2': '4.0rc1',
+    '4.0.3': '4.0rc1',
+    '4.0.4': '4.0rc1',
+    '4.0.5': '4.0rc1',
+    '4.0.6': '4.0rc1',
+    '4.0.7': '4.0rc1',
+    '4.0.8': '4.0rc1',
+    '4.0.9': '4.0rc1',
     '4.0.10': '4.0rc1',
     '4.0.11': '4.0rc1',
     '4.0.12': '4.0rc1',
@@ -424,28 +434,13 @@ version_schema_map = {
     '4.0.16': '4.0rc1',
     '4.0.17': '4.0rc1',
     '4.0.18': '4.0rc1',
-    '4.0.2': '4.0rc1',
-    '4.0.3': '4.0rc1',
-    '4.0.4': '4.0rc1',
-    '4.0.5': '4.0rc1',
-    '4.0.6': '4.0rc1',
-    '4.0.7': '4.0rc1',
-    '4.0.8': '4.0rc1',
-    '4.0.9': '4.0rc1',
-    '4.0rc1': '4.0rc1',
-    '4.0rc2': '4.0rc1',
     '4.1.1': '4.1.1',
     '4.1.2': '4.1.1',
     '4.1.3': '4.1.3',
+    '4.2rc1': '4.2rc1',
+    '4.2rc2': '4.2rc1',
     '4.2': '4.2',
     '4.2.1': '4.2.1',
-    '4.2.10': '4.2.1',
-    '4.2.11': '4.2.1',
-    '4.2.12': '4.2.1',
-    '4.2.13': '4.2.1',
-    '4.2.14': '4.2.1',
-    '4.2.15': '4.2.1',
-    '4.2.16': '4.2.1',
     '4.2.2': '4.2.1',
     '4.2.3': '4.2.1',
     '4.2.4': '4.2.1',
@@ -454,18 +449,20 @@ version_schema_map = {
     '4.2.7': '4.2.1',
     '4.2.8': '4.2.1',
     '4.2.9': '4.2.1',
-    '4.2rc1': '4.2rc1',
-    '4.2rc2': '4.2rc1',
+    '4.2.10': '4.2.1',
+    '4.2.11': '4.2.1',
+    '4.2.12': '4.2.1',
+    '4.2.13': '4.2.1',
+    '4.2.14': '4.2.1',
+    '4.2.15': '4.2.1',
+    '4.2.16': '4.2.1',
     '4.3.1': '4.3.1',
     '4.3.2': '4.3.2',
     '4.3.3': '4.3.3',
+    '4.4rc1': '4.3.3',
+    '4.4rc2': '4.4rc2',
     '4.4': '4.4rc2',
     '4.4.1': '4.4rc2',
-    '4.4.10': '4.4rc2',
-    '4.4.11': '4.4rc2',
-    '4.4.12': '4.4rc2',
-    '4.4.13': '4.4rc2',
-    '4.4.14': '4.4rc2',
     '4.4.2': '4.4rc2',
     '4.4.3': '4.4rc2',
     '4.4.4': '4.4rc2',
@@ -474,14 +471,20 @@ version_schema_map = {
     '4.4.7': '4.4rc2',
     '4.4.8': '4.4rc2',
     '4.4.9': '4.4rc2',
-    '4.4rc1': '4.3.3',
-    '4.4rc2': '4.4rc2',
+    '4.4.10': '4.4rc2',
+    '4.4.11': '4.4rc2',
+    '4.4.12': '4.4rc2',
+    '4.4.13': '4.4rc2',
+    '4.4.14': '4.4rc2',
     '4.5.1': '4.5.1',
     '4.5.2': '4.5.2',
     '4.5.3': '4.5.2',
     '4.5.4': '4.5.2',
     '4.5.5': '4.5.5',
     '4.5.6': '4.5.6',
+    '5.0rc1': '5.0rc1',
+    '5.0rc2': '5.0rc1',
+    '5.0rc3': '5.0rc1',
     '5.0': '5.0rc1',
     '5.0.1': '5.0rc1',
     '5.0.2': '5.0rc1',
@@ -490,12 +493,9 @@ version_schema_map = {
     '5.0.4.1': '5.0rc1',
     '5.0.5': '5.0rc1',
     '5.0.6': '5.0.6',
-    '5.0rc1': '5.0rc1',
-    '5.0rc2': '5.0rc1',
-    '5.0rc3': '5.0rc1',
+    '5.2': '5.0.6',
     '5.1.1': '5.1.1',
     '5.1.2': '5.1.1',
-    '5.2': '5.0.6',
     '5.3.3': '5.1.1',
     '5.9.1': '5.9.1',
 }
@@ -648,7 +648,7 @@ version_remark = [
     ('3.4.14', '2012-01-31', 'A security patch release'),
     ('3.6.8', '2012-01-31', 'A security patch release'),
     ('4.0.4', '2012-01-31', 'A security patch release'),
-    ('4.2rc1', '2012-01-31', 'A release candidate'),
+    ('4.2rc2', '2012-01-31', 'A release candidate'),
     ('4.0.5', '2012-02-22', 'A patch release'),
     ('4.2', '2012-02-22', ''),
     ('3.6.9', '2012-04-18', 'A security patch release'),
@@ -728,8 +728,10 @@ version_remark = [
     (
         '5.3.3',
         '2024-05-??',
-        'A development release following 5.1.2 (the branch was renamed). '
-        'Not-yet-released.',
+        (
+            'A development release following 5.1.2 (the branch was renamed). '
+            'Not-yet-released.'
+        ),
     ),
     ('5.9.1', '2024-05-??', 'A not-yet-released development release'),
 ]
@@ -1579,9 +1581,11 @@ column_remark = {
         'description': 'A description of the component.',
         'id': 'The component id.',
         'initialowner': [
-            'The default initial owner of bugs in this '
-            'component.  On component creation, this is '
-            'set to the user who creates the component.',
+            (
+                'The default initial owner of bugs in this '
+                'component.  On component creation, this is '
+                'set to the user who creates the component.'
+            ),
             (
                 None,
                 '2.10',
@@ -1590,10 +1594,12 @@ column_remark = {
             ('2.12', None, '%(VERSION_STRING)sforeign key %(column-profiles-userid)s.'),
         ],
         'initialqacontact': [
-            'The initial "qa_contact" field for bugs '
-            'of this component. Note that the use of '
-            'the qa_contact field is optional, '
-            'parameterized by Param("useqacontact").',
+            (
+                'The initial "qa_contact" field for bugs '
+                'of this component. Note that the use of '
+                'the qa_contact field is optional, '
+                'parameterized by Param("useqacontact").'
+            ),
             (
                 None,
                 '2.10',
@@ -1708,26 +1714,34 @@ column_remark = {
             (
                 '2.23.1',
                 None,
-                '%(VERSION_STRING)s1 (FIELD_TYPE_FREETEXT) for a '
-                'single-line text field. ',
+                (
+                    '%(VERSION_STRING)s1 (FIELD_TYPE_FREETEXT) for a '
+                    'single-line text field. '
+                ),
             ),
             (
                 '2.23.3',
                 None,
-                '%(VERSION_STRING)s2 (FIELD_TYPE_SINGLE_SELECT) for a '
-                'single-select field. ',
+                (
+                    '%(VERSION_STRING)s2 (FIELD_TYPE_SINGLE_SELECT) for a '
+                    'single-select field. '
+                ),
             ),
             (
                 '3.1.2',
                 None,
-                '%(VERSION_STRING)s3 (FIELD_TYPE_MULTI_SELECT) for a '
-                'multi-select field. ',
+                (
+                    '%(VERSION_STRING)s3 (FIELD_TYPE_MULTI_SELECT) for a '
+                    'multi-select field. '
+                ),
             ),
             (
                 '3.1.2',
                 None,
-                '%(VERSION_STRING)s4 (FIELD_TYPE_TEXTAREA) for a '
-                'large text box field. ',
+                (
+                    '%(VERSION_STRING)s4 (FIELD_TYPE_TEXTAREA) for a '
+                    'large text box field. '
+                ),
             ),
             (
                 '3.1.3',
@@ -2211,9 +2225,11 @@ column_remark = {
             (
                 None,
                 '2.12',
-                '%(VERSION_STRING)sThe MySQL function '
-                '<code>encrypt</code> is used to encrypt '
-                'passwords.',
+                (
+                    '%(VERSION_STRING)sThe MySQL function '
+                    '<code>encrypt</code> is used to encrypt '
+                    'passwords.'
+                ),
             ),
             (
                 '2.14',
@@ -2260,14 +2276,18 @@ column_remark = {
             (
                 None,
                 '5.2',
-                "The user's email address.  Used when logging in "
-                "or providing mailto: links.",
+                (
+                    "The user's email address.  Used when logging in "
+                    "or providing mailto: links."
+                ),
             ),
             (
                 '5.1.1',
                 None,
-                "The user's username. Used when logging in and "
-                "displayed to other users.",
+                (
+                    "The user's username. Used when logging in and "
+                    "displayed to other users."
+                ),
             ),
         ],
         'mfa': 'TODO',
@@ -2421,19 +2441,25 @@ column_remark = {
             'The series category. (foreign key %(column-series_categories-id)s)'
         ),
         'creator': [
-            'The user who created this series (foreign key '
-            '%(column-profiles-userid)s).',
+            (
+                'The user who created this series (foreign key '
+                '%(column-profiles-userid)s).'
+            ),
             (
                 None,
                 '2.23.2',
-                '%(VERSION_STRING)s 0 if this series is created by '
-                'checksetup when first installing Bugzilla.',
+                (
+                    '%(VERSION_STRING)s 0 if this series is created by '
+                    'checksetup when first installing Bugzilla.'
+                ),
             ),
             (
                 '2.23.3',
                 None,
-                '%(VERSION_STRING)s NULL if this series is created by '
-                'checksetup when first installing Bugzilla.',
+                (
+                    '%(VERSION_STRING)s NULL if this series is created by '
+                    'checksetup when first installing Bugzilla.'
+                ),
             ),
         ],
         'frequency': 'The period between data samples for this series, in days.',
@@ -3735,216 +3761,237 @@ footer = [
 # schema itself.
 
 prelude = [
-    '\n\n<center>\n<p>Quick links to <a href="#notes-tables">table'
-    ' definitions</a>:</p>\n\n%(QUICK_TABLES_TABLE)s</center>\n\n<h2><a id="section-1"'
-    ' name="section-1">1. Introduction</a></h2>\n\n<p>This document describes the'
-    ' Bugzilla database schema for Bugzilla\n%(BUGZILLA_VERSIONS)s.</p>\n\n<p>This'
-    ' document is generated automatically by a Python script which\nconstructs and'
-    ' colors the schema tables from the stored results of\nMySQL queries.  For more'
-    ' information about the scripts, see'
-    ' <a\nhref="https://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>\n\n<p>The'
-    ' purpose of this document is to act as a reference for\ndevelopers of Bugzilla and'
-    ' of code which interacts with Bugzilla\n(e.g. P4DTI).</p>\n\n<p>The intended'
-    ' readership is P4DTI developers and Bugzilla developers\nand'
-    ' administrators.</p>\n\n<p>This document is not confidential.</p>\n\n<p>Please <a'
-    ' href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Bugzilla&amp;component=bugzilla.org&amp;short_desc=[schematool]%%20change%%20this%%20to%%20your%%20description">file'
-    ' a bug report</a> if you find any issues or what a new feature.</p>\n\n<h2><a'
-    ' id="section-2" name="section-2">2. Bugzilla overview</a></h2>\n\n<p>Bugzilla is a'
-    ' defect tracking system, written in Perl with a CGI\nweb GUI.  By default it uses'
-    ' MySQL to store its tables.',
+    (
+        '\n\n<center>\n<p>Quick links to <a href="#notes-tables">table'
+        ' definitions</a>:</p>\n\n%(QUICK_TABLES_TABLE)s</center>\n\n<h2><a'
+        ' id="section-1" name="section-1">1. Introduction</a></h2>\n\n<p>This document'
+        ' describes the Bugzilla database schema for'
+        ' Bugzilla\n%(BUGZILLA_VERSIONS)s.</p>\n\n<p>This document is generated'
+        ' automatically by a Python script which\nconstructs and colors the schema'
+        ' tables from the stored results of\nMySQL queries.  For more information about'
+        ' the scripts, see'
+        ' <a\nhref="https://github.com/bugzilla/bugzilla-schema">GitHub</a>.</p>\n\n<p>The'
+        ' purpose of this document is to act as a reference for\ndevelopers of Bugzilla'
+        ' and of code which interacts with Bugzilla\n(e.g. P4DTI).</p>\n\n<p>The'
+        ' intended readership is P4DTI developers and Bugzilla developers\nand'
+        ' administrators.</p>\n\n<p>This document is not confidential.</p>\n\n<p>Please'
+        ' <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Bugzilla&amp;component=bugzilla.org&amp;short_desc=[schematool]%%20change%%20this%%20to%%20your%%20description">file'
+        ' a bug report</a> if you find any issues or what a new feature.</p>\n\n<h2><a'
+        ' id="section-2" name="section-2">2. Bugzilla overview</a></h2>\n\n<p>Bugzilla'
+        ' is a defect tracking system, written in Perl with a CGI\nweb GUI.  By default'
+        ' it uses MySQL to store its tables.'
+    ),
     ('2.22', None, '%(VERSION_STRING)s PostgreSQL is also supported.'),
-    '</p>\n'
-    '\n'
-    '%(NOTATION_GUIDE)s\n'
-    '\n'
-    '<h3><a id="notes-bugs" name="notes-bugs">Bugs</a></h3>\n'
-    '\n'
-    '<p>Each defect is called a <b>bug</b> and corresponds to one row in\n'
-    '%(the-table-bugs)s.  It is identified by its number,\n'
-    '%(column-bugs-bug_id)s.</p>\n'
-    '\n'
-    '<h3><a id="notes-products" name="notes-products">Products and '
-    'components</a></h3>\n'
-    '\n'
-    '<p>The work managed by Bugzilla is divided into products.  The work\n'
-    'for each product is in turn divided into the components of that\n'
-    'product.  Several properties of a new bug (e.g. ownership) are\n'
-    'determined by the product and component to which it belongs.  Each\n'
-    'component is represented by a row in %(the-table-components)s.',
+    (
+        '</p>\n'
+        '\n'
+        '%(NOTATION_GUIDE)s\n'
+        '\n'
+        '<h3><a id="notes-bugs" name="notes-bugs">Bugs</a></h3>\n'
+        '\n'
+        '<p>Each defect is called a <b>bug</b> and corresponds to one row in\n'
+        '%(the-table-bugs)s.  It is identified by its number,\n'
+        '%(column-bugs-bug_id)s.</p>\n'
+        '\n'
+        '<h3><a id="notes-products" name="notes-products">Products and '
+        'components</a></h3>\n'
+        '\n'
+        '<p>The work managed by Bugzilla is divided into products.  The work\n'
+        'for each product is in turn divided into the components of that\n'
+        'product.  Several properties of a new bug (e.g. ownership) are\n'
+        'determined by the product and component to which it belongs.  Each\n'
+        'component is represented by a row in %(the-table-components)s.'
+    ),
     (
         '2.2',
         None,
-        ' %(VERSION_STRING)sEach product is represented by a\n'
-        'row in %(the-table-products)s.',
+        (
+            ' %(VERSION_STRING)sEach product is represented by a\n'
+            'row in %(the-table-products)s.'
+        ),
     ),
     '</p>',
     (
         '2.19.1',
         None,
-        '\n'
-        '\n'
-        '<p>%(VERSION_STRING)sProducts are grouped by "classification".  This\n'
-        'is optional and controlled by the parameter \'useclassification\'.  The\n'
-        'classifications are used to help in finding bugs and in constructing\n'
-        'meaningful time series, but have no other semantics in Bugzilla.\n'
-        'There is a default classification, with ID 1, meaning\n'
-        '"Unclassified".</p> ',
+        (
+            '\n'
+            '\n'
+            '<p>%(VERSION_STRING)sProducts are grouped by "classification".  This\n'
+            'is optional and controlled by the parameter \'useclassification\'.  The\n'
+            'classifications are used to help in finding bugs and in constructing\n'
+            'meaningful time series, but have no other semantics in Bugzilla.\n'
+            'There is a default classification, with ID 1, meaning\n'
+            '"Unclassified".</p> '
+        ),
     ),
-    '<h3><a id="notes-workflow" name="notes-workflow">Workflow</a></h3>\n'
-    '\n'
-    '<p>Each bug has a status (%(column-bugs-bug_status)s).  If a bug has a\n'
-    'status which shows it has been resolved, it also has a resolution\n'
-    '(%(column-bugs-resolution)s), otherwise the resolution field is empty.</p>',
+    (
+        '<h3><a id="notes-workflow" name="notes-workflow">Workflow</a></h3>\n'
+        '\n'
+        '<p>Each bug has a status (%(column-bugs-bug_status)s).  If a bug has a\n'
+        'status which shows it has been resolved, it also has a resolution\n'
+        '(%(column-bugs-resolution)s), otherwise the resolution field is empty.</p>'
+    ),
     (
         '3.1.1',
         None,
-        '<p>%(VERSION_STRING)sWorkflow is configurable.  The\n'
-        'possible status values are stored in %(the-table-bug_status)s; the\n'
-        'transitions in %(the-table-status_workflow)s.</p>',
+        (
+            '<p>%(VERSION_STRING)sWorkflow is configurable.  The\n'
+            'possible status values are stored in %(the-table-bug_status)s; the\n'
+            'transitions in %(the-table-status_workflow)s.</p>'
+        ),
     ),
-    '<p>This table shows the possible values and valid transitions of\n'
-    'the status field in the default workflow.</p>\n'
-    '\n'
-    '<table border="1" cellspacing="0" cellpadding="5">\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <th>Status</th>\n'
-    '\n'
-    '    <th>Resolved?</th>\n'
-    '\n'
-    '    <th>Description</th>\n'
-    '\n'
-    '    <th>Transitions</th>\n'
-    '\n'
-    '  </tr>\n'
-    '\n',
+    (
+        '<p>This table shows the possible values and valid transitions of\n'
+        'the status field in the default workflow.</p>\n'
+        '\n'
+        '<table border="1" cellspacing="0" cellpadding="5">\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <th>Status</th>\n'
+        '\n'
+        '    <th>Resolved?</th>\n'
+        '\n'
+        '    <th>Description</th>\n'
+        '\n'
+        '    <th>Transitions</th>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+    ),
     (
         '2.10',
         '3.6.13',
-        '<tr%(VERSION_COLOUR)s valign="top" align="left">\n'
-        '\n'
-        '    <td>UNCONFIRMED</td>\n'
-        '\n'
-        '    <td>No</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)sA new bug, when a product has voting</td>\n'
-        '\n'
-        '    <td>to NEW by voting or confirmation<br />\n'
-        '        to ASSIGNED by acceptance<br />\n'
-        '        to RESOLVED by resolution<br />\n'
-        '    </td>\n'
-        '\n'
-        '  </tr>',
+        (
+            '<tr%(VERSION_COLOUR)s valign="top" align="left">\n'
+            '\n'
+            '    <td>UNCONFIRMED</td>\n'
+            '\n'
+            '    <td>No</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sA new bug, when a product has voting</td>\n'
+            '\n'
+            '    <td>to NEW by voting or confirmation<br />\n'
+            '        to ASSIGNED by acceptance<br />\n'
+            '        to RESOLVED by resolution<br />\n'
+            '    </td>\n'
+            '\n'
+            '  </tr>'
+        ),
     ),
     (
         '3.7.1',
         None,
-        '<tr%(VERSION_COLOUR)s valign="top" align="left">\n'
+        (
+            '<tr%(VERSION_COLOUR)s valign="top" align="left">\n'
+            '\n'
+            '    <td>UNCONFIRMED</td>\n'
+            '\n'
+            '    <td>No</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sA new bug, when a product allows '
+            'UNCONFIRMED</td>\n'
+            '\n'
+            '    <td>to NEW by confirmation<br />\n'
+            '        to ASSIGNED by acceptance<br />\n'
+            '        to RESOLVED by resolution<br />\n'
+            '    </td>\n'
+            '\n'
+            '  </tr>'
+        ),
+    ),
+    (
+        '<tr valign="top" align="left">\n'
         '\n'
-        '    <td>UNCONFIRMED</td>\n'
+        '    <td>NEW</td>\n'
         '\n'
         '    <td>No</td>\n'
         '\n'
-        '    <td>%(VERSION_STRING)sA new bug, when a product allows '
-        'UNCONFIRMED</td>\n'
+        '    <td>Recently added or confirmed</td>\n'
         '\n'
-        '    <td>to NEW by confirmation<br />\n'
-        '        to ASSIGNED by acceptance<br />\n'
-        '        to RESOLVED by resolution<br />\n'
+        '    <td>to ASSIGNED by acceptance<br />\n'
+        '        to RESOLVED by analysis and maybe fixing<br />\n'
+        '        to NEW by reassignment<br />\n'
         '    </td>\n'
         '\n'
-        '  </tr>',
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <td>ASSIGNED</td>\n'
+        '\n'
+        '    <td>No</td>\n'
+        '\n'
+        '    <td>Has been assigned</td>\n'
+        '\n'
+        '    <td>to NEW by reassignment<br />\n'
+        '        to RESOLVED by analysis and maybe fixing<br />\n'
+        '    </td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <td>REOPENED</td>\n'
+        '\n'
+        '    <td>No</td>\n'
+        '\n'
+        '    <td>Was once resolved but has been reopened</td>\n'
+        '\n'
+        '    <td>to NEW by reassignment<br />\n'
+        '        to ASSIGNED by acceptance<br />\n'
+        '        to RESOLVED by analysis and maybe fixing<br />\n'
+        '    </td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <td>RESOLVED</td>\n'
+        '\n'
+        '    <td>Yes</td>\n'
+        '\n'
+        '    <td>Has been resolved (e.g. fixed, deemed unfixable, etc.  See '
+        '"resolution" column)</td>\n'
+        '\n'
+        '    <td>to REOPENED by reopening<br />\n'
+        '        to VERIFIED by verification<br />\n'
+        '        to CLOSED by closing<br />\n'
+        '    </td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <td>VERIFIED</td>\n'
+        '\n'
+        '    <td>Yes</td>\n'
+        '\n'
+        '    <td>The resolution has been approved by QA</td>\n'
+        '\n'
+        '    <td>to CLOSED when the product ships<br />\n'
+        '        to REOPENED by reopening<br />\n'
+        '    </td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <td>CLOSED</td>\n'
+        '\n'
+        '    <td>Yes</td>\n'
+        '\n'
+        '    <td>Over and done with</td>\n'
+        '\n'
+        '    <td>to REOPENED by reopening</td>\n'
+        '\n'
+        '  </tr>\n'
+        '</table>\n'
+        '\n'
+        '<p>This table shows the allowable values of the resolution field.  The\n'
+        'values "FIXED", "MOVED", and "DUPLICATE" have special meaning for\n'
+        'Bugzilla.  The other values may be changed, '
     ),
-    '<tr valign="top" align="left">\n'
-    '\n'
-    '    <td>NEW</td>\n'
-    '\n'
-    '    <td>No</td>\n'
-    '\n'
-    '    <td>Recently added or confirmed</td>\n'
-    '\n'
-    '    <td>to ASSIGNED by acceptance<br />\n'
-    '        to RESOLVED by analysis and maybe fixing<br />\n'
-    '        to NEW by reassignment<br />\n'
-    '    </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <td>ASSIGNED</td>\n'
-    '\n'
-    '    <td>No</td>\n'
-    '\n'
-    '    <td>Has been assigned</td>\n'
-    '\n'
-    '    <td>to NEW by reassignment<br />\n'
-    '        to RESOLVED by analysis and maybe fixing<br />\n'
-    '    </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <td>REOPENED</td>\n'
-    '\n'
-    '    <td>No</td>\n'
-    '\n'
-    '    <td>Was once resolved but has been reopened</td>\n'
-    '\n'
-    '    <td>to NEW by reassignment<br />\n'
-    '        to ASSIGNED by acceptance<br />\n'
-    '        to RESOLVED by analysis and maybe fixing<br />\n'
-    '    </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <td>RESOLVED</td>\n'
-    '\n'
-    '    <td>Yes</td>\n'
-    '\n'
-    '    <td>Has been resolved (e.g. fixed, deemed unfixable, etc.  See '
-    '"resolution" column)</td>\n'
-    '\n'
-    '    <td>to REOPENED by reopening<br />\n'
-    '        to VERIFIED by verification<br />\n'
-    '        to CLOSED by closing<br />\n'
-    '    </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <td>VERIFIED</td>\n'
-    '\n'
-    '    <td>Yes</td>\n'
-    '\n'
-    '    <td>The resolution has been approved by QA</td>\n'
-    '\n'
-    '    <td>to CLOSED when the product ships<br />\n'
-    '        to REOPENED by reopening<br />\n'
-    '    </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <td>CLOSED</td>\n'
-    '\n'
-    '    <td>Yes</td>\n'
-    '\n'
-    '    <td>Over and done with</td>\n'
-    '\n'
-    '    <td>to REOPENED by reopening</td>\n'
-    '\n'
-    '  </tr>\n'
-    '</table>\n'
-    '\n'
-    '<p>This table shows the allowable values of the resolution field.  The\n'
-    'values "FIXED", "MOVED", and "DUPLICATE" have special meaning for\n'
-    'Bugzilla.  The other values may be changed, ',
     (None, '2.19.2', '%(VERSION_STRING)sby editing the schema of %(the-table-bugs)s, '),
     (
         '2.19.3',
@@ -3952,152 +3999,176 @@ prelude = [
         '%(VERSION_STRING)sby manually updating %(the-table-resolution)s, ',
     ),
     ('2.23.3', None, '%(VERSION_STRING)sby using editvalues.cgi, '),
-    'to add, remove, or rename values as necessary.</p>\n'
-    '\n'
-    '<table border="1" cellspacing="0" cellpadding="5">\n'
-    '  <tr valign="top" align="left">\n'
-    '\n'
-    '    <th>Resolution</th>\n'
-    '\n'
-    '    <th>Meaning</th>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>FIXED</td>\n'
-    '\n'
-    '    <td>The bug has been fixed.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>INVALID</td>\n'
-    '\n'
-    '    <td>The problem described is not a bug.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>WONTFIX</td>\n'
-    '\n'
-    '    <td>This bug will never be fixed.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>LATER</td>\n'
-    '\n'
-    '    <td>This bug will not be fixed in this version.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>REMIND</td>\n'
-    '\n'
-    '    <td>This bug probably won\'t be fixed in this version.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>DUPLICATE</td>\n'
-    '\n'
-    '    <td>This is a duplicate of an existing bug A description comment\n'
-    '        is added to this effect',
+    (
+        'to add, remove, or rename values as necessary.</p>\n'
+        '\n'
+        '<table border="1" cellspacing="0" cellpadding="5">\n'
+        '  <tr valign="top" align="left">\n'
+        '\n'
+        '    <th>Resolution</th>\n'
+        '\n'
+        '    <th>Meaning</th>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>FIXED</td>\n'
+        '\n'
+        '    <td>The bug has been fixed.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>INVALID</td>\n'
+        '\n'
+        '    <td>The problem described is not a bug.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>WONTFIX</td>\n'
+        '\n'
+        '    <td>This bug will never be fixed.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>LATER</td>\n'
+        '\n'
+        '    <td>This bug will not be fixed in this version.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>REMIND</td>\n'
+        '\n'
+        '    <td>This bug probably won\'t be fixed in this version.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>DUPLICATE</td>\n'
+        '\n'
+        '    <td>This is a duplicate of an existing bug A description comment\n'
+        '        is added to this effect'
+    ),
     (
         '2.12',
         None,
-        ', and %(VERSION_STRING)sa record is added to\n'
-        '        %(the-table-duplicates)s',
+        (
+            ', and %(VERSION_STRING)sa record is added to\n'
+            '        %(the-table-duplicates)s'
+        ),
     ),
-    '.</td> </tr>\n'
-    '\n'
-    '  <tr>\n'
-    '\n'
-    '    <td>WORKSFORME</td>\n'
-    '\n'
-    '    <td>This bug could not be reproduced.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n',
+    (
+        '.</td> </tr>\n'
+        '\n'
+        '  <tr>\n'
+        '\n'
+        '    <td>WORKSFORME</td>\n'
+        '\n'
+        '    <td>This bug could not be reproduced.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+    ),
     (
         '2.12',
         None,
-        '  <tr%(VERSION_COLOUR)s>\n'
-        '\n'
-        '    <td>MOVED</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)sThis bug has been moved to another '
-        'database.</td>\n'
-        '\n'
-        '</tr>\n',
+        (
+            '  <tr%(VERSION_COLOUR)s>\n'
+            '\n'
+            '    <td>MOVED</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sThis bug has been moved to another '
+            'database.</td>\n'
+            '\n'
+            '</tr>\n'
+        ),
     ),
-    '</table>\n'
-    '\n'
-    '<h3><a id="notes-users" name="notes-users">Users</a></h3>\n'
-    '\n'
-    '<p>Bugzilla has users.  Each user is represented by one row in\n'
-    '%(the-table-profiles)s.  Each user is referred by a number\n'
-    '(%(column-profiles-userid)s) and an email address\n'
-    '(%(column-profiles-login_name)s).</p>\n'
-    '\n'
-    '<h3><a id="notes-authentication" '
-    'name="notes-authentication">Authentication</a></h3>\n'
-    '\n',
+    (
+        '</table>\n'
+        '\n'
+        '<h3><a id="notes-users" name="notes-users">Users</a></h3>\n'
+        '\n'
+        '<p>Bugzilla has users.  Each user is represented by one row in\n'
+        '%(the-table-profiles)s.  Each user is referred by a number\n'
+        '(%(column-profiles-userid)s) and an email address\n'
+        '(%(column-profiles-login_name)s).</p>\n'
+        '\n'
+        '<h3><a id="notes-authentication" '
+        'name="notes-authentication">Authentication</a></h3>\n'
+        '\n'
+    ),
     (
         '2.19.1',
         None,
-        '<p>%(VERSION_STRING)sThere are various\n'
-        'authentication mechanisms, including "environment variable\n'
-        'authentication" (Bugzilla/Auth/Login/WWW/Env.pm) which uses\n'
-        'environment variables to pass an external user ID\n'
-        '(%(column-profiles-extern_id)s) to the Bugzilla CGI.  The rest of this\n'
-        'section describes the password-based authentication which has always\n'
-        'been in Bugzilla and which is still widely used.</p>',
+        (
+            '<p>%(VERSION_STRING)sThere are various\n'
+            'authentication mechanisms, including "environment variable\n'
+            'authentication" (Bugzilla/Auth/Login/WWW/Env.pm) which uses\n'
+            'environment variables to pass an external user ID\n'
+            '(%(column-profiles-extern_id)s) to the Bugzilla CGI.  The rest of this\n'
+            'section describes the password-based authentication which has always\n'
+            'been in Bugzilla and which is still widely used.</p>'
+        ),
     ),
-    '<p>Each user has a password, used to authenticate that user to\n'
-    'Bugzilla.  The password is stored in %(column-profiles-cryptpassword)s in\n'
-    'encrypted form.',
+    (
+        '<p>Each user has a password, used to authenticate that user to\n'
+        'Bugzilla.  The password is stored in %(column-profiles-cryptpassword)s in\n'
+        'encrypted form.'
+    ),
     (
         None,
         '2.12',
-        '  %(VERSION_STRING)s it is also stored in\n'
-        '%(column-profiles-password)s as plaintext.',
+        (
+            '  %(VERSION_STRING)s it is also stored in\n'
+            '%(column-profiles-password)s as plaintext.'
+        ),
     ),
-    '</p>\n'
-    '\n'
-    '<p>On a successful login, Bugzilla generates a pair of cookies for the\n'
-    'user\'s browser.  On subsequent accesses, a user gets access if these\n'
-    'cookie checks pass:</p>\n'
-    '\n'
-    '<ul>\n'
-    '\n'
-    '  <li>they have both Bugzilla_login and Bugzilla_logincookie cookies;</li>',
+    (
+        '</p>\n'
+        '\n'
+        '<p>On a successful login, Bugzilla generates a pair of cookies for the\n'
+        'user\'s browser.  On subsequent accesses, a user gets access if these\n'
+        'cookie checks pass:</p>\n'
+        '\n'
+        '<ul>\n'
+        '\n'
+        '  <li>they have both Bugzilla_login and Bugzilla_logincookie cookies;</li>'
+    ),
     (
         None,
         '2.17.3',
-        '<li>%(VERSION_STRING)sTheir Bugzilla_login is the\n'
-        '  %(column-profiles-login_name)s of a row in\n'
-        '  %(the-table-profiles)s;</li>',
+        (
+            '<li>%(VERSION_STRING)sTheir Bugzilla_login is the\n'
+            '  %(column-profiles-login_name)s of a row in\n'
+            '  %(the-table-profiles)s;</li>'
+        ),
     ),
     (
         '2.17.4',
         None,
-        '<li>%(VERSION_STRING)sTheir Bugzilla_login is the\n'
-        '  %(column-profiles-userid)s of a row in\n'
-        '  %(the-table-profiles)s;</li>',
+        (
+            '<li>%(VERSION_STRING)sTheir Bugzilla_login is the\n'
+            '  %(column-profiles-userid)s of a row in\n'
+            '  %(the-table-profiles)s;</li>'
+        ),
     ),
-    '\n'
-    '  <li>their Bugzilla_logincookie matches a row in '
-    '%(the-table-logincookies)s;</li>\n'
-    '\n'
-    '  <li>the userids of these two rows match;</li>\n'
-    '\n',
+    (
+        '\n'
+        '  <li>their Bugzilla_logincookie matches a row in '
+        '%(the-table-logincookies)s;</li>\n'
+        '\n'
+        '  <li>the userids of these two rows match;</li>\n'
+        '\n'
+    ),
     (
         None,
         '2.14.5',
@@ -4106,18 +4177,22 @@ prelude = [
     (
         None,
         '2.14.1',
-        '<li>%(VERSION_STRING)s%(column-logincookies-hostname)s matches the CGI '
-        'REMOTE_HOST;</li>\n'
-        '\n'
-        '  ',
+        (
+            '<li>%(VERSION_STRING)s%(column-logincookies-hostname)s matches the CGI '
+            'REMOTE_HOST;</li>\n'
+            '\n'
+            '  '
+        ),
     ),
     (
         '2.14.2',
         None,
-        '<li>%(VERSION_STRING)s%(column-logincookies-ipaddr)s matches the CGI '
-        'REMOTE_ADDR;</li>\n'
-        '\n'
-        '  ',
+        (
+            '<li>%(VERSION_STRING)s%(column-logincookies-ipaddr)s matches the CGI '
+            'REMOTE_ADDR;</li>\n'
+            '\n'
+            '  '
+        ),
     ),
     (
         '2.10',
@@ -4129,71 +4204,83 @@ prelude = [
         None,
         '<li>%(VERSION_STRING)s%(column-profiles-is_enabled)s is 1.</li>\n  ',
     ),
-    '</ul>\n'
-    '\n'
-    '<p>If the cookie checks fail, the user has to login (with their\n'
-    'password), in which case a new row is added to\n'
-    '%(the-table-logincookies)s and the user gets a new pair of\n'
-    'cookies.</p>\n'
-    '\n'
-    '<p>Rows in %(the-table-logincookies)s are deleted after 30 days (at\n'
-    'user login time).</p>',
+    (
+        '</ul>\n'
+        '\n'
+        '<p>If the cookie checks fail, the user has to login (with their\n'
+        'password), in which case a new row is added to\n'
+        '%(the-table-logincookies)s and the user gets a new pair of\n'
+        'cookies.</p>\n'
+        '\n'
+        '<p>Rows in %(the-table-logincookies)s are deleted after 30 days (at\n'
+        'user login time).</p>'
+    ),
     (
         '2.8',
         '3.6.13',
-        '<h3><a id="notes-voting" name="notes-voting">Voting</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sUsers may vote for bugs which they think are\n'
-        'important.  A user can vote for a bug more than once.  Votes are\n'
-        'recorded in %(the-table-votes)s.</p>',
+        (
+            '<h3><a id="notes-voting" name="notes-voting">Voting</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sUsers may vote for bugs which they think are\n'
+            'important.  A user can vote for a bug more than once.  Votes are\n'
+            'recorded in %(the-table-votes)s.</p>'
+        ),
     ),
     (
         '2.10',
         '3.6.13',
-        '%(VERSION_STRING)sThe maximum number of votes per\n'
-        'bug per user is product-dependent.  Whether or not project managers\n'
-        'pay any attention to votes is up to them, apart from the "confirmation\n'
-        'by acclamation" process, which is as follows:</p>\n'
-        '\n'
-        '<p>New bugs have the status UNCONFIRMED.  To enter the main workflow,\n'
-        'they need the status NEW.  To get the status NEW, they need a\n'
-        'particular number of votes which is product-dependent.</p>',
+        (
+            '%(VERSION_STRING)sThe maximum number of votes per\n'
+            'bug per user is product-dependent.  Whether or not project managers\n'
+            'pay any attention to votes is up to them, apart from the "confirmation\n'
+            'by acclamation" process, which is as follows:</p>\n'
+            '\n'
+            '<p>New bugs have the status UNCONFIRMED.  To enter the main workflow,\n'
+            'they need the status NEW.  To get the status NEW, they need a\n'
+            'particular number of votes which is product-dependent.</p>'
+        ),
     ),
     (
         '2.10',
         None,
-        '<h3><a id="notes-milestones" name="notes-milestones">Milestones</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sProducts may have "milestones" defined.  The\n'
-        'intention is that a milestone should be a point in a project at which\n'
-        'a set of bugs has been resolved.  An example might be a product\n'
-        'release or a QA target.  Milestones may be turned on and off with the\n'
-        'parameter "usetargetmilestone".</p>\n'
-        '\n'
-        '<p>If milestones are on, each bug has a "target milestone" (by which\n'
-        'it should be fixed).  A product may have a URL associated with it\n'
-        'which locates a document describing the milestones for that product.\n'
-        'This document itself is entirely outside Bugzilla.  A product may also\n'
-        'have a default target milestone, which is given to new bugs.</p>\n'
-        '\n'
-        '<p>Milestones for a product have a "sort key", which allows them to be\n'
-        'presented in a specific order in the user interface.</p>\n'
-        '\n'
-        '<p>Milestones are kept in %(the-table-milestones)s.</p>',
+        (
+            '<h3><a id="notes-milestones" name="notes-milestones">Milestones</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sProducts may have "milestones" defined.  The\n'
+            'intention is that a milestone should be a point in a project at which\n'
+            'a set of bugs has been resolved.  An example might be a product\n'
+            'release or a QA target.  Milestones may be turned on and off with the\n'
+            'parameter "usetargetmilestone".</p>\n'
+            '\n'
+            '<p>If milestones are on, each bug has a "target milestone" (by which\n'
+            'it should be fixed).  A product may have a URL associated with it\n'
+            'which locates a document describing the milestones for that product.\n'
+            'This document itself is entirely outside Bugzilla.  A product may also\n'
+            'have a default target milestone, which is given to new bugs.</p>\n'
+            '\n'
+            '<p>Milestones for a product have a "sort key", which allows them to be\n'
+            'presented in a specific order in the user interface.</p>\n'
+            '\n'
+            '<p>Milestones are kept in %(the-table-milestones)s.</p>'
+        ),
     ),
-    '<h3><a id="notes-versions" name="notes-versions">Versions</a></h3>\n'
-    '\n'
-    '<p>Products may have versions.  This allows more accurate bug\n'
-    'reporting: "we saw it in 1.3.7b3".',
+    (
+        '<h3><a id="notes-versions" name="notes-versions">Versions</a></h3>\n'
+        '\n'
+        '<p>Products may have versions.  This allows more accurate bug\n'
+        'reporting: "we saw it in 1.3.7b3".'
+    ),
     ('2.10', None, 'Versions are\ntotally independent of milestones.'),
-    '</p>\n'
-    '\n'
-    '<h3><a id="notes-parameters" name="notes-parameters">Parameters</a></h3>\n'
-    '\n'
-    '<p>The operation of Bugzilla is controlled by parameters.  These are\n'
-    'set in editparams.cgi.  The current values are stored in data/params.\n'
-    'They are <b>not</b> stored in the database.</p>\n'
-    '<p>',
+    (
+        '</p>\n'
+        '\n'
+        '<h3><a id="notes-parameters" name="notes-parameters">Parameters</a></h3>\n'
+        '\n'
+        '<p>The operation of Bugzilla is controlled by parameters.  These are\n'
+        'set in editparams.cgi.  The current values are stored in data/params.\n'
+        'They are <b>not</b> stored in the database.</p>\n'
+        '<p>'
+    ),
     (
         None,
         '2.21.1',
@@ -4202,383 +4289,356 @@ prelude = [
     (
         '2.22rc1',
         None,
-        '%(VERSION_STRING)sThe set of parameters is defined in the modules in '
-        'Bugzilla/Config/.',
+        (
+            '%(VERSION_STRING)sThe set of parameters is defined in the modules in '
+            'Bugzilla/Config/.'
+        ),
     ),
     '</p>\n\n',
     (
         '2.4',
         None,
-        '<h3><a id="notes-groups" name="notes-groups">Groups</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugzilla has "groups" of users.  Membership of a\n'
-        'group allows a user to perform certain tasks.  Each group is\n'
-        'represented by a row of %(the-table-groups)s.</p>\n'
-        '\n'
-        '<p>There are a number of built-in groups, as follows:</p>\n'
-        '\n'
-        '<table border="1" cellspacing="0" cellpadding="5">\n'
-        '  <tr align="left" valign="top">\n'
-        '\n'
-        '    <th>Name</th>\n'
-        '\n'
-        '    <th>Description</th>\n'
-        '\n'
-        '  </tr>\n'
-        '\n',
+        (
+            '<h3><a id="notes-groups" name="notes-groups">Groups</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugzilla has "groups" of users.  Membership of a\n'
+            'group allows a user to perform certain tasks.  Each group is\n'
+            'represented by a row of %(the-table-groups)s.</p>\n'
+            '\n'
+            '<p>There are a number of built-in groups, as follows:</p>\n'
+            '\n'
+            '<table border="1" cellspacing="0" cellpadding="5">\n'
+            '  <tr align="left" valign="top">\n'
+            '\n'
+            '    <th>Name</th>\n'
+            '\n'
+            '    <th>Description</th>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+        ),
     ),
     (
         '2.17.1',
         None,
-        '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>admin</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)s Can administer all aspects of Bugzilla</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n',
+        (
+            '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>admin</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)s Can administer all aspects of Bugzilla</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+        ),
     ),
     (
         '2.4',
         None,
-        ' <tr align="left" valign="top">\n'
-        '\n'
-        '    <td>tweakparams</td>\n'
-        '\n'
-        '    <td>Can tweak operating parameters</td>\n'
-        '\n'
-        '  </tr>',
+        (
+            ' <tr align="left" valign="top">\n'
+            '\n'
+            '    <td>tweakparams</td>\n'
+            '\n'
+            '    <td>Can tweak operating parameters</td>\n'
+            '\n'
+            '  </tr>'
+        ),
     ),
     (
         '2.4',
         '2.8',
-        '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>editgroupmembers</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)sCan put people in and out of groups</td>\n'
-        '\n'
-        '  </tr>',
+        (
+            '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>editgroupmembers</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sCan put people in and out of groups</td>\n'
+            '\n'
+            '  </tr>'
+        ),
     ),
     (
         '2.10',
         None,
-        '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>editusers</td>\n'
-        '\n'
-        '    <td>Can edit or disable users</td>\n'
-        '\n'
-        '  </tr>',
+        (
+            '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>editusers</td>\n'
+            '\n'
+            '    <td>Can edit or disable users</td>\n'
+            '\n'
+            '  </tr>'
+        ),
     ),
     (
         '2.4',
         None,
-        '<tr align="left" valign="top">\n'
-        '\n'
-        '    <td>creategroups</td>\n'
-        '\n'
-        '    <td>Can create and destroy groups</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n'
-        '  <tr align="left" valign="top">\n'
-        '\n'
-        '    <td>editcomponents</td>\n'
-        '\n'
-        '    <td>Can create, destroy, and edit components and other controls (e.g. '
-        'flagtypes).</td>\n'
-        '\n'
-        '  </tr>',
+        (
+            '<tr align="left" valign="top">\n'
+            '\n'
+            '    <td>creategroups</td>\n'
+            '\n'
+            '    <td>Can create and destroy groups</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+            '  <tr align="left" valign="top">\n'
+            '\n'
+            '    <td>editcomponents</td>\n'
+            '\n'
+            '    <td>Can create, destroy, and edit components and other controls (e.g. '
+            'flagtypes).</td>\n'
+            '\n'
+            '  </tr>'
+        ),
     ),
     (
         '2.10',
         None,
-        '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>editkeywords</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)sCan create, destroy, and edit keywords</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n'
-        '  <tr %(VERSION_COLOUR)salign="left" valign="top">\n'
-        '\n'
-        '    <td>editbugs</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)sCan edit all aspects of any bug</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n'
-        '  <tr %(VERSION_COLOUR)salign="left" valign="top">\n'
-        '\n'
-        '    <td>canconfirm</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)sCan confirm a bug</td>\n'
-        '\n'
-        '  </tr>',
+        (
+            '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>editkeywords</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sCan create, destroy, and edit keywords</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+            '  <tr %(VERSION_COLOUR)salign="left" valign="top">\n'
+            '\n'
+            '    <td>editbugs</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sCan edit all aspects of any bug</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+            '  <tr %(VERSION_COLOUR)salign="left" valign="top">\n'
+            '\n'
+            '    <td>canconfirm</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)sCan confirm a bug</td>\n'
+            '\n'
+            '  </tr>'
+        ),
     ),
     (
         '2.19.1',
         None,
-        '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>editclassifications</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)s Can edit classifications</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n'
-        '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>bz_canusewhines</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)s Can configure whine reports for self</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n'
-        '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>bz_canusewhineatothers</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)s Can configure whine reports for other '
-        'users</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n',
+        (
+            '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>editclassifications</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)s Can edit classifications</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+            '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>bz_canusewhines</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)s Can configure whine reports for self</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+            '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>bz_canusewhineatothers</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)s Can configure whine reports for other '
+            'users</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+        ),
     ),
     (
         '2.22rc1',
         None,
-        '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>bz_sudoers</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)s Can impersonate another user</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n'
-        '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '\n'
-        '    <td>bz_sudo_protect</td>\n'
-        '\n'
-        '    <td>%(VERSION_STRING)s Cannot be impersonated</td>\n'
-        '\n'
-        '  </tr>\n'
-        '\n',
+        (
+            '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>bz_sudoers</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)s Can impersonate another user</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+            '  <tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '\n'
+            '    <td>bz_sudo_protect</td>\n'
+            '\n'
+            '    <td>%(VERSION_STRING)s Cannot be impersonated</td>\n'
+            '\n'
+            '  </tr>\n'
+            '\n'
+        ),
     ),
     (
         '2.4',
         None,
-        '</table>\n'
-        '\n'
-        '<p>New groups may be added and used to control access to sets of bugs.\n'
-        'These "bug groups" have %(column-groups-isbuggroup)s set to 1.  A bug\n'
-        'may be in any number of bug groups.  To see a bug, a user must be a\n'
-        'member of all the bug groups which the bug is in.</p>',
+        (
+            '</table>\n'
+            '\n'
+            '<p>New groups may be added and used to control access to sets of bugs.\n'
+            'These "bug groups" have %(column-groups-isbuggroup)s set to 1.  A bug\n'
+            'may be in any number of bug groups.  To see a bug, a user must be a\n'
+            'member of all the bug groups which the bug is in.</p>'
+        ),
     ),
     (
         '2.10',
         None,
-        '<p>%(VERSION_STRING)sIf the parameter "usebuggroups"\n'
-        'is on, each product automatically has a bug group associated with it.\n'
-        'If the parameter "usebuggroupsentry" is also on, a user must be in the\n'
-        'product\'s bug group in order to create new bugs for the\n'
-        'product.</p>',
+        (
+            '<p>%(VERSION_STRING)sIf the parameter "usebuggroups"\n'
+            'is on, each product automatically has a bug group associated with it.\n'
+            'If the parameter "usebuggroupsentry" is also on, a user must be in the\n'
+            'product\'s bug group in order to create new bugs for the\n'
+            'product.</p>'
+        ),
     ),
     (
         '2.10',
         None,
-        '<p>%(VERSION_STRING)sUsers may be added to a group\n'
-        'by any user who has the "bless" property for that group.  The "bless"\n'
-        'property itself may only be conferred by an administrator.</p>',
+        (
+            '<p>%(VERSION_STRING)sUsers may be added to a group\n'
+            'by any user who has the "bless" property for that group.  The "bless"\n'
+            'property itself may only be conferred by an administrator.</p>'
+        ),
     ),
     (
         '2.4',
         None,
-        '<p>Group membership for new users and new groups is\n'
-        'determined by matching %(column-groups-userregexp)s against the user\'s\n'
-        'email address.',
+        (
+            '<p>Group membership for new users and new groups is\n'
+            'determined by matching %(column-groups-userregexp)s against the user\'s\n'
+            'email address.'
+        ),
     ),
     (
         '2.10',
         None,
-        '%(VERSION_STRING)sThe default configuration has\n'
-        'universal regexps for the "editbugs" and "canconfirm" groups.',
+        (
+            '%(VERSION_STRING)sThe default configuration has\n'
+            'universal regexps for the "editbugs" and "canconfirm" groups.'
+        ),
     ),
     ('2.4', None, '</p>\n\n<p>'),
     (
         '2.4',
         '2.16.7',
-        '%(VERSION_STRING)sEach group corresponds to a bit\n'
-        'in a 64-bit bitset, %(column-groups-bit)s.  User\n'
-        'membership in a group is conferred by the bit being set in '
-        '%(column-profiles-groupset)s.  Bug\n'
-        'membership in a bug group is conferred by the bit being set in '
-        '%(column-bugs-groupset)s.',
+        (
+            '%(VERSION_STRING)sEach group corresponds to a bit\n'
+            'in a 64-bit bitset, %(column-groups-bit)s.  User\n'
+            'membership in a group is conferred by the bit being set in '
+            '%(column-profiles-groupset)s.  Bug\n'
+            'membership in a bug group is conferred by the bit being set in '
+            '%(column-bugs-groupset)s.'
+        ),
     ),
     (
         '2.10',
         '2.16.7',
-        '%(VERSION_STRING)sThe bless\n'
-        'privilege for a group is conferred by the bit being set in '
-        '%(column-profiles-blessgroupset)s.',
+        (
+            '%(VERSION_STRING)sThe bless\n'
+            'privilege for a group is conferred by the bit being set in '
+            '%(column-profiles-blessgroupset)s.'
+        ),
     ),
     (
         '2.17.1',
         None,
-        '%(VERSION_STRING)sUser membership in a group is\n'
-        'conferred by a row in %(the-table-user_group_map)s, with\n'
-        '%(column-user_group_map-isbless)s set to 0.  The bless privilege for a\n'
-        'group is conferred by a row with %(column-user_group_map-isbless)s set\n'
-        'to 1.  Bug membership in a bug group is conferred by a row in\n'
-        '%(the-table-bug_group_map)s.',
+        (
+            '%(VERSION_STRING)sUser membership in a group is\n'
+            'conferred by a row in %(the-table-user_group_map)s, with\n'
+            '%(column-user_group_map-isbless)s set to 0.  The bless privilege for a\n'
+            'group is conferred by a row with %(column-user_group_map-isbless)s set\n'
+            'to 1.  Bug membership in a bug group is conferred by a row in\n'
+            '%(the-table-bug_group_map)s.'
+        ),
     ),
     ('2.4', None, '</p>'),
     (
         '2.17.1',
         None,
-        '<p>%(VERSION_STRING)sGroups may be configured so\n'
-        'that membership in one group automatically confers membership or the\n'
-        '"bless" privilege for another group.  This is controlled by\n'
-        '%(the-table-group_group_map)s.</p>',
+        (
+            '<p>%(VERSION_STRING)sGroups may be configured so\n'
+            'that membership in one group automatically confers membership or the\n'
+            '"bless" privilege for another group.  This is controlled by\n'
+            '%(the-table-group_group_map)s.</p>'
+        ),
     ),
     (
         '2.19.1',
         None,
-        '<p>%(VERSION_STRING)sGroups may be configured so\n'
-        'that the existence of a group is not visible to members of another\n'
-        'group. This is controlled by %(the-table-group_group_map)s.</p>',
+        (
+            '<p>%(VERSION_STRING)sGroups may be configured so\n'
+            'that the existence of a group is not visible to members of another\n'
+            'group. This is controlled by %(the-table-group_group_map)s.</p>'
+        ),
     ),
     (
         '2.17.3',
         None,
-        '<p>%(VERSION_STRING)sA product may be configured\n'
-        'so that membership in one or more groups is required to perform\n'
-        'certain actions on bugs in the product.  Whether or not a new bug for\n'
-        'the product is placed in a group is also configurable (note that user\n'
-        'membership in a group is required to place an existing bug in that\n'
-        'group).  All this is controlled by %(the-table-group_control_map)s.</p>\n'
-        '\n'
-        '<p>The %(column-group_control_map-membercontrol)s and\n'
-        '%(column-group_control_map-othercontrol)s\n'
-        'columns of that table determine the treatment of a given group for a\n'
-        'new bug in a given product, depending on whether the bug is being\n'
-        'created by a member or non-member of that group respectively.  The\n'
-        'possible values of these columns are as follows:</p>\n'
-        '\n'
-        '<table border="1" cellspacing="0" cellpadding="5">\n'
-        '<tr>\n'
-        '  <th>value</th>\n'
-        '  <th>name</th>\n'
-        '  <th>meaning</th>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>0</td>\n'
-        '  <td>NA</td>\n'
-        '  <td>A bug for this product cannot be placed in this group.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>1</td>\n'
-        '  <td>Shown</td>\n'
-        '  <td>A bug for this product may be placed in this group, but will not be '
-        'by default.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>2</td>\n'
-        '  <td>Default</td>\n'
-        '  <td>A bug for this product may be placed in this group, and is by '
-        'default.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>3</td>\n'
-        '  <td>Mandatory</td>\n'
-        '  <td>A bug for this product is always placed in this group.</td>\n'
-        '</tr>\n'
-        '</table>\n'
-        '\n'
-        '<p>Only certain combinations of membercontrol/othercontrol are\n'
-        'permitted, as follows:</p>\n'
-        '\n'
-        '<table border="1" cellspacing="0" cellpadding="5">\n'
-        ' <tr>\n'
-        '  <th>membercontrol</th>\n'
-        '  <th>othercontrol</th>\n'
-        '  <th>Notes</th>\n'
-        '</tr>\n'
-        '<tr>\n'
-        '  <td>0(NA)</td>\n'
-        '  <td>0(NA)</td>\n'
-        '  <td>A bug for this product can never be placed in this group (so the\n'
-        '  option isn\'t presented).</td>\n'
-        '\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td rowspan="4">1 (Shown)</td>\n'
-        '  <td>0(NA)</td>\n'
-        '  <td>Only members can place a bug in this group.<b>This is the default '
-        'setting.</b></td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>1 (Shown)</td>\n'
-        '  <td>Anyone can place a new bug in this group.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>2 (Default)</td>\n'
-        '  <td>Anyone can place a bug in this group, and\n'
-        '  non-members will do so by default.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>3 (Mandatory)</td>\n'
-        '  <td>Anyone can place a bug in this group, and non-members will always do '
-        'so.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td rowspan="3">2 (Default)</td>\n'
-        '  <td>0(NA)</td>\n'
-        '  <td>Only members can place a bug in this group, and do so by '
-        'default.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>2 (Default)</td>\n'
-        '  <td>Anyone can place a bug in this group, and does so by default.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>3 (Mandatory)</td>\n'
-        '  <td>Members can place a bug in this group, and do so by default.\n'
-        '  Non-members always place a bug in this group.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr>\n'
-        '  <td>3(Mandatory)</td>\n'
-        '  <td>3(Mandatory)</td>\n'
-        '  <td>A bug for this product can never be removed from this group (so\n'
-        '  the option isn\'t presented).</td>\n'
-        '</tr>\n'
-        '</table>\n'
-        '\n',
+        (
+            '<p>%(VERSION_STRING)sA product may be configured\nso that membership in'
+            ' one or more groups is required to perform\ncertain actions on bugs in the'
+            ' product.  Whether or not a new bug for\nthe product is placed in a group'
+            ' is also configurable (note that user\nmembership in a group is required'
+            ' to place an existing bug in that\ngroup).  All this is controlled by'
+            ' %(the-table-group_control_map)s.</p>\n\n<p>The'
+            ' %(column-group_control_map-membercontrol)s'
+            ' and\n%(column-group_control_map-othercontrol)s\ncolumns of that table'
+            ' determine the treatment of a given group for a\nnew bug in a given'
+            ' product, depending on whether the bug is being\ncreated by a member or'
+            ' non-member of that group respectively.  The\npossible values of these'
+            ' columns are as follows:</p>\n\n<table border="1" cellspacing="0"'
+            ' cellpadding="5">\n<tr>\n  <th>value</th>\n  <th>name</th>\n '
+            ' <th>meaning</th>\n</tr>\n\n<tr>\n  <td>0</td>\n  <td>NA</td>\n  <td>A bug'
+            ' for this product cannot be placed in this group.</td>\n</tr>\n\n<tr>\n '
+            ' <td>1</td>\n  <td>Shown</td>\n  <td>A bug for this product may be placed'
+            ' in this group, but will not be by default.</td>\n</tr>\n\n<tr>\n '
+            ' <td>2</td>\n  <td>Default</td>\n  <td>A bug for this product may be'
+            ' placed in this group, and is by default.</td>\n</tr>\n\n<tr>\n '
+            ' <td>3</td>\n  <td>Mandatory</td>\n  <td>A bug for this product is always'
+            ' placed in this group.</td>\n</tr>\n</table>\n\n<p>Only certain'
+            ' combinations of membercontrol/othercontrol are\npermitted, as'
+            ' follows:</p>\n\n<table border="1" cellspacing="0" cellpadding="5">\n'
+            ' <tr>\n  <th>membercontrol</th>\n  <th>othercontrol</th>\n '
+            ' <th>Notes</th>\n</tr>\n<tr>\n  <td>0(NA)</td>\n  <td>0(NA)</td>\n  <td>A'
+            ' bug for this product can never be placed in this group (so the\n  option'
+            ' isn\'t presented).</td>\n\n</tr>\n\n<tr>\n  <td rowspan="4">1'
+            ' (Shown)</td>\n  <td>0(NA)</td>\n  <td>Only members can place a bug in'
+            ' this group.<b>This is the default setting.</b></td>\n</tr>\n\n<tr>\n '
+            ' <td>1 (Shown)</td>\n  <td>Anyone can place a new bug in this'
+            ' group.</td>\n</tr>\n\n<tr>\n  <td>2 (Default)</td>\n  <td>Anyone can'
+            ' place a bug in this group, and\n  non-members will do so by'
+            ' default.</td>\n</tr>\n\n<tr>\n  <td>3 (Mandatory)</td>\n  <td>Anyone can'
+            ' place a bug in this group, and non-members will always do'
+            ' so.</td>\n</tr>\n\n<tr>\n  <td rowspan="3">2 (Default)</td>\n '
+            ' <td>0(NA)</td>\n  <td>Only members can place a bug in this group, and do'
+            ' so by default.</td>\n</tr>\n\n<tr>\n  <td>2 (Default)</td>\n  <td>Anyone'
+            ' can place a bug in this group, and does so by'
+            ' default.</td>\n</tr>\n\n<tr>\n  <td>3 (Mandatory)</td>\n  <td>Members can'
+            ' place a bug in this group, and do so by default.\n  Non-members always'
+            ' place a bug in this group.</td>\n</tr>\n\n<tr>\n  <td>3(Mandatory)</td>\n'
+            '  <td>3(Mandatory)</td>\n  <td>A bug for this product can never be removed'
+            ' from this group (so\n  the option isn\'t'
+            ' presented).</td>\n</tr>\n</table>\n\n'
+        ),
     ),
     (
         '2.6',
         None,
-        '<h3><a id="notes-attachments" '
-        'name="notes-attachments">Attachments</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sUsers can upload attachments to bugs.  An\n'
-        'attachments can be marked as a patch.  Attachments are stored in\n'
-        '%(the-table-attachments)s.',
+        (
+            '<h3><a id="notes-attachments" '
+            'name="notes-attachments">Attachments</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sUsers can upload attachments to bugs.  An\n'
+            'attachments can be marked as a patch.  Attachments are stored in\n'
+            '%(the-table-attachments)s.'
+        ),
     ),
     (
         '2.16rc1',
@@ -4588,8 +4648,10 @@ prelude = [
     (
         '2.6',
         '2.20.7',
-        '%(VERSION_STRING)sAttachment data is stored in\n'
-        '%(column-attachments-thedata)s.',
+        (
+            '%(VERSION_STRING)sAttachment data is stored in\n'
+            '%(column-attachments-thedata)s.'
+        ),
     ),
     (
         '2.21.1',
@@ -4599,222 +4661,250 @@ prelude = [
     (
         '2.22rc1',
         None,
-        '%(VERSION_STRING)sAttachments can be URLs, marked\n'
-        'by the flag %(column-attachments-isurl)s.  The URL itself is stored in\n'
-        '%(column-attach_data-thedata)s.',
+        (
+            '%(VERSION_STRING)sAttachments can be URLs, marked\n'
+            'by the flag %(column-attachments-isurl)s.  The URL itself is stored in\n'
+            '%(column-attach_data-thedata)s.'
+        ),
     ),
     '</p>',
     (
         '2.16rc1',
         '2.16.7',
-        '<p>%(VERSION_STRING)sEach attachment may have\n'
-        'one of a number of "status" keywords associated with it.  The status\n'
-        'keywords are user-defined on a per-product basis.  The set of status\n'
-        'keywords is defined in %(the-table-attachstatusdefs)s.  Whether a\n'
-        'given attachment has a given status keyword is defined by\n'
-        '%(the-table-attachstatuses)s.</p>',
+        (
+            '<p>%(VERSION_STRING)sEach attachment may have\n'
+            'one of a number of "status" keywords associated with it.  The status\n'
+            'keywords are user-defined on a per-product basis.  The set of status\n'
+            'keywords is defined in %(the-table-attachstatusdefs)s.  Whether a\n'
+            'given attachment has a given status keyword is defined by\n'
+            '%(the-table-attachstatuses)s.</p>'
+        ),
     ),
     (
         '2.17.1',
         None,
-        '<p>%(VERSION_STRING)sAttachment statuses are\n'
-        'implemented with the <a href="#notes-flags">flags</a> system.</p>',
+        (
+            '<p>%(VERSION_STRING)sAttachment statuses are\n'
+            'implemented with the <a href="#notes-flags">flags</a> system.</p>'
+        ),
     ),
     (
         '2.17.1',
         None,
-        '\n'
-        '\n'
-        '<h3><a id="notes-flags" name="notes-flags">Flags</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugs and attachments may be marked with "flags".\n'
-        'The set of flag types is user-defined (using editflagtypes.cgi).  For\n'
-        'instance, a flag type might be "candidate for version 7.3 triage", or\n'
-        '"7.3" for short.  Flag types are recorded in %(the-table-flagtypes)s.\n'
-        'Each flag type is either for bugs or for attachments, not both.</p>\n'
-        '\n'
-        '<p>Actual flags are recorded in %(the-table-flags)s.  Each flag has a\n'
-        'status of "+" ("granted"), "-" ("denied") or "?" ("requested").  For\n'
-        'instance, one bug might have flag "7.3+", and another might have flag\n'
-        '"7.3-".</p>\n'
-        '\n'
-        '<p>A status of "?" indicates that a user has requested that this item\n'
-        'be given this flag.  There is an special interface for viewing request\n'
-        'flags (request.cgi).  A request flag may be marked for the attention\n'
-        'of a particular user, the "requestee".</p>\n'
-        '\n'
-        '<p>A flag type may have a "CC list" of email addresses, of people to\n'
-        'notify when a flag is requested.</p>\n'
-        '\n'
-        '<p>By default, a single bug or attachment may receive several flags of\n'
-        'the same type, with the same or different statuses and the same or\n'
-        'different requestees.  This may be disabled for any given flag\n'
-        'type.</p>\n'
-        '\n'
-        '<p>Particular flag types may only be available to bugs in certain\n'
-        'products and components (or their attachments).  This is recorded in\n'
-        '%(the-table-flaginclusions)s.  Particular flag types may <em>not</em>\n'
-        'be available to bugs in certain products and components (or their\n'
-        'attachments).  This is recorded in %(the-table-flagexclusions)s.</p>\n'
-        '\n'
-        '<p>Various features of flag types may be disabled: they can be made\n'
-        'inactive, not requestable, not "requesteeable", not "multiplicable".</p>\n'
-        '\n',
+        (
+            '\n'
+            '\n'
+            '<h3><a id="notes-flags" name="notes-flags">Flags</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugs and attachments may be marked with "flags".\n'
+            'The set of flag types is user-defined (using editflagtypes.cgi).  For\n'
+            'instance, a flag type might be "candidate for version 7.3 triage", or\n'
+            '"7.3" for short.  Flag types are recorded in %(the-table-flagtypes)s.\n'
+            'Each flag type is either for bugs or for attachments, not both.</p>\n'
+            '\n'
+            '<p>Actual flags are recorded in %(the-table-flags)s.  Each flag has a\n'
+            'status of "+" ("granted"), "-" ("denied") or "?" ("requested").  For\n'
+            'instance, one bug might have flag "7.3+", and another might have flag\n'
+            '"7.3-".</p>\n'
+            '\n'
+            '<p>A status of "?" indicates that a user has requested that this item\n'
+            'be given this flag.  There is an special interface for viewing request\n'
+            'flags (request.cgi).  A request flag may be marked for the attention\n'
+            'of a particular user, the "requestee".</p>\n'
+            '\n'
+            '<p>A flag type may have a "CC list" of email addresses, of people to\n'
+            'notify when a flag is requested.</p>\n'
+            '\n'
+            '<p>By default, a single bug or attachment may receive several flags of\n'
+            'the same type, with the same or different statuses and the same or\n'
+            'different requestees.  This may be disabled for any given flag\n'
+            'type.</p>\n'
+            '\n'
+            '<p>Particular flag types may only be available to bugs in certain\n'
+            'products and components (or their attachments).  This is recorded in\n'
+            '%(the-table-flaginclusions)s.  Particular flag types may <em>not</em>\n'
+            'be available to bugs in certain products and components (or their\n'
+            'attachments).  This is recorded in %(the-table-flagexclusions)s.</p>\n'
+            '\n'
+            '<p>Various features of flag types may be disabled: they can be made\n'
+            'inactive, not requestable, not "requesteeable", not "multiplicable".</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.10',
         None,
-        '\n'
-        '\n'
-        '<h3><a id="notes-keywords" name="notes-keywords">Keywords</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugzilla users can define a number of keywords,\n'
-        'and then give each bug a set of keywords.  This is mainly for use in\n'
-        'finding related bugs.  The keywords are stored in\n'
-        '%(the-table-keyworddefs)s, and the one-to-many mapping from bugs to\n'
-        'keywords is stored in %(the-table-keywords)s, and also in\n'
-        '%(column-bugs-keywords)s.</p>\n'
-        '\n',
+        (
+            '\n'
+            '\n'
+            '<h3><a id="notes-keywords" name="notes-keywords">Keywords</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugzilla users can define a number of keywords,\n'
+            'and then give each bug a set of keywords.  This is mainly for use in\n'
+            'finding related bugs.  The keywords are stored in\n'
+            '%(the-table-keyworddefs)s, and the one-to-many mapping from bugs to\n'
+            'keywords is stored in %(the-table-keywords)s, and also in\n'
+            '%(column-bugs-keywords)s.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.6',
         None,
-        '<h3><a id="notes-dependencies" '
-        'name="notes-dependencies">Dependencies</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugs may depend on other bugs being fixed.  That\n'
-        'is, it may be impossible to fix one bug until another one is fixed.\n'
-        'Bugzilla records and displays such information and uses it to notify\n'
-        'users when a bug changes (all contacts for all dependent bugs are\n'
-        'notified when a bug changes).</p>\n'
-        '\n'
-        '<p>Dependencies are recorded in %(the-table-dependencies)s.</p>',
+        (
+            '<h3><a id="notes-dependencies" '
+            'name="notes-dependencies">Dependencies</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugs may depend on other bugs being fixed.  That\n'
+            'is, it may be impossible to fix one bug until another one is fixed.\n'
+            'Bugzilla records and displays such information and uses it to notify\n'
+            'users when a bug changes (all contacts for all dependent bugs are\n'
+            'notified when a bug changes).</p>\n'
+            '\n'
+            '<p>Dependencies are recorded in %(the-table-dependencies)s.</p>'
+        ),
     ),
-    '<h3><a id="notes-activity" name="notes-activity">Activity</a></h3>\n'
-    '\n'
-    '<p>Bugzilla keeps a record of changes made to bugs.  This record is in\n'
-    '%(the-table-bugs_activity)s.  Each row in this table records a change\n'
-    'to a field in %(the-table-bugs)s.',
+    (
+        '<h3><a id="notes-activity" name="notes-activity">Activity</a></h3>\n'
+        '\n'
+        '<p>Bugzilla keeps a record of changes made to bugs.  This record is in\n'
+        '%(the-table-bugs_activity)s.  Each row in this table records a change\n'
+        'to a field in %(the-table-bugs)s.'
+    ),
     (
         '2.10',
         None,
-        '%(VERSION_STRING)sThe fields are referred to by a\n'
-        'number which is looked up in %(the-table-fielddefs)s.  This table\n'
-        'records the name of the field and also a longer description used to\n'
-        'display activity tables.',
+        (
+            '%(VERSION_STRING)sThe fields are referred to by a\n'
+            'number which is looked up in %(the-table-fielddefs)s.  This table\n'
+            'records the name of the field and also a longer description used to\n'
+            'display activity tables.'
+        ),
     ),
-    '</p>\n'
-    '\n'
-    '<h3><a id="notes-severity" name="notes-severity">Severity</a></h3>\n'
-    '\n'
-    '<p>Each bug has a "severity" field, %(column-bugs-bug_severity)s,\n'
-    'indicating the severity of the impact of the bug.  There is no code in\n'
-    'Bugzilla which distinguishes the values of this field, although it may\n'
-    'naturally be used in queries.',
+    (
+        '</p>\n'
+        '\n'
+        '<h3><a id="notes-severity" name="notes-severity">Severity</a></h3>\n'
+        '\n'
+        '<p>Each bug has a "severity" field, %(column-bugs-bug_severity)s,\n'
+        'indicating the severity of the impact of the bug.  There is no code in\n'
+        'Bugzilla which distinguishes the values of this field, although it may\n'
+        'naturally be used in queries.'
+    ),
     (
         '2.19.3',
         None,
-        '%(VERSION_STRING)sThe set of values available for\n'
-        'this field is stored in %(table-bug_severity)s and can be controlled\n'
-        'by the administrator. ',
+        (
+            '%(VERSION_STRING)sThe set of values available for\n'
+            'this field is stored in %(table-bug_severity)s and can be controlled\n'
+            'by the administrator. '
+        ),
     ),
-    'The intended meanings of the built-in values of this field are as\n'
-    'follows:</p>\n'
-    '\n'
-    '<table border="1" cellspacing="0" cellpadding="5">\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <th>Value</th>\n'
-    '\n'
-    '    <th>Intended meaning</th>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <td>Blocker</td>\n'
-    '\n'
-    '    <td>Blocks development and/or testing work</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <td>Critical</td>\n'
-    '\n'
-    '    <td>Crashes, loss of data, severe memory leak</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <td>Major</td>\n'
-    '\n'
-    '    <td>Major loss of function</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <td>Minor</td>\n'
-    '\n'
-    '    <td>Minor loss of function, or other problem where easy workaround is '
-    'present</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <td>Trivial</td>\n'
-    '\n'
-    '    <td>Cosmetic problem</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr align="left" valign="top">\n'
-    '\n'
-    '    <td>Enhancement</td>\n'
-    '\n'
-    '    <td>Request for enhancement</td>\n'
-    '\n'
-    '  </tr>\n'
-    '</table>\n'
-    '\n'
-    '<h3><a id="notes-email" name="notes-email">Email notification</a></h3>\n'
-    '\n'
-    '<p>When a bug changes, email notification is sent out to a number of\n'
-    'users:</p>\n'
-    '\n'
-    '<ul>\n'
-    '  <li>The bug\'s owner (%(column-bugs-assigned_to)s)</li>\n'
-    '  <li>The bug\'s reporter (%(column-bugs-reporter)s)</li>\n'
-    '  <li>The bug\'s QA contact, if the "useqacontact" parameter is set '
-    '(%(column-bugs-qa_contact)s)</li>\n'
-    '  <li>All the users who have explicitly asked to be notified when the bug '
-    'changes (these users are stored in %(the-table-cc)s).</li>\n'
-    '  <li>All the users who have voted for this bug (recorded in '
-    '%(the-table-votes)s).</li>\n'
-    '</ul>\n'
-    '\n'
-    '<p>',
+    (
+        'The intended meanings of the built-in values of this field are as\n'
+        'follows:</p>\n'
+        '\n'
+        '<table border="1" cellspacing="0" cellpadding="5">\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <th>Value</th>\n'
+        '\n'
+        '    <th>Intended meaning</th>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <td>Blocker</td>\n'
+        '\n'
+        '    <td>Blocks development and/or testing work</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <td>Critical</td>\n'
+        '\n'
+        '    <td>Crashes, loss of data, severe memory leak</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <td>Major</td>\n'
+        '\n'
+        '    <td>Major loss of function</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <td>Minor</td>\n'
+        '\n'
+        '    <td>Minor loss of function, or other problem where easy workaround is '
+        'present</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <td>Trivial</td>\n'
+        '\n'
+        '    <td>Cosmetic problem</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr align="left" valign="top">\n'
+        '\n'
+        '    <td>Enhancement</td>\n'
+        '\n'
+        '    <td>Request for enhancement</td>\n'
+        '\n'
+        '  </tr>\n'
+        '</table>\n'
+        '\n'
+        '<h3><a id="notes-email" name="notes-email">Email notification</a></h3>\n'
+        '\n'
+        '<p>When a bug changes, email notification is sent out to a number of\n'
+        'users:</p>\n'
+        '\n'
+        '<ul>\n'
+        '  <li>The bug\'s owner (%(column-bugs-assigned_to)s)</li>\n'
+        '  <li>The bug\'s reporter (%(column-bugs-reporter)s)</li>\n'
+        '  <li>The bug\'s QA contact, if the "useqacontact" parameter is set '
+        '(%(column-bugs-qa_contact)s)</li>\n'
+        '  <li>All the users who have explicitly asked to be notified when the bug '
+        'changes (these users are stored in %(the-table-cc)s).</li>\n'
+        '  <li>All the users who have voted for this bug (recorded in '
+        '%(the-table-votes)s).</li>\n'
+        '</ul>\n'
+        '\n'
+        '<p>'
+    ),
     (
         '2.12',
         None,
-        '%(VERSION_STRING)sIndividual users may filter\n'
-        'these messages according to the way in which the bug changes and their\n'
-        'relationship to the bug.\n',
+        (
+            '%(VERSION_STRING)sIndividual users may filter\n'
+            'these messages according to the way in which the bug changes and their\n'
+            'relationship to the bug.\n'
+        ),
     ),
     (
         '2.12',
         '2.19.2',
-        '%(VERSION_STRING)sThese filtering preferences are\n'
-        'recorded in %(column-profiles-emailflags)s.\n',
+        (
+            '%(VERSION_STRING)sThese filtering preferences are\n'
+            'recorded in %(column-profiles-emailflags)s.\n'
+        ),
     ),
     (
         '2.19.3',
         None,
-        '%(VERSION_STRING)sThese filtering preferences are\n'
-        'recorded in the %(table-email_setting)s table.\n',
+        (
+            '%(VERSION_STRING)sThese filtering preferences are\n'
+            'recorded in the %(table-email_setting)s table.\n'
+        ),
     ),
     ('2.12', None, '</p>\n\n<p>'),
     (
@@ -4825,27 +4915,33 @@ prelude = [
     (
         '2.17.4',
         None,
-        '%(VERSION_STRING)sThis is handled by the\n'
-        'Bugzilla::Bugmail module, which is invoked by the template system\n'
-        '(from Bugzilla::Template) when it encounters a call to SendBugMail()\n'
-        'in a template.  ',
+        (
+            '%(VERSION_STRING)sThis is handled by the\n'
+            'Bugzilla::Bugmail module, which is invoked by the template system\n'
+            '(from Bugzilla::Template) when it encounters a call to SendBugMail()\n'
+            'in a template.  '
+        ),
     ),
     (
         '3.3.1',
         None,
-        '</p>%(VERSION_STRING)sIf the parameter\n'
-        '"use_mailer_queue" is set, all email is queued to be sent\n'
-        'asynchronously.  This is managed by a third-party general-purpose Perl\n'
-        'job queueing system called TheSchwartz, using several database tables\n'
-        'of its own (%(table-ts_error)s, %(table-ts_exitstatus)s,\n'
-        '%(table-ts_funcmap)s, %(table-ts_job)s, and %(table-ts_note)s).',
+        (
+            '</p>%(VERSION_STRING)sIf the parameter\n'
+            '"use_mailer_queue" is set, all email is queued to be sent\n'
+            'asynchronously.  This is managed by a third-party general-purpose Perl\n'
+            'job queueing system called TheSchwartz, using several database tables\n'
+            'of its own (%(table-ts_error)s, %(table-ts_exitstatus)s,\n'
+            '%(table-ts_funcmap)s, %(table-ts_job)s, and %(table-ts_note)s).'
+        ),
     ),
-    '</p>\n'
-    '\n'
-    '<h3><a id="notes-descriptions" name="notes-descriptions">Long '
-    'descriptions</a></h3>\n'
-    '\n'
-    '<p>Each bug has a number of comments associated with it. ',
+    (
+        '</p>\n'
+        '\n'
+        '<h3><a id="notes-descriptions" name="notes-descriptions">Long '
+        'descriptions</a></h3>\n'
+        '\n'
+        '<p>Each bug has a number of comments associated with it. '
+    ),
     (
         None,
         '2.8',
@@ -4856,75 +4952,87 @@ prelude = [
         None,
         '%(VERSION_STRING)sThese are stored individually in\n%(the-table-longdescs)s.',
     ),
-    '</p>\n'
-    '\n'
-    '<p>They are displayed as the "Description" on the bug form, ordered by\n'
-    'date and annotated with the user and date.  Users can add new comments\n'
-    'with the "Additional comment" field on the bug form.</p>',
+    (
+        '</p>\n'
+        '\n'
+        '<p>They are displayed as the "Description" on the bug form, ordered by\n'
+        'date and annotated with the user and date.  Users can add new comments\n'
+        'with the "Additional comment" field on the bug form.</p>'
+    ),
     (
         '2.10',
         None,
-        '<h3><a id="notes-namedqueries" name="notes-namedqueries">Named '
-        'queries</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sUsers can name queries.  Links to named query\n'
-        'pages appear in a navigation footer bar on most Bugzilla pages.  A\n'
-        'query named "(Default query)" is a user\'s default query.  Named\n'
-        'queries are stored in %(the-table-namedqueries)s.</p>\n'
-        '\n',
+        (
+            '<h3><a id="notes-namedqueries" name="notes-namedqueries">Named '
+            'queries</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sUsers can name queries.  Links to named query\n'
+            'pages appear in a navigation footer bar on most Bugzilla pages.  A\n'
+            'query named "(Default query)" is a user\'s default query.  Named\n'
+            'queries are stored in %(the-table-namedqueries)s.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.23.3',
         None,
-        '<p>%(VERSION_STRING)sIf the parameter\n'
-        '"querysharegroup" is set, it names a group of users who are empowered\n'
-        'to share named queries.  An empowered user can share a given named\n'
-        'query they create with all the members of a group, as long as he or\n'
-        'she has the "bless" property for that group.  A query can only be\n'
-        'shared with a single group.  Sharing is recorded in\n'
-        '%(the-table-namedquery_group_map)s.</p>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sAny user able to use a given named query can\n'
-        'control whether or not that query appears in his or her navigation\n'
-        'footer bar.  This is recorded in\n'
-        '%(the-table-namedqueries_link_in_footer)s.</p>\n'
-        '\n',
+        (
+            '<p>%(VERSION_STRING)sIf the parameter\n'
+            '"querysharegroup" is set, it names a group of users who are empowered\n'
+            'to share named queries.  An empowered user can share a given named\n'
+            'query they create with all the members of a group, as long as he or\n'
+            'she has the "bless" property for that group.  A query can only be\n'
+            'shared with a single group.  Sharing is recorded in\n'
+            '%(the-table-namedquery_group_map)s.</p>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sAny user able to use a given named query can\n'
+            'control whether or not that query appears in his or her navigation\n'
+            'footer bar.  This is recorded in\n'
+            '%(the-table-namedqueries_link_in_footer)s.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.17.5',
         None,
-        '<h3><a id="notes-charts" name="notes-charts">Charts</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugzilla can draw general time-series charts.\n'
-        'There are a number of default time series.  Each product has a default\n'
-        'series for each bug status or resolution (for instance "how many bugs\n'
-        'are INVALID in product Foo") and each component has a default series\n'
-        'for all open bugs (UNCONFIRMED/NEW/ASSIGNED/REOPENED) and one for all\n'
-        'closed bugs (RESOLVED/VERIFIED/CLOSED).  A user can also define a new\n'
-        'time series based on any query, and give it a "frequency" (actually a\n'
-        'period, measured in days).  The set of series is stored in\n'
-        '%(the-table-series)s.</p>\n'
-        '\n'
-        '<p>To collect the data for the time series, the Bugzilla administrator\n'
-        'needs to arrange for the collectstats.pl script to be run every day.\n'
-        'This script stores the data in %(the-table-series_data)s.</p>\n'
-        '\n'
-        '<p>Series have categories and subcategories, which are provided in\n'
-        'order to make it easier to manage large numbers of series.  They are\n'
-        'normalized in %(the-table-series_categories)s.</p>\n',
+        (
+            '<h3><a id="notes-charts" name="notes-charts">Charts</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugzilla can draw general time-series charts.\n'
+            'There are a number of default time series.  Each product has a default\n'
+            'series for each bug status or resolution (for instance "how many bugs\n'
+            'are INVALID in product Foo") and each component has a default series\n'
+            'for all open bugs (UNCONFIRMED/NEW/ASSIGNED/REOPENED) and one for all\n'
+            'closed bugs (RESOLVED/VERIFIED/CLOSED).  A user can also define a new\n'
+            'time series based on any query, and give it a "frequency" (actually a\n'
+            'period, measured in days).  The set of series is stored in\n'
+            '%(the-table-series)s.</p>\n'
+            '\n'
+            '<p>To collect the data for the time series, the Bugzilla administrator\n'
+            'needs to arrange for the collectstats.pl script to be run every day.\n'
+            'This script stores the data in %(the-table-series_data)s.</p>\n'
+            '\n'
+            '<p>Series have categories and subcategories, which are provided in\n'
+            'order to make it easier to manage large numbers of series.  They are\n'
+            'normalized in %(the-table-series_categories)s.</p>\n'
+        ),
     ),
     (
         '2.17.5',
         None,
-        '<p>By default, a time series is "private": only\n'
-        'visible to the user who created it. An administrator may make a time\n'
-        'series "public", or visible to other users.',
+        (
+            '<p>By default, a time series is "private": only\n'
+            'visible to the user who created it. An administrator may make a time\n'
+            'series "public", or visible to other users.'
+        ),
     ),
     (
         '2.17.5',
         '2.18rc2',
-        '%(VERSION_STRING)s this is determined by the\n'
-        '"subscription" system (see below).',
+        (
+            '%(VERSION_STRING)s this is determined by the\n'
+            '"subscription" system (see below).'
+        ),
     ),
     (
         '2.18rc3',
@@ -4935,184 +5043,208 @@ prelude = [
     (
         '2.17.5',
         '2.18rc2',
-        '<p>%(VERSION_STRING)sIf a series is "private"\n'
-        '(not "public") then users may "subscribe" to it.  Each user is\n'
-        'automatically subscribed to any series created by that user.  The\n'
-        'subscription is recorded in %(the-table-user_series_map)s.  If all\n'
-        'users unsubscribe from a time series, data will stop being collected\n'
-        'on it (by setting the period to 0 days).  A series is "public" if\n'
-        '%(column-user_series_map-user_id)s is zero.</p> ',
+        (
+            '<p>%(VERSION_STRING)sIf a series is "private"\n'
+            '(not "public") then users may "subscribe" to it.  Each user is\n'
+            'automatically subscribed to any series created by that user.  The\n'
+            'subscription is recorded in %(the-table-user_series_map)s.  If all\n'
+            'users unsubscribe from a time series, data will stop being collected\n'
+            'on it (by setting the period to 0 days).  A series is "public" if\n'
+            '%(column-user_series_map-user_id)s is zero.</p> '
+        ),
     ),
     (
         '2.18rc3',
         None,
-        '<p>%(VERSION_STRING)sVisibility of a time series\n'
-        'to a user is determined on a per-category basis using the groups\n'
-        'system.  The group memberships required to see a time series in a\n'
-        'given category are recorded in %(the-table-category_group_map)s.  A\n'
-        'user may see a time series if they are in all the groups for the\n'
-        'category <em>and</em> either ths user created the series or it is\n'
-        'public.</p>\n'
-        '\n',
+        (
+            '<p>%(VERSION_STRING)sVisibility of a time series\n'
+            'to a user is determined on a per-category basis using the groups\n'
+            'system.  The group memberships required to see a time series in a\n'
+            'given category are recorded in %(the-table-category_group_map)s.  A\n'
+            'user may see a time series if they are in all the groups for the\n'
+            'category <em>and</em> either ths user created the series or it is\n'
+            'public.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.10',
         None,
-        '<h3><a id="notes-watchers"\n'
-        'name="notes-watchers">Watchers</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugzilla lets users "watch" each other; receiving\n'
-        'each other\'s Bugzilla email.  For instance, if Sam goes on holiday,\n'
-        'Phil can "watch" her, receiving all her Bugzilla email.  This is set\n'
-        'up by the user preferences (userprefs.cgi), recorded in\n'
-        '%(the-table-watch)s and handled by the <a href="#notes-email">email\n'
-        'subsystem</a>.</p>\n'
-        '\n',
+        (
+            '<h3><a id="notes-watchers"\n'
+            'name="notes-watchers">Watchers</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugzilla lets users "watch" each other; receiving\n'
+            'each other\'s Bugzilla email.  For instance, if Sam goes on holiday,\n'
+            'Phil can "watch" her, receiving all her Bugzilla email.  This is set\n'
+            'up by the user preferences (userprefs.cgi), recorded in\n'
+            '%(the-table-watch)s and handled by the <a href="#notes-email">email\n'
+            'subsystem</a>.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.10',
         '2.17.1',
-        '\n'
-        '<h3><a id="notes-shadow" name="notes-shadow">Shadow database</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)s: Bugzilla can maintain a shadow, read-only copy\n'
-        'of everything in another database (with the parameter "shadowdb").  If\n'
-        'the parameter "queryagainstshadowdb" is on, queries were run against\n'
-        'the shadow.  A record of SQL activity since the last reflection is\n'
-        'kept in %(the-table-shadowlog)s.</p>',
+        (
+            '\n'
+            '<h3><a id="notes-shadow" name="notes-shadow">Shadow database</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)s: Bugzilla can maintain a shadow, read-only copy\n'
+            'of everything in another database (with the parameter "shadowdb").  If\n'
+            'the parameter "queryagainstshadowdb" is on, queries were run against\n'
+            'the shadow.  A record of SQL activity since the last reflection is\n'
+            'kept in %(the-table-shadowlog)s.</p>'
+        ),
     ),
     (
         '2.17.1',
         None,
-        '\n'
-        '<h3><a id="notes-time-tracking" name="notes-time-tracking">Time '
-        'tracking</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)s Bugzilla can track time for each bug, if the\n'
-        '"timetrackinggroup" parameter is set.  Members of that group get the\n'
-        'ability to estimate the amount of effort (measured in hours) a bug\n'
-        'will take to fix, either when creating or when editing the bug.\n'
-        'Members of that group are also permitted to record hours of effort\n'
-        'spent on the bug</p>\n'
-        '\n'
-        '<p>%(column-longdescs-work_time)s\n'
-        'records each increment of work.  The sum of this column for a bug is\n'
-        'computed to display as "Hours Worked" for the bug.</p>\n'
-        '\n'
-        '<p>%(column-bugs-estimated_time)s is\n'
-        'the estimate for how much time the bug will take in total, displayed\n'
-        'as "Orig. Est.".  This can be changed by members of the\n'
-        'timetrackinggroup.</p>\n'
-        '\n'
-        '<p>%(column-bugs-remaining_time)s is\n'
-        'the current estimate for how much more time the bug will take to fix,\n'
-        'displayed as "Hours Left".  This can be changed by members of the\n'
-        'timetrackinggroup.</p>\n'
-        '\n'
-        '<p>The total of "Hours Left" and "Hours Worked" is shown as "Current\n'
-        'Est.": the current estimate of the total effort required to fix the\n'
-        'bug. "Hours Worked" as a percentage of "Current Est" is shown as "%%\n'
-        'Complete". "Current Est" deducted from "Orig. Est" is shown as\n'
-        '"Gain"</p>',
+        (
+            '\n'
+            '<h3><a id="notes-time-tracking" name="notes-time-tracking">Time '
+            'tracking</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)s Bugzilla can track time for each bug, if the\n'
+            '"timetrackinggroup" parameter is set.  Members of that group get the\n'
+            'ability to estimate the amount of effort (measured in hours) a bug\n'
+            'will take to fix, either when creating or when editing the bug.\n'
+            'Members of that group are also permitted to record hours of effort\n'
+            'spent on the bug</p>\n'
+            '\n'
+            '<p>%(column-longdescs-work_time)s\n'
+            'records each increment of work.  The sum of this column for a bug is\n'
+            'computed to display as "Hours Worked" for the bug.</p>\n'
+            '\n'
+            '<p>%(column-bugs-estimated_time)s is\n'
+            'the estimate for how much time the bug will take in total, displayed\n'
+            'as "Orig. Est.".  This can be changed by members of the\n'
+            'timetrackinggroup.</p>\n'
+            '\n'
+            '<p>%(column-bugs-remaining_time)s is\n'
+            'the current estimate for how much more time the bug will take to fix,\n'
+            'displayed as "Hours Left".  This can be changed by members of the\n'
+            'timetrackinggroup.</p>\n'
+            '\n'
+            '<p>The total of "Hours Left" and "Hours Worked" is shown as "Current\n'
+            'Est.": the current estimate of the total effort required to fix the\n'
+            'bug. "Hours Worked" as a percentage of "Current Est" is shown as "%%\n'
+            'Complete". "Current Est" deducted from "Orig. Est" is shown as\n'
+            '"Gain"</p>'
+        ),
     ),
     (
         '2.19.3',
         None,
-        '\n'
-        '<p>%(VERSION_STRING)s%(column-bugs-deadline)s records a calendar deadline '
-        'for the bug.</p>',
-    ),
-    '<h3><a id="notes-whine" name="notes-whine">The Whine System</a></h3>\n'
-    '\n'
-    '<p>Bugzilla has a system for sending "whine" email messages to\n'
-    'specified users on a regular basis.  This system relies on the\n'
-    'administrator configuring the Bugzilla server to run a script at\n'
-    'regular intervals (e.g. by using crontab).</p>\n'
-    '\n'
-    '<p>The <code>whineatnews.pl</code> script should be run once a day.\n'
-    'For each bug which has status NEW or REOPENED, and which has not\n'
-    'changed for a certain number of days, it sends a message to the bug\'s\n'
-    'owner.  The number of days is controlled by a Bugzilla parameter\n'
-    'called "whinedays".  The content of the email message is controlled by\n'
-    'a Bugzilla parameter called "whinemail".</p>',
-    (
-        '2.19.1',
-        None,
-        '<p>%(VERSION_STRING)sThe <code>whine.pl</code>\n'
-        'script runs a separate whine system, which allows a number of whine\n'
-        'schedules to be established with varying frequency (up to every 15\n'
-        'minutes), criteria, and content of whine messages.  It is configured\n'
-        'with <code>editwhines.cgi</code>.  Obviously, <code>whine.pl</code>\n'
-        'needs to be run every 15 minutes in order to send the most frequent\n'
-        'messages.</p>\n'
-        '\n'
-        '<p>Users must be in the bz_canusewhines group to configure whine\n'
-        'messages.  Users must be in the bz_canusewhineatothers group to\n'
-        'configure whine messages <em>to be sent to other users</em>.  These\n'
-        'restrictions are checked when configuring whine messages and also\n'
-        'before messages are sent, so removing a user from one of these groups\n'
-        'will disable any whines which that user has configured.</p>\n'
-        '\n'
-        '<p>A whine schedule, stored in %(the-table-whine_schedules)s,\n'
-        'specifies the frequency with which an email should be sent to a\n'
-        'particular user.  The email is specified with a whine event (see\n'
-        'below).  There is a variety of ways of specifying the frequency: both\n'
-        'days (every day, a particular day of the week, weekdays only, a\n'
-        'particular day of the month, the last day of the month) and times (a\n'
-        'particular hour, or every 15, 30, or 60 minutes).</p>\n'
-        '\n',
+        (
+            '\n'
+            '<p>%(VERSION_STRING)s%(column-bugs-deadline)s records a calendar deadline '
+            'for the bug.</p>'
+        ),
     ),
     (
-        '2.19.3',
-        None,
+        '<h3><a id="notes-whine" name="notes-whine">The Whine System</a></h3>\n'
         '\n'
-        '<p>%(VERSION_STRING)sWhines may be scheduled for groups as well as '
-        'users.</p>',
+        '<p>Bugzilla has a system for sending "whine" email messages to\n'
+        'specified users on a regular basis.  This system relies on the\n'
+        'administrator configuring the Bugzilla server to run a script at\n'
+        'regular intervals (e.g. by using crontab).</p>\n'
+        '\n'
+        '<p>The <code>whineatnews.pl</code> script should be run once a day.\n'
+        'For each bug which has status NEW or REOPENED, and which has not\n'
+        'changed for a certain number of days, it sends a message to the bug\'s\n'
+        'owner.  The number of days is controlled by a Bugzilla parameter\n'
+        'called "whinedays".  The content of the email message is controlled by\n'
+        'a Bugzilla parameter called "whinemail".</p>'
     ),
     (
         '2.19.1',
         None,
-        '\n'
-        '<p>A whine schedule, stored in %(the-table-whine_schedules)s,\n'
-        'specifies the frequency with which an email should be sent to a\n'
-        'particular user.  The email is specified with a whine event (see\n'
-        'below).  There is a variety of ways of specifying the frequency: both\n'
-        'days (every day, a particular day of the week, weekdays only, a\n'
-        'particular day of the month, the last day of the month) and times (a\n'
-        'particular hour, or every 15, 30, or 60 minutes).</p>\n'
-        '\n'
-        '<p>A whine event, stored in %(the-table-whine_events)s, describes an\n'
-        'email message: subject line and some body text to precede query\n'
-        'results.  A message may consist of more than one whine query.</p>\n'
-        '\n'
-        '<p>A whine query, stored in %(the-table-whine_queries)s is a <a\n'
-        'href="#notes-namedqueries">named query</a>, to which a title is given\n'
-        'for use in email messages.  Whine queries are stored in\n'
-        '%(the-table-whine_queries)s.  A whine query may specify that a\n'
-        'separate message is to be sent for each bug found.</p>\n',
+        (
+            '<p>%(VERSION_STRING)sThe <code>whine.pl</code>\n'
+            'script runs a separate whine system, which allows a number of whine\n'
+            'schedules to be established with varying frequency (up to every 15\n'
+            'minutes), criteria, and content of whine messages.  It is configured\n'
+            'with <code>editwhines.cgi</code>.  Obviously, <code>whine.pl</code>\n'
+            'needs to be run every 15 minutes in order to send the most frequent\n'
+            'messages.</p>\n'
+            '\n'
+            '<p>Users must be in the bz_canusewhines group to configure whine\n'
+            'messages.  Users must be in the bz_canusewhineatothers group to\n'
+            'configure whine messages <em>to be sent to other users</em>.  These\n'
+            'restrictions are checked when configuring whine messages and also\n'
+            'before messages are sent, so removing a user from one of these groups\n'
+            'will disable any whines which that user has configured.</p>\n'
+            '\n'
+            '<p>A whine schedule, stored in %(the-table-whine_schedules)s,\n'
+            'specifies the frequency with which an email should be sent to a\n'
+            'particular user.  The email is specified with a whine event (see\n'
+            'below).  There is a variety of ways of specifying the frequency: both\n'
+            'days (every day, a particular day of the week, weekdays only, a\n'
+            'particular day of the month, the last day of the month) and times (a\n'
+            'particular hour, or every 15, 30, or 60 minutes).</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.19.3',
         None,
-        '\n'
-        '<h3><a id="notes-settings" name="notes-settings">Settings</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sThere are several user-interface preferences,\n'
-        'each of which can take a number of values.  Each preference has a row\n'
-        'in the %(table-setting)s table, and possible values in the\n'
-        '%(table-setting_value)s table.  The administrator may set a default\n'
-        'value for each preference (%(column-setting-default_value)s) and\n'
-        'determine whether users are able to override the default\n'
-        '(%(column-setting-is_enabled)s).  The user\'s individual preferences\n'
-        'are recorded in the %(table-profile_setting)s table.</p>',
+        (
+            '\n'
+            '<p>%(VERSION_STRING)sWhines may be scheduled for groups as well as '
+            'users.</p>'
+        ),
     ),
-    '\n'
-    '\n'
-    '<h3><a id="notes-quips" name="notes-quips">Quips</a></h3>\n'
-    '\n'
-    '<p>Bugzilla supports "quips": small text messages, often humorous,\n'
-    'which appear along with search results.  The quips are selected at\n'
-    'random from a set.</p>',
+    (
+        '2.19.1',
+        None,
+        (
+            '\n'
+            '<p>A whine schedule, stored in %(the-table-whine_schedules)s,\n'
+            'specifies the frequency with which an email should be sent to a\n'
+            'particular user.  The email is specified with a whine event (see\n'
+            'below).  There is a variety of ways of specifying the frequency: both\n'
+            'days (every day, a particular day of the week, weekdays only, a\n'
+            'particular day of the month, the last day of the month) and times (a\n'
+            'particular hour, or every 15, 30, or 60 minutes).</p>\n'
+            '\n'
+            '<p>A whine event, stored in %(the-table-whine_events)s, describes an\n'
+            'email message: subject line and some body text to precede query\n'
+            'results.  A message may consist of more than one whine query.</p>\n'
+            '\n'
+            '<p>A whine query, stored in %(the-table-whine_queries)s is a <a\n'
+            'href="#notes-namedqueries">named query</a>, to which a title is given\n'
+            'for use in email messages.  Whine queries are stored in\n'
+            '%(the-table-whine_queries)s.  A whine query may specify that a\n'
+            'separate message is to be sent for each bug found.</p>\n'
+        ),
+    ),
+    (
+        '2.19.3',
+        None,
+        (
+            '\n'
+            '<h3><a id="notes-settings" name="notes-settings">Settings</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sThere are several user-interface preferences,\n'
+            'each of which can take a number of values.  Each preference has a row\n'
+            'in the %(table-setting)s table, and possible values in the\n'
+            '%(table-setting_value)s table.  The administrator may set a default\n'
+            'value for each preference (%(column-setting-default_value)s) and\n'
+            'determine whether users are able to override the default\n'
+            '(%(column-setting-is_enabled)s).  The user\'s individual preferences\n'
+            'are recorded in the %(table-profile_setting)s table.</p>'
+        ),
+    ),
+    (
+        '\n'
+        '\n'
+        '<h3><a id="notes-quips" name="notes-quips">Quips</a></h3>\n'
+        '\n'
+        '<p>Bugzilla supports "quips": small text messages, often humorous,\n'
+        'which appear along with search results.  The quips are selected at\n'
+        'random from a set.</p>'
+    ),
     (
         None,
         '2.16.7',
@@ -5126,501 +5258,436 @@ prelude = [
     (
         '2.14',
         None,
-        '<p>%(VERSION_STRING)sQuips may be entered or deleted\n'
-        'using <code>quips.cgi</code>.</p>',
+        (
+            '<p>%(VERSION_STRING)sQuips may be entered or deleted\n'
+            'using <code>quips.cgi</code>.</p>'
+        ),
     ),
     (
         '2.17.4',
         None,
-        '<p>%(VERSION_STRING)sQuips may be entered by any\n'
-        'user but must be approved by an administrator before they can be\n'
-        'displayed.</p>',
+        (
+            '<p>%(VERSION_STRING)sQuips may be entered by any\n'
+            'user but must be approved by an administrator before they can be\n'
+            'displayed.</p>'
+        ),
     ),
     (
         '3.3.2',
         None,
-        '\n'
-        '<h3><a id="notes-see_also" name="notes-see_also">References to other '
-        'Bugzillas</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugzilla can record connections to bugs in other\n'
-        'instances of Bugzilla, if the parameter "use_see_also" is set.  The\n'
-        'connections are displayed as clickable URLs and are stored as URLs in\n'
-        '%(the-table-bug_see_also)s.  They are validated according to the\n'
-        'system\'s notion of a valid form for Bugzilla URLs.</p> ',
+        (
+            '\n'
+            '<h3><a id="notes-see_also" name="notes-see_also">References to other '
+            'Bugzillas</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugzilla can record connections to bugs in other\n'
+            'instances of Bugzilla, if the parameter "use_see_also" is set.  The\n'
+            'connections are displayed as clickable URLs and are stored as URLs in\n'
+            '%(the-table-bug_see_also)s.  They are validated according to the\n'
+            'system\'s notion of a valid form for Bugzilla URLs.</p> '
+        ),
     ),
     (
         '2.23.1',
         None,
-        '\n'
-        '<h3><a id="notes-customfields" name="notes-customfields">Custom '
-        'Fields</a></h3>\n'
-        '\n'
-        '<p>%(VERSION_STRING)sBugzilla supports custom fields.  Each custom\n'
-        'field is a new column in %(the-table-bugs)s, with a name beginning\n'
-        '<code>cf_</code>.  The presence of each custom field is indicated by a\n'
-        'row in %(the-table-fielddefs)s, with %(column-fielddefs-custom)s set\n'
-        'to 1.  The type of each custom field is specified by\n'
-        '%(column-fielddefs-type)s:\n'
-        '\n'
-        '<p>The value 1 (FIELD_TYPE_FREETEXT) indicates a free-form text field\n'
-        '(type varchar(255)).</p>\n'
-        '\n',
+        (
+            '\n'
+            '<h3><a id="notes-customfields" name="notes-customfields">Custom '
+            'Fields</a></h3>\n'
+            '\n'
+            '<p>%(VERSION_STRING)sBugzilla supports custom fields.  Each custom\n'
+            'field is a new column in %(the-table-bugs)s, with a name beginning\n'
+            '<code>cf_</code>.  The presence of each custom field is indicated by a\n'
+            'row in %(the-table-fielddefs)s, with %(column-fielddefs-custom)s set\n'
+            'to 1.  The type of each custom field is specified by\n'
+            '%(column-fielddefs-type)s:\n'
+            '\n'
+            '<p>The value 1 (FIELD_TYPE_FREETEXT) indicates a free-form text field\n'
+            '(type varchar(255)).</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.23.3',
         None,
-        '\n'
-        '\n'
-        '<p>%(VERSION_STRING)sThe value 2 (FIELD_TYPE_SINGLE_SELECT) indicates\n'
-        'a single-select field (type varchar(64), not null, default \'---\').\n'
-        'The allowable values of that field are stored in a special table with\n'
-        'the same <code>cf_&lt;name&gt;</code> name as the field, and a schema\n'
-        'like this:</p>\n'
-        '\n'
-        '<table border="1" cellpadding="5" cellspacing="0">\n'
-        '\n'
-        '<tbody>\n'
-        '<a id="table-customfield" name="table-customfield"><tr align="left" '
-        'valign="top">\n'
-        '<th>Field</th>\n'
-        '<th>Type</th>\n'
-        '<th>Default</th>\n'
-        '<th>Properties</th>\n'
-        '<th>Remarks</th>\n'
-        '</tr></a>\n'
-        '\n'
-        '<tr align="left" valign="top">\n'
-        '<th><a id="column-customfield-id" name="column-customfield-id">id</a></th>\n'
-        '<td>smallint</td>\n'
-        '<td>0</td>\n'
-        '<td>auto_increment</td>\n'
-        '<td>a unique ID.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr align="left" valign="top">\n'
-        '<th><a id="column-customfield-value" '
-        'name="column-customfield-value">value</a></th>\n'
-        '<td>varchar(64)</td>\n'
-        '<td>\'\'</td>\n'
-        '<td>-</td>\n'
-        '<td>the text value</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr align="left" valign="top">\n'
-        '<th><a id="column-customfield-sortkey" '
-        'name="column-customfield-sortkey">sortkey</a></th>\n'
-        '<td>smallint</td>\n'
-        '<td>0</td>\n'
-        '<td>-</td>\n'
-        '<td>a number determining the order in which values appear.</td>\n'
-        '</tr>\n'
-        '\n'
-        '<tr align="left" valign="top">\n'
-        '<th><a id="column-customfield-isactive" '
-        'name="column-customfield-isactive">isactive</a></th>\n'
-        '<td>tinyint</td>\n'
-        '<td>1</td>\n'
-        '<td>-</td>\n'
-        '<td>1 if this value is currently available, 0 otherwise</td>\n'
-        '</tr>\n',
+        (
+            '\n\n<p>%(VERSION_STRING)sThe value 2 (FIELD_TYPE_SINGLE_SELECT)'
+            ' indicates\na single-select field (type varchar(64), not null, default'
+            ' \'---\').\nThe allowable values of that field are stored in a special'
+            ' table with\nthe same <code>cf_&lt;name&gt;</code> name as the field, and'
+            ' a schema\nlike this:</p>\n\n<table border="1" cellpadding="5"'
+            ' cellspacing="0">\n\n<tbody>\n<a id="table-customfield"'
+            ' name="table-customfield"><tr align="left"'
+            ' valign="top">\n<th>Field</th>\n<th>Type</th>\n<th>Default</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr></a>\n\n<tr'
+            ' align="left" valign="top">\n<th><a id="column-customfield-id"'
+            ' name="column-customfield-id">id</a></th>\n<td>smallint</td>\n<td>0</td>\n<td>auto_increment</td>\n<td>a'
+            ' unique ID.</td>\n</tr>\n\n<tr align="left" valign="top">\n<th><a'
+            ' id="column-customfield-value"'
+            ' name="column-customfield-value">value</a></th>\n<td>varchar(64)</td>\n<td>\'\'</td>\n<td>-</td>\n<td>the'
+            ' text value</td>\n</tr>\n\n<tr align="left" valign="top">\n<th><a'
+            ' id="column-customfield-sortkey"'
+            ' name="column-customfield-sortkey">sortkey</a></th>\n<td>smallint</td>\n<td>0</td>\n<td>-</td>\n<td>a'
+            ' number determining the order in which values appear.</td>\n</tr>\n\n<tr'
+            ' align="left" valign="top">\n<th><a id="column-customfield-isactive"'
+            ' name="column-customfield-isactive">isactive</a></th>\n<td>tinyint</td>\n<td>1</td>\n<td>-</td>\n<td>1'
+            ' if this value is currently available, 0 otherwise</td>\n</tr>\n'
+        ),
     ),
     (
         '3.3.1',
         None,
-        '\n'
-        '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '<th><a id="column-customfield-visibility_value_id" '
-        'name="column-customfield-visibility_value_id">visibility_value_id</a></th>\n'
-        '<td>smallint</td>\n'
-        '<td>0</td>\n'
-        '<td>-</td>\n'
-        '<td>If set, this value is only available if the chooser field (identified '
-        'by %(column-fielddefs-value_field_id)s) has the value with this ID.  '
-        'Foreign key &lt;field&gt;.id, for example %(column-products-id)s or <a '
-        'href="#column-customfield-id">cf_&lt;field&gt;.id</a>.</td>\n'
-        '</tr>\n',
+        (
+            '\n<tr %(VERSION_COLOUR)s align="left" valign="top">\n<th><a'
+            ' id="column-customfield-visibility_value_id"'
+            ' name="column-customfield-visibility_value_id">visibility_value_id</a></th>\n<td>smallint</td>\n<td>0</td>\n<td>-</td>\n<td>If'
+            ' set, this value is only available if the chooser field (identified by'
+            ' %(column-fielddefs-value_field_id)s) has the value with this ID.  Foreign'
+            ' key &lt;field&gt;.id, for example %(column-products-id)s or <a'
+            ' href="#column-customfield-id">cf_&lt;field&gt;.id</a>.</td>\n</tr>\n'
+        ),
     ),
     (
         '2.23.3',
         None,
-        '\n\n</tbody></table>\n\n<p>Indexes:</p>\n\n<table border="1" cellpadding="5"'
-        ' cellspacing="0">\n\n<tbody>\n<tr align="left"'
-        ' valign="top">\n<th>Name</th>\n<th>Fields</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr>\n\n<tr'
-        ' align="left" valign="top">\n<th><a id="index-customfield-PRIMARY"'
-        ' name="index-customfield-PRIMARY">PRIMARY</a></th>\n<td>id</td>\n<td>unique</td>\n<td>-</td>\n</tr>\n\n<tr'
-        ' align="left" valign="top">\n<th><a id="index-customfield-cf_field_value_idx"'
-        ' name="index-customfield-cf_field_value_idx">cf_&lt;field&gt;_value_idx</a></th>\n<td>value</td>\n<td>unique</td>\n<td>-</td>\n</tr>\n\n<tr'
-        ' align="left" valign="top">\n<th><a'
-        ' id="index-customfield-cf_field_sortkey_idx"'
-        ' name="index-customfield-cf_field_sortkey_idx">cf_&lt;field&gt;_sortkey_idx</a></th>\n<td>sortkey</td>\n'
-        ' <td>-</td>\n<td>-</td>\n</tr>\n\n',
+        (
+            '\n\n</tbody></table>\n\n<p>Indexes:</p>\n\n<table border="1"'
+            ' cellpadding="5" cellspacing="0">\n\n<tbody>\n<tr align="left"'
+            ' valign="top">\n<th>Name</th>\n<th>Fields</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr>\n\n<tr'
+            ' align="left" valign="top">\n<th><a id="index-customfield-PRIMARY"'
+            ' name="index-customfield-PRIMARY">PRIMARY</a></th>\n<td>id</td>\n<td>unique</td>\n<td>-</td>\n</tr>\n\n<tr'
+            ' align="left" valign="top">\n<th><a'
+            ' id="index-customfield-cf_field_value_idx"'
+            ' name="index-customfield-cf_field_value_idx">cf_&lt;field&gt;_value_idx</a></th>\n<td>value</td>\n<td>unique</td>\n<td>-</td>\n</tr>\n\n<tr'
+            ' align="left" valign="top">\n<th><a'
+            ' id="index-customfield-cf_field_sortkey_idx"'
+            ' name="index-customfield-cf_field_sortkey_idx">cf_&lt;field&gt;_sortkey_idx</a></th>\n<td>sortkey</td>\n'
+            ' <td>-</td>\n<td>-</td>\n</tr>\n\n'
+        ),
     ),
     (
         '3.3.1',
         None,
-        '\n'
-        '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
-        '<th><a id="index-customfield-cf_field_visibility_value_id_idx" '
-        'name="index-customfield-cf_field_visibility_value_id_idx">cf_&lt;field&gt;_visibility_value_id_idx</a></th>\n'
-        '<td>visibility_value_id</td>\n'
-        '<td>-</td>\n'
-        '<td>-</td>\n'
-        '</tr>\n',
+        (
+            '\n'
+            '<tr %(VERSION_COLOUR)s align="left" valign="top">\n'
+            '<th><a id="index-customfield-cf_field_visibility_value_id_idx" '
+            'name="index-customfield-cf_field_visibility_value_id_idx">cf_&lt;field&gt;_visibility_value_id_idx</a></th>\n'
+            '<td>visibility_value_id</td>\n'
+            '<td>-</td>\n'
+            '<td>-</td>\n'
+            '</tr>\n'
+        ),
     ),
     ('2.23.3', None, '</tbody></table>'),
     (
         '3.1.2',
         None,
-        '<p>%(VERSION_STRING)sThe value 3 (FIELD_TYPE_MULTI_SELECT)\nindicates a'
-        ' multi-select field.  The allowable values of that field\nare stored in a'
-        ' <code>cf_&lt;name&gt;</code> table as for\nFIELD_TYPE_SINGLE_SELECT, above. '
-        ' The actual values of the field are\nnot stored in %(the-table-bugs)s, unlike'
-        ' other custom fields, Instead\nthey are stored in another table, with the'
-        ' name\n<code>bug_cf_&lt;name&gt;</code>, and a schema like this:</p>\n\n<table'
-        ' border="1" cellpadding="5" cellspacing="0">\n\n<tbody>\n<a'
-        ' id="table-multiselect" name="table-multiselect"><tr align="left"'
-        ' valign="top">\n<th>Field</th>\n<th>Type</th>\n<th>Default</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr></a>\n\n<tr'
-        ' align="left" valign="top">\n<th><a id="column-multiselect-bug_id"'
-        ' name="column-multiselect-bug_id">bug_id</a></th>\n<td>mediumint</td>\n<td>0</td>\n<td></td>\n<td>The'
-        ' bug ID (foreign key %(column-bugs-bug_id)s).</td>\n</tr>\n\n<tr align="left"'
-        ' valign="top">\n<th><a id="column-multiselect-value"'
-        ' name="column-multiselect-value">value</a></th>\n<td>varchar(64)</td>\n<td>\'\'</td>\n<td>-</td>\n<td>the'
-        ' value (foreign key <a'
-        ' href="#column-customfield-value">cf_&lt;name&gt;.value</a>).</td>\n</tr>\n</tbody></table>\n\n<p>Indexes:</p>\n\n<table'
-        ' border="1" cellpadding="5" cellspacing="0">\n\n<tbody>\n<tr align="left"'
-        ' valign="top">\n<th>Name</th>\n<th>Fields</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr>\n\n<tr'
-        ' align="left" valign="top">\n<th><a id="index-multiselect-cf_field_bug_id_idx"'
-        ' name="index-multiselect-cf_field_bug_id_idx">cf_&lt;field&gt;_bug_id_idx</a></th>\n<td>bug_id,'
-        ' value</td>\n<td>unique</td>\n<td>-</td>\n</tr>\n\n</tbody></table>\n\n<p>%(VERSION_STRING)sThe'
-        ' value 4 (FIELD_TYPE_TEXTAREA)\nindicates a large text-box field (type'
-        ' mediumtext).</p>\n',
+        (
+            '<p>%(VERSION_STRING)sThe value 3 (FIELD_TYPE_MULTI_SELECT)\nindicates a'
+            ' multi-select field.  The allowable values of that field\nare stored in a'
+            ' <code>cf_&lt;name&gt;</code> table as for\nFIELD_TYPE_SINGLE_SELECT,'
+            ' above.  The actual values of the field are\nnot stored in'
+            ' %(the-table-bugs)s, unlike other custom fields, Instead\nthey are stored'
+            ' in another table, with the name\n<code>bug_cf_&lt;name&gt;</code>, and a'
+            ' schema like this:</p>\n\n<table border="1" cellpadding="5"'
+            ' cellspacing="0">\n\n<tbody>\n<a id="table-multiselect"'
+            ' name="table-multiselect"><tr align="left"'
+            ' valign="top">\n<th>Field</th>\n<th>Type</th>\n<th>Default</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr></a>\n\n<tr'
+            ' align="left" valign="top">\n<th><a id="column-multiselect-bug_id"'
+            ' name="column-multiselect-bug_id">bug_id</a></th>\n<td>mediumint</td>\n<td>0</td>\n<td></td>\n<td>The'
+            ' bug ID (foreign key %(column-bugs-bug_id)s).</td>\n</tr>\n\n<tr'
+            ' align="left" valign="top">\n<th><a id="column-multiselect-value"'
+            ' name="column-multiselect-value">value</a></th>\n<td>varchar(64)</td>\n<td>\'\'</td>\n<td>-</td>\n<td>the'
+            ' value (foreign key <a'
+            ' href="#column-customfield-value">cf_&lt;name&gt;.value</a>).</td>\n</tr>\n</tbody></table>\n\n<p>Indexes:</p>\n\n<table'
+            ' border="1" cellpadding="5" cellspacing="0">\n\n<tbody>\n<tr align="left"'
+            ' valign="top">\n<th>Name</th>\n<th>Fields</th>\n<th>Properties</th>\n<th>Remarks</th>\n</tr>\n\n<tr'
+            ' align="left" valign="top">\n<th><a'
+            ' id="index-multiselect-cf_field_bug_id_idx"'
+            ' name="index-multiselect-cf_field_bug_id_idx">cf_&lt;field&gt;_bug_id_idx</a></th>\n<td>bug_id,'
+            ' value</td>\n<td>unique</td>\n<td>-</td>\n</tr>\n\n</tbody></table>\n\n<p>%(VERSION_STRING)sThe'
+            ' value 4 (FIELD_TYPE_TEXTAREA)\nindicates a large text-box field (type'
+            ' mediumtext).</p>\n'
+        ),
     ),
     (
         '3.1.3',
         None,
-        '<p>%(VERSION_STRING)sThe value 5 (FIELD_TYPE_DATETIME)\n'
-        'indicates a date/time field (type datetime).</p>\n',
+        (
+            '<p>%(VERSION_STRING)sThe value 5 (FIELD_TYPE_DATETIME)\n'
+            'indicates a date/time field (type datetime).</p>\n'
+        ),
     ),
     (
         '3.3.1',
         None,
-        '<p>%(VERSION_STRING)sThe value 6 (FIELD_TYPE_BUG_ID)\n'
-        'indicates a bug ID field (type mediumint).</p>\n',
+        (
+            '<p>%(VERSION_STRING)sThe value 6 (FIELD_TYPE_BUG_ID)\n'
+            'indicates a bug ID field (type mediumint).</p>\n'
+        ),
     ),
     (
         '2.23.1',
         '2.23.2',
-        '<p>%(VERSION_STRING)sCustom fields are\n'
-        'manipulated from the command-line with the <code>customfield.pl</code>\n'
-        'script.</p>',
+        (
+            '<p>%(VERSION_STRING)sCustom fields are\n'
+            'manipulated from the command-line with the <code>customfield.pl</code>\n'
+            'script.</p>'
+        ),
     ),
     (
         '2.23.3',
         None,
-        '<p>%(VERSION_STRING)sCustom fields are configured\n'
-        'using <code>editfield.cgi</code>.</p>',
+        (
+            '<p>%(VERSION_STRING)sCustom fields are configured\n'
+            'using <code>editfield.cgi</code>.</p>'
+        ),
     ),
-    '<h3><a id="notes-tables" name="notes-tables">List of tables</a></h3>\n'
-    '\n'
-    '%(TABLES_TABLE)s\n'
-    '\n'
-    '<h2><a id="section-3" name="section-3">3. The schema</a></h2>\n'
-    '\n',
+    (
+        '<h3><a id="notes-tables" name="notes-tables">List of tables</a></h3>\n'
+        '\n'
+        '%(TABLES_TABLE)s\n'
+        '\n'
+        '<h2><a id="section-3" name="section-3">3. The schema</a></h2>\n'
+        '\n'
+    ),
 ]
 
 # This afterword is included in the generated schema doc after the
 # schema itself.
 
 afterword = [
-    '\n'
-    '\n'
-    '<h2><a id="section-4" name="section-4">4. Bugzilla History</a></h2>\n'
-    '\n'
-    '<h3><a id="history-release-table" name="history-release-table">Bugzilla '
-    'releases</a></h3>\n'
-    '\n'
-    '<p>This table gives the dates of all the Bugzilla releases since 2.0.</p>\n'
-    '\n'
-    '<table border="1" cellspacing="0" cellpadding="5">\n'
-    '\n'
-    '<thead>\n'
-    '\n'
-    '  <tr align="left">\n'
-    '\n'
-    '    <th>Date</th>\n'
-    '\n'
-    '    <th>Release</th>\n'
-    '\n'
-    '    <th>Notes</th>\n'
-    '  </tr>\n'
-    '\n'
-    '</thead>\n'
-    '\n'
-    '<tbody>\n'
-    '%(VERSIONS_TABLE)s\n'
-    '</tbody>\n'
-    '</table>\n'
-    '\n'
-    '<h3><a id="history-schema-changes" name="history-schema-changes">Bugzilla '
-    'Schema Changes</a></h3>\n'
-    '\n',
+    (
+        '\n'
+        '\n'
+        '<h2><a id="section-4" name="section-4">4. Bugzilla History</a></h2>\n'
+        '\n'
+        '<h3><a id="history-release-table" name="history-release-table">Bugzilla '
+        'releases</a></h3>\n'
+        '\n'
+        '<p>This table gives the dates of all the Bugzilla releases since 2.0.</p>\n'
+        '\n'
+        '<table border="1" cellspacing="0" cellpadding="5">\n'
+        '\n'
+        '<thead>\n'
+        '\n'
+        '  <tr align="left">\n'
+        '\n'
+        '    <th>Date</th>\n'
+        '\n'
+        '    <th>Release</th>\n'
+        '\n'
+        '    <th>Notes</th>\n'
+        '  </tr>\n'
+        '\n'
+        '</thead>\n'
+        '\n'
+        '<tbody>\n'
+        '%(VERSIONS_TABLE)s\n'
+        '</tbody>\n'
+        '</table>\n'
+        '\n'
+        '<h3><a id="history-schema-changes" name="history-schema-changes">Bugzilla '
+        'Schema Changes</a></h3>\n'
+        '\n'
+    ),
     (
         '2.2',
         '2.2',
-        '<p>In Bugzilla release 2.2, the following schema\n'
-        'changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-products)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-qa_contact)s, %(column-bugs-status_whiteboard)s,\n'
-        '  and %(column-bugs-target_milestone)s were added.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-op_sys)s changed from tinytext to a non-null enum,\n'
-        '  default All.</li>\n'
-        '\n'
-        '  <li>\'X-Windows\' was removed from %(column-bugs-rep_platform)s.</li>\n'
-        '\n'
-        '  <li>%(column-components-description)s and\n'
-        '  %(column-components-initialqacontact)s were added.</li>\n'
-        '\n'
-        '  <li>%(column-components-initialowner)s became non-null default \'\'.</li>\n'
-        '\n'
-        '  <li>Indexes %(index-bugs-op_sys)s, %(index-bugs-qa_contact)s, and\n'
-        '  %(index-bugs-target_milestone)s were added.</li>\n'
-        '\n'
-        '  <li>Indexes %(index-cc-bug_id)s and %(index-cc-who)s were added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.2, the following schema\nchanges were'
+            ' made:</p>\n\n<ul>\n\n  <li>%(the-table-products)s was added.</li>\n\n '
+            ' <li>%(column-bugs-qa_contact)s, %(column-bugs-status_whiteboard)s,\n  and'
+            ' %(column-bugs-target_milestone)s were added.</li>\n\n '
+            ' <li>%(column-bugs-op_sys)s changed from tinytext to a non-null enum,\n '
+            ' default All.</li>\n\n  <li>\'X-Windows\' was removed from'
+            ' %(column-bugs-rep_platform)s.</li>\n\n '
+            ' <li>%(column-components-description)s and\n '
+            ' %(column-components-initialqacontact)s were added.</li>\n\n '
+            ' <li>%(column-components-initialowner)s became non-null default'
+            ' \'\'.</li>\n\n  <li>Indexes %(index-bugs-op_sys)s,'
+            ' %(index-bugs-qa_contact)s, and\n  %(index-bugs-target_milestone)s were'
+            ' added.</li>\n\n  <li>Indexes %(index-cc-bug_id)s and %(index-cc-who)s'
+            ' were added.</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '2.4',
         '2.4',
-        '<p>In Bugzilla release 2.4, the following schema\n'
-        'changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-groups)s, %(column-profiles-groupset)s, and\n'
-        '  %(column-bugs-groupset)s were added, introducing <a\n'
-        '  href="#notes-groups ">groups</a>.</li>\n'
-        '\n'
-        '  <li>%(the-table-dependencies)s was added, introducing <a\n'
-        '  href="#notes-dependencies">dependencies</a>.</li>\n'
-        '\n'
-        '  <li>The value \'blocker\' was added to %(column-bugs-bug_severity)s and the '
-        'default was change from \'critical\' to \'blocker\'.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-creation_ts)s became non-null, with default 0000-00-00 '
-        '00:00:00, and was added as the index %(index-bugs-creation_ts)s.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-emailnotification)s was added.</li>\n'
-        '\n'
-        '  <li>Additional values were permitted in %(column-bugs-op_sys)s.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.4, the following schema\nchanges were'
+            ' made:</p>\n\n<ul>\n\n  <li>%(the-table-groups)s,'
+            ' %(column-profiles-groupset)s, and\n  %(column-bugs-groupset)s were added,'
+            ' introducing <a\n  href="#notes-groups ">groups</a>.</li>\n\n '
+            ' <li>%(the-table-dependencies)s was added, introducing <a\n '
+            ' href="#notes-dependencies">dependencies</a>.</li>\n\n  <li>The value'
+            ' \'blocker\' was added to %(column-bugs-bug_severity)s and the default was'
+            ' change from \'critical\' to \'blocker\'.</li>\n\n '
+            ' <li>%(column-bugs-creation_ts)s became non-null, with default 0000-00-00'
+            ' 00:00:00, and was added as the index %(index-bugs-creation_ts)s.</li>\n\n'
+            '  <li>%(column-profiles-emailnotification)s was added.</li>\n\n '
+            ' <li>Additional values were permitted in'
+            ' %(column-bugs-op_sys)s.</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '2.6',
         '2.6',
-        '<p>In Bugzilla release 2.6, the following schema\n'
-        'changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-attachments)s was added, introducing <a\n'
-        '  href="#notes-attachments ">attachments</a>.</li>\n'
-        '\n'
-        '  <li>%(the-table-dependencies)s was added, introducing <a\n'
-        '  href="#notes-dependencies ">dependencies</a>.</li>\n'
-        '\n'
-        '  <li>The value \'blocker\' was added to %(column-bugs-bug_severity)s and the '
-        'default was change from \'critical\' to \'blocker\'.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-creation_ts)s became non-null, with default 0000-00-00 '
-        '00:00:00, and was added as the index %(index-bugs-creation_ts)s.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-emailnotification)s was added.</li>\n'
-        '\n'
-        '  <li>Additional values were permitted in %(column-bugs-op_sys)s.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.6, the following schema\nchanges were'
+            ' made:</p>\n\n<ul>\n\n  <li>%(the-table-attachments)s was added,'
+            ' introducing <a\n  href="#notes-attachments ">attachments</a>.</li>\n\n '
+            ' <li>%(the-table-dependencies)s was added, introducing <a\n '
+            ' href="#notes-dependencies ">dependencies</a>.</li>\n\n  <li>The value'
+            ' \'blocker\' was added to %(column-bugs-bug_severity)s and the default was'
+            ' change from \'critical\' to \'blocker\'.</li>\n\n '
+            ' <li>%(column-bugs-creation_ts)s became non-null, with default 0000-00-00'
+            ' 00:00:00, and was added as the index %(index-bugs-creation_ts)s.</li>\n\n'
+            '  <li>%(column-profiles-emailnotification)s was added.</li>\n\n '
+            ' <li>Additional values were permitted in'
+            ' %(column-bugs-op_sys)s.</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '2.8',
         '2.8',
-        '<p>In Bugzilla release 2.8, the following schema\n'
-        'changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-votes)s, %(column-bugs-votes)s, and\n'
-        '  %(column-products-votesperuser)s were added, introducing <a\n'
-        '  href="#notes-voting">voting</a>.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-product)s was changed from varchar(16) to varchar(64), '
-        'and %(column-products-product)s, %(column-versions-program)s, and '
-        '%(column-components-program)s were all changed from tinytext to '
-        'varchar(64), lengthening product names.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-area)s was removed.</li>\n'
-        '\n'
-        '  <li>%(column-bugs_activity-when)s was renamed as '
-        '%(column-bugs_activity-bug_when)s .</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.8, the following schema\nchanges were'
+            ' made:</p>\n\n<ul>\n\n  <li>%(the-table-votes)s, %(column-bugs-votes)s,'
+            ' and\n  %(column-products-votesperuser)s were added, introducing <a\n '
+            ' href="#notes-voting">voting</a>.</li>\n\n  <li>%(column-bugs-product)s'
+            ' was changed from varchar(16) to varchar(64), and'
+            ' %(column-products-product)s, %(column-versions-program)s, and'
+            ' %(column-components-program)s were all changed from tinytext to'
+            ' varchar(64), lengthening product names.</li>\n\n '
+            ' <li>%(column-bugs-area)s was removed.</li>\n\n '
+            ' <li>%(column-bugs_activity-when)s was renamed as'
+            ' %(column-bugs_activity-bug_when)s .</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '2.10',
         '2.10',
-        '<p>In Bugzilla release 2.10, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-keywords)s, %(the-table-keyworddefs)s, and\n'
-        '  %(column-bugs-keywords)s were added, giving <a\n'
-        '  href="#notes-keywords">keywords</a> to bugs.</li>\n'
-        '\n'
-        '  <li>%(the-table-milestones)s and\n'
-        '  %(column-products-defaultmilestone)s were added, to implement <a\n'
-        '  href="#notes-milestones">milestones</a>.</li>\n'
-        '\n'
-        '  <li>%(the-table-fielddefs)s was added, and\n'
-        '  %(column-bugs_activity-field)s was changed to\n'
-        '  %(column-bugs_activity-fieldid)s, decoupling bug history from field\n'
-        '  names and providing longer field descriptions in bug change\n'
-        '  reports.</li>\n'
-        '\n'
-        '  <li>%(the-table-longdescs)s was added, and %(column-bugs-long_desc)s\n'
-        '  was removed, allowing multiple comments per bug.</li>\n'
-        '\n'
-        '  <li>%(the-table-namedqueries)s was added, for <a\n'
-        '  href="#notes-named-queries">named queries</a>.</li>\n'
-        '\n'
-        '  <li>%(the-table-profiles_activity)s was added, recording activity in\n'
-        '  %(the-table-profiles)s.</li>\n'
-        '\n'
-        '  <li>%(the-table-shadowlog)s was added, recording SQL activity for\n'
-        '  reflection into a <a href="#notes-shadow">shadow database</a>.</li>\n'
-        '\n'
-        '  <li>%(the-table-watch)s was added, allowing <a\n'
-        '  href="#notes-watchers">watchers</a>.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-everconfirmed)s,\n'
-        '  %(column-products-maxvotesperbug)s, and\n'
-        '  %(column-products-votestoconfirm)s was added, and UNCONFIRMED was\n'
-        '  added to %(column-bugs-bug_status)s, introducing <a\n'
-        '  href="#notes-voting">bug confirmation by voting</a>.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-lastdiffed)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-blessgroupset)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-disabledtext)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-mybugslink)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-newemailtech)s was added.</li>\n'
-        '\n'
-        '  <li>Additional values were permitted in %(column-bugs-op_sys)s.</li>\n'
-        '\n'
-        '  <li>The default value of %(column-bugs-target_milestone)s changed from \'\' '
-        'to \'---\'.</li>\n'
-        '\n'
-        '  <li>%(column-versions-program)s changed from "null default None" to '
-        '"non-null default \'\'".</li>\n'
-        '\n'
-        '  <li>%(column-cc-who)s was added to the index %(index-cc-bug_id)s.</li>\n'
-        '\n'
-        '  <li>The index %(index-profiles-login_name)s was made unique.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.10, the following schema changes'
+            ' were\nmade:</p>\n\n<ul>\n\n  <li>%(the-table-keywords)s,'
+            ' %(the-table-keyworddefs)s, and\n  %(column-bugs-keywords)s were added,'
+            ' giving <a\n  href="#notes-keywords">keywords</a> to bugs.</li>\n\n '
+            ' <li>%(the-table-milestones)s and\n  %(column-products-defaultmilestone)s'
+            ' were added, to implement <a\n '
+            ' href="#notes-milestones">milestones</a>.</li>\n\n '
+            ' <li>%(the-table-fielddefs)s was added, and\n '
+            ' %(column-bugs_activity-field)s was changed to\n '
+            ' %(column-bugs_activity-fieldid)s, decoupling bug history from field\n '
+            ' names and providing longer field descriptions in bug change\n '
+            ' reports.</li>\n\n  <li>%(the-table-longdescs)s was added, and'
+            ' %(column-bugs-long_desc)s\n  was removed, allowing multiple comments per'
+            ' bug.</li>\n\n  <li>%(the-table-namedqueries)s was added, for <a\n '
+            ' href="#notes-named-queries">named queries</a>.</li>\n\n '
+            ' <li>%(the-table-profiles_activity)s was added, recording activity in\n '
+            ' %(the-table-profiles)s.</li>\n\n  <li>%(the-table-shadowlog)s was added,'
+            ' recording SQL activity for\n  reflection into a <a'
+            ' href="#notes-shadow">shadow database</a>.</li>\n\n '
+            ' <li>%(the-table-watch)s was added, allowing <a\n '
+            ' href="#notes-watchers">watchers</a>.</li>\n\n '
+            ' <li>%(column-bugs-everconfirmed)s,\n  %(column-products-maxvotesperbug)s,'
+            ' and\n  %(column-products-votestoconfirm)s was added, and UNCONFIRMED'
+            ' was\n  added to %(column-bugs-bug_status)s, introducing <a\n '
+            ' href="#notes-voting">bug confirmation by voting</a>.</li>\n\n '
+            ' <li>%(column-bugs-lastdiffed)s was added.</li>\n\n '
+            ' <li>%(column-profiles-blessgroupset)s was added.</li>\n\n '
+            ' <li>%(column-profiles-disabledtext)s was added.</li>\n\n '
+            ' <li>%(column-profiles-mybugslink)s was added.</li>\n\n '
+            ' <li>%(column-profiles-newemailtech)s was added.</li>\n\n  <li>Additional'
+            ' values were permitted in %(column-bugs-op_sys)s.</li>\n\n  <li>The'
+            ' default value of %(column-bugs-target_milestone)s changed from \'\' to'
+            ' \'---\'.</li>\n\n  <li>%(column-versions-program)s changed from "null'
+            ' default None" to "non-null default \'\'".</li>\n\n  <li>%(column-cc-who)s'
+            ' was added to the index %(index-cc-bug_id)s.</li>\n\n  <li>The index'
+            ' %(index-profiles-login_name)s was made unique.</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '2.12',
         '2.12',
-        '<p>In Bugzilla release 2.12, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '  <li>%(the-table-duplicates)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-emailflags)s was added.</li>\n'
-        '\n'
-        '  <li>The %(column-bugs-resolution)s value <b>MOVED</b> was\n'
-        '  added.</li>\n'
-        '\n'
-        '  <li>A number of additional values were permitted in '
-        '%(column-bugs-op_sys)s.</li>\n'
-        '\n'
-        '  <li>%(column-components-initialowner)s and\n'
-        '  %(column-components-initialqacontact)s changed from "tinytext"\n'
-        '  (foreign key %(column-profiles-login_name)s) to "mediumint" (foreign\n'
-        '  key %(column-profiles-userid)s), default 0.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-disabledtext)s\n'
-        '  changed from "not null" to "null".</li>\n'
-        '\n'
-        '  <li>The default value of %(column-profiles-newemailtech)s\n'
-        '  changed from 0 to 1.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.12, the following schema changes were\n'
+            'made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '  <li>%(the-table-duplicates)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-emailflags)s was added.</li>\n'
+            '\n'
+            '  <li>The %(column-bugs-resolution)s value <b>MOVED</b> was\n'
+            '  added.</li>\n'
+            '\n'
+            '  <li>A number of additional values were permitted in '
+            '%(column-bugs-op_sys)s.</li>\n'
+            '\n'
+            '  <li>%(column-components-initialowner)s and\n'
+            '  %(column-components-initialqacontact)s changed from "tinytext"\n'
+            '  (foreign key %(column-profiles-login_name)s) to "mediumint" (foreign\n'
+            '  key %(column-profiles-userid)s), default 0.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-disabledtext)s\n'
+            '  changed from "not null" to "null".</li>\n'
+            '\n'
+            '  <li>The default value of %(column-profiles-newemailtech)s\n'
+            '  changed from 0 to 1.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '2.14',
         '2.14',
-        '<p>In Bugzilla release 2.14, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '  <li>%(the-table-tokens)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-password)s was\n'
-        '  removed.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-cryptpassword)s and\n'
-        '  %(column-logincookies-cryptpassword)s\n'
-        '  were both changed from varchar(64) to varchar(32).</li>\n'
-        '\n'
-        '  <li>%(column-profiles-newemailtech)s was\n'
-        '  removed.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-emailnotification)s\n'
-        '  was removed.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-reporter_accessible)s,\n'
-        '  %(column-bugs-assignee_accessible)s,\n'
-        '  %(column-bugs-qacontact_accessible)s,\n'
-        '  and %(column-bugs-cclist_accessible)s\n'
-        '  were added.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-version)s changed from\n'
-        '  varchar(16) to varchar(64).</li>\n'
-        '\n'
-        '  <li>%(column-bugs_activity-oldvalue)s and\n'
-        '  %(column-bugs_activity-newvalue)s\n'
-        '  were replaced by %(column-bugs_activity-removed)s and\n'
-        '  %(column-bugs_activity-added)s.</li>\n'
-        '\n'
-        '  <li>%(column-groups-isactive)s was\n'
-        '  added.</li>\n'
-        '\n'
-        '  <li>%(column-longdescs-who)s became an\n'
-        '  index field.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-disabledtext)s\n'
-        '  changed back to "not null".</li>\n'
-        '\n'
-        '</ul>',
+        (
+            '<p>In Bugzilla release 2.14, the following schema changes were\n'
+            'made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '  <li>%(the-table-tokens)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-password)s was\n'
+            '  removed.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-cryptpassword)s and\n'
+            '  %(column-logincookies-cryptpassword)s\n'
+            '  were both changed from varchar(64) to varchar(32).</li>\n'
+            '\n'
+            '  <li>%(column-profiles-newemailtech)s was\n'
+            '  removed.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-emailnotification)s\n'
+            '  was removed.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-reporter_accessible)s,\n'
+            '  %(column-bugs-assignee_accessible)s,\n'
+            '  %(column-bugs-qacontact_accessible)s,\n'
+            '  and %(column-bugs-cclist_accessible)s\n'
+            '  were added.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-version)s changed from\n'
+            '  varchar(16) to varchar(64).</li>\n'
+            '\n'
+            '  <li>%(column-bugs_activity-oldvalue)s and\n'
+            '  %(column-bugs_activity-newvalue)s\n'
+            '  were replaced by %(column-bugs_activity-removed)s and\n'
+            '  %(column-bugs_activity-added)s.</li>\n'
+            '\n'
+            '  <li>%(column-groups-isactive)s was\n'
+            '  added.</li>\n'
+            '\n'
+            '  <li>%(column-longdescs-who)s became an\n'
+            '  index field.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-disabledtext)s\n'
+            '  changed back to "not null".</li>\n'
+            '\n'
+            '</ul>'
+        ),
     ),
     (
         '2.14',
@@ -5630,197 +5697,179 @@ afterword = [
     (
         '2.14.2',
         '2.14.2',
-        '<p>In Bugzilla release 2.14.2, the following schema change was\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-logincookies-hostname)s was\n'
-        '  replaced by %(column-logincookies-ipaddr)s.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.14.2, the following schema change was\n'
+            'made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-logincookies-hostname)s was\n'
+            '  replaced by %(column-logincookies-ipaddr)s.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '2.14.2',
         '2.14.5',
-        '<p>The schema is identical in Bugzilla releases 2.14.2, 2.14.3,\n'
-        '2.14.4, and 2.14.5.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 2.14.2, 2.14.3,\n'
+            '2.14.4, and 2.14.5.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.16rc1',
         '2.16',
-        '<p>In Bugzilla release 2.16 (and the release candidates 2.16rc1 and\n'
-        '2.16rc2), the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>The %(table-attachstatuses)s and %(table-attachstatusdefs)s\n'
-        '  tables were added.</li>\n'
-        '\n'
-        '  <li>%(column-attachments-isobsolete)s was\n'
-        '  added.</li>\n'
-        '\n'
-        '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-assignee_accessible)s\n'
-        '  and %(column-bugs-qacontact_accessible)s\n'
-        '  were removed.</li>\n'
-        '\n'
-        '  <li>%(column-bugs_activity-attach_id)s\n'
-        '  was added.</li>\n'
-        '\n'
-        '  <li>%(column-logincookies-cryptpassword)s\n'
-        '  was removed.</li>\n'
-        '\n'
-        '  <li>The possible values of %(column-tokens-tokentype)s changed, to\n'
-        '  include \'emailold\' and \'emailnew\' (used when changing the email\n'
-        '  address of a Bugzilla user).</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.16 (and the release candidates 2.16rc1 and\n'
+            '2.16rc2), the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>The %(table-attachstatuses)s and %(table-attachstatusdefs)s\n'
+            '  tables were added.</li>\n'
+            '\n'
+            '  <li>%(column-attachments-isobsolete)s was\n'
+            '  added.</li>\n'
+            '\n'
+            '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-assignee_accessible)s\n'
+            '  and %(column-bugs-qacontact_accessible)s\n'
+            '  were removed.</li>\n'
+            '\n'
+            '  <li>%(column-bugs_activity-attach_id)s\n'
+            '  was added.</li>\n'
+            '\n'
+            '  <li>%(column-logincookies-cryptpassword)s\n'
+            '  was removed.</li>\n'
+            '\n'
+            '  <li>The possible values of %(column-tokens-tokentype)s changed, to\n'
+            '  include \'emailold\' and \'emailnew\' (used when changing the email\n'
+            '  address of a Bugzilla user).</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '2.16rc1',
         '2.16.11',
-        '<p>The schema is identical in Bugzilla releases 2.16rc1, 2.16rc2,\n'
-        '2.16, 2.16.1, 2.16.2, 2.16.3, 2.16.4, 2.16.5, 2.16.6, 2.16.7, 2.16.8, '
-        '2.16.9, 2.16.10, and 2.16.11.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 2.16rc1, 2.16rc2,\n'
+            '2.16, 2.16.1, 2.16.2, 2.16.3, 2.16.4, 2.16.5, 2.16.6, 2.16.7, 2.16.8, '
+            '2.16.9, 2.16.10, and 2.16.11.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.17.1',
         '2.17.1',
-        '<p>In Bugzilla release 2.17.1, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li><p>The groups system was radically changed.  This included the\n'
-        '  following detailed schema changes:</p>\n'
-        '    <ul>\n'
-        '\n'
-        '      <li>The %(table-bug_group_map)s, %(table-user_group_map)s,\n'
-        '      and %(table-group_group_map)s tables were added.</li>\n'
-        '\n'
-        '      <li>%(column-groups-bit)s was replaced\n'
-        '      with %(column-groups-id)s.</li>\n'
-        '\n'
-        '      <li>%(column-groups-last_changed)s was\n'
-        '      added.</li>\n'
-        '\n'
-        '      <li>%(column-bugs-groupset)s, %(column-profiles-groupset)s and '
-        '%(column-profiles-blessgroupset)s\n'
-        '      were dropped.</li> </ul> </li>\n'
-        '\n'
-        '  <li>A new <a href="#notes-flags">flags</a> system was introduced,\n'
-        '  adding the tables %(table-flags)s, %(table-flagtypes)s,\n'
-        '  %(table-flaginclusions)s, and %(table-flagexclusions)s.  This allows\n'
-        '  status flags to be defined and used on both attachments and bugs.\n'
-        '  This replaces the "attachment statuses" feature, so the\n'
-        '  %(table-attachstatuses)s and %(table-attachstatusdefs)s tables were\n'
-        '  removed.</li>\n'
-        '\n'
-        '  <li>%(the-table-quips)s was added.</li>\n'
-        '\n'
-        '  <li>Products got IDs in addition to names, and product name columns\n'
-        '  were replaced with product ID columns: %(column-bugs-product)s was\n'
-        '  replaced with %(column-bugs-product_id)s,\n'
-        '  %(column-components-program)s was replaced with\n'
-        '  %(column-components-product_id)s, %(column-milestones-product)s was\n'
-        '  replaced with %(column-milestones-product_id)s,\n'
-        '  %(column-versions-program)s was replaced with\n'
-        '  %(column-versions-product_id)s, and %(column-products-product)s was\n'
-        '  replaced with %(column-products-id)s and\n'
-        '  %(column-products-name)s.</li>\n'
-        '\n'
-        '  <li>Components got IDs in addition to names, and the component name\n'
-        '  column was replaced with a component ID column: %(column-bugs-component)s '
-        'was replaced with\n'
-        '  %(column-bugs-component_id)s, and %(column-components-value)s was '
-        'replaced\n'
-        '  with %(column-components-id)s and %(column-components-name)s.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-estimated_time)s, %(column-bugs-remaining_time)s, and '
-        '%(column-longdescs-work_time)s were\n'
-        '  added.</li>\n'
-        '\n'
-        '  <li>%(column-attachments-isprivate)s and\n'
-        '  %(column-longdescs-isprivate)s were\n'
-        '  added.</li>\n'
-        '\n'
-        '  <li>%(column-attachments-creation_ts)s\n'
-        '  changed from a timestamp to a datetime, default \'0000-00-00\n'
-        '  00:00:00\'.</li>\n'
-        '\n'
-        '  <li>%(column-attachments-filename)s\n'
-        '  changed from a mediumtext to a varchar(100).</li>\n'
-        '\n'
-        '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-alias)s was added.</li>\n'
-        '\n'
-        '  <li>The unused column %(column-namedqueries-watchfordiffs)s\n'
-        '  was removed.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-refreshed_when)s\n'
-        '  was added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.17.1, the following schema changes'
+            ' were\nmade:</p>\n\n<ul>\n\n  <li><p>The groups system was radically'
+            ' changed.  This included the\n  following detailed schema changes:</p>\n  '
+            '  <ul>\n\n      <li>The %(table-bug_group_map)s,'
+            ' %(table-user_group_map)s,\n      and %(table-group_group_map)s tables'
+            ' were added.</li>\n\n      <li>%(column-groups-bit)s was replaced\n     '
+            ' with %(column-groups-id)s.</li>\n\n     '
+            ' <li>%(column-groups-last_changed)s was\n      added.</li>\n\n     '
+            ' <li>%(column-bugs-groupset)s, %(column-profiles-groupset)s and'
+            ' %(column-profiles-blessgroupset)s\n      were dropped.</li> </ul>'
+            ' </li>\n\n  <li>A new <a href="#notes-flags">flags</a> system was'
+            ' introduced,\n  adding the tables %(table-flags)s, %(table-flagtypes)s,\n '
+            ' %(table-flaginclusions)s, and %(table-flagexclusions)s.  This allows\n '
+            ' status flags to be defined and used on both attachments and bugs.\n  This'
+            ' replaces the "attachment statuses" feature, so the\n '
+            ' %(table-attachstatuses)s and %(table-attachstatusdefs)s tables were\n '
+            ' removed.</li>\n\n  <li>%(the-table-quips)s was added.</li>\n\n '
+            ' <li>Products got IDs in addition to names, and product name columns\n '
+            ' were replaced with product ID columns: %(column-bugs-product)s was\n '
+            ' replaced with %(column-bugs-product_id)s,\n '
+            ' %(column-components-program)s was replaced with\n '
+            ' %(column-components-product_id)s, %(column-milestones-product)s was\n '
+            ' replaced with %(column-milestones-product_id)s,\n '
+            ' %(column-versions-program)s was replaced with\n '
+            ' %(column-versions-product_id)s, and %(column-products-product)s was\n '
+            ' replaced with %(column-products-id)s and\n '
+            ' %(column-products-name)s.</li>\n\n  <li>Components got IDs in addition to'
+            ' names, and the component name\n  column was replaced with a component ID'
+            ' column: %(column-bugs-component)s was replaced with\n '
+            ' %(column-bugs-component_id)s, and %(column-components-value)s was'
+            ' replaced\n  with %(column-components-id)s and'
+            ' %(column-components-name)s.</li>\n\n  <li>%(column-bugs-estimated_time)s,'
+            ' %(column-bugs-remaining_time)s, and %(column-longdescs-work_time)s were\n'
+            '  added.</li>\n\n  <li>%(column-attachments-isprivate)s and\n '
+            ' %(column-longdescs-isprivate)s were\n  added.</li>\n\n '
+            ' <li>%(column-attachments-creation_ts)s\n  changed from a timestamp to a'
+            ' datetime, default \'0000-00-00\n  00:00:00\'.</li>\n\n '
+            ' <li>%(column-attachments-filename)s\n  changed from a mediumtext to a'
+            ' varchar(100).</li>\n\n  <li>The values permitted in'
+            ' %(column-bugs-op_sys)s changed.</li>\n\n  <li>%(column-bugs-alias)s was'
+            ' added.</li>\n\n  <li>The unused column'
+            ' %(column-namedqueries-watchfordiffs)s\n  was removed.</li>\n\n '
+            ' <li>%(column-profiles-refreshed_when)s\n  was added.</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '2.17.3',
         '2.17.3',
-        '<p>In Bugzilla release 2.17.3, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-group_control_map)s was added.</li>\n'
-        '\n'
-        '  <li>%(the-table-shadowlog)s was removed.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.17.3, the following schema changes were\n'
+            'made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(the-table-group_control_map)s was added.</li>\n'
+            '\n'
+            '  <li>%(the-table-shadowlog)s was removed.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '2.17.4',
         '2.17.4',
-        '<p>In Bugzilla release 2.17.4, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-quips-approved)s was added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.17.4, the following schema changes were\n'
+            'made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-quips-approved)s was added.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '2.17.5',
         '2.17.5',
-        '<p>In Bugzilla release 2.17.5, the following schema changes were\n'
-        'made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>The %(table-series)s, %(table-series_categories)s,\n'
-        '  %(table-series_data)s, and %(table-user_series_map)s tables were\n'
-        '  added, to support <a href="#notes-charts">the new charts\n'
-        '  system</a>.</li>\n'
-        '\n'
-        '  <li>%(column-votes-count)s was renamed as '
-        '%(column-votes-vote_count)s.</li>\n'
-        '\n'
-        '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-short_desc)s and %(column-longdescs-thetext)s became\n'
-        '  fulltext index fields, allowing quicker full text searching.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla release 2.17.5, the following schema changes were\n'
+            'made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>The %(table-series)s, %(table-series_categories)s,\n'
+            '  %(table-series_data)s, and %(table-user_series_map)s tables were\n'
+            '  added, to support <a href="#notes-charts">the new charts\n'
+            '  system</a>.</li>\n'
+            '\n'
+            '  <li>%(column-votes-count)s was renamed as '
+            '%(column-votes-vote_count)s.</li>\n'
+            '\n'
+            '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-short_desc)s and %(column-longdescs-thetext)s became\n'
+            '  fulltext index fields, allowing quicker full text searching.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '2.17.5',
@@ -5830,30 +5879,34 @@ afterword = [
     (
         '2.17.7',
         '2.17.7',
-        '<p>In Bugzilla 2.17.7, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-bugs-short_desc)s\n'
-        '  changed to "not null".</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.17.7, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-bugs-short_desc)s\n'
+            '  changed to "not null".</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.18rc1',
         '2.18rc1',
-        '<p>In Bugzilla 2.18rc1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
-        '\n'
-        '  <li>%(column-user_group_map-isderived)s\n'
-        '  was replaced by %(column-user_group_map-grant_type)s.</li>\n'
-        '  <li>%(column-flags-is_active)s was\n'
-        '  added.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.18rc1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>The values permitted in %(column-bugs-op_sys)s changed.</li>\n'
+            '\n'
+            '  <li>%(column-user_group_map-isderived)s\n'
+            '  was replaced by %(column-user_group_map-grant_type)s.</li>\n'
+            '  <li>%(column-flags-is_active)s was\n'
+            '  added.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.18rc2',
@@ -5863,24 +5916,26 @@ afterword = [
     (
         '2.18rc3',
         '2.18rc3',
-        '<p>In Bugzilla 2.18rc3, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(the-table-user_series_map)s was removed, replaced in part by\n'
-        '  %(column-series-public)s.</li>\n'
-        '\n'
-        '  <li>%(the-table-category_group_map)s was added, providing\n'
-        '  group-level access control for time-series charts.</li>\n'
-        '\n'
-        '  <li>%(column-series_categories-category_id)s was renamed as\n'
-        '  %(column-series_categories-id)s.</li>\n'
-        '\n'
-        '  <li>%(column-series_data-date)s was renamed as\n'
-        '  %(column-series_data-series_date)s, and %(column-series_data-value)s\n'
-        '  was renamed as %(column-series_data-series_value)s.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.18rc3, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(the-table-user_series_map)s was removed, replaced in part by\n'
+            '  %(column-series-public)s.</li>\n'
+            '\n'
+            '  <li>%(the-table-category_group_map)s was added, providing\n'
+            '  group-level access control for time-series charts.</li>\n'
+            '\n'
+            '  <li>%(column-series_categories-category_id)s was renamed as\n'
+            '  %(column-series_categories-id)s.</li>\n'
+            '\n'
+            '  <li>%(column-series_data-date)s was renamed as\n'
+            '  %(column-series_data-series_date)s, and %(column-series_data-value)s\n'
+            '  was renamed as %(column-series_data-series_value)s.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.18',
@@ -5890,458 +5945,470 @@ afterword = [
     (
         '2.18.1',
         '2.18.1',
-        '<p>In Bugzilla 2.18.1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-fielddefs-obsolete)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-quips-userid)s was changed from "not null default 0" to '
-        '"null".</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.18.1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-fielddefs-obsolete)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-quips-userid)s was changed from "not null default 0" to '
+            '"null".</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.18.2',
         '2.18.2',
-        '<p>In Bugzilla 2.18.2, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-bugs-creation_ts)s changed from "not null" to "null".</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.18.2, the following schema changes were'
+            ' made:</p>\n\n<ul>\n\n  <li>%(column-bugs-creation_ts)s changed from "not'
+            ' null" to "null".</li>\n\n</ul>\n'
+        ),
     ),
     (
         '2.18.3',
         '2.18.6',
-        '<p>The schema is identical in Bugzilla releases 2.18.2, 2.18.3, 2.18.4, '
-        '2.18.5, and 2.18.6.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 2.18.2, 2.18.3, 2.18.4, '
+            '2.18.5, and 2.18.6.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.19.1',
         '2.19.1',
-        '<p>In Bugzilla 2.19.1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>Because 2.19.1 predates the 2.18 series of releases, the changes\n'
-        '  made in that series are "undone" in 2.19.1 (and redone later in the\n'
-        '  2.19/2.20rc series):\n'
-        '\n'
-        '    <ul>\n'
-        '      <li>%(column-fielddefs-obsolete)s was removed again.</li>\n'
-        '\n'
-        '      <li>%(column-bugs-creation_ts)s returned to being "not null".</li>\n'
-        '\n'
-        '      <li>%(column-quips-userid)s returned to being "not null default '
-        '0".</li>\n'
-        '    </ul>\n'
-        '\n'
-        '  <li>%(the-table-classifications)s and\n'
-        '  %(column-products-classification_id)s were added, to support <a\n'
-        '  href="#notes-products">the new classifications\n'
-        '  system</a>.</li>\n'
-        '\n'
-        '  <li>%(column-group_group_map-isbless)s was replaced by\n'
-        '  %(column-group_group_map-grant_type)s.</li>\n'
-        '\n'
-        '  <li>%(column-logincookies-lastused)s changed from a timestamp to a\n'
-        '  datetime, default \'0000-00-00 00:00:00\'.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-extern_id)s was added.</li>\n'
-        '\n'
-        '  <li>The %(table-whine_events)s, %(table-whine_queries)s, and <a\n'
-        '  %(the-table-whine_schedules)s tables were added, to support <a\n'
-        '  href="#notes-whine">the new whining system</a>.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.19.1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>Because 2.19.1 predates the 2.18 series of releases, the changes\n'
+            '  made in that series are "undone" in 2.19.1 (and redone later in the\n'
+            '  2.19/2.20rc series):\n'
+            '\n'
+            '    <ul>\n'
+            '      <li>%(column-fielddefs-obsolete)s was removed again.</li>\n'
+            '\n'
+            '      <li>%(column-bugs-creation_ts)s returned to being "not null".</li>\n'
+            '\n'
+            '      <li>%(column-quips-userid)s returned to being "not null default '
+            '0".</li>\n'
+            '    </ul>\n'
+            '\n'
+            '  <li>%(the-table-classifications)s and\n'
+            '  %(column-products-classification_id)s were added, to support <a\n'
+            '  href="#notes-products">the new classifications\n'
+            '  system</a>.</li>\n'
+            '\n'
+            '  <li>%(column-group_group_map-isbless)s was replaced by\n'
+            '  %(column-group_group_map-grant_type)s.</li>\n'
+            '\n'
+            '  <li>%(column-logincookies-lastused)s changed from a timestamp to a\n'
+            '  datetime, default \'0000-00-00 00:00:00\'.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-extern_id)s was added.</li>\n'
+            '\n'
+            '  <li>The %(table-whine_events)s, %(table-whine_queries)s, and <a\n'
+            '  %(the-table-whine_schedules)s tables were added, to support <a\n'
+            '  href="#notes-whine">the new whining system</a>.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.19.2',
         '2.19.2',
-        '<p>In Bugzilla 2.19.2, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-flagtypes-grant_group_id)s and\n'
-        '  %(column-flagtypes-request_group_id)s were added.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.19.2, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-flagtypes-grant_group_id)s and\n'
+            '  %(column-flagtypes-request_group_id)s were added.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.19.3',
         '2.19.3',
-        '<p>In Bugzilla 2.19.3, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>All the secondary indexes were given new names, based on the\n'
-        '  names of the table and first indexed column.</li>\n'
-        '\n'
-        '  <li>The %(table-bug_severity)s, %(table-bug_status)s,\n'
-        '  %(table-op_sys)s, %(table-priority)s, %(table-rep_platform)s, and\n'
-        '  %(table-resolution)s tables were added, and the matching bug fields\n'
-        '  (%(column-bugs-bug_severity)s, %(column-bugs-bug_status)s,\n'
-        '  %(column-bugs-op_sys)s, %(column-bugs-priority)s,\n'
-        '  %(column-bugs-rep_platform)s, and %(column-bugs-resolution)s) were\n'
-        '  changed from enumerated types into varchar(64) foreign keys for\n'
-        '  these new tables.  The effect of this is to remove all enumerated\n'
-        '  types from the schema (improving portability to other DBMSes), and\n'
-        '  in principle to allow the administrator to modify the set of\n'
-        '  allowable values.</li>\n'
-        '\n'
-        '  <li>The table %(table-bz_schema)s was added.</li>\n'
-        '\n'
-        '  <li>The tables %(table-profile_setting)s, %(table-setting)s, and\n'
-        '  %(table-setting_value)s were added, for <a\n'
-        '  href="#notes-settings">the settings system</a>.</li>\n'
-        '\n'
-        '  <li>The table %(table-email_setting)s was added, replacing\n'
-        '  %(column-profiles-emailflags)s.</li>\n'
-        '\n'
-        '  <li>The indexes %(index-bugs_activity-bugs_activity_who_idx)s,\n'
-        '  %(index-attachments-attachments_submitter_id_idx)s,\n'
-        '  %(index-versions-versions_product_id_idx)s, and\n'
-        '  %(index-flags-flags_type_id_idx)s were added.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-deadline)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-delta_ts)s changed from a timestamp to a '
-        'datetime.</li>\n'
-        '\n'
-        '  <li>%(column-bugs-lastdiffed)s changed from "not null" to "null".</li>\n'
-        '\n'
-        '  <li>%(column-bugs-qa_contact)s and\n'
-        '  %(column-components-initialqacontact)s changed from "not null" to\n'
-        '  "null".</li>\n'
-        '\n'
-        '  <li>%(column-fielddefs-obsolete)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-longdescs-already_wrapped)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-cryptpassword)s was changed from varchar(34)\n'
-        '  to varchar(128).</li>\n'
-        '\n'
-        '  <li>%(column-quips-approved)s and %(column-series-public)s changed\n'
-        '  from tinyint(1) to tinyint.</li>\n'
-        '\n'
-        '  <li>%(column-versions-value)s changed from "tinytext null" to\n'
-        '  "varchar(64) not null".</li>\n'
-        '\n'
-        '  <li>%(column-whine_schedules-mailto_userid)s was replaced by\n'
-        '  %(column-whine_schedules-mailto)s and\n'
-        '  %(column-whine_schedules-mailto_type)s.</li>\n'
-        '\n'
-        '  <li>The index %(index-series-creator)s was removed.</li>\n'
-        '\n'
-        '  <li>%(column-quips-userid)s was changed from "not null default 0" to '
-        '"null".</li>\n'
-        '\n'
-        '  </ul>\n',
+        (
+            '<p>In Bugzilla 2.19.3, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>All the secondary indexes were given new names, based on the\n'
+            '  names of the table and first indexed column.</li>\n'
+            '\n'
+            '  <li>The %(table-bug_severity)s, %(table-bug_status)s,\n'
+            '  %(table-op_sys)s, %(table-priority)s, %(table-rep_platform)s, and\n'
+            '  %(table-resolution)s tables were added, and the matching bug fields\n'
+            '  (%(column-bugs-bug_severity)s, %(column-bugs-bug_status)s,\n'
+            '  %(column-bugs-op_sys)s, %(column-bugs-priority)s,\n'
+            '  %(column-bugs-rep_platform)s, and %(column-bugs-resolution)s) were\n'
+            '  changed from enumerated types into varchar(64) foreign keys for\n'
+            '  these new tables.  The effect of this is to remove all enumerated\n'
+            '  types from the schema (improving portability to other DBMSes), and\n'
+            '  in principle to allow the administrator to modify the set of\n'
+            '  allowable values.</li>\n'
+            '\n'
+            '  <li>The table %(table-bz_schema)s was added.</li>\n'
+            '\n'
+            '  <li>The tables %(table-profile_setting)s, %(table-setting)s, and\n'
+            '  %(table-setting_value)s were added, for <a\n'
+            '  href="#notes-settings">the settings system</a>.</li>\n'
+            '\n'
+            '  <li>The table %(table-email_setting)s was added, replacing\n'
+            '  %(column-profiles-emailflags)s.</li>\n'
+            '\n'
+            '  <li>The indexes %(index-bugs_activity-bugs_activity_who_idx)s,\n'
+            '  %(index-attachments-attachments_submitter_id_idx)s,\n'
+            '  %(index-versions-versions_product_id_idx)s, and\n'
+            '  %(index-flags-flags_type_id_idx)s were added.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-deadline)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-delta_ts)s changed from a timestamp to a '
+            'datetime.</li>\n'
+            '\n'
+            '  <li>%(column-bugs-lastdiffed)s changed from "not null" to "null".</li>\n'
+            '\n'
+            '  <li>%(column-bugs-qa_contact)s and\n'
+            '  %(column-components-initialqacontact)s changed from "not null" to\n'
+            '  "null".</li>\n'
+            '\n'
+            '  <li>%(column-fielddefs-obsolete)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-longdescs-already_wrapped)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-profiles-cryptpassword)s was changed from varchar(34)\n'
+            '  to varchar(128).</li>\n'
+            '\n'
+            '  <li>%(column-quips-approved)s and %(column-series-public)s changed\n'
+            '  from tinyint(1) to tinyint.</li>\n'
+            '\n'
+            '  <li>%(column-versions-value)s changed from "tinytext null" to\n'
+            '  "varchar(64) not null".</li>\n'
+            '\n'
+            '  <li>%(column-whine_schedules-mailto_userid)s was replaced by\n'
+            '  %(column-whine_schedules-mailto)s and\n'
+            '  %(column-whine_schedules-mailto_type)s.</li>\n'
+            '\n'
+            '  <li>The index %(index-series-creator)s was removed.</li>\n'
+            '\n'
+            '  <li>%(column-quips-userid)s was changed from "not null default 0" to '
+            '"null".</li>\n'
+            '\n'
+            '  </ul>\n'
+        ),
     ),
     (
         '2.20rc1',
         '2.20rc1',
-        '<p>In Bugzilla 2.20rc1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-bugs-creation_ts)s changed from "not null" to "null".</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.20rc1, the following schema changes were'
+            ' made:</p>\n\n<ul>\n\n  <li>%(column-bugs-creation_ts)s changed from "not'
+            ' null" to "null".</li>\n\n</ul>\n'
+        ),
     ),
     (
         '2.20rc2',
         '2.20rc2',
-        '<p>In Bugzilla 2.20rc2, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-attachments-bug_id)s was added to the index '
-        '%(index-attachments-attachments_submitter_id_idx)s.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.20rc2, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-attachments-bug_id)s was added to the index '
+            '%(index-attachments-attachments_submitter_id_idx)s.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.20',
         '2.20.7',
-        '<p>The schema is identical in Bugzilla releases 2.20rc2, 2.20, 2.20.1, '
-        '2.20.2, 2.20.3, 2.20.4, 2.20.5, 2.20.6, and 2.20.7.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 2.20rc2, 2.20, 2.20.1, '
+            '2.20.2, 2.20.3, 2.20.4, 2.20.5, 2.20.6, and 2.20.7.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.21.1',
         '2.21.1',
-        '<p>In Bugzilla 2.21.1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>The table %(table-attach_data)s was added, replacing\n'
-        '  %(column-attachments-thedata)s.  This makes SQL queries on '
-        '%(the-table-attachments)s go faster.</li>\n'
-        '\n'
-        '  <li>%(column-series-public)s was renamed %(column-series-is_public)s '
-        '("public" is a keyword in Oracle).</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.21.1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>The table %(table-attach_data)s was added, replacing\n'
+            '  %(column-attachments-thedata)s.  This makes SQL queries on '
+            '%(the-table-attachments)s go faster.</li>\n'
+            '\n'
+            '  <li>%(column-series-public)s was renamed %(column-series-is_public)s '
+            '("public" is a keyword in Oracle).</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.22rc1',
         '2.22rc1',
-        '<p>In Bugzilla 2.22rc1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-attachments-isurl)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-namedqueries-query_type)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-logincookies-cookie)s was changed from "mediumint\n'
-        '  auto_increment" to "varchar(16)", to hold a randomly-generated\n'
-        '  (and therefore harder-to-guess) cookie.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.22rc1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-attachments-isurl)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-namedqueries-query_type)s was added.</li>\n'
+            '\n'
+            '  <li>%(column-logincookies-cookie)s was changed from "mediumint\n'
+            '  auto_increment" to "varchar(16)", to hold a randomly-generated\n'
+            '  (and therefore harder-to-guess) cookie.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.22',
         '2.22.7',
-        '<p>The schema is identical in Bugzilla releases 2.22rc1, 2.22, 2.22.1, '
-        '2.22.2, 2.22.3, 2.22.4, 2.22.5, 2.22.6, and 2.22.7.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 2.22rc1, 2.22, 2.22.1, '
+            '2.22.2, 2.22.3, 2.22.4, 2.22.5, 2.22.6, and 2.22.7.</p>\n'
+            '\n'
+        ),
     ),
     (
         '2.23.1',
         '2.23.1',
-        '<p>In Bugzilla 2.23.1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li><b>Custom fields</b> were added: columns named '
-        '<code>cf_&lt;name&gt;</code> in %(the-table-bugs)s.</li>\n'
-        '\n'
-        '  <li>%(column-fielddefs-custom)s and %(column-fielddefs-type)s were '
-        'added.</li>\n'
-        '\n'
-        '  <li>%(column-flags-id)s became "auto_increment" and\n'
-        '  %(column-flags-is_active)s was removed.  Dead flags are now removed\n'
-        '  from the database instead of being marked inactive.</li>\n'
-        '\n'
-        '  <li>%(column-longdescs-comment_id)s was added, as a primary key on '
-        '%(table-longdescs)s.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.23.1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li><b>Custom fields</b> were added: columns named '
+            '<code>cf_&lt;name&gt;</code> in %(the-table-bugs)s.</li>\n'
+            '\n'
+            '  <li>%(column-fielddefs-custom)s and %(column-fielddefs-type)s were '
+            'added.</li>\n'
+            '\n'
+            '  <li>%(column-flags-id)s became "auto_increment" and\n'
+            '  %(column-flags-is_active)s was removed.  Dead flags are now removed\n'
+            '  from the database instead of being marked inactive.</li>\n'
+            '\n'
+            '  <li>%(column-longdescs-comment_id)s was added, as a primary key on '
+            '%(table-longdescs)s.</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.23.2',
         '2.23.2',
-        '<p>In Bugzilla 2.23.2, the following schema change was made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>%(column-bugs-short_desc)s changed from mediumtext to '
-        'varchar(255).</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.23.2, the following schema change was made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '  <li>%(column-bugs-short_desc)s changed from mediumtext to '
+            'varchar(255).</li>\n'
+            '\n'
+            '</ul>\n'
+        ),
     ),
     (
         '2.23.3',
         '2.23.3',
-        '<p>In Bugzilla 2.23.3, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '  <li>Single-select <b>custom fields</b> were added; allowable values\n'
-        '  are stored in tables named <code>cf_&lt;name&gt;</code>.</li>\n'
-        '\n'
-        '  <li>Shared named queries were added, by adding tables\n'
-        '  %(table-namedqueries_link_in_footer)s and\n'
-        '  %(table-namedquery_group_map)s, column %(column-namedqueries-id)s,\n'
-        '  and index %(index-namedqueries-PRIMARY)s, and removing\n'
-        '  %(column-namedqueries-linkinfooter)s.</li>\n'
-        '\n'
-        '  <li>%(the-table-component_cc)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-classifications-sortkey)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-setting-subclass)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-fielddefs-enter_bug)s was added.</li>\n'
-        '\n'
-        '  <li>%(column-fielddefs-fieldid)s was renamed to '
-        '%(column-fielddefs-id)s.</li>\n'
-        '\n'
-        '  <li>%(column-flagtypes-id)s and %(column-keyworddefs-id)s became '
-        '"auto_increment".</li>\n'
-        '\n'
-        '  <li>%(column-longdescs-thetext)s became "not null".</li>\n'
-        '\n'
-        '  <li>%(column-longdescs-bug_id)s was added to the index '
-        '%(index-longdescs-longdescs_who_idx)s.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-realname)s became "not null".</li>\n'
-        '\n'
-        '  <li>%(column-series-creator)s changed from "not null" to "null".</li>\n'
-        '\n'
-        '  <li>%(column-tokens-userid)s changed from "not null" to "null".</li>\n'
-        '\n'
-        '  <li>%(column-profiles-disable_mail)s was added.</li>\n'
-        '\n'
-        '  <li>The index %(index-bugs-bugs_short_desc_idx)s was removed.</li>\n'
-        '\n'
-        '  <li>%(column-profiles-refreshed_when)s and %(column-groups-last_changed)s '
-        'were removed.</li>\n'
-        '\n'
-        '</ul>',
+        (
+            '<p>In Bugzilla 2.23.3, the following schema changes were'
+            ' made:</p>\n\n<ul>\n\n  <li>Single-select <b>custom fields</b> were added;'
+            ' allowable values\n  are stored in tables named'
+            ' <code>cf_&lt;name&gt;</code>.</li>\n\n  <li>Shared named queries were'
+            ' added, by adding tables\n  %(table-namedqueries_link_in_footer)s and\n '
+            ' %(table-namedquery_group_map)s, column %(column-namedqueries-id)s,\n  and'
+            ' index %(index-namedqueries-PRIMARY)s, and removing\n '
+            ' %(column-namedqueries-linkinfooter)s.</li>\n\n '
+            ' <li>%(the-table-component_cc)s was added.</li>\n\n '
+            ' <li>%(column-classifications-sortkey)s was added.</li>\n\n '
+            ' <li>%(column-setting-subclass)s was added.</li>\n\n '
+            ' <li>%(column-fielddefs-enter_bug)s was added.</li>\n\n '
+            ' <li>%(column-fielddefs-fieldid)s was renamed to'
+            ' %(column-fielddefs-id)s.</li>\n\n  <li>%(column-flagtypes-id)s and'
+            ' %(column-keyworddefs-id)s became "auto_increment".</li>\n\n '
+            ' <li>%(column-longdescs-thetext)s became "not null".</li>\n\n '
+            ' <li>%(column-longdescs-bug_id)s was added to the index'
+            ' %(index-longdescs-longdescs_who_idx)s.</li>\n\n '
+            ' <li>%(column-profiles-realname)s became "not null".</li>\n\n '
+            ' <li>%(column-series-creator)s changed from "not null" to "null".</li>\n\n'
+            '  <li>%(column-tokens-userid)s changed from "not null" to "null".</li>\n\n'
+            '  <li>%(column-profiles-disable_mail)s was added.</li>\n\n  <li>The index'
+            ' %(index-bugs-bugs_short_desc_idx)s was removed.</li>\n\n '
+            ' <li>%(column-profiles-refreshed_when)s and %(column-groups-last_changed)s'
+            ' were removed.</li>\n\n</ul>'
+        ),
     ),
     (
         '2.23.4',
         '2.23.4',
-        '<p>In Bugzilla 2.23.4, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '    <li>%(column-milestones-id)s and %(column-versions-id)s were\n'
-        '    added, as PRIMARY indexes (increasing consistency: no objects are\n'
-        '    now identified solely by user-specified strings, although some\n'
-        '    cross-table references are still by string IDs rather than\n'
-        '    auto-generated integer IDs).</li>\n'
-        '\n'
-        '    <li>%(column-group_control_map-canconfirm)s, '
-        '%(column-group_control_map-editbugs)s, and\n'
-        '    %(column-group_control_map-editcomponents)s were added.</li>\n'
-        '\n'
-        '    <li>%(column-longdescs-type)s and %(column-longdescs-extra_data)s were '
-        'added.</li>\n'
-        '\n'
-        '</ul>\n',
+        (
+            '<p>In Bugzilla 2.23.4, the following schema changes were'
+            ' made:</p>\n\n<ul>\n\n    <li>%(column-milestones-id)s and'
+            ' %(column-versions-id)s were\n    added, as PRIMARY indexes (increasing'
+            ' consistency: no objects are\n    now identified solely by user-specified'
+            ' strings, although some\n    cross-table references are still by string'
+            ' IDs rather than\n    auto-generated integer IDs).</li>\n\n   '
+            ' <li>%(column-group_control_map-canconfirm)s,'
+            ' %(column-group_control_map-editbugs)s, and\n   '
+            ' %(column-group_control_map-editcomponents)s were added.</li>\n\n   '
+            ' <li>%(column-longdescs-type)s and %(column-longdescs-extra_data)s were'
+            ' added.</li>\n\n</ul>\n'
+        ),
     ),
     (
         '3.0rc1',
         '3.0.9',
-        '<p>The schema is identical in Bugzilla releases 2.23.4, 3.0rc1, 3.0, 3.0.1, '
-        '3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.0.7, 3.0.8, and 3.0.9.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 2.23.4, 3.0rc1, 3.0,'
+            ' 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.0.7, 3.0.8, and'
+            ' 3.0.9.</p>\n\n'
+        ),
     ),
     (
         '3.1.1',
         '3.1.1',
-        '<p>In Bugzilla 3.1.1, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '<li>%(the-table-status_workflow)s, and %(column-bug_status-is_open)s,\n'
-        'were added, to provide configurable <a '
-        'href="#notes-workflow">workflow</a>.</li>\n'
-        '\n'
-        '<li>%(column-groups-icon_url)s was added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla 3.1.1, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '<li>%(the-table-status_workflow)s, and %(column-bug_status-is_open)s,\n'
+            'were added, to provide configurable <a '
+            'href="#notes-workflow">workflow</a>.</li>\n'
+            '\n'
+            '<li>%(column-groups-icon_url)s was added.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '3.1.2',
         '3.1.2',
-        '<p>In Bugzilla 3.1.2, the following schema change was made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '<li>Multi-select custom fields were added, with <a '
-        'href="#table-multiselect">this schema</a>;</li>\n'
-        '\n'
-        '<li>Large text box custom fields were added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla 3.1.2, the following schema change was made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '<li>Multi-select custom fields were added, with <a '
+            'href="#table-multiselect">this schema</a>;</li>\n'
+            '\n'
+            '<li>Large text box custom fields were added.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '3.1.3',
         '3.1.3',
-        '<p>In Bugzilla 3.1.3, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '<li>%(column-attachments-modification_time)s and\n'
-        '%(index-attachments-attachments_modification_time_idx)s were\n'
-        'added.</li>\n'
-        '\n'
-        '<li>Date/time custom fields were added;</li>\n'
-        '\n'
-        '<li>These fields changed from mediumtext to tinytext:\n'
-        '%(column-attachments-description)s, %(column-attachments-mimetype)s,\n'
-        '%(column-fielddefs-description)s.</li>\n'
-        '\n'
-        '<li>These fields changed from text to mediumtext:\n'
-        '%(column-bugs-bug_file_loc)s, %(column-flagtypes-description)s,\n'
-        '%(column-groups-description)s, and %(column-quips-quip)s.</li>\n'
-        '\n'
-        '<li>%(column-flagtypes-description)s became "not null".</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla 3.1.3, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '<li>%(column-attachments-modification_time)s and\n'
+            '%(index-attachments-attachments_modification_time_idx)s were\n'
+            'added.</li>\n'
+            '\n'
+            '<li>Date/time custom fields were added;</li>\n'
+            '\n'
+            '<li>These fields changed from mediumtext to tinytext:\n'
+            '%(column-attachments-description)s, %(column-attachments-mimetype)s,\n'
+            '%(column-fielddefs-description)s.</li>\n'
+            '\n'
+            '<li>These fields changed from text to mediumtext:\n'
+            '%(column-bugs-bug_file_loc)s, %(column-flagtypes-description)s,\n'
+            '%(column-groups-description)s, and %(column-quips-quip)s.</li>\n'
+            '\n'
+            '<li>%(column-flagtypes-description)s became "not null".</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '3.1.4',
         '3.1.4',
-        '<p>In Bugzilla 3.1.4, the following schema change was made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '<li>%(the-table-bugs_fulltext)s was added and the index\n'
-        '%(index-longdescs-longdescs_thetext_idx)s was removed, improving the\n'
-        'performance of full-text searching.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla 3.1.4, the following schema change was made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '<li>%(the-table-bugs_fulltext)s was added and the index\n'
+            '%(index-longdescs-longdescs_thetext_idx)s was removed, improving the\n'
+            'performance of full-text searching.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '3.2rc1',
         '3.2.5',
-        '<p>The schema is identical in Bugzilla releases 3.1.4, 3.2rc1, 3.2rc2, 3.2, '
-        '3.2.1, 3.2.2, 3.2.3, 3.2.4, and 3.2.5.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 3.1.4, 3.2rc1, 3.2rc2,'
+            ' 3.2, 3.2.1, 3.2.2, 3.2.3, 3.2.4, and 3.2.5.</p>\n\n'
+        ),
     ),
     (
         '3.3.1',
         '3.3.1',
-        '<p>In Bugzilla 3.3.1, the following schema changes were'
-        ' made:</p>\n\n<ul>\n\n<li>Bug ID custom fields were added;</li>\n\n<li>The'
-        ' tables %(table-ts_error)s, %(table-ts_exitstatus)s,\n%(table-ts_funcmap)s,'
-        ' %(table-ts_job)s, and %(table-ts_note)s were\nadded.  These tables are'
-        ' created and used by TheSchwartz job queue\nsystem, to run the background'
-        ' email sending system.</li>\n\n<li>%(column-fielddefs-visibility_field_id)s'
-        ' and\n%(column-fielddefs-visibility_value_id)s were added, to allow the'
-        ' display of\neach custom field to depend on the value of a select'
-        ' field.</li>\n\n<li>%(column-fielddefs-value_field_id)s,'
-        ' %(column-bug_severity-visibility_value_id)s,\n%(column-bug_status-visibility_value_id)s,'
-        ' %(column-op_sys-visibility_value_id)s,\n%(column-priority-visibility_value_id)s,'
-        ' %(column-rep_platform-visibility_value_id)s,\n%(column-resolution-visibility_value_id)s,'
-        ' and <a'
-        ' href="#column-customfield-visibility_value_id">\ncf_&lt;field&gt;.visibility_value_id</a>'
-        ' were added, to\nallow the availability of individual values of single-select'
-        ' and multi-select fields to depend on the value of another select'
-        ' field.</li>\n\n<li>New indexes'
-        ' %(index-fielddefs-fielddefs_value_field_id_idx)s,\n%(index-bug_severity-bug_severity_visibility_value_id_idx)s,\n%(index-bug_status-bug_status_visibility_value_id_idx)s,\n%(index-op_sys-op_sys_visibility_value_id_idx)s,\n%(index-priority-priority_visibility_value_id_idx)s,\n%(index-rep_platform-rep_platform_visibility_value_id_idx)s,\n%(index-resolution-resolution_visibility_value_id_idx)s,'
-        ' and\n<a'
-        ' href="#index-customfield-cf_field_visibility_value_id">cf_&lt;field&gt;:cf_&lt;field&gt;_visibility_value_id_idx</a>'
-        ' were added, to support use of the above new'
-        ' fields.</li>\n<li>%(column-group_control_map-product_id)s changed from'
-        ' mediumint to smallint.</li>\n\n</ul>\n\n',
+        (
+            '<p>In Bugzilla 3.3.1, the following schema changes were'
+            ' made:</p>\n\n<ul>\n\n<li>Bug ID custom fields were added;</li>\n\n<li>The'
+            ' tables %(table-ts_error)s,'
+            ' %(table-ts_exitstatus)s,\n%(table-ts_funcmap)s, %(table-ts_job)s, and'
+            ' %(table-ts_note)s were\nadded.  These tables are created and used by'
+            ' TheSchwartz job queue\nsystem, to run the background email sending'
+            ' system.</li>\n\n<li>%(column-fielddefs-visibility_field_id)s'
+            ' and\n%(column-fielddefs-visibility_value_id)s were added, to allow the'
+            ' display of\neach custom field to depend on the value of a select'
+            ' field.</li>\n\n<li>%(column-fielddefs-value_field_id)s,'
+            ' %(column-bug_severity-visibility_value_id)s,\n%(column-bug_status-visibility_value_id)s,'
+            ' %(column-op_sys-visibility_value_id)s,\n%(column-priority-visibility_value_id)s,'
+            ' %(column-rep_platform-visibility_value_id)s,\n%(column-resolution-visibility_value_id)s,'
+            ' and <a'
+            ' href="#column-customfield-visibility_value_id">\ncf_&lt;field&gt;.visibility_value_id</a>'
+            ' were added, to\nallow the availability of individual values of'
+            ' single-select and multi-select fields to depend on the value of another'
+            ' select field.</li>\n\n<li>New indexes'
+            ' %(index-fielddefs-fielddefs_value_field_id_idx)s,\n%(index-bug_severity-bug_severity_visibility_value_id_idx)s,\n%(index-bug_status-bug_status_visibility_value_id_idx)s,\n%(index-op_sys-op_sys_visibility_value_id_idx)s,\n%(index-priority-priority_visibility_value_id_idx)s,\n%(index-rep_platform-rep_platform_visibility_value_id_idx)s,\n%(index-resolution-resolution_visibility_value_id_idx)s,'
+            ' and\n<a'
+            ' href="#index-customfield-cf_field_visibility_value_id">cf_&lt;field&gt;:cf_&lt;field&gt;_visibility_value_id_idx</a>'
+            ' were added, to support use of the above new'
+            ' fields.</li>\n<li>%(column-group_control_map-product_id)s changed from'
+            ' mediumint to smallint.</li>\n\n</ul>\n\n'
+        ),
     ),
     (
         '3.3.2',
         '3.3.2',
-        '<p>In Bugzilla 3.3.2, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '<li>%(the-table-bug_see_also)s was added.</li>\n'
-        '\n'
-        '<li>%(column-fielddefs-buglist)s was added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla 3.3.2, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '<li>%(the-table-bug_see_also)s was added.</li>\n'
+            '\n'
+            '<li>%(column-fielddefs-buglist)s was added.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '3.3.3',
@@ -6351,508 +6418,521 @@ afterword = [
     (
         '3.3.4',
         '3.3.4',
-        '<p>In Bugzilla 3.3.4, the following schema changes were made:</p>\n'
-        '\n'
-        '<ul>\n'
-        '\n'
-        '<li>The index %(index-profiles-profiles_extern_id_idx)s was added.</li>\n'
-        '\n'
-        '</ul>\n'
-        '\n',
+        (
+            '<p>In Bugzilla 3.3.4, the following schema changes were made:</p>\n'
+            '\n'
+            '<ul>\n'
+            '\n'
+            '<li>The index %(index-profiles-profiles_extern_id_idx)s was added.</li>\n'
+            '\n'
+            '</ul>\n'
+            '\n'
+        ),
     ),
     (
         '3.4rc1',
         '3.4.1',
-        '<p>The schema is identical in Bugzilla releases 3.3.4, 3.4rc1, 3.4, 3.4.1, '
-        'and 3.4.2.</p>\n'
-        '\n',
+        (
+            '<p>The schema is identical in Bugzilla releases 3.3.4, 3.4rc1, 3.4, 3.4.1,'
+            ' and 3.4.2.</p>\n\n'
+        ),
     ),
-    '<h2><a id="section-5" name="section-5">5. Example queries</a></h2>\n'
-    '\n'
-    '<p>To select bug number <em>n</em>:</p>\n'
-    '\n'
-    '<blockquote><code>\n'
-    'select * from bugs where bug_id = <em>n</em>\n'
-    '</code></blockquote>\n'
-    '\n'
-    '<p>To get a complete list of user ids and email addresses:</p>\n'
-    '\n'
-    '<blockquote><code>\n'
-    'select userid, login_name from profiles\n'
-    '</code></blockquote>\n'
-    '\n'
-    '<p>To get the email address of user <em>n</em>:</p>\n'
-    '\n'
-    '<blockquote><code>\n'
-    'select login_name from profiles where userid = <em>n</em>\n'
-    '</code></blockquote>\n'
-    '\n'
-    '<p>To get the set of cc addresses of bug <em>n</em>:</p>\n'
-    '\n'
-    '<blockquote><code>\n'
-    'select login_name from cc, profiles\n'
-    ' where cc.bug_id = <em>n</em>\n'
-    '   and profiles.userid = cc.who\n'
-    '</code></blockquote>\n'
-    '\n',
+    (
+        '<h2><a id="section-5" name="section-5">5. Example queries</a></h2>\n'
+        '\n'
+        '<p>To select bug number <em>n</em>:</p>\n'
+        '\n'
+        '<blockquote><code>\n'
+        'select * from bugs where bug_id = <em>n</em>\n'
+        '</code></blockquote>\n'
+        '\n'
+        '<p>To get a complete list of user ids and email addresses:</p>\n'
+        '\n'
+        '<blockquote><code>\n'
+        'select userid, login_name from profiles\n'
+        '</code></blockquote>\n'
+        '\n'
+        '<p>To get the email address of user <em>n</em>:</p>\n'
+        '\n'
+        '<blockquote><code>\n'
+        'select login_name from profiles where userid = <em>n</em>\n'
+        '</code></blockquote>\n'
+        '\n'
+        '<p>To get the set of cc addresses of bug <em>n</em>:</p>\n'
+        '\n'
+        '<blockquote><code>\n'
+        'select login_name from cc, profiles\n'
+        ' where cc.bug_id = <em>n</em>\n'
+        '   and profiles.userid = cc.who\n'
+        '</code></blockquote>\n'
+        '\n'
+    ),
     (
         '2.10',
         None,
-        '<p>%(VERSION_STRING)sTo select the long descriptions\n'
-        'of bug <em>n</em>, together with the name and email address of the\n'
-        'commenters:</p>\n'
-        '\n'
-        '<blockquote><code>\n'
-        'select profiles.login_name, profiles.realname,\n'
-        '       longdescs.bug_when, longdescs.thetext\n'
-        '  from longdescs, profiles\n'
-        ' where profiles.userid = longdescs.who\n'
-        '   and longdescs.bug_id = <em>n</em>\n'
-        ' order by longdescs.bug_when\n'
-        '</code></blockquote>',
+        (
+            '<p>%(VERSION_STRING)sTo select the long descriptions\n'
+            'of bug <em>n</em>, together with the name and email address of the\n'
+            'commenters:</p>\n'
+            '\n'
+            '<blockquote><code>\n'
+            'select profiles.login_name, profiles.realname,\n'
+            '       longdescs.bug_when, longdescs.thetext\n'
+            '  from longdescs, profiles\n'
+            ' where profiles.userid = longdescs.who\n'
+            '   and longdescs.bug_id = <em>n</em>\n'
+            ' order by longdescs.bug_when\n'
+            '</code></blockquote>'
+        ),
     ),
     ('2.4', None, '<p>To find out the groups of user <em>n</em>:</p>'),
     (
         '2.4',
         '2.16.7',
-        '<p>%(VERSION_STRING)s</p>\n'
-        '\n'
-        '<blockquote><code>\n'
-        'select groupset from profiles where userid = <em>n</em>\n'
-        '</code></blockquote>',
+        (
+            '<p>%(VERSION_STRING)s</p>\n'
+            '\n'
+            '<blockquote><code>\n'
+            'select groupset from profiles where userid = <em>n</em>\n'
+            '</code></blockquote>'
+        ),
     ),
     (
         '2.17.1',
         None,
-        '<p>%(VERSION_STRING)s</p>\n'
-        '\n'
-        '<blockquote><code>\n'
-        'select group_id from user_group_map where userid = <em>n</em> and '
-        'isbless=0\n'
-        '</code></blockquote>',
+        (
+            '<p>%(VERSION_STRING)s</p>\n'
+            '\n'
+            '<blockquote><code>\n'
+            'select group_id from user_group_map where userid = <em>n</em> and '
+            'isbless=0\n'
+            '</code></blockquote>'
+        ),
     ),
-    '<h2><a id="section-A" name="section-A">A. References</a></h2>\n'
-    '\n'
-    '\n'
-    '<h2><a id="section-B" name="section-B">B. Document History</a></h2>\n'
-    '\n'
-    '<table>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2000-11-14</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Created.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td> 2001-03-02 </td>\n'
-    '\n'
-    '    <td> <a href="mailto:rb@ravenbrook.com">RB</a> </td>\n'
-    '\n'
-    '    <td> Transferred copyright to Perforce under their license. </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td> 2001-04-06 </td>\n'
-    '\n'
-    '    <td> <a href="mailto:nb@ravenbrook.com">NB</a> </td>\n'
-    '\n'
-    '    <td> Added sample queries. </td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2001-09-12</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Updated to reflect schema updates in Bugzilla 2.12 and 2.14</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2002-01-31</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added notes on Bugzilla 2.14.1.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2002-05-31</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Updated for Bugzilla 2.16 (based on 2.16rc1).</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2002-09-26</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Updated for Bugzilla 2.16/2.14.2/2.14.3.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2002-10-04</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added notes on Bugzilla 2.14.4 and 2.16.1, and on identical '
-    'schemas.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-05-14</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added extensive notes on schema changes, in section 2.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-06-06</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added table of Bugzilla releases showing release date and support '
-    'status.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-06-06</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added notes on schema changes in 2.17.x.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-06-13</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added first cut at description of new Bugzilla tables.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-06-27</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Added more on recent schema changes.  Colour-coded all schema\n'
-    '  changes.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-07-09</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Completely changed the way this document is produced.  The\n'
-    '    schema tables themselves are now created and coloured\n'
-    '    automatically by querying MySQL.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-11-04</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add Bugzilla 2.16.4 and 2.17.5.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2003-11-10</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add Bugzilla 2.17.6.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-03-19</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add Bugzilla 2.17.7; improve documentation of the groups system; '
-    'improve automated schema change descriptions.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-03-26</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add documentation of the flags system, the time series system, and '
-    'the time tracking system.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-04-30</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Correct some documentation of the time series system based on '
-    'feedback from the author.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-07-14</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.16.6 and 2.18rc1.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-07-28</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.18rc2.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-11-11</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.16.7, 2.18rc3, 2.19.1.  Change document-generation code\n'
-    '    to improve colouring, link consistency, control, and\n'
-    '    robustness.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-11-12</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Turn into CGI, using schemas stored in Python pickles.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-11-13</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.0, 2.2, 2.4, 2.6. 2.8, for completeness.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2004-12-03</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add notes on quips and a few missing foreign key links.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2005-01-18</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.16.8, 2.18, and 2.19.2.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2005-05-19</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.16.9, 2.16.10, 2.18.1, and (preliminarily) 2.19.3.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2005-09-15</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.18.2, 2.18.3, 2.20rc1, 2.20rc2, and complete remarks for '
-    '2.19.3.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2005-10-03</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.18.4, 2.20, 2.21.1</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2006-05-18</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add 2.16.11, 2.18.5, 2.20.1, 2.22rc1, 2.20.2, 2.22, 2.23.1.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2006-10-31</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add recent releases, to 2.18.6, 2.20.3, 2.22.1, 2.23.3.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2007-05-11</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add recent releases 2.20.4, 2.22.2, 2.23.4, 3.0rc1, 3.0.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2008-02-29</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add recent releases 3.0.1, 3.0.2, 3.0.3, 3.1.1, 3.1.2, 3.1.3.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2009-07-31</td>\n'
-    '\n'
-    '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
-    '\n'
-    '    <td>Add recent releases 2.20.7, 2.22.5, 2.22.6, 2.22.7, 3.0.5, 3.0.6, '
-    '3.0.7, 3.0.8, 3.2rc1, 3.2rc2, 3.2, 3.2.1, 3.2.2, 3.2.3, 3.2.4, 3.3.1, 3.3.2, '
-    '3.3.3, 3.3.4, 3.4rc1, and 3.4.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2024-04-26</td>\n'
-    '\n'
-    '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
-    '\n'
-    '    <td>Add ancient releases 3.0.10, 3.0.11, 3.2.6, 3.2.7, 3.2.8, 3.2.9, '
-    '3.2.10, 3.4.3, 3.4.4, 3.4.5, 3.4.6, 3.4.7, 3.4.8, 3.4.9, 3.4.10, 3.4.11, '
-    '3.4.12, 3.4.13, 3.4.14, 3.5.1, and 3.5.2.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2024-04-27</td>\n'
-    '\n'
-    '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
-    '\n'
-    '    <td>Add ancient releases 3.5.3, 3.6rc1, 3.6, 3.6.1, 3.6.2, 3.6.3, 3.6.4, '
-    '3.6.5, 3.6.6, 3.6.7, 3.6.8, 3.6.9, 3.6.10, 3.6.11, 3.6.12, 3.6.13, 3.7.1, '
-    '3.7.2, 3.7.3, 4.0rc1, 4.0rc2, 4.0, 4.0.1, 4.0.2, 4.0.3, 4.0.4, 4.0.5, 4.0.6, '
-    '4.0.7, 4.0.8, 4.0.9, 4.0.10, 4.0.11, 4.0.12, 4.0.13, 4.0.14, 4.0.15, 4.0.16, '
-    '4.0.17, 4.0.18, 4.1.1, 4.1.2, 4.1.3, and 4.2rc1.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2024-04-28</td>\n'
-    '\n'
-    '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
-    '\n'
-    '    <td>Add ancient releases 4.2rc1, 4.2rc2, 4.2, 4.2.1, 4.2.2, 4.2.3, '
-    '4.2.4, 4.2.5, 4.2.6, 4.2.7, 4.2.8, 4.2.9, 4.2.10, 4.2.11, 4.2.12, 4.2.13, '
-    '4.2.14, 4.2.15, and 4.2.16.</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '  <tr valign="top">\n'
-    '\n'
-    '    <td>2024-05-01</td>\n'
-    '\n'
-    '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
-    '\n'
-    '    <td>Add releases 4.3.1, 4.3.2, 4.3.3, 4.4rc1, 4.4rc2, 4.4, 4.4.1, 4.4.2, '
-    '4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7, 4.4.8, 4.4.9, 4.4.10, 4.4.11, 4.4.12, '
-    '4.4.13, 4.4.14, 4.5.1, 4.5.2, 4.5.3, 4.5.4, 4.5.5, 4.5.6, 5.0rc1, 5.0rc2, '
-    '5.0rc3, 5.0, 5.0.1, 5.0.2, 5.0.3, 5.0.4, 5.0.4.1, 5.0.5, 5.0.6, 5.2, 5.1.1, '
-    '5.1.2, and 5.3.3</td>\n'
-    '\n'
-    '  </tr>\n'
-    '\n'
-    '</table>\n'
-    '\n'
-    '<hr/>\n'
-    '\n'
-    '<div align="center">\n'
-    '<p><small>Generated at %(TIME)s<br/>\n'
-    'by <code>%(SCRIPT_ID)s</code><br/>\n'
-    'from <code>%(REMARKS_ID)s</code></small></p>\n'
-    '</div>\n'
-    '\n',
+    (
+        '<h2><a id="section-A" name="section-A">A. References</a></h2>\n'
+        '\n'
+        '\n'
+        '<h2><a id="section-B" name="section-B">B. Document History</a></h2>\n'
+        '\n'
+        '<table>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2000-11-14</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Created.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td> 2001-03-02 </td>\n'
+        '\n'
+        '    <td> <a href="mailto:rb@ravenbrook.com">RB</a> </td>\n'
+        '\n'
+        '    <td> Transferred copyright to Perforce under their license. </td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td> 2001-04-06 </td>\n'
+        '\n'
+        '    <td> <a href="mailto:nb@ravenbrook.com">NB</a> </td>\n'
+        '\n'
+        '    <td> Added sample queries. </td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2001-09-12</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Updated to reflect schema updates in Bugzilla 2.12 and 2.14</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2002-01-31</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added notes on Bugzilla 2.14.1.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2002-05-31</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Updated for Bugzilla 2.16 (based on 2.16rc1).</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2002-09-26</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Updated for Bugzilla 2.16/2.14.2/2.14.3.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2002-10-04</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added notes on Bugzilla 2.14.4 and 2.16.1, and on identical '
+        'schemas.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-05-14</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added extensive notes on schema changes, in section 2.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-06-06</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added table of Bugzilla releases showing release date and support '
+        'status.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-06-06</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added notes on schema changes in 2.17.x.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-06-13</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added first cut at description of new Bugzilla tables.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-06-27</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Added more on recent schema changes.  Colour-coded all schema\n'
+        '  changes.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-07-09</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Completely changed the way this document is produced.  The\n'
+        '    schema tables themselves are now created and coloured\n'
+        '    automatically by querying MySQL.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-11-04</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add Bugzilla 2.16.4 and 2.17.5.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2003-11-10</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add Bugzilla 2.17.6.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-03-19</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add Bugzilla 2.17.7; improve documentation of the groups system; '
+        'improve automated schema change descriptions.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-03-26</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add documentation of the flags system, the time series system, and '
+        'the time tracking system.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-04-30</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Correct some documentation of the time series system based on '
+        'feedback from the author.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-07-14</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.16.6 and 2.18rc1.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-07-28</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.18rc2.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-11-11</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.16.7, 2.18rc3, 2.19.1.  Change document-generation code\n'
+        '    to improve colouring, link consistency, control, and\n'
+        '    robustness.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-11-12</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Turn into CGI, using schemas stored in Python pickles.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-11-13</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.0, 2.2, 2.4, 2.6. 2.8, for completeness.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2004-12-03</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add notes on quips and a few missing foreign key links.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2005-01-18</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.16.8, 2.18, and 2.19.2.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2005-05-19</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.16.9, 2.16.10, 2.18.1, and (preliminarily) 2.19.3.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2005-09-15</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.18.2, 2.18.3, 2.20rc1, 2.20rc2, and complete remarks for '
+        '2.19.3.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2005-10-03</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.18.4, 2.20, 2.21.1</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2006-05-18</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add 2.16.11, 2.18.5, 2.20.1, 2.22rc1, 2.20.2, 2.22, 2.23.1.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2006-10-31</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add recent releases, to 2.18.6, 2.20.3, 2.22.1, 2.23.3.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2007-05-11</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add recent releases 2.20.4, 2.22.2, 2.23.4, 3.0rc1, 3.0.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2008-02-29</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add recent releases 3.0.1, 3.0.2, 3.0.3, 3.1.1, 3.1.2, 3.1.3.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2009-07-31</td>\n'
+        '\n'
+        '    <td><a href="mailto:nb@ravenbrook.com">NB</a></td>\n'
+        '\n'
+        '    <td>Add recent releases 2.20.7, 2.22.5, 2.22.6, 2.22.7, 3.0.5, 3.0.6, '
+        '3.0.7, 3.0.8, 3.2rc1, 3.2rc2, 3.2, 3.2.1, 3.2.2, 3.2.3, 3.2.4, 3.3.1, 3.3.2, '
+        '3.3.3, 3.3.4, 3.4rc1, and 3.4.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2024-04-26</td>\n'
+        '\n'
+        '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
+        '\n'
+        '    <td>Add ancient releases 3.0.10, 3.0.11, 3.2.6, 3.2.7, 3.2.8, 3.2.9, '
+        '3.2.10, 3.4.3, 3.4.4, 3.4.5, 3.4.6, 3.4.7, 3.4.8, 3.4.9, 3.4.10, 3.4.11, '
+        '3.4.12, 3.4.13, 3.4.14, 3.5.1, and 3.5.2.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2024-04-27</td>\n'
+        '\n'
+        '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
+        '\n'
+        '    <td>Add ancient releases 3.5.3, 3.6rc1, 3.6, 3.6.1, 3.6.2, 3.6.3, 3.6.4, '
+        '3.6.5, 3.6.6, 3.6.7, 3.6.8, 3.6.9, 3.6.10, 3.6.11, 3.6.12, 3.6.13, 3.7.1, '
+        '3.7.2, 3.7.3, 4.0rc1, 4.0rc2, 4.0, 4.0.1, 4.0.2, 4.0.3, 4.0.4, 4.0.5, 4.0.6, '
+        '4.0.7, 4.0.8, 4.0.9, 4.0.10, 4.0.11, 4.0.12, 4.0.13, 4.0.14, 4.0.15, 4.0.16, '
+        '4.0.17, 4.0.18, 4.1.1, 4.1.2, 4.1.3, and 4.2rc1.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2024-04-28</td>\n'
+        '\n'
+        '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
+        '\n'
+        '    <td>Add ancient releases 4.2rc1, 4.2rc2, 4.2, 4.2.1, 4.2.2, 4.2.3, '
+        '4.2.4, 4.2.5, 4.2.6, 4.2.7, 4.2.8, 4.2.9, 4.2.10, 4.2.11, 4.2.12, 4.2.13, '
+        '4.2.14, 4.2.15, and 4.2.16.</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '  <tr valign="top">\n'
+        '\n'
+        '    <td>2024-05-01</td>\n'
+        '\n'
+        '    <td><a href="https://github.com/justdave">justdave</a></td>\n'
+        '\n'
+        '    <td>Add releases 4.3.1, 4.3.2, 4.3.3, 4.4rc1, 4.4rc2, 4.4, 4.4.1, 4.4.2, '
+        '4.4.3, 4.4.4, 4.4.5, 4.4.6, 4.4.7, 4.4.8, 4.4.9, 4.4.10, 4.4.11, 4.4.12, '
+        '4.4.13, 4.4.14, 4.5.1, 4.5.2, 4.5.3, 4.5.4, 4.5.5, 4.5.6, 5.0rc1, 5.0rc2, '
+        '5.0rc3, 5.0, 5.0.1, 5.0.2, 5.0.3, 5.0.4, 5.0.4.1, 5.0.5, 5.0.6, 5.2, 5.1.1, '
+        '5.1.2, and 5.3.3</td>\n'
+        '\n'
+        '  </tr>\n'
+        '\n'
+        '</table>\n'
+        '\n'
+        '<hr/>\n'
+        '\n'
+        '<div align="center">\n'
+        '<p><small>Generated at %(TIME)s<br/>\n'
+        'by <code>%(SCRIPT_ID)s</code><br/>\n'
+        'from <code>%(REMARKS_ID)s</code></small></p>\n'
+        '</div>\n'
+        '\n'
+    ),
 ]
 
 remarks_id = '$Id$'
