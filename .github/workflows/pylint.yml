@@ -21,7 +21,7 @@ jobs:
         pip install pylint mysqlclient black
     - name: Check for compile errors with pylint
       run: |
-        pylint -E $(git ls-files '*.py')
+        pylint -E $(git ls-files '*.py' schema-tool)
     #- name: Full code analysis with pylint
     #  run: |
-    #    pylint $(git ls-files '*.py')
+    #    pylint $(git ls-files '*.py' schema-tool)
